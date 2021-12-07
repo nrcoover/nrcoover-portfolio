@@ -129,7 +129,7 @@ p {
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 2px solid rgba(223, 179, 145, 0);
-  color: #454646;
+  color: var(--violet-200);
   font-size: 14px;
   text-decoration: none;
 }
@@ -1005,7 +1005,7 @@ p {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  background-image: url('../images/hero-light.jpg');
+  background-image: url('../images-custom/pexels-cottonbro_finest-of-fashion_hybrid2.jpeg');
   background-position: 0% 50%;
   background-size: cover;
   background-attachment: scroll;
