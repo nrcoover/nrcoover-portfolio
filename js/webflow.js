@@ -5,6 +5,20 @@
  *   var Webflow = Webflow || [];
  *   Webflow.push(readyFunction);
  */
+//CUSTOM COLOR VARIABLE DECLERATIONS
+  // Original Orange Color: rgba(231,176,151,1)
+  var rValueOriginal = 231;
+  var bValueOriginal = 151;
+  var gValueOriginal = 176;
+  var aValueOriginal = 1;
+
+  // Custom Theme Color Light: rgba()
+  var rValueThemeLight = 31;
+  var gValueThemeLight = 151;
+  var bValueThemeLight = 176;
+  var aValueThemeLight = 1;
+
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -23337,10 +23351,10 @@ Webflow.require("ix2").init({
                   selectorGuids: ["91e7400b-41a9-373a-d8f8-88dbc6a225f7"],
                 },
                 globalSwatchId: "56fb8e81",
-                rValue: 231,
-                bValue: 151,
-                gValue: 175,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
           ],
@@ -23420,10 +23434,10 @@ Webflow.require("ix2").init({
                   id: "6a765871-4faf-2dc1-28c2-467d89453caa",
                 },
                 globalSwatchId: "56fb8e81",
-                rValue: 231,
-                bValue: 151,
-                gValue: 175,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
           ],
@@ -23480,10 +23494,10 @@ Webflow.require("ix2").init({
                   id: "61acd2f48db1eff8884c1178|e2d5db5e-d625-8d95-83f8-932b33c2fc38",
                 },
                 globalSwatchId: "55f8ecce",
-                rValue: 231,
-                bValue: 151,
-                gValue: 176,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: gValueThemeLight,
               },
             },
             {
@@ -23559,10 +23573,10 @@ Webflow.require("ix2").init({
                   selectorGuids: ["8af0c0c0-bf45-493e-9e15-a31c5021947f"],
                 },
                 globalSwatchId: "55f8ecce",
-                rValue: 231,
-                bValue: 151,
-                gValue: 176,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
             {
@@ -23608,10 +23622,10 @@ Webflow.require("ix2").init({
                   id: "61acd2f48db1eff8884c1178|e2d5db5e-d625-8d95-83f8-932b33c2fc38",
                 },
                 globalSwatchId: "55f8ecce",
-                rValue: 231,
-                bValue: 151,
-                gValue: 176,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
             {
@@ -23700,10 +23714,10 @@ Webflow.require("ix2").init({
                   selectorGuids: ["9e401551-f74e-1431-aa94-b2977b6e65af"],
                 },
                 globalSwatchId: "55f8ecce",
-                rValue: 231,
-                bValue: 151,
-                gValue: 176,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
           ],
@@ -23987,10 +24001,10 @@ Webflow.require("ix2").init({
                   id: "5fd89d71acc92515c793ecb9|22762c52-e53f-a7ec-732d-17578bb5d163",
                 },
                 globalSwatchId: "55f8ecce",
-                rValue: 231,
-                bValue: 151,
-                gValue: 176,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
             {
@@ -24051,10 +24065,10 @@ Webflow.require("ix2").init({
                   id: "5fd89d71acc92515c793ecb9|22762c52-e53f-a7ec-732d-17578bb5d163",
                 },
                 globalSwatchId: "55f8ecce",
-                rValue: 231,
-                bValue: 151,
-                gValue: 176,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
             {
@@ -24126,10 +24140,10 @@ Webflow.require("ix2").init({
                   selectorGuids: ["8af0c0c0-bf45-493e-9e15-a31c5021947f"],
                 },
                 globalSwatchId: "55f8ecce",
-                rValue: 231,
-                bValue: 151,
-                gValue: 176,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
             {
@@ -24563,10 +24577,10 @@ Webflow.require("ix2").init({
                   id: "61acd2f48db1efab5f4c1180|cd98c721-1dac-5f42-50a0-9b638fded48d",
                 },
                 globalSwatchId: "56fb8e81",
-                rValue: 231,
-                bValue: 151,
-                gValue: 175,
-                aValue: 1,
+                rValue: rValueThemeLight,
+                bValue: bValueThemeLight,
+                gValue: gValueThemeLight,
+                aValue: aValueThemeLight,
               },
             },
           ],
