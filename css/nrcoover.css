@@ -42,18 +42,26 @@
 
   --teal-dark: rgb(19, 94, 94);
   --teal-medium: rgb(32, 160, 160);
-  --theme-color-light: rgb(51, 223, 194);
   --teal-faint: rgb(172, 255, 255);
+
+  --theme-color-black: #17252A;
+  --theme-color-dark: #2B7A78;
+  --theme-color-main: #3AAFA9;
+  --theme-color-light: #DEF2F1;
+  --theme-color-white: #FEFFFF;
+
 
 /* ---------- MAIN BODY DECLERATIONS ---------- */
 }
 
 html, body {
   font-family: Montserrat, sans-serif;
-  color: #6d7375;
+  /* color: #6d7375; */
+  color: var(--theme-color-black);
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.2px;
+  background-color: var(--theme-color-black);
 }
 
 p {
@@ -64,7 +72,7 @@ p {
   width: 100%;
   height: 2px;
   margin-top: 2px;
-  background-color: var(--green-500);
+  background-color: var(--theme-color-dark);
   -webkit-transform: scale3d(0, 1, 1);
   transform: scale3d(0, 1, 1);
   -webkit-transform-origin: 0% 50%;
@@ -88,6 +96,23 @@ p {
 .menu-button {
   display: none;
   cursor: pointer;
+}
+
+#About {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+#About, #Contact {
+  background-color: var(--theme-color-light);
+}
+
+#Service {
+  color: var(--theme-color-light);
+}
+
+#Contact {
+  padding-top: 140px;
 }
 
 /* ---------- NAVIGATION DECLERATIONS ---------- */
@@ -132,11 +157,11 @@ p {
 }
 
 #nrcoover-logo {
-  fill: white;
+  fill: var(--theme-color-light);
 }
 
 #nrcoover-logo-c-svg {
-  fill: var(--theme-color-light);
+  fill: var(--theme-color-main);
   transform: scale(1.03) translate(-7.88em, .12em);
 }
 
@@ -152,7 +177,7 @@ p {
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 2px solid rgba(223, 179, 145, 0);
-  color: var(--violet-200);
+  color: var(--theme-color-white);
   font-size: 14px;
   text-decoration: none;
 }
@@ -160,7 +185,7 @@ p {
 .navigation {
   position: absolute;
   z-index: 1000;
-  background-color: rgb(124, 124, 124);
+  background-color: var(--theme-color-black);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -191,6 +216,7 @@ p {
 .icon {
   width: 20px;
   background-color: #454646;
+  /* background-color: var(--theme-color-light); */
 }
 
 .navigation-back-home {
@@ -214,7 +240,7 @@ p {
 
 /* ---------- HERO SECTION DECLERATIONS ---------- */
 .hero-section {
-  /* background-color: var(--neutral-1000); */
+  background: linear-gradient(var(--theme-color-white),var(--theme-color-black));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -259,7 +285,7 @@ p {
   margin-bottom: 0px;
   opacity: 0.76;
   font-family: Poppins, sans-serif;
-  /* color: var(--green-100);  */
+  color: var(--theme-color-black); 
   font-size: 65px;
   line-height: 65px;
   font-weight: 500;
@@ -541,7 +567,7 @@ p {
   margin-top: 0px;
   margin-bottom: 20px;
   font-family: Poppins, sans-serif;
-  color: #454646;
+  color: var(--theme-color-dark);
   font-size: 54px;
   line-height: 54px;
   font-weight: 500;
@@ -652,7 +678,7 @@ p {
 
 .input-field:focus {
   border-bottom-width: 2px;
-  border-bottom-color: #e7b097;
+  border-bottom-color: var(--theme-color-dark);
 }
 
 .input-field.message {
@@ -787,7 +813,7 @@ p {
 }
 
 .h2.span {
-  color: var(--theme-color-light);
+  color: var(--theme-color-main);
   /* color: #e7af97; */
   font-size: 32px;
   line-height: 32px;
@@ -866,11 +892,12 @@ p {
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: Poppins, sans-serif;
-  color: #959c9e;
+  color: var(--theme-color-light);
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.5px;
+  opacity: 0.8 !important;
 }
 
 .styleguide-heading {
@@ -1084,7 +1111,7 @@ p {
   height: 8px;
   margin-top: 4px;
   border-radius: 50px;
-  background-color: #e7b097;
+  background-color: var(--theme-color-dark);
 }
 
 .scroll-wrapper {
@@ -1135,7 +1162,7 @@ p {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-  background-image: url('../images/plantdecoration.jpg');
+  background-image: url('../images-custom/nicholas-coover-professional_400x400.jpg');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1165,7 +1192,7 @@ p {
   min-height: 100%;
   margin-bottom: 60px;
   padding-left: 1.5px;
-  background-color: #e7b097;
+  background-color: var(--theme-color-dark);
 }
 
 .content-section {
@@ -1270,7 +1297,7 @@ p {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-  background-image: url('../images/table-with-chair.jpg');
+  background-image: url('../images-custom/web-dev_audio-image-teal2.png');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1960,7 +1987,7 @@ p {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #fcfaf8;
+  background-color: var(--theme-color-black);
 }
 
 .license-wrapper {
