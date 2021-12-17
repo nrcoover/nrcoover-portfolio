@@ -40,15 +40,11 @@
   --green-200: #57D9A3; /* rgba() */
   --green-100: #ABF5D1; /* rgba() */
 
-  --teal-dark: rgb(19, 94, 94);
-  --teal-medium: rgb(32, 160, 160);
-  --teal-faint: rgb(172, 255, 255);
-
-  --theme-color-black: #17252A;
-  --theme-color-dark: #2B7A78;
-  --theme-color-main: #3AAFA9;
-  --theme-color-light: #DEF2F1;
-  --theme-color-white: #FEFFFF;
+  --theme-color-black: #17252A; /* rgba(23,37,42,1) */
+  --theme-color-dark: #2B7A78; /* rgba(43,122,120, 1) */
+  --theme-color-main: #3AAFA9; /* rgba(58, 175, 169, 1) */
+  --theme-color-light: #DEF2F1; /* rgba(222,242,241,1) */
+  --theme-color-white: #FEFFFF; /* rgba(254, 255, 255, 1) */
 
 
 /* ---------- MAIN BODY DECLERATIONS ---------- */
@@ -62,6 +58,7 @@ html, body {
   line-height: 24px;
   letter-spacing: 0.2px;
   background-color: var(--theme-color-black);
+  height: 100%;
 }
 
 p {
@@ -213,10 +210,26 @@ p {
   align-items: center;
 }
 
+.icon-wrap {
+  /* background-color: white; */
+  height: 25px;
+  width: 35px;
+}
+
 .icon {
-  width: 20px;
-  background-color: #454646;
+  width: 25px;
+  height: 25px;
+  /* background-color: #454646; */
   /* background-color: var(--theme-color-light); */
+}
+
+.icon-social {
+  fill: var(--theme-color-light);
+  transition: .25s;
+}
+
+.icon-social:hover {
+  fill: var(--theme-color-main);
 }
 
 .navigation-back-home {
@@ -299,6 +312,10 @@ p {
 
 #hero-description {
   font-size: 45px;
+}
+
+.scroll-wrapper p {
+  color: var(--theme-color-dark)
 }
 
 
@@ -449,6 +466,7 @@ p {
 .small-paragraph {
   font-size: 14px;
   line-height: 20px;
+  color: var(--theme-color-light);
 }
 
 .small-paragraph.semibold {
@@ -815,8 +833,8 @@ p {
 .h2.span {
   color: var(--theme-color-main);
   /* color: #e7af97; */
-  font-size: 32px;
-  line-height: 32px;
+  font-size: 24px;
+  line-height: 24px;
 }
 
 .h2.white-text {
@@ -1162,7 +1180,7 @@ p {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-  background-image: url('../images-custom/nicholas-coover-professional_400x400.jpg');
+  background-image: url('../images-custom/Nick-Professional-Profile-Image_Close-Up-Teal.png');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1427,7 +1445,7 @@ p {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-  background-image: url('../images/sofa.jpg');
+  background-image: url('../images-custom/pexels-cottonbro-4065864-man-typing-cool.png');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
