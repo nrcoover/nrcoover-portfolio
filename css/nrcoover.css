@@ -7,7 +7,6 @@
 }
 
 :root {
-  --: #; /* rgba() */
 
   --neutral-1200: #0d0f11; /* rgba() */
   --neutral-1100: #181b1f; /* rgba() */
@@ -45,10 +44,9 @@
   --theme-color-main: #3AAFA9; /* rgba(58, 175, 169, 1) */
   --theme-color-light: #DEF2F1; /* rgba(222,242,241,1) */
   --theme-color-white: #FEFFFF; /* rgba(254, 255, 255, 1) */
-
+}
 
 /* ---------- MAIN BODY DECLERATIONS ---------- */
-}
 
 html, body {
   font-family: Montserrat, sans-serif;
@@ -93,6 +91,10 @@ p {
 .menu-button {
   display: none;
   cursor: pointer;
+}
+
+.hero-wrapper {
+  margin-top: 140px;
 }
 
 #About {
@@ -211,16 +213,14 @@ p {
 }
 
 .icon-wrap {
-  /* background-color: white; */
   height: 25px;
   width: 35px;
+  margin: 0 5px;
 }
 
 .icon {
   width: 25px;
   height: 25px;
-  /* background-color: #454646; */
-  /* background-color: var(--theme-color-light); */
 }
 
 .icon-social {
@@ -983,14 +983,12 @@ p {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 2px;
-  /* background-color: #e7af97; */
   background-color: var(--theme-color-light);
   box-shadow: inset 0 0 0 1.5px var(--theme-color-light);
   -webkit-transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
   text-decoration: none;
-  /* background: transparent; */
   color: black;
 }
 
@@ -1004,7 +1002,6 @@ p {
   max-width: 540px;
   margin-top: 10px;
   background-color: var(--theme-color-light);
-  /* background-color: #e7af97; */
   background: none;
 }
 
@@ -2265,8 +2262,24 @@ p {
     order: 1;
   }
 
+  .icon-wrap {
+    height: 35px;
+    width: 35px;
+    margin: 0 5px;
+  }
+  
   .icon {
-    background-color: #6d7375;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .icon-social {
+    fill: var(--theme-color-light);
+    transition: .25s;
+  }
+  
+  .icon-social:hover {
+    fill: var(--theme-color-main);
   }
 
   .footer-top {
@@ -2277,7 +2290,7 @@ p {
   }
 
   .h1 {
-    max-width: 400px;
+    max-width: 450px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -2286,9 +2299,10 @@ p {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    font-size: 44px;
-    line-height: 44px;
+    font-size: 37px;
+    line-height: 37px;
     text-align: center;
+    margin-top: 10px;
   }
 
   .form {
@@ -2323,6 +2337,7 @@ p {
 
   .h4 {
     font-size: 16px;
+    color: var(--theme-color-black);
     line-height: 24px;
     text-align: center;
   }
@@ -2330,23 +2345,26 @@ p {
   .button-primary {
     margin-top: 40px;
     margin-bottom: 20px;
+    background-color: var(--theme-color-main);
   }
 
   .button-primary.form {
     margin-top: 0px;
     margin-bottom: 0px;
+    background-color: var(--theme-color-main);
+
   }
 
   .logo-background {
-    top: -12%;
-    font-size: 76px;
-    line-height: 76px;
+    /* top: -12%; */
+    font-size: 64px;
+    line-height: 64px;
     text-align: center;
   }
 
   .hero-image {
     position: static;
-    height: 420px;
+    height: 650px;
     max-width: 100%;
     margin-top: 40px;
     -webkit-box-align: center;
@@ -2381,7 +2399,7 @@ p {
 
   .hero-section {
     width: 100%;
-    height: 100%;
+    height: 1400px;
     min-height: auto;
     margin-right: auto;
     margin-left: auto;
@@ -2396,7 +2414,7 @@ p {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #fff;
+    background: linear-gradient(var(--theme-color-light) 0%,var(--theme-color-black) 58%);
   }
 
   .hero-wrapper {
@@ -2404,10 +2422,8 @@ p {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }
-
-  .icon-2 {
-    background-color: #6d7375;
+    height: 720px;
+    margin-top: 70px;
   }
 
   .right-wrapper {
@@ -2485,7 +2501,7 @@ p {
     object-fit: cover;
   }
 
-  .collection-list {
+  /* .collection-list {
     margin-top: 40px;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
@@ -2499,7 +2515,7 @@ p {
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end;
-  }
+  } */
 
   .content-card-wrapper {
     height: 100%;
