@@ -2672,6 +2672,11 @@ p {
     transform-origin: 50% 0%;
   }
 
+  .logo-background {
+    font-size: 60px;
+  }
+
+
   .footer-social {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -3067,25 +3072,35 @@ p {
 }
 
 
+@media screen and (max-width: 642px) {
+  .logo-background {
+    font-size: 55px;
+  }
 
+  .hero-wrapper .h1 {
+    font-size: 35px;
+  }
+  
+  .hero-wrapper .h4 {
+    font-size: 28px !important;
+  }
 
+}
 
+@media screen and (max-width: 520px) {
+  .logo-background {
+    font-size: 50px;
+  }
 
+  .hero-wrapper .h1 {
+    font-size: 30px;
+  }
+  
+  .hero-wrapper .h4 {
+    font-size: 25px !important;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
