@@ -7,38 +7,6 @@
 }
 
 :root {
-
-  --neutral-1200: #0d0f11; /* rgba() */
-  --neutral-1100: #181b1f; /* rgba() */
-  --neutral-1000: #24292E; /* rgba() */
-  --neutral-900: #383F45; /* rgba() */
-  --neutral-800: #454C52; /* rgba() */
-  --neutral-700: #596066; /* rgba() */
-  --neutral-600: #676E76; /* rgba() */
-  --neutral-500: #7F8790; /* rgba() */
-  --neutral-400: #9EA5AD; /* rgba() */
-  --neutral-300: #CED2D6; /* rgba() */
-  --neutral-200: #E5E7EA; /* rgba() */
-  --neutral-100: #F6F7F9; /* rgba() */
-
-  --blue-500: #00A3BF; /* rgba() */
-  --blue-400: #00B8D9; /* rgba() */
-  --blue-300: #00C7E6; /* rgba() */
-  --blue-200: #79E2F2; /* rgba() */
-  --blue-100: #B3F5FF; /* rgba() */
-
-  --violet-500: #A239AD; /* rgba() */
-  --violet-400: #C054BE; /* rgba() */
-  --violet-300: #C270CD; /* rgba() */
-  --violet-200: #D6A9D5; /* rgba() */
-  --violet-100: #E1C7E0; /* rgba() */
-
-  --green-500: #006644; /* rgba() */
-  --green-400: #00875A; /* rgba() */
-  --green-300: #36B37E; /* rgba() */
-  --green-200: #57D9A3; /* rgba() */
-  --green-100: #ABF5D1; /* rgba() */
-
   --theme-color-black: #17252A; /* rgba(23,37,42,1) */
   --theme-color-dark: #2B7A78; /* rgba(43,122,120, 1) */
   --theme-color-main: #3AAFA9; /* rgba(58, 175, 169, 1) */
