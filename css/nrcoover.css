@@ -3103,13 +3103,6 @@ p {
 }
 
 
-
-
-
-
-
-
-
 @media screen and (max-width: 479px) {
   .social-menu {
     display: none;
@@ -3206,13 +3199,13 @@ p {
   }
 
   .logo-background {
-    top: -10%;
+    top: -38%;
     font-size: 58px;
     line-height: 58px;
   }
 
   .hero-image {
-    height: 180px;
+    height: 480px;
   }
 
   .max-width-wrapper {
@@ -3228,6 +3221,7 @@ p {
   }
 
   .hero-section {
+    height: 1200px;
     overflow: hidden;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -3242,6 +3236,7 @@ p {
   .hero-wrapper {
     padding-right: 0px;
     padding-left: 0px;
+    height: 670px;
   }
 
   .image {
@@ -3267,7 +3262,8 @@ p {
   }
 
   .image-2 {
-    height: 380px;
+    height: 500px;
+    background-image: url(../images-custom/web-dev_audio-image-teal2.png);
   }
 
   .collection-list {
