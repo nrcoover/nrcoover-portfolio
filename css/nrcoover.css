@@ -1306,6 +1306,10 @@ p {
   align-items: center;
 }
 
+.collection-wrapper h2 {
+  color: var(--theme-color-light);
+}
+
 .collection-list-wrapper {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
