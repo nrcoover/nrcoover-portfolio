@@ -74,7 +74,7 @@ p {
   background-color: var(--theme-color-light);
 }
 
-#Service {
+#Service, #R-Design-Layout {
   color: var(--theme-color-light);
 }
 
@@ -1516,8 +1516,6 @@ p {
   -ms-flex-align: center;
   align-items: center;
   display: flex;
-  
-  /* transform: translate(-50%, 50%); */
 }
 
 .category-image-wrapper{
@@ -1547,6 +1545,10 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#r-design-description {
+  background: var(--theme-color-black);
 }
 
 .header-overlay {
