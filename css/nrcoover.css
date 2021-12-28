@@ -2929,12 +2929,29 @@ p {
   }
 
   .content-section {
+    max-width: 625px;
     width: 100vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+
+  .center-wrapper {
+    display: flex;
+    margin: 0 auto;
+    max-width: 600px;
+    padding-bottom: .5em; 
+    transform: translateY(50%);
+  }
+
+  #Featured-Blog-Section {
+    padding-bottom:  10em;
+  }
+
+  #Website-Preview {
+    padding-top: 6em;
   }
 
   .data-wrapper {
