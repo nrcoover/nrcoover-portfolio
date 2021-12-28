@@ -3344,7 +3344,24 @@ p {
   }
 
   .content-section {
-    margin-top: 60px;
+    margin-top: 120px;
+  }
+
+  #Blog-Screen-Images .category-image-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #Blog-Screen-Images .left-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .rdd-section {
+    margin-top: 10px;
+  }
+
+  .center-wrapper {
+    transform: translateY(40%);
   }
 
   .left-grid {
