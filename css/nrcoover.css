@@ -2567,6 +2567,14 @@ p {
     margin-left: 20px;
   }
 
+  #r-design-description {
+    flex-direction: column-reverse;
+  }
+
+  .rdd-section {
+    margin-top: 0;
+  }
+
   .category-image-container {
     width: 500px;
     height: auto;
