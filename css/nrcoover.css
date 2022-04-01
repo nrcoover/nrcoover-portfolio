@@ -302,6 +302,14 @@ p {
 
 /* ---------- PORTFOLIO PAGE DECLERATIONS ---------- */
 
+#Portfolio-Scroll-Down {
+  background-color: rgba(23,37,42, .8);
+  width: 12rem;
+  padding: 1rem;
+  border-radius: 0 35px 35px 0;
+
+}
+
 .title-wrapper {
   background-color: var(--theme-color-dark);
   /* border-radius: 5px; */
