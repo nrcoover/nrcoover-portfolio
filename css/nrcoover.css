@@ -1525,7 +1525,7 @@ p {
   background-position: 50% 70%;
   background-size: cover;
   background-repeat: no-repeat;
-  background: linear-gradient(var(--theme-color-main), var(--theme-color-light));
+  /* background: linear-gradient(var(--theme-color-main), var(--theme-color-light)); */
 }
 
 
@@ -3040,9 +3040,13 @@ p {
     align-items: center;
   }
   
-  #Project-Hero-Section {
-    height: 900px;
-
+  /* Implemented in HTML Document portfolio.html */
+  #Project-Hero-Image {
+    background-image: url(../images-hero/pexels-kevin-ku-577585.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
   }
 
   #Header-Full-Width-Main {
