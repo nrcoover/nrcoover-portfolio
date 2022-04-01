@@ -300,6 +300,18 @@ p {
   color: var(--theme-color-dark)
 }
 
+/* ---------- PORTFOLIO PAGE DECLERATIONS ---------- */
+
+.title-wrapper {
+  background-color: var(--theme-color-dark);
+  border-radius: 5px;
+  margin-bottom: -3.25rem;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* ---------- OTHER DECLERATIONS ---------- */
 
 .footer-social {
   display: -webkit-box;
