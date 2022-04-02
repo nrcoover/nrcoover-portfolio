@@ -304,6 +304,8 @@ p {
 
 #Portfolio-Scroll-Down {
   background-color: rgba(23,37,42, .8);
+  border-radius: 0 35px 35px 0;
+  padding: 1rem;
   width: 12rem;
 }
 
@@ -343,12 +345,17 @@ p {
   clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
   content: "";
   height:100%;
-  overflow-x: hidden;
   position:absolute;
   transform: translateX(-50%);
   width: 250%;
   z-index:-1;
   /* border-radius: 100px; */
+}
+
+.h4-custom-wrapper:before {
+  border-bottom: 8px solid var(--theme-color-main);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%);
+  transform: translateX(-10%);
 }
 
 .title-wrapper {
