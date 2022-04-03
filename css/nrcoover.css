@@ -1567,7 +1567,7 @@ p {
   align-items: center;
 }
 
-.category-image {
+.category-image, .project-hero-banner {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1585,7 +1585,10 @@ p {
   background-position: 50% 70%;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background: linear-gradient(var(--theme-color-main), var(--theme-color-light)); */
+}
+
+.project-hero-banner {
+  background: linear-gradient(var(--theme-color-main), var(--theme-color-light));
 }
 
 
