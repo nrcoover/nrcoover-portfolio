@@ -3862,5 +3862,11 @@ p {
     -ms-grid-column: 1;
     grid-column-start: 1;
   }
+
+  .collection-wrapper .background-card, .collection-item-wrapper {
+    min-width: 100%;
+    height: 100%;
+    width: 80vw;
+  }
 }
 
