@@ -26,6 +26,11 @@ html, body {
   background-color: var(--theme-color-black);
   height: 100%;
   width: 100%;
+  min-width: 320px;
+}
+
+nav {
+  min-width: 320px;
 }
 
 p {
@@ -3868,5 +3873,21 @@ p {
     height: 100%;
     width: 80vw;
   }
+
+  .max-width-wrapper h2 {
+    font-size: 3rem;
+    margin: 3rem auto;
+    margin-top: 1rem;
+  }
 }
 
+@media screen and (max-width: 399px) {
+  .max-width-wrapper h2 {
+    transform: translateY(20%);
+    font-size: 2.5rem;
+  }
+
+  .hero-wrapper {
+    min-height: 100vh;
+  }
+}
