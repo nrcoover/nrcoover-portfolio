@@ -45,6 +45,37 @@ p {
   width: 100%;
 }
 
+.background-theme-black h2,
+.background-theme-black strong {
+  color: var(--theme-color-main);
+}
+
+.background-theme-black p {
+  color: var(--theme-color-light);
+}
+
+.background-theme-dark {
+  background-color: var(--theme-color-dark);
+  width: 100%;
+}
+
+.background-theme-main {
+  background-color: var(--theme-color-main);
+  width: 100;
+}
+
+.background-theme-light {
+  background-color: var(--theme-color-light);
+  width: 100%;
+}
+
+.background-theme-light h2 {
+  color: rgba(0, 0, 0, .65);
+}
+
+.background-theme-white {
+  background-color: var(--theme-color-white);
+  width: 100%;
 }
 
 .underline {
