@@ -39,17 +39,12 @@ p {
   margin-bottom: 0px;
 }
 
-.my-block-quote {
-  display: inline-block;
-  font-family: 'Merriweather', serif;
-  font-size: 2.45rem;
-  font-style: italic;
-  line-height: 3rem;
-  margin-bottom: 1rem;
+/* Used to sylize the specified articles with a themematic full-width background color */
+.background-theme-black {
+  background-color: var(--theme-color-black);
+  width: 100%;
 }
 
-.content-wrapper-left {
-  margin-right: 3rem;
 }
 
 .underline {
@@ -390,6 +385,35 @@ p {
 .theme-glow-light {
   box-shadow: 2px 2px 20px rgba(146, 146, 146, 0.25);
 }
+
+
+/* ---------- ABOUT ME PAGE DECLERATIONS ---------- */
+
+.my-block-quote {
+  display: inline-block;
+  font-family: 'Merriweather', serif;
+  font-size: 2.45rem;
+  font-style: italic;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.my-inner-block-quote {
+  display: block;
+  font-size: 1.25rem;
+  text-align: right;
+  color: rgba(222, 242, 241, .5);
+  /* transform: translateX(10rem); */
+}
+
+.content-wrapper-left {
+  margin-right: 3rem;
+}
+
+.less-strong {
+  font-weight: 600;
+}
+
 
 /* ---------- OTHER DECLERATIONS ---------- */
 
