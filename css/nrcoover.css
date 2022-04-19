@@ -39,6 +39,16 @@ p {
   margin-bottom: 0px;
 }
 
+p a {
+  cursor: pointer;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
+
 /* Used to sylize the specified articles with a themematic full-width background color */
 .background-theme-black {
   background-color: var(--theme-color-black);
@@ -48,6 +58,14 @@ p {
 .background-theme-black h2,
 .background-theme-black strong {
   color: var(--theme-color-main);
+}
+
+.background-theme-black a {
+  color: var(--theme-color-main);
+}
+
+.background-theme-black a:visited {
+  color: var(--theme-color-dark);
 }
 
 .background-theme-black p {
@@ -419,6 +437,28 @@ p {
 
 
 /* ---------- ABOUT ME PAGE DECLERATIONS ---------- */
+
+#About-Me-Body h2 {
+  font-size: clamp(2rem, 15vw, 4rem);
+  line-height: clamp(2rem, 18vw, 4.2rem);
+  padding-bottom: 1.25rem;
+}
+
+.paragraph-width-limiter {
+  display: inline-block;
+  max-width: 60ch;
+}
+
+.para-columns-container {
+  display: flex;
+  /* justify-content: space-between; */
+  text-align: justify;
+  gap: 2rem;
+}
+
+.para-columns-container p {
+  width: 30%;
+}
 
 .my-block-quote {
   display: inline-block;
@@ -1580,6 +1620,47 @@ p {
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.image-4 {
+  z-index: 200;
+  width: 50%;
+  height: 600px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  background: url("../assets/images-other/social-network-mark.jpg"), rgba(50, 125, 175, .2);
+  background-blend-mode: overlay;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#Movie-Wrapper-Social-Network{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 2rem 0 5rem;
+}
+
+.social-network-title-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 7rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+#Social-Network-Title {
+  background-color: rgba(0, 0, 0, .4);
+  color: rgba(255, 255, 255, .5);
+  font-size: clamp(1.3rem, 15vw, 5.6rem);
+  line-height: clamp(1.5rem, 17vw, 5.8rem);
+  padding: 1rem;
+  width: 100%;
 }
 
 .contact-form {
@@ -2773,6 +2854,14 @@ p {
     padding-bottom: 0px;
     border-radius: 20px;
     background-color: var(--theme-color-main);
+  }
+
+  .para-columns-container {
+    flex-direction: column;
+  }
+
+  .para-columns-container p {
+    width: 100%;
   }
 
   .social-menu {
