@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   list-style: none;
@@ -35,6 +37,19 @@ nav {
 
 p {
   margin-bottom: 0px;
+}
+
+.my-block-quote {
+  display: inline-block;
+  font-family: 'Merriweather', serif;
+  font-size: 2.45rem;
+  font-style: italic;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.content-wrapper-left {
+  margin-right: 3rem;
 }
 
 .underline {
@@ -3843,6 +3858,10 @@ p {
     grid-row-start: 4;
     -ms-grid-column-align: center;
     justify-self: center;
+  }
+
+  .content-wrapper-left {
+    margin-right: 0;
   }
 }
 
