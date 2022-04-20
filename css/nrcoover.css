@@ -19,16 +19,18 @@
 /* ---------- MAIN BODY DECLERATIONS ---------- */
 
 html, body {
+  background-color: var(--theme-color-black);
+  color: var(--theme-color-black);
+  display: flex;
+  flex-direction: column;
   font-family: Montserrat, sans-serif;
   /* color: #6d7375; */
-  color: var(--theme-color-black);
   font-size: 16px;
-  line-height: 24px;
   letter-spacing: 0.2px;
-  background-color: var(--theme-color-black);
-  height: 100%;
-  width: 100%;
+  line-height: 24px;
+  min-height: 100%;
   min-width: 320px;
+  width: 100%;
 }
 
 nav {
@@ -81,9 +83,43 @@ p a {
   width: 100%;
 }
 
+.background-theme-dark h2,
+.background-theme-dark strong {
+  color: var(--theme-color-black);
+}
+
+.background-theme-dark a {
+  color: var(--theme-color-main);
+}
+
+.background-theme-dark a:visited {
+  color: var(--theme-color-white);
+}
+
+.background-theme-dark p {
+  color: var(--theme-color-light);
+}
+
 .background-theme-main {
   background-color: var(--theme-color-main);
   width: 100;
+}
+
+.background-theme-main h2,
+.background-theme-main strong {
+  color: var(--theme-color-black);
+}
+
+.background-theme-main a {
+  color: var(--theme-color-black);
+}
+
+.background-theme-main a:visited {
+  color: var(--theme-color-dark);
+}
+
+.background-theme-main p {
+  color: var(--theme-color-black);
 }
 
 .background-theme-light {
@@ -1644,8 +1680,24 @@ p a {
   background-size: cover;
 }
 
-#Movie-Wrapper-Social-Network{
+.image-5 {
+  z-index: 200;
+  width: 50%;
+  height: 600px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  background: url("../assets/images-other/the-fray-group-photo.jpg"), rgba(50, 69, 175, 0.2);
+  background-blend-mode: overlay;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#Movie-Wrapper-Social-Network,
+#Artist-Wrapper-The-Fray {
   align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   display: flex;
   justify-content: center;
   position: relative;
@@ -1665,6 +1717,15 @@ p a {
 #Social-Network-Title {
   background-color: rgba(0, 0, 0, .4);
   color: rgba(255, 255, 255, .5);
+  font-size: clamp(1.3rem, 15vw, 5.6rem);
+  line-height: clamp(1.5rem, 17vw, 5.8rem);
+  padding: 1rem;
+  width: 100%;
+}
+
+#The-Fray-Title {
+  background-color: rgba(0, 0, 0, .6);
+  color: rgba(255, 255, 255, .6);
   font-size: clamp(1.3rem, 15vw, 5.6rem);
   line-height: clamp(1.5rem, 17vw, 5.8rem);
   padding: 1rem;
