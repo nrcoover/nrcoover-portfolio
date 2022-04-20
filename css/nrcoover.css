@@ -48,6 +48,7 @@ p a {
 }
 
 li {
+  margin-top: .5rem;
   font-style: normal;
   list-style-type: circle;
 }
