@@ -45,6 +45,10 @@ p a {
   text-decoration: underline;
 }
 
+.padding-bottom-break {
+  padding-bottom: 10em;
+}
+
 .no-underline {
   text-decoration: none !important;
 }
@@ -451,9 +455,9 @@ p a {
 
 .para-columns-container {
   display: flex;
-  /* justify-content: space-between; */
-  text-align: justify;
   gap: 2rem;
+  justify-content: space-between;
+  text-align: justify;
 }
 
 .para-columns-container p {
