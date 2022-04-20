@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   list-style: none;
@@ -17,16 +19,18 @@
 /* ---------- MAIN BODY DECLERATIONS ---------- */
 
 html, body {
+  background-color: var(--theme-color-black);
+  color: var(--theme-color-black);
+  display: flex;
+  flex-direction: column;
   font-family: Montserrat, sans-serif;
   /* color: #6d7375; */
-  color: var(--theme-color-black);
   font-size: 16px;
-  line-height: 24px;
   letter-spacing: 0.2px;
-  background-color: var(--theme-color-black);
-  height: 100%;
-  width: 100%;
+  line-height: 24px;
+  min-height: 100%;
   min-width: 320px;
+  width: 100%;
 }
 
 nav {
@@ -35,6 +39,130 @@ nav {
 
 p {
   margin-bottom: 0px;
+}
+
+p a {
+  cursor: pointer;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+li {
+  margin-top: .5rem;
+  font-style: normal;
+  list-style-type: circle;
+}
+
+li a {
+  cursor: pointer;
+}
+
+li a:hover {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.color-dark {
+  color: var(--theme-color-main) !important;
+}
+
+.color-light {
+  color: var(--theme-color-light) !important;
+}
+
+.padding-bottom-break {
+  padding-bottom: 10em;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
+
+/* Used to sylize the specified articles with a themematic full-width background color */
+.background-theme-black {
+  background-color: var(--theme-color-black);
+  width: 100%;
+}
+
+.background-theme-black h2,
+.background-theme-black strong {
+  color: var(--theme-color-main);
+}
+
+.background-theme-black h3 {
+  color: var(--theme-color-dark);
+}
+
+.background-theme-black a {
+  color: var(--theme-color-main);
+}
+
+.background-theme-black a:visited {
+  color: var(--theme-color-dark);
+}
+
+.background-theme-black p,
+.background-theme-black ul,
+.background-theme-black li {
+  color: var(--theme-color-light);
+}
+
+.background-theme-dark {
+  background-color: var(--theme-color-dark);
+  width: 100%;
+}
+
+.background-theme-dark h2,
+.background-theme-dark strong {
+  color: var(--theme-color-black);
+}
+
+.background-theme-dark a {
+  color: var(--theme-color-main);
+}
+
+.background-theme-dark a:visited {
+  color: var(--theme-color-white);
+}
+
+.background-theme-dark p {
+  color: var(--theme-color-light);
+}
+
+.background-theme-main {
+  background-color: var(--theme-color-main);
+  width: 100;
+}
+
+.background-theme-main h2,
+.background-theme-main strong {
+  color: var(--theme-color-black);
+}
+
+.background-theme-main a {
+  color: var(--theme-color-black);
+}
+
+.background-theme-main a:visited {
+  color: var(--theme-color-dark);
+}
+
+.background-theme-main p {
+  color: var(--theme-color-black);
+}
+
+.background-theme-light {
+  background-color: var(--theme-color-light);
+  width: 100%;
+}
+
+.background-theme-light h2 {
+  color: rgba(0, 0, 0, .65);
+}
+
+.background-theme-white {
+  background-color: var(--theme-color-white);
+  width: 100%;
 }
 
 .underline {
@@ -80,7 +208,7 @@ p {
   background-color: var(--theme-color-light);
 }
 
-#Service, #R-Design-Layout {
+#Services, #R-Design-Layout {
   color: var(--theme-color-light);
 }
 
@@ -375,6 +503,61 @@ p {
 .theme-glow-light {
   box-shadow: 2px 2px 20px rgba(146, 146, 146, 0.25);
 }
+
+
+/* ---------- ABOUT ME PAGE DECLERATIONS ---------- */
+
+#About-Me-Body h2 {
+  font-size: clamp(2rem, 15vw, 4rem);
+  line-height: clamp(2rem, 18vw, 4.2rem);
+  padding-bottom: 1.25rem;
+}
+
+#About-Me-Hero {
+  background-image: linear-gradient(to right, rgba(43,122,120, 1), rgba(222,242,241,1), rgba(222,242,241,1), rgba(222,242,241,1), rgba(222,242,241,1), rgba(222,242,241,1),rgba(222,242,241,1),rgba(222,242,241,1), rgba(222,242,241,1),rgba(222,242,241,1), rgba(43,122,120,1));
+}
+
+.paragraph-width-limiter {
+  display: inline-block;
+  max-width: 60ch;
+}
+
+.para-columns-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.para-columns-container p {
+  width: 30%;
+}
+
+.my-block-quote {
+  display: inline-block;
+  font-family: 'Merriweather', serif;
+  font-size: 2.45rem;
+  font-style: italic;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.my-inner-block-quote {
+  display: block;
+  font-size: 1.25rem;
+  text-align: right;
+  color: rgba(222, 242, 241, .5);
+  /* transform: translateX(10rem); */
+}
+
+.content-wrapper-left {
+  margin-right: 3rem;
+}
+
+.less-strong {
+  font-weight: 600;
+}
+
 
 /* ---------- OTHER DECLERATIONS ---------- */
 
@@ -1240,6 +1423,7 @@ p {
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
 .data {
@@ -1510,6 +1694,86 @@ p {
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.image-4 {
+  z-index: 200;
+  width: 50%;
+  height: 600px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  background: url("../assets/images-other/social-network-mark.jpg"), rgba(50, 125, 175, .2);
+  background-blend-mode: overlay;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-5 {
+  z-index: 200;
+  width: 50%;
+  height: 600px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  background: url("../assets/images-other/the-fray-group-photo.jpg"), rgba(50, 69, 175, 0.2);
+  background-blend-mode: overlay;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-6 {
+  z-index: 200;
+  width: 50%;
+  height: 580px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  background-image: url('../assets/images-other/book-stack_pexels-pixabay-433333.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+#Movie-Wrapper-Social-Network,
+#Artist-Wrapper-The-Fray {
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 2rem 0 5rem;
+}
+
+.social-network-title-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 7rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+#Social-Network-Title {
+  background-color: rgba(0, 0, 0, .4);
+  color: rgba(255, 255, 255, .5);
+  font-size: clamp(1.3rem, 15vw, 5.6rem);
+  line-height: clamp(1.5rem, 17vw, 5.8rem);
+  padding: 1rem;
+  width: 100%;
+}
+
+#The-Fray-Title {
+  background-color: rgba(0, 0, 0, .6);
+  color: rgba(255, 255, 255, .6);
+  font-size: clamp(1.3rem, 15vw, 5.6rem);
+  line-height: clamp(1.5rem, 17vw, 5.8rem);
+  padding: 1rem;
+  width: 100%;
 }
 
 .contact-form {
@@ -2346,7 +2610,14 @@ p {
   align-items: stretch;
 }
 
+@media screen and (max-width: 1201px) {
+  #About-Me-Hero {
+    background-image: none;
+  }
+}
+
 @media screen and (max-width: 991px) {
+  
   .social-menu {
     display: none;
     margin-bottom: 30px;
@@ -2550,6 +2821,17 @@ p {
     object-fit: cover;
   }
 
+  .image-6 {
+    width: 46%;
+    height: 480px;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    background-size: cover;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
   .data {
     margin-right: 20px;
     margin-left: 20px;
@@ -2703,6 +2985,14 @@ p {
     padding-bottom: 0px;
     border-radius: 20px;
     background-color: var(--theme-color-main);
+  }
+
+  .para-columns-container {
+    flex-direction: column;
+  }
+
+  .para-columns-container p {
+    width: 100%;
   }
 
   .social-menu {
@@ -3002,6 +3292,24 @@ p {
     -o-object-position: 0% 50%;
     object-position: 0% 50%;
     background-image: url('../images-custom/Nick-Professional-Profile-Image_horizontal-crop-2.jpg');
+  }
+
+  .image-6 {
+    display: block;
+    width: 100%;
+    height: 600px;
+    max-height: none;
+    margin-top: 40px;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    background-size: cover;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 0% 50%;
+    object-position: 0% 50%;
+    margin: 0 auto;
   }
 
   .data {
@@ -3437,6 +3745,10 @@ p {
     height: 380px;
   }
 
+  .image-6 {
+    height: 380px;
+  }
+
   .data {
     margin-right: 10px;
     margin-left: 10px;
@@ -3843,6 +4155,10 @@ p {
     grid-row-start: 4;
     -ms-grid-column-align: center;
     justify-self: center;
+  }
+
+  .content-wrapper-left {
+    margin-right: 0;
   }
 }
 
