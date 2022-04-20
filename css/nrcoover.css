@@ -56,6 +56,11 @@ li a {
   cursor: pointer;
 }
 
+li a:hover {
+  font-style: italic;
+  text-decoration: underline;
+}
+
 .color-dark {
   color: var(--theme-color-main) !important;
 }
