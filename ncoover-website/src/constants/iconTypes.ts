@@ -1,5 +1,5 @@
 // TYPES
-type IconTypes = "music" | "social" | "ui";
+export type IconTypes = "music" | "social" | "ui";
 
 export const iconTypes = {
 	Music: "music",
@@ -45,12 +45,17 @@ export const iconUi: IconLabel = {
 	Star: "star",
 } as const;
 
-// DATA
-export type IconData = {
-	type: IconTypes;
-} & {
-	[key: string]: string | IconTypes;
+export type IconLabelMap = {
+	music: keyof typeof iconMusic;
+	social: keyof typeof iconSocial;
+	ui: keyof typeof iconUi;
 };
+
+// DATA
+export type IconData =
+	| { type: "music"; label: keyof typeof iconMusic }
+	| { type: "social"; label: keyof typeof iconSocial }
+	| { type: "ui"; label: keyof typeof iconUi };
 
 export const icons: IconData[] = [
 	{
