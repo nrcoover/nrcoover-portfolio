@@ -1,21 +1,24 @@
-import { type IconData } from "../../../constants/iconTypes";
+import type { IconSource } from "../../../constants/iconTypes";
 import { iconMap } from "../../../utility/icon/iconMap";
-import "./Icon.css";
+import classes from "./Icon.module.css";
 
 interface IconProps {
-	source: IconData;
+	source: IconSource;
 }
 
 const Icon = ({ source }: IconProps) => {
-	const { type, label } = source;
+	const [typeCategory, label] = source.split(".") as [
+		keyof typeof iconMap,
+		string,
+	];
 
-	const icon = iconMap[type]?.[
-		label as keyof (typeof iconMap)[typeof type]
+	const icon = iconMap[typeCategory]?.[
+		label as keyof (typeof iconMap)[typeof typeCategory]
 	] ?? <></>;
 
 	return (
-		<div className="icon-wrapper">
-			<div className="svg-container">{icon}</div>
+		<div className={classes.iconWrapper}>
+			<div className={classes.svgContainer}>{icon}</div>
 		</div>
 	);
 };

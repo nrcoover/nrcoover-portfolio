@@ -1,3 +1,8 @@
+export type IconSource =
+	| (typeof iconMusic)[keyof typeof iconMusic]
+	| (typeof iconSocial)[keyof typeof iconSocial]
+	| (typeof iconUi)[keyof typeof iconUi];
+
 // TYPES
 export type IconTypes = "music" | "social" | "ui";
 
@@ -8,41 +13,37 @@ export const iconTypes = {
 } as const;
 
 // LABELS
-type IconLabel = {
-	[key: string]: string;
-};
-
-export const iconMusic: IconLabel = {
-	AppleMusic: "apple music",
-	Bandcamp: "bandcamp",
-	Itunes: "itunes",
-	MusicDefault: "music default",
-	Soundcloud: "soundcloud",
-	Spotify: "spotify",
+export const iconMusic = {
+	AppleMusic: "music.AppleMusic",
+	Bandcamp: "music.Bandcamp",
+	Itunes: "music.Itunes",
+	MusicDefault: "music.MusicDefault",
+	Soundcloud: "music.Soundcloud",
+	Spotify: "music.Spotify",
 } as const;
 
-export const iconSocial: IconLabel = {
-	BlueSky: "bluesky",
-	Facbook: "facebook",
-	Instagram: "instagram",
-	Mastodon: "mastodon",
-	Reddit: "reddit",
-	Threads: "threads",
-	Tumblr: "tumblr",
-	Twitch: "twitch",
-	Twitter: "twitter",
-	YouTube: "youtube",
+export const iconSocial = {
+	BlueSky: "social.BlueSky",
+	Facbook: "social.Facbook",
+	Instagram: "social.Instagram",
+	Mastodon: "social.Mastodon",
+	Reddit: "social.Reddit",
+	Threads: "social.Threads",
+	Tumblr: "social.Tumblr",
+	Twitch: "social.Twitch",
+	Twitter: "social.Twitter",
+	YouTube: "social.YouTube",
 } as const;
 
-export const iconUi: IconLabel = {
-	DarkMode: "dark mode",
-	Favorite: "favorite",
-	Home: "home",
-	LightMode: "light mode",
-	Login: "login",
-	Profile: "profile",
-	Search: "search",
-	Star: "star",
+export const iconUi = {
+	DarkMode: "ui.DarkMode",
+	Favorite: "ui.Favorite",
+	Home: "ui.Home",
+	LightMode: "ui.LightMode",
+	Login: "ui.Login",
+	Profile: "ui.Profile",
+	Search: "ui.Search",
+	Star: "ui.Star",
 } as const;
 
 export type IconLabelMap = {
@@ -56,10 +57,3 @@ export type IconData =
 	| { type: "music"; label: keyof typeof iconMusic }
 	| { type: "social"; label: keyof typeof iconSocial }
 	| { type: "ui"; label: keyof typeof iconUi };
-
-export const icons: IconData[] = [
-	{
-		type: iconTypes.Music,
-		label: iconMusic.AppleMusic,
-	},
-];

@@ -1,0 +1,23 @@
+.iconWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0;
+}
+
+.svgContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 2rem;
+	text-align: center;
+	margin: 0;
+}
+
+svg {
+	fill: var(--primary-color);
+}
