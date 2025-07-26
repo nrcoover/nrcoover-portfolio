@@ -1,4 +1,4 @@
-import Button from "../components/ui/Button";
+import Button from "../components/common/ui/Button";
 import { PATHS } from "../constants/paths";
 
 const ErrorDefault = () => {
