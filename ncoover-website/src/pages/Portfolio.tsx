@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { createProjectPath } from "../helpers/paths-helper";
+import SideNavigation from "../components/side-navigation/SideNavigation";
 
 const DUMMY_PROJECTS = [
 	{ id: 1, title: "Project One" },
@@ -11,6 +12,7 @@ const DUMMY_PROJECTS = [
 const Portfolio = () => {
 	return (
 		<>
+			<SideNavigation />
 			<h1>DEVFLIX</h1>
 			<div>
 				<h2>Dummy Project</h2>
