@@ -11,13 +11,12 @@ ul {
 }
 
 .navigationWrapper {
-	width: 5rem;
 	height: 100vh;
 	background-color: green;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 7rem;
+	width: 6rem;
 	height: 100vh;
 }
 

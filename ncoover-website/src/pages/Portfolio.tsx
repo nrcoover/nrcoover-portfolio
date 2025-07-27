@@ -1,19 +1,37 @@
 import { Link } from "react-router-dom";
+import "./styles/Portfolio.module.css";
 
-import { createProjectPath } from "../helpers/paths-helper";
+import HeroBanner from "../components/portfolio/hero-banner/HeroBanner";
 import SideNavigation from "../components/side-navigation/SideNavigation";
+import { createProjectPath } from "../helpers/paths-helper";
 
+// TODO: Extract to Constants folder
+const CATEGORIES = {
+	featured: "Featured",
+	newArrivals: "New Arrivals",
+	miniGames: "Mini Games",
+	ai: "A. I.",
+	react: "React",
+	typeScript: "TypeScript",
+	cSharp: "C#",
+	javaScript: "Vanilla JavaScript",
+	simpleWeb: "HTML & CSS",
+};
+
+// TODO: Replace with real data
+// TODO: Real data will require a Category array as projects may belong to multiple categoreis.
 const DUMMY_PROJECTS = [
-	{ id: 1, title: "Project One" },
-	{ id: 2, title: "Project Two" },
-	{ id: 3, title: "Project Three" },
+	{ id: 1, title: "Featured Project", category: CATEGORIES.featured },
+	{ id: 2, title: "New Arrival Project", category: CATEGORIES.newArrivals },
+	{ id: 3, title: "Mini Game Project", category: CATEGORIES.miniGames },
 ];
 
 const Portfolio = () => {
 	return (
-		<>
+		<main>
 			<SideNavigation />
-			<h1>DEVFLIX</h1>
+			<HeroBanner />
+
 			<div>
 				<h2>Dummy Project</h2>
 				<ul>
@@ -41,7 +59,7 @@ const Portfolio = () => {
 					<li>HTML & CSS</li>
 				</ol>
 			</div>
-		</>
+		</main>
 	);
 };
 
