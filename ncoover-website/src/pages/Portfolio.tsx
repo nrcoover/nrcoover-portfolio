@@ -102,9 +102,7 @@ const DUMMY_PROJECTS: Project[] = [
 
 const filterProjects = (category: string): Project[] => {
 	return DUMMY_PROJECTS.filter((project) => {
-		return project.categories.some((categories) =>
-			categories.includes(category)
-		);
+		return project.categories.includes(category);
 	});
 };
 
