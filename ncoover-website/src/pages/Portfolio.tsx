@@ -4,6 +4,8 @@ import "./styles/Portfolio.module.css";
 import HeroBanner from "../components/portfolio/hero-banner/HeroBanner";
 import SideNavigation from "../components/side-navigation/SideNavigation";
 import { createProjectPath } from "../helpers/paths-helper";
+import Carousel from "../components/portfolio/carousel/Carousel";
+import type { Project } from "../components/portfolio/project-card/ProjectCard";
 
 // TODO: Extract to Constants folder
 const CATEGORIES = {
@@ -18,26 +20,117 @@ const CATEGORIES = {
 	simpleWeb: "HTML & CSS",
 };
 
+const CATEGORIES_ARRAY = [
+	CATEGORIES.featured,
+	CATEGORIES.newArrivals,
+	CATEGORIES.miniGames,
+	CATEGORIES.ai,
+	CATEGORIES.react,
+	CATEGORIES.typeScript,
+	CATEGORIES.cSharp,
+	CATEGORIES.javaScript,
+	CATEGORIES.simpleWeb,
+];
+
 // TODO: Replace with real data
 // TODO: Real data will require a Category array as projects may belong to multiple categoreis.
-const DUMMY_PROJECTS = [
-	{ id: 1, title: "Featured Project", category: CATEGORIES.featured },
-	{ id: 2, title: "New Arrival Project", category: CATEGORIES.newArrivals },
-	{ id: 3, title: "Mini Game Project", category: CATEGORIES.miniGames },
+const DUMMY_PROJECTS: Project[] = [
+	{
+		title: "Featured Project",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.featured,
+	},
+	{
+		title: "New Arrival Project",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.newArrivals,
+	},
+	{
+		title: "Mini Game Project",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.miniGames,
+	},
+	{
+		title: "Featured Project 2",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.featured,
+	},
+	{
+		title: "New Arrival Project 2",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.newArrivals,
+	},
+	{
+		title: "Mini Game Project 2",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.miniGames,
+	},
+	{
+		title: "Featured Project 3",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.featured,
+	},
+	{
+		title: "New Arrival Project 3",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.newArrivals,
+	},
+	{
+		title: "Mini Game Project 3",
+		coverArtPath:
+			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+		description: "Testing this thing.",
+		category: CATEGORIES.miniGames,
+	},
 ];
+
+const filterProjects = (category: string): Project[] => {
+	return DUMMY_PROJECTS.filter((project) => {
+		return project.category === category;
+	});
+};
 
 const Portfolio = () => {
 	return (
 		<main>
 			<SideNavigation />
 			<HeroBanner />
-
+			{CATEGORIES_ARRAY &&
+				CATEGORIES_ARRAY.map((category) => {
+					const projects = filterProjects(category);
+					if (projects.length > 0) {
+						return (
+							<Carousel
+								title={category}
+								items={DUMMY_PROJECTS.filter((project) => {
+									return project.category === category;
+								})}
+							/>
+						);
+					}
+				})}
 			<div>
 				<h2>Dummy Project</h2>
 				<ul>
 					{DUMMY_PROJECTS &&
 						DUMMY_PROJECTS.map((project) => (
-							<li key={project.id}>
+							<li key={project.title}>
 								<Link to={createProjectPath(project.title)}>
 									{project.title}
 								</Link>

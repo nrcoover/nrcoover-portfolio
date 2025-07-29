@@ -1,0 +1,16 @@
+.carousel {
+	display: flex;
+	flex-direction: column;
+	background-color: chocolate;
+	padding: 1rem 2rem 1rem 2rem;
+}
+
+.carousel h2 {
+	text-align: left;
+	font-size: 2.5rem;
+}
+
+.projectContainer {
+	display: flex;
+	flex-direction: row;
+}

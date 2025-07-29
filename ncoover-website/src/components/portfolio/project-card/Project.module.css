@@ -1,0 +1,22 @@
+.coverArtContainer {
+	display: flex;
+	height: 35vh;
+	width: 30vh;
+	overflow: hidden;
+	flex: 100%;
+	padding-right: 1.5rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.coverArtContainer img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.titleBox {
+	position: absolute;
+	z-index: 1;
+}
