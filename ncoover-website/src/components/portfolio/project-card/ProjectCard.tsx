@@ -4,7 +4,7 @@ export type Project = {
 	title: string;
 	coverArtPath: string;
 	description: string;
-	category: string;
+	categories: string[];
 };
 
 interface ProjectCardProps {

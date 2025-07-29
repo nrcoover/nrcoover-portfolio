@@ -40,69 +40,71 @@ const DUMMY_PROJECTS: Project[] = [
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.featured,
+		categories: [CATEGORIES.featured],
 	},
 	{
 		title: "New Arrival Project",
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.newArrivals,
+		categories: [CATEGORIES.newArrivals, CATEGORIES.featured],
 	},
 	{
 		title: "Mini Game Project",
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.miniGames,
+		categories: [CATEGORIES.miniGames, CATEGORIES.featured],
 	},
 	{
 		title: "Featured Project 2",
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.featured,
+		categories: [CATEGORIES.featured],
 	},
 	{
 		title: "New Arrival Project 2",
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.newArrivals,
+		categories: [CATEGORIES.newArrivals, CATEGORIES.featured],
 	},
 	{
 		title: "Mini Game Project 2",
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.miniGames,
+		categories: [CATEGORIES.miniGames, CATEGORIES.featured],
 	},
 	{
 		title: "Featured Project 3",
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.featured,
+		categories: [CATEGORIES.featured],
 	},
 	{
 		title: "New Arrival Project 3",
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.newArrivals,
+		categories: [CATEGORIES.newArrivals, CATEGORIES.featured],
 	},
 	{
 		title: "Mini Game Project 3",
 		coverArtPath:
 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
 		description: "Testing this thing.",
-		category: CATEGORIES.miniGames,
+		categories: [CATEGORIES.miniGames, CATEGORIES.featured],
 	},
 ];
 
 const filterProjects = (category: string): Project[] => {
 	return DUMMY_PROJECTS.filter((project) => {
-		return project.category === category;
+		return project.categories.some((categories) =>
+			categories.includes(category)
+		);
 	});
 };
 
@@ -115,14 +117,7 @@ const Portfolio = () => {
 				CATEGORIES_ARRAY.map((category) => {
 					const projects = filterProjects(category);
 					if (projects.length > 0) {
-						return (
-							<Carousel
-								title={category}
-								items={DUMMY_PROJECTS.filter((project) => {
-									return project.category === category;
-								})}
-							/>
-						);
+						return <Carousel title={category} items={projects} />;
 					}
 				})}
 			<div>
