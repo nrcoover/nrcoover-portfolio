@@ -30,3 +30,8 @@
 .card {
 	scroll-snap-align: start;
 }
+
+.cardSpacer {
+	min-width: 1rem; /* or match .card width exactly */
+	flex-shrink: 0;
+}
