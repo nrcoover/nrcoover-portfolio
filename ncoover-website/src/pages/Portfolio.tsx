@@ -115,7 +115,7 @@ const Portfolio = () => {
 				CATEGORIES_ARRAY.map((category) => {
 					const projects = filterProjects(category);
 					if (projects.length > 0) {
-						return <Carousel title={category} items={projects} />;
+						return <Carousel title={category} projects={projects} />;
 					}
 				})}
 			<div>

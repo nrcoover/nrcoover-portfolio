@@ -1,20 +1,54 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProjectCard, { type Project } from "../project-card/ProjectCard";
 
 import classes from "./Carousel.module.css";
 
 interface CarouselProps {
 	title: string;
-	items: Project[];
+	projects: Project[];
 }
 
-const Carousel = ({ title, items }: CarouselProps) => {
+const Carousel = ({ title, projects }: CarouselProps) => {
 	const scrollRef = useRef<HTMLDivElement>(null);
+	const cardRef = useRef<HTMLDivElement | null>(null);
+
+	const [cardWidth, setCardWidth] = useState(0);
+
+	useEffect(() => {
+		if (!cardRef.current) return;
+
+		const observer = new ResizeObserver(() => {
+			if (cardRef.current) {
+				setCardWidth(cardRef.current.offsetWidth);
+			}
+		});
+
+		observer.observe(cardRef.current);
+		return () => observer.disconnect();
+	}, []);
 
 	const scroll = (direction: "left" | "right") => {
-		if (!scrollRef.current) return;
-		const scrollAmount = direction === "left" ? -300 : 300;
-		scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+		if (!scrollRef.current || !cardRef.current) return;
+
+		const container = scrollRef.current;
+		// const cardWidth = cardRef.current.offsetWidth;
+		const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
+
+		const maxScrollLeft = container.scrollWidth - container.clientWidth;
+		const targetScroll = container.scrollLeft + scrollAmount;
+
+		// If scrolling right, prevent overshooting
+		if (direction === "right" && targetScroll > maxScrollLeft) {
+			container.scrollTo({ left: maxScrollLeft, behavior: "smooth" });
+		}
+		// If scrolling left, prevent negative scroll
+		else if (direction === "left" && targetScroll < 0) {
+			container.scrollTo({ left: 0, behavior: "smooth" });
+		}
+		// Normal scroll
+		else {
+			container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+		}
 	};
 
 	useEffect(() => {
@@ -41,8 +75,15 @@ const Carousel = ({ title, items }: CarouselProps) => {
 					tabIndex={0}
 					aria-label={`${title} carousel`}
 				>
-					{items.map((item) => (
-						<ProjectCard key={item.title} project={item} />
+					{projects.map((project, index) => (
+						<div
+							key={project.title}
+							className={classes.card}
+							role="listitem"
+							ref={index === 0 ? cardRef : null}
+						>
+							<ProjectCard key={project.title} project={project} />
+						</div>
 					))}
 				</div>
 				<button onClick={() => scroll("right")} aria-label="Scroll right">
@@ -50,21 +91,6 @@ const Carousel = ({ title, items }: CarouselProps) => {
 				</button>
 			</div>
 		</section>
-	);
-
-	return (
-		<div
-			className={classes.carousel}
-			role="region"
-			aria-label="Project carousel"
-		>
-			<h2>{title}</h2>
-			<div className={classes.projectContainer}>
-				{items.map((item) => (
-					<ProjectCard key={item.title} project={item} />
-				))}
-			</div>
-		</div>
 	);
 };
 
