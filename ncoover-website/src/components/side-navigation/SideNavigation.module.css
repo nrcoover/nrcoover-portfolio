@@ -13,11 +13,12 @@ ul {
 .navigationWrapper {
 	height: 100vh;
 	background-color: green;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 6rem;
 	height: 100vh;
+	pointer-events: none;
 }
 
 .sideNavigation {
@@ -25,7 +26,8 @@ ul {
 	flex-direction: column;
 	justify-content: center;
 	background-color: purple;
-	height: 100%;
+	height: 100vh;
+	top: 0;
 }
 
 .list {
