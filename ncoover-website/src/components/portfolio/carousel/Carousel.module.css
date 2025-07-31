@@ -32,6 +32,6 @@
 }
 
 .cardSpacer {
-	min-width: 1rem; /* or match .card width exactly */
+	min-width: 1rem;
 	flex-shrink: 0;
 }
