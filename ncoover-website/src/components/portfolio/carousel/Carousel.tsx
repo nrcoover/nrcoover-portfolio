@@ -9,28 +9,11 @@ interface CarouselProps {
 }
 
 const Carousel = ({ title, projects }: CarouselProps) => {
-	const scrollRef = useRef<HTMLDivElement>(null);
-	const cardRef = useRef<HTMLDivElement | null>(null);
+	const [scrollIndex, setScrollIndex] = useState(0);
 	const [cardWidth, setCardWidth] = useState(0);
 
-	useEffect(() => {
-		if (!cardRef.current) return;
-
-		const updateCardWidth = () => {
-			if (!cardRef.current) return;
-			const style = getComputedStyle(cardRef.current);
-			const marginRight = parseFloat(style.marginRight);
-			setCardWidth(cardRef.current.offsetWidth + marginRight);
-		};
-
-		const observer = new ResizeObserver(updateCardWidth);
-		observer.observe(cardRef.current);
-		updateCardWidth(); // also trigger once immediately
-
-		return () => observer.disconnect();
-	}, []);
-
-	const [scrollIndex, setScrollIndex] = useState(0);
+	const scrollRef = useRef<HTMLDivElement>(null);
+	const cardRef = useRef<HTMLDivElement | null>(null);
 
 	const scroll = useCallback(
 		(direction: "left" | "right") => {
@@ -52,6 +35,23 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 		},
 		[cardWidth, projects.length, scrollIndex]
 	);
+
+	useEffect(() => {
+		if (!cardRef.current) return;
+
+		const updateCardWidth = () => {
+			if (!cardRef.current) return;
+			const style = getComputedStyle(cardRef.current);
+			const marginRight = parseFloat(style.marginRight);
+			setCardWidth(cardRef.current.offsetWidth + marginRight);
+		};
+
+		const observer = new ResizeObserver(updateCardWidth);
+		observer.observe(cardRef.current);
+		updateCardWidth(); // also trigger once immediately
+
+		return () => observer.disconnect();
+	}, []);
 
 	useEffect(() => {
 		const handleKey = (e: KeyboardEvent) => {
@@ -88,7 +88,12 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 							role="listitem"
 							ref={index === 0 ? cardRef : null}
 						>
-							<ProjectCard project={project} />
+							<ProjectCard
+								project={project}
+								index={index}
+								selected={scrollIndex === index}
+								setScrollIndex={setScrollIndex}
+							/>
 						</div>
 					))}
 					<div className={classes.cardSpacer} aria-hidden="true" />

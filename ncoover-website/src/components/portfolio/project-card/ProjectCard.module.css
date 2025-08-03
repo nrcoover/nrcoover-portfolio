@@ -4,7 +4,7 @@
 	width: 30vh;
 	overflow: hidden;
 	flex: 100%;
-	padding-right: 1.5rem;
+	margin-left: 1rem;
 	align-items: center;
 	justify-content: center;
 }
@@ -19,4 +19,16 @@
 .titleBox {
 	position: absolute;
 	z-index: 1;
+}
+
+.projectCard {
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.selected {
+	transform: scale(1.05);
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+	z-index: 2;
 }
