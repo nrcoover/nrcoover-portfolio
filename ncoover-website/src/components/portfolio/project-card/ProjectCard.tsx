@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import classes from "./ProjectCard.module.css";
 
 export type Project = {
