@@ -30,31 +30,27 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 		return () => observer.disconnect();
 	}, []);
 
+	const [scrollIndex, setScrollIndex] = useState(0);
+
 	const scroll = useCallback(
 		(direction: "left" | "right") => {
 			if (!scrollRef.current || !cardRef.current) return;
 
-			const container = scrollRef.current;
-			// const cardWidth = cardRef.current.offsetWidth;
-			const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
+			const newIndex = Math.max(
+				0,
+				Math.min(
+					scrollIndex + (direction === "right" ? 1 : -1),
+					projects.length - 1
+				)
+			);
 
-			const maxScrollLeft = container.scrollWidth - container.clientWidth;
-			const targetScroll = container.scrollLeft + scrollAmount;
-
-			// If scrolling right, prevent overshooting
-			if (direction === "right" && targetScroll > maxScrollLeft) {
-				container.scrollTo({ left: maxScrollLeft, behavior: "smooth" });
-			}
-			// If scrolling left, prevent negative scroll
-			else if (direction === "left" && targetScroll < 0) {
-				container.scrollTo({ left: 0, behavior: "smooth" });
-			}
-			// Normal scroll
-			else {
-				container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-			}
+			setScrollIndex(newIndex);
+			scrollRef.current.scrollTo({
+				left: cardWidth * newIndex,
+				behavior: "smooth",
+			});
 		},
-		[cardWidth]
+		[cardWidth, projects.length, scrollIndex]
 	);
 
 	useEffect(() => {
@@ -71,7 +67,11 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 		<section aria-label={title} className={classes.carousel}>
 			<h2>{title}</h2>
 			<div className={classes.controls}>
-				<button onClick={() => scroll("left")} aria-label="Scroll left">
+				<button
+					className={classes.arrowControl}
+					onClick={() => scroll("left")}
+					aria-label="Scroll left"
+				>
 					◀
 				</button>
 				<div
@@ -93,7 +93,11 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 					))}
 					<div className={classes.cardSpacer} aria-hidden="true" />
 				</div>
-				<button onClick={() => scroll("right")} aria-label="Scroll right">
+				<button
+					className={classes.arrowControl}
+					onClick={() => scroll("right")}
+					aria-label="Scroll right"
+				>
 					▶
 				</button>
 			</div>
