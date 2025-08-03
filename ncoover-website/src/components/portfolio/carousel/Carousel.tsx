@@ -15,25 +15,27 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 	const scrollRef = useRef<HTMLDivElement>(null);
 	const cardRef = useRef<HTMLDivElement | null>(null);
 
-	const scroll = useCallback(
-		(direction: "left" | "right") => {
+	const scrollToIndex = useCallback(
+		(index: number) => {
 			if (!scrollRef.current || !cardRef.current) return;
 
-			const newIndex = Math.max(
-				0,
-				Math.min(
-					scrollIndex + (direction === "right" ? 1 : -1),
-					projects.length - 1
-				)
-			);
+			const clampedIndex = Math.max(0, Math.min(index, projects.length - 1));
+			setScrollIndex(clampedIndex);
 
-			setScrollIndex(newIndex);
 			scrollRef.current.scrollTo({
-				left: cardWidth * newIndex,
+				left: cardWidth * clampedIndex,
 				behavior: "smooth",
 			});
 		},
-		[cardWidth, projects.length, scrollIndex]
+		[cardWidth, projects.length]
+	);
+
+	const scroll = useCallback(
+		(direction: "left" | "right") => {
+			const newIndex = scrollIndex + (direction === "right" ? 1 : -1);
+			scrollToIndex(newIndex);
+		},
+		[scrollIndex, scrollToIndex]
 	);
 
 	useEffect(() => {
@@ -92,7 +94,7 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 								project={project}
 								index={index}
 								selected={scrollIndex === index}
-								setScrollIndex={setScrollIndex}
+								scrollToIndex={scrollToIndex}
 							/>
 						</div>
 					))}

@@ -11,7 +11,7 @@ interface ProjectCardProps {
 	project: Project;
 	index: number;
 	selected?: boolean;
-	setScrollIndex: React.Dispatch<React.SetStateAction<number>>;
+	scrollToIndex: (index: number) => void;
 }
 
 const TAB_FOCUSABLE = 0;
@@ -21,10 +21,10 @@ const ProjectCard = ({
 	project,
 	index,
 	selected = false,
-	setScrollIndex,
+	scrollToIndex,
 }: ProjectCardProps) => {
 	const handleSelect = () => {
-		setScrollIndex(index);
+		scrollToIndex(index);
 	};
 
 	return (
