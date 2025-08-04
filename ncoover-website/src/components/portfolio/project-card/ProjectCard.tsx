@@ -46,6 +46,13 @@ const ProjectCard = ({
 						<h3>{project.title}</h3>
 						<p>{project.description}</p>
 					</div>
+					<div
+						className={`${classes.previewBox} ${
+							selected ? "" : classes.hiddenPreviewBox
+						}`}
+					>
+						<button>Preview</button>
+					</div>
 				</div>
 			</article>
 		</div>
