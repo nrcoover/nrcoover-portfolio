@@ -26,7 +26,8 @@
 	margin: 3px;
 	transition:
 		transform 0.3s ease,
-		box-shadow 0.3s ease;
+		box-shadow 0.3s ease,
+		outline 0.1s ease;
 }
 
 .selected {
