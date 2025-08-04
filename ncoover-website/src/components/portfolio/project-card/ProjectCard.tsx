@@ -28,25 +28,27 @@ const ProjectCard = ({
 	};
 
 	return (
-		<article
-			role="group"
-			aria-label={project.title}
-			className={`${classes.projectCard} ${selected ? classes.selected : ""}`}
-			aria-selected={selected}
-			tabIndex={selected ? TAB_FOCUSABLE : TAB_SKIP}
-			onClick={handleSelect}
-		>
-			<div className={classes.coverArtContainer}>
-				<img
-					src={project.coverArtPath}
-					alt={`Cover art for ${project.title}`}
-				/>
-				<div className={classes.titleBox}>
-					<h3>{project.title}</h3>
-					<p>{project.description}</p>
+		<div className={classes.projectSpacer}>
+			<article
+				role="group"
+				aria-label={project.title}
+				className={`${classes.projectCard} ${selected ? classes.selected : ""}`}
+				aria-selected={selected}
+				tabIndex={selected ? TAB_FOCUSABLE : TAB_SKIP}
+				onClick={handleSelect}
+			>
+				<div className={classes.coverArtContainer}>
+					<img
+						src={project.coverArtPath}
+						alt={`Cover art for ${project.title}`}
+					/>
+					<div className={classes.titleBox}>
+						<h3>{project.title}</h3>
+						<p>{project.description}</p>
+					</div>
 				</div>
-			</div>
-		</article>
+			</article>
+		</div>
 	);
 };
 
