@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import ProjectDetails from "./pages/ProjectDetails";
 import Root from "./pages/Root";
+import ProjectPreivewContextProvider from "./store/project-preview-context/ProjectPreviewContextProvider";
 
 const router = createBrowserRouter([
 	{
@@ -43,7 +44,9 @@ const router = createBrowserRouter([
 const App = () => {
 	return (
 		<>
-			<RouterProvider router={router}></RouterProvider>
+			<ProjectPreivewContextProvider>
+				<RouterProvider router={router}></RouterProvider>
+			</ProjectPreivewContextProvider>
 		</>
 	);
 };

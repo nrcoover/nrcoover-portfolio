@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext";
 import classes from "./ProjectCard.module.css";
 
 export type Project = {
@@ -23,8 +25,14 @@ const ProjectCard = ({
 	selected = false,
 	scrollToIndex,
 }: ProjectCardProps) => {
+	const { isModalOpen, setIsModalOpen } = useContext(ProjectPreviewContext);
+
 	const handleSelect = () => {
 		scrollToIndex(index);
+	};
+
+	const handlePreviewClick = () => {
+		setIsModalOpen(true);
 	};
 
 	return (
@@ -51,7 +59,9 @@ const ProjectCard = ({
 							selected ? "" : classes.hiddenPreviewBox
 						}`}
 					>
-						<button>Preview</button>
+						<button onClick={handlePreviewClick} disabled={isModalOpen}>
+							Preview
+						</button>
 					</div>
 				</div>
 			</article>

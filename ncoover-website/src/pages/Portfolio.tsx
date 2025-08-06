@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import "./styles/Portfolio.module.css";
 
+import { useContext } from "react";
+import Carousel from "../components/portfolio/carousel/Carousel";
 import HeroBanner from "../components/portfolio/hero-banner/HeroBanner";
+import ProjectPreview from "../components/portfolio/modals/project-preview/ProjectPreview";
+import type { Project } from "../components/portfolio/project-card/ProjectCard";
 import SideNavigation from "../components/side-navigation/SideNavigation";
 import { createProjectPath } from "../helpers/paths-helper";
-import Carousel from "../components/portfolio/carousel/Carousel";
-import type { Project } from "../components/portfolio/project-card/ProjectCard";
+import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
 
 // TODO: Extract to Constants folder
 const CATEGORIES = {
@@ -107,8 +110,11 @@ const filterProjects = (category: string): Project[] => {
 };
 
 const Portfolio = () => {
+	const { isModalOpen } = useContext(ProjectPreviewContext);
+
 	return (
 		<main>
+			{isModalOpen && <ProjectPreview />}
 			<SideNavigation />
 			<HeroBanner />
 			{CATEGORIES_ARRAY &&
