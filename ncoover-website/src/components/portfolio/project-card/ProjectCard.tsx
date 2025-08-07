@@ -25,14 +25,14 @@ const ProjectCard = ({
 	selected = false,
 	scrollToIndex,
 }: ProjectCardProps) => {
-	const { isModalOpen, setIsModalOpen } = useContext(ProjectPreviewContext);
+	const { isModalOpen, openPreviewModal } = useContext(ProjectPreviewContext);
 
 	const handleSelect = () => {
 		scrollToIndex(index);
 	};
 
 	const handlePreviewClick = () => {
-		setIsModalOpen(true);
+		openPreviewModal();
 	};
 
 	return (

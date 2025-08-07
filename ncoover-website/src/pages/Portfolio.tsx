@@ -110,11 +110,11 @@ const filterProjects = (category: string): Project[] => {
 };
 
 const Portfolio = () => {
-	const { isModalOpen } = useContext(ProjectPreviewContext);
+	const { isModalOpen, previewModal } = useContext(ProjectPreviewContext);
 
 	return (
 		<main>
-			{isModalOpen && <ProjectPreview />}
+			{isModalOpen && <ProjectPreview ref={previewModal} />}
 			<SideNavigation />
 			<HeroBanner />
 			{CATEGORIES_ARRAY &&
