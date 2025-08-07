@@ -23,7 +23,6 @@ const ProjectPreview = ({ ref }: ProjectPreviewProps) => {
 					ref={ref}
 					className={classes.previewModal}
 					onClose={handleCloseModal}
-					open
 				>
 					<h3>Title</h3>
 					<p>

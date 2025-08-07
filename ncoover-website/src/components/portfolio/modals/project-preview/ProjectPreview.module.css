@@ -5,7 +5,6 @@
 	position: fixed;
 	align-items: center;
 	justify-content: center;
-	z-index: 10;
 }
 
 .previewModal {
@@ -14,8 +13,9 @@
 	padding: 2rem;
 	background-color: #21a89b;
 	z-index: 10;
+	align-self: center;
 	justify-self: center;
-	position: absolute;
+	position: fixed;
 }
 
 .previewModal[open] {
