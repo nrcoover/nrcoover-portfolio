@@ -26,6 +26,8 @@ const ProjectCard = ({
 	scrollToIndex,
 }: ProjectCardProps) => {
 	const { isModalOpen, openPreviewModal } = useContext(ProjectPreviewContext);
+	// TODO: Replace with dynamic property of project data "IsAiGeneratedImage"
+	const isAiGeneratedImage = true;
 
 	const handleSelect = () => {
 		scrollToIndex(index);
@@ -50,6 +52,12 @@ const ProjectCard = ({
 						src={project.coverArtPath}
 						alt={`Cover art for ${project.title}`}
 					/>
+					{isAiGeneratedImage && (
+						<div className={classes.aiNotice}>
+							<p>A.I. Generated Image</p>
+						</div>
+					)}
+
 					<div className={classes.titleBox}>
 						<h3>{project.title}</h3>
 						<p>{project.description}</p>
