@@ -4,11 +4,16 @@ import { PATHS } from "../../constants/paths";
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
+	const pathname = window.location.pathname;
+	const isPortfolio = pathname.includes("portfolio");
+
 	return (
 		<div className={classes.headerWrapper}>
 			<header className={classes.header}>
 				<nav>
-					<ul className={classes.list}>
+					<ul
+						className={`${classes.list} ${isPortfolio ? classes.sideNavigationOffset : ""}`}
+					>
 						<li>
 							<NavLink
 								to={PATHS.Home}

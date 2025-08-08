@@ -33,3 +33,7 @@ ul {
 	color: var(--color-primary-800);
 	text-decoration: underline;
 }
+
+.sideNavigationOffset {
+	padding-left: var(--side-navigation-width-offset);
+}
