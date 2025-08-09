@@ -6,6 +6,7 @@
 
 .arrowControl {
 	height: 8rem;
+	z-index: 1;
 }
 
 .carousel {

@@ -85,7 +85,7 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 				>
 					{projects.map((project, index) => (
 						<div
-							key={project.title}
+							key={project.id}
 							className={classes.card}
 							role="listitem"
 							ref={index === 0 ? cardRef : null}
