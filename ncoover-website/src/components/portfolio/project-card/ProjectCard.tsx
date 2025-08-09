@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext";
 import classes from "./ProjectCard.module.css";
+import PreviewButton from "../../common/ui/preview-button/PreviewButton";
 
 export type CoverArt = {
 	coverArtPath: string;
@@ -93,13 +94,11 @@ const ProjectCard = ({
 							selected ? "" : classes.hiddenPreviewBox
 						}`}
 					>
-						<button
-							className={selected ? "" : classes.displayNone}
-							onClick={handlePreviewClick}
-							disabled={isModalOpen}
-						>
-							Preview
-						</button>
+						<PreviewButton
+							selected={selected}
+							handlePreviewClick={handlePreviewClick}
+							isModalOpen={isModalOpen}
+						/>
 					</div>
 				</div>
 			</article>
