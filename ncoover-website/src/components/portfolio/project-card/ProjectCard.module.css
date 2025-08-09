@@ -87,6 +87,6 @@
 }
 
 .displayNone {
-	transition: display 2.3s ease;
+	transition: display 2.3 ease;
 	display: none;
 }

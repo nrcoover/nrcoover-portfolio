@@ -93,7 +93,11 @@ const ProjectCard = ({
 							selected ? "" : classes.hiddenPreviewBox
 						}`}
 					>
-						<button onClick={handlePreviewClick} disabled={isModalOpen}>
+						<button
+							className={selected ? "" : classes.displayNone}
+							onClick={handlePreviewClick}
+							disabled={isModalOpen}
+						>
 							Preview
 						</button>
 					</div>
