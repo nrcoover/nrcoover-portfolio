@@ -2,11 +2,34 @@ import { useContext } from "react";
 import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext";
 import classes from "./ProjectCard.module.css";
 
-export type Project = {
-	title: string;
+export type CoverArt = {
 	coverArtPath: string;
+	isAiGeneratedImage: boolean;
+};
+
+export type ImageData = {
+	coverArt: CoverArt;
+	imagesPaths: string[];
+};
+
+export type TagData = {
+	primaryTag: string;
+	otherTags: string[];
+};
+
+export type CodeLinks = {
+	type: string;
+	url: string;
+};
+
+export type Project = {
+	id: number;
+	title: string;
 	description: string;
-	categories: string[];
+	dateAdded: Date;
+	imageData: ImageData;
+	tagData: TagData;
+	links: CodeLinks[];
 };
 
 interface ProjectCardProps {
@@ -14,6 +37,7 @@ interface ProjectCardProps {
 	index: number;
 	selected?: boolean;
 	scrollToIndex: (index: number) => void;
+	category: string;
 }
 
 const TAB_FOCUSABLE = 0;
@@ -24,10 +48,12 @@ const ProjectCard = ({
 	index,
 	selected = false,
 	scrollToIndex,
+	category,
 }: ProjectCardProps) => {
+	const isPrimaryCategory = project.tagData.primaryTag === category;
+
 	const { isModalOpen, openPreviewModal } = useContext(ProjectPreviewContext);
-	// TODO: Replace with dynamic property of project data "IsAiGeneratedImage"
-	const isAiGeneratedImage = true;
+	const isAiGeneratedImage = project.imageData.coverArt.isAiGeneratedImage;
 
 	const handleSelect = () => {
 		scrollToIndex(index);
@@ -42,14 +68,14 @@ const ProjectCard = ({
 			<article
 				role="group"
 				aria-label={project.title}
-				className={`${classes.projectCard} ${selected ? classes.selected : ""}`}
+				className={`${classes.projectCard} ${selected ? classes.selected : ""} ${isPrimaryCategory ? classes.primaryTagGlow : ""}`}
 				aria-selected={selected}
 				tabIndex={selected ? TAB_FOCUSABLE : TAB_SKIP}
 				onClick={handleSelect}
 			>
 				<div className={classes.coverArtContainer}>
 					<img
-						src={project.coverArtPath}
+						src={project.imageData.coverArt.coverArtPath}
 						alt={`Cover art for ${project.title}`}
 					/>
 					{isAiGeneratedImage && (

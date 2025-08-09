@@ -95,6 +95,7 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 								index={index}
 								selected={scrollIndex === index}
 								scrollToIndex={scrollToIndex}
+								category={title}
 							/>
 						</div>
 					))}

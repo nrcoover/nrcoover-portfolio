@@ -31,7 +31,10 @@ const ProjectPreview = ({ ref }: ProjectPreviewProps) => {
 						just hard-coded willy nilly like nilly's hard coded willy.
 					</p>
 					<div>
-						<img src="" alt="" />
+						<img
+							src="../../../../../public/placeholder-images/pexels-joshsorenson-1714208.jpg"
+							alt=""
+						/>
 					</div>
 					<div>
 						<p>
