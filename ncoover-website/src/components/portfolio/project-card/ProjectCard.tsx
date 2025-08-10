@@ -51,9 +51,11 @@ const ProjectCard = ({
 	scrollToIndex,
 	category,
 }: ProjectCardProps) => {
-	const isPrimaryCategory = project.tagData.primaryTag === category;
+	const { isModalOpen, setSelectedProject, openPreviewModal } = useContext(
+		ProjectPreviewContext
+	);
 
-	const { isModalOpen, openPreviewModal } = useContext(ProjectPreviewContext);
+	const isPrimaryCategory = project.tagData.primaryTag === category;
 	const isAiGeneratedImage = project.imageData.coverArt.isAiGeneratedImage;
 
 	const handleSelect = () => {
@@ -61,6 +63,7 @@ const ProjectCard = ({
 	};
 
 	const handlePreviewClick = () => {
+		setSelectedProject(project);
 		openPreviewModal();
 	};
 

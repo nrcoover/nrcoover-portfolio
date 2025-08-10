@@ -1,8 +1,11 @@
 import { createContext } from "react";
+import type { Project } from "../../components/portfolio/project-card/ProjectCard";
 
 interface ProjectPreviewContextProps {
 	isModalOpen: boolean;
 	previewModal: React.RefObject<HTMLDialogElement | null>;
+	selectedProject: Project | undefined;
+	setSelectedProject: React.Dispatch<React.SetStateAction<Project | undefined>>;
 	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	openPreviewModal: () => void;
 	closePreviewModal: () => void;
@@ -11,6 +14,8 @@ interface ProjectPreviewContextProps {
 export const ProjectPreviewContext = createContext<ProjectPreviewContextProps>({
 	isModalOpen: false,
 	previewModal: { current: null },
+	selectedProject: undefined,
+	setSelectedProject: () => {},
 	setIsModalOpen: () => {},
 	openPreviewModal: () => {},
 	closePreviewModal: () => {},

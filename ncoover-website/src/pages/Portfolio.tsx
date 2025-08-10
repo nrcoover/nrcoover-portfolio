@@ -12,74 +12,6 @@ import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
 import { createProjectPath } from "../helpers/paths-helper";
 import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
 
-// TODO: Replace with real data
-// TODO: Real data will require a Category array as projects may belong to multiple categoreis.
-// const DUMMY_PROJECTS: Project[] = [
-// 	{
-// 		title: "Featured Project",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.featured],
-// 	},
-// 	{
-// 		title: "New Arrival Project",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.newArrivals, CATEGORIES.featured],
-// 	},
-// 	{
-// 		title: "Mini Game Project",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.miniGames, CATEGORIES.featured],
-// 	},
-// 	{
-// 		title: "Featured Project 2",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.featured],
-// 	},
-// 	{
-// 		title: "New Arrival Project 2",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.newArrivals, CATEGORIES.featured],
-// 	},
-// 	{
-// 		title: "Mini Game Project 2",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.miniGames, CATEGORIES.featured],
-// 	},
-// 	{
-// 		title: "Featured Project 3",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.featured],
-// 	},
-// 	{
-// 		title: "New Arrival Project 3",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.newArrivals, CATEGORIES.featured],
-// 	},
-// 	{
-// 		title: "Mini Game Project 3",
-// 		coverArtPath:
-// 			"./../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-// 		description: "Testing this thing.",
-// 		categories: [CATEGORIES.miniGames, CATEGORIES.featured],
-// 	},
-// ];
-
 const filterProjects = (category: string, projects: Project[]): Project[] => {
 	const primaryProjects = projects
 		.filter((project) => {
@@ -108,7 +40,7 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 };
 
 const Portfolio = () => {
-	const { previewModal } = useContext(ProjectPreviewContext);
+	const { previewModal, selectedProject } = useContext(ProjectPreviewContext);
 
 	const dummy_projects = JSON.parse(DUMMY_PROJECTS_JSON);
 	const [projects] = useState<Project[]>(dummy_projects);
@@ -118,7 +50,7 @@ const Portfolio = () => {
 
 	return (
 		<main className={classes.portfolio}>
-			<ProjectPreview ref={previewModal} />
+			<ProjectPreview ref={previewModal} project={selectedProject} />
 			<SideNavigation />
 			<HeroBanner />
 			{CATEGORIES_ARRAY &&
