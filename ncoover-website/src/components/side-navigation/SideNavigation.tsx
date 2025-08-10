@@ -62,6 +62,19 @@ const SideNavigation = () => {
 							<Icon source={iconUi.Profile} />
 						</NavLink>
 					</li>
+					<li className={classes.iconContainer}>
+						<NavLink
+							to={PATHS.Home}
+							className={({ isActive }) =>
+								isActive
+									? (classes.active, classes.iconContainer)
+									: classes.iconContainer
+							}
+							end
+						>
+							<Icon source={iconUi.Settings} />
+						</NavLink>
+					</li>
 				</ul>
 			</nav>
 		</div>

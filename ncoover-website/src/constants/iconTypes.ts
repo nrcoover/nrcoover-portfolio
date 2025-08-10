@@ -43,6 +43,7 @@ export const iconUi = {
 	Login: "ui.Login",
 	Profile: "ui.Profile",
 	Search: "ui.Search",
+	Settings: "ui.Settings",
 	Star: "ui.Star",
 } as const;
 
