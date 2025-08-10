@@ -1,11 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { PATHS } from "../../constants/paths";
 
+import { useEffect, useState } from "react";
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
-	const pathname = window.location.pathname;
-	const isPortfolio = pathname.includes("portfolio");
+	const location = useLocation();
+	const [isPortfolio, setIsPortfolio] = useState(false);
+
+	useEffect(() => {
+		setIsPortfolio(location.pathname.includes("portfolio"));
+	}, [location.pathname]);
 
 	return (
 		<div className={classes.headerWrapper}>

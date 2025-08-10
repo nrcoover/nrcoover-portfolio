@@ -1,4 +1,7 @@
 main {
-	margin-left: 3rem;
 	position: relative;
+}
+
+.portfolio {
+	margin-left: var(--side-navigation-width-offset);
 }

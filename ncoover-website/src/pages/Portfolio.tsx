@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./styles/Portfolio.module.css";
+import classes from "./styles/Portfolio.module.css";
 
 import { useContext, useState } from "react";
 import Carousel from "../components/portfolio/carousel/Carousel";
@@ -117,7 +117,7 @@ const Portfolio = () => {
 	console.log(dummy_projects);
 
 	return (
-		<main>
+		<main className={classes.portfolio}>
 			<ProjectPreview ref={previewModal} />
 			<SideNavigation />
 			<HeroBanner />
