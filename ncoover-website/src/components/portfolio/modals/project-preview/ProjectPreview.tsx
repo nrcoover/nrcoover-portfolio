@@ -94,7 +94,7 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 							)}
 						</ul>
 					</div>
-					{closeButton}
+					<div className={classes.closeButton}>{closeButton}</div>
 				</dialog>
 			</section>
 		</>
