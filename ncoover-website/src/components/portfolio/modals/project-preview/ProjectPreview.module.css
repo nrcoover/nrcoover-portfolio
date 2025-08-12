@@ -1,4 +1,4 @@
-.PreviewWrapper {
+.previewWrapper {
 	display: flex;
 	position: fixed;
 	align-items: center;
@@ -70,7 +70,7 @@
 	background-color: #21a89b;
 }
 
-.previewTitle h3 {
+.previewWrapper h3 {
 	font-family: "Handjet", monospace;
 	font-size: 3rem;
 	text-transform: uppercase;
@@ -84,7 +84,7 @@
 	text-align: left;
 }
 
-.previewContent h4 {
+.previewWrapper h4 {
 	font-family: "Handjet", monospace;
 	font-size: 1.25rem;
 }

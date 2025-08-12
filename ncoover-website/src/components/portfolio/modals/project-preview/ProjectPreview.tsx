@@ -57,7 +57,7 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 
 	return (
 		<>
-			<section className={classes.PreviewWrapper}>
+			<section className={classes.previewWrapper}>
 				<dialog
 					ref={ref}
 					className={classes.previewModal}
@@ -81,7 +81,15 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 							<ImageCarousel images={imagesPaths}></ImageCarousel>
 						</div>
 					</div>
-					<h4>Image Description</h4>
+					<div>
+						<p>
+							Tags: {primaryTag} (<i>Primary Tag</i>)
+							{otherTags.map((tag) => (
+								<>, {tag}</>
+							))}
+						</p>
+					</div>
+					<h4>Project Links</h4>
 					<div className={classes.previewIconsWrapper}>
 						<ul className={classes.previewIcons}>
 							<li className={globalClasses.iconContainer}>
@@ -136,26 +144,7 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 							</li>
 						</ul>
 					</div>
-					<div>
-						<p>
-							Tags: {primaryTag} (<i>Primary Tag</i>)
-							{otherTags.map((tag) => (
-								<>, {tag}</>
-							))}
-						</p>
-						{/* <ul>
-							{links.map(
-								(link) =>
-									link.url && (
-										<li key={link.url}>
-											<a href={link.url}>
-												{link.type}: {link.url}
-											</a>
-										</li>
-									)
-							)}
-						</ul> */}
-					</div>
+
 					<div className={classes.closeButton}>{closeButton}</div>
 				</dialog>
 			</section>
