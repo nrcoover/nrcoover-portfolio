@@ -2,11 +2,11 @@ import type { IconSource } from "../../../constants/iconTypes";
 import { iconMap } from "../../../utility/icon/iconMap";
 import classes from "./Icon.module.css";
 
-interface IconProps {
+interface IconProps extends React.HTMLAttributes<HTMLDivElement> {
 	source: IconSource;
 }
 
-const Icon = ({ source }: IconProps) => {
+const Icon = ({ source, ...props }: IconProps) => {
 	const [typeCategory, label] = source.split(".") as [
 		keyof typeof iconMap,
 		string,
@@ -18,7 +18,9 @@ const Icon = ({ source }: IconProps) => {
 
 	return (
 		<div className={classes.iconWrapper}>
-			<div className={classes.svgContainer}>{icon}</div>
+			<div className={classes.svgContainer} {...props}>
+				{icon}
+			</div>
 		</div>
 	);
 };

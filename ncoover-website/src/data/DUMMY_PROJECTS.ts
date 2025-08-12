@@ -15,9 +15,18 @@ const DUMMY_PROJECTS: Project[] = [
 				isAiGeneratedImage: true,
 			},
 			imagesPaths: [
-				"../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-				"../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
-				"../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+				{
+					src: "../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+					alt: "Test image 1",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
+					alt: "Test image 2",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+					alt: "Test image 3",
+				},
 			],
 		},
 		tagData: {
@@ -43,9 +52,18 @@ const DUMMY_PROJECTS: Project[] = [
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
-				"../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-				"../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
-				"../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+				{
+					src: "../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+					alt: "Test image 1",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
+					alt: "Test image 2",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+					alt: "Test image 3",
+				},
 			],
 		},
 		tagData: {
@@ -71,9 +89,18 @@ const DUMMY_PROJECTS: Project[] = [
 				isAiGeneratedImage: true,
 			},
 			imagesPaths: [
-				"../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-				"../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
-				"../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+				{
+					src: "../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+					alt: "Test image 1",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
+					alt: "Test image 2",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+					alt: "Test image 3",
+				},
 			],
 		},
 		tagData: {
@@ -99,9 +126,18 @@ const DUMMY_PROJECTS: Project[] = [
 				isAiGeneratedImage: true,
 			},
 			imagesPaths: [
-				"../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-				"../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
-				"../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+				{
+					src: "../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+					alt: "Test image 1",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
+					alt: "Test image 2",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+					alt: "Test image 3",
+				},
 			],
 		},
 		tagData: {
@@ -127,9 +163,18 @@ const DUMMY_PROJECTS: Project[] = [
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
-				"../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-				"../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
-				"../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+				{
+					src: "../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+					alt: "Test image 1",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
+					alt: "Test image 2",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+					alt: "Test image 3",
+				},
 			],
 		},
 		tagData: {
@@ -155,9 +200,18 @@ const DUMMY_PROJECTS: Project[] = [
 				isAiGeneratedImage: true,
 			},
 			imagesPaths: [
-				"../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
-				"../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
-				"../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+				{
+					src: "../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+					alt: "Test image 1",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-joshsorenson-1714208.jpg",
+					alt: "Test image 2",
+				},
+				{
+					src: "../../public/placeholder-images/pexels-designecologist-1779487.jpg",
+					alt: "Test image 3",
+				},
 			],
 		},
 		tagData: {

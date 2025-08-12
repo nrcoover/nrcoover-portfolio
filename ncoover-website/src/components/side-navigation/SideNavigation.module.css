@@ -4,12 +4,6 @@ ul {
 	list-style-type: none;
 }
 
-.iconContainer {
-	display: flex;
-	margin: 0 auto;
-	border-radius: 100%;
-}
-
 .navigationWrapper {
 	height: 100vh;
 	position: fixed;

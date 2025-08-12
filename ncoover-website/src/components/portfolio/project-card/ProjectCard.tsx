@@ -1,7 +1,13 @@
 import { useContext } from "react";
 import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext";
-import classes from "./ProjectCard.module.css";
 import PreviewButton from "../../common/ui/preview-button/PreviewButton";
+
+import classes from "./ProjectCard.module.css";
+
+export type Image = {
+	src: string;
+	alt: string;
+};
 
 export type CoverArt = {
 	coverArtPath: string;
@@ -10,7 +16,7 @@ export type CoverArt = {
 
 export type ImageData = {
 	coverArt: CoverArt;
-	imagesPaths: string[];
+	imagesPaths: Image[];
 };
 
 export type TagData = {

@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import classes from "./styles/Portfolio.module.css";
-
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import Carousel from "../components/portfolio/carousel/Carousel";
 import HeroBanner from "../components/portfolio/hero-banner/HeroBanner";
 import ProjectPreview from "../components/portfolio/modals/project-preview/ProjectPreview";
@@ -11,6 +9,8 @@ import CATEGORIES_ARRAY from "../constants/projectCategories";
 import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
 import { createProjectPath } from "../helpers/paths-helper";
 import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
+
+import classes from "./styles/Portfolio.module.css";
 
 const filterProjects = (category: string, projects: Project[]): Project[] => {
 	const primaryProjects = projects

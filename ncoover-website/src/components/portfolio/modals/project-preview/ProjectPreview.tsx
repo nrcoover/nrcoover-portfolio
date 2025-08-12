@@ -1,8 +1,15 @@
 import { useContext, type Ref } from "react";
+import { NavLink } from "react-router-dom";
+import { iconSocial } from "../../../../constants/iconTypes";
+import { PATHS } from "../../../../constants/paths";
+import { getIconName } from "../../../../helpers/icon-helper";
 import { ProjectPreviewContext } from "../../../../store/project-preview-context/ProjectPreviewContext";
+import Icon from "../../../common/icon/Icon";
+import ImageCarousel from "../../image-carousel/ImageCarousel";
 import type { Project } from "../../project-card/ProjectCard";
+
+import globalClasses from "../../../../global.module.css";
 import classes from "./ProjectPreview.module.css";
-import ImageWrapper from "../../../common/wrappers/image-wrapper/ImageWrapper";
 
 interface ProjectPreviewProps {
 	ref: Ref<HTMLDialogElement> | undefined;
@@ -44,8 +51,8 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 		);
 	}
 
-	const { title, description, imageData, tagData, links } = project;
-	const { coverArt, imagesPaths } = imageData;
+	const { title, description, imageData, tagData } = project;
+	const { imagesPaths } = imageData;
 	const { primaryTag, otherTags } = tagData;
 
 	return (
@@ -56,32 +63,87 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 					className={classes.previewModal}
 					onClose={handleCloseModal}
 				>
-					<h3>{title}</h3>
-					<p>{description}</p>
-					<ImageWrapper
-						height={"50vh"}
-						width={"50vw"}
-						maxHeight={"500px"}
-						maxWidth={"500px"}
-					>
-						<img
-							src={coverArt.coverArtPath}
-							alt={`Cover art for the ${primaryTag} project, titled: ${title}`}
-						/>
-					</ImageWrapper>
-					<div>
-						{imagesPaths.map((path) => (
-							<p key={path}>{path}</p>
-						))}
+					<div className={classes.previewTitle}>
+						<h3>{title}</h3>
+					</div>
+					<div className={classes.previewContent}>
+						<div className={classes.previewItem}>
+							<h4>Project Description</h4>
+							<p>{description}</p>
+							<h4>Image Description</h4>
+							<p>
+								This is a bunch of placeholder text until I can get the real
+								descriptions dynamically implemented. Thank you for your
+								continued patience and understanding.
+							</p>
+						</div>
+						<div className={classes.previewItem}>
+							<ImageCarousel images={imagesPaths}></ImageCarousel>
+						</div>
+					</div>
+					<h4>Image Description</h4>
+					<div className={classes.previewIconsWrapper}>
+						<ul className={classes.previewIcons}>
+							<li className={globalClasses.iconContainer}>
+								<NavLink
+									to={PATHS.Home}
+									className={({ isActive }) =>
+										isActive
+											? (classes.active, globalClasses.iconContainer)
+											: globalClasses.iconContainer
+									}
+									end
+								>
+									<Icon
+										source={iconSocial.GitHub}
+										className={classes.previewLink}
+									/>
+								</NavLink>
+								<p>{getIconName(iconSocial.GitHub)}</p>
+							</li>
+							<li className={globalClasses.iconContainer}>
+								<NavLink
+									to={PATHS.Home}
+									className={({ isActive }) =>
+										isActive
+											? (classes.active, globalClasses.iconContainer)
+											: globalClasses.iconContainer
+									}
+									end
+								>
+									<Icon
+										source={iconSocial.CodePen}
+										className={classes.previewLink}
+									/>
+								</NavLink>
+								<p>{getIconName(iconSocial.CodePen)}</p>
+							</li>
+							<li className={globalClasses.iconContainer}>
+								<NavLink
+									to={PATHS.Home}
+									className={`${({ isActive }: { isActive: boolean }) =>
+										isActive
+											? (classes.active, globalClasses.iconContainer)
+											: globalClasses.iconContainer}`}
+									end
+								>
+									<Icon
+										source={iconSocial.Website}
+										className={classes.previewLink}
+									/>
+								</NavLink>
+								<p>{getIconName(iconSocial.Website)}</p>
+							</li>
+						</ul>
 					</div>
 					<div>
 						<p>
-							Tags: {primaryTag}
+							Tags: {primaryTag} (<i>Primary Tag</i>)
 							{otherTags.map((tag) => (
 								<>, {tag}</>
 							))}
 						</p>
-						<ul>
+						{/* <ul>
 							{links.map(
 								(link) =>
 									link.url && (
@@ -92,7 +154,7 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 										</li>
 									)
 							)}
-						</ul>
+						</ul> */}
 					</div>
 					<div className={classes.closeButton}>{closeButton}</div>
 				</dialog>

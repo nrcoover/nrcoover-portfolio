@@ -24,15 +24,19 @@ export const iconMusic = {
 
 export const iconSocial = {
 	BlueSky: "social.BlueSky",
-	Facbook: "social.Facbook",
+	CodePen: "social.CodePen",
+	Facbook: "social.Facebook",
+	GitHub: "social.GitHub",
 	Instagram: "social.Instagram",
 	Mastodon: "social.Mastodon",
 	Reddit: "social.Reddit",
+	Steam: "social.Steam",
 	Threads: "social.Threads",
 	Tumblr: "social.Tumblr",
 	Twitch: "social.Twitch",
 	Twitter: "social.Twitter",
 	YouTube: "social.YouTube",
+	Website: "social.Website",
 } as const;
 
 export const iconUi = {

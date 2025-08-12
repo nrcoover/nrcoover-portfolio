@@ -10,7 +10,7 @@
 	max-height: 75vh;
 	border: none;
 	border-radius: 8px;
-	padding: 2rem;
+	padding: 0 2rem 2rem 2rem;
 	background-color: #21a89b;
 	z-index: 10;
 	align-self: center;
@@ -24,13 +24,6 @@
 
 .previewModal::backdrop {
 	background: rgba(0, 0, 0, 0.9);
-}
-
-.previewModal h2 {
-	font-family: "Handjet", monospace;
-	margin: 0 0 0.25rem 0;
-	font-size: 3rem;
-	text-transform: uppercase;
 }
 
 .previewModal progress {
@@ -69,6 +62,65 @@
 	background: #051715;
 }
 
+.previewTitle {
+	padding-top: 0.5rem;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: #21a89b;
+}
+
+.previewTitle h3 {
+	font-family: "Handjet", monospace;
+	font-size: 3rem;
+	text-transform: uppercase;
+	border-bottom: solid white 3px;
+}
+
+.previewContent {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: row;
+	text-align: left;
+}
+
+.previewContent h4 {
+	font-family: "Handjet", monospace;
+	font-size: 1.25rem;
+}
+
+.previewContent p {
+	font-family: "Handjet", monospace;
+	margin-bottom: 1rem;
+}
+
+.previewItem {
+	background-color: pink;
+	margin: 0.5rem;
+	flex: 1;
+}
+
+.previewIconsWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.previewIcons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: palevioletred;
+}
+
+.previewIcons p {
+	margin: 0;
+}
+
+.previewIcons li {
+	padding: 0.5rem;
+}
+
 .closeButton {
 	display: inline;
 	position: sticky;
@@ -80,6 +132,11 @@
 
 .closeButton button {
 	margin: 0;
+}
+
+.previewLink {
+	width: 3rem;
+	height: 3rem;
 }
 
 @keyframes slide-in-from-top {
