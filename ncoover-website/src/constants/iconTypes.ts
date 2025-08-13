@@ -42,6 +42,7 @@ export const iconSocial = {
 export const iconUi = {
 	DarkMode: "ui.DarkMode",
 	Favorite: "ui.Favorite",
+	FavoriteOutline: "ui.FavoriteOutline",
 	Home: "ui.Home",
 	LightMode: "ui.LightMode",
 	Login: "ui.Login",

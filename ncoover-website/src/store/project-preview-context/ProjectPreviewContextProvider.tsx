@@ -6,7 +6,7 @@ interface ProjectPreviewContextProviderProps {
 	children: React.ReactNode;
 }
 
-const ProjectPreivewContextProvider = ({
+const ProjectPreviewContextProvider = ({
 	children,
 }: ProjectPreviewContextProviderProps) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,4 +42,4 @@ const ProjectPreivewContextProvider = ({
 	);
 };
 
-export default ProjectPreivewContextProvider;
+export default ProjectPreviewContextProvider;

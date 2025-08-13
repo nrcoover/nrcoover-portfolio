@@ -10,6 +10,7 @@ import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
 import { createProjectPath } from "../helpers/paths-helper";
 import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
 
+import { FavoritesContext } from "../store/favorites-context/FavoritesContext";
 import classes from "./styles/Portfolio.module.css";
 
 const filterProjects = (category: string, projects: Project[]): Project[] => {
@@ -34,25 +35,24 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 				new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()
 		);
 
-	console.log([...primaryProjects, ...secondaryProjects]);
-
 	return [...primaryProjects, ...secondaryProjects];
 };
 
 const Portfolio = () => {
 	const { previewModal, selectedProject } = useContext(ProjectPreviewContext);
+	const { favoriteProjects } = useContext(FavoritesContext);
 
 	const dummy_projects = JSON.parse(DUMMY_PROJECTS_JSON);
 	const [projects] = useState<Project[]>(dummy_projects);
-
-	console.log();
-	console.log(dummy_projects);
 
 	return (
 		<main className={classes.portfolio}>
 			<ProjectPreview ref={previewModal} project={selectedProject} />
 			<SideNavigation />
 			<HeroBanner />
+			{favoriteProjects.length > 0 && (
+				<Carousel title={"Favorites"} projects={favoriteProjects} />
+			)}
 			{CATEGORIES_ARRAY &&
 				CATEGORIES_ARRAY.map((category) => {
 					const filteredProjects = filterProjects(category, projects);

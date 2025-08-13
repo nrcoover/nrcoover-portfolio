@@ -34,6 +34,7 @@ export type Project = {
 	title: string;
 	description: string;
 	dateAdded: Date;
+	isFavorite: boolean;
 	imageData: ImageData;
 	tagData: TagData;
 	links: CodeLinks[];
