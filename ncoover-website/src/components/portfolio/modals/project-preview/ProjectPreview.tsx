@@ -66,20 +66,24 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 	);
 
 	// use for debugging
-	// project = undefined;
+	project = undefined;
 
 	if (!project) {
 		return (
-			<section className={classes.PreviewWrapper}>
+			<section className={classes.previewWrapper}>
 				<dialog
 					ref={ref}
 					className={classes.previewModal}
 					onClose={handleCloseModal}
 				>
-					<h3>Project Not Found!</h3>
+					<div className={classes.previewTitle}>
+						<h3>Project Not Found!</h3>
+					</div>
 					<p>
 						Either the project could not be found or there was an issue loading
-						the data. Please try again later!
+						the data.
+						<br></br>
+						Please try again later!
 					</p>
 					{closeButton}
 				</dialog>
