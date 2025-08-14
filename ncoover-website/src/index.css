@@ -71,6 +71,23 @@ button:focus-visible {
 	text-align: center;
 }
 
+.iconButton {
+	background: none;
+	margin: none;
+	padding: 0;
+	border: none;
+}
+
+.iconButton:active,
+.iconButton:hover,
+.iconButton:focus,
+.iconButton:focus-visible {
+	background: none;
+	margin: none;
+	padding: 0;
+	border: none;
+}
+
 @media (prefers-color-scheme: light) {
 	:root {
 		color: #213547;

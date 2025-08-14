@@ -11,6 +11,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import Root from "./pages/Root";
 import FavoritesContextProvider from "./store/favorites-context/FavoritesContextProvider";
 import ProjectPreviewContextProvider from "./store/project-preview-context/ProjectPreviewContextProvider";
+import AuthUserContextProvider from "./store/auth-user-context/AuthUserContextProvider";
 
 const router = createBrowserRouter([
 	{
@@ -45,11 +46,13 @@ const router = createBrowserRouter([
 const App = () => {
 	return (
 		<>
-			<FavoritesContextProvider>
-				<ProjectPreviewContextProvider>
-					<RouterProvider router={router}></RouterProvider>
-				</ProjectPreviewContextProvider>
-			</FavoritesContextProvider>
+			<AuthUserContextProvider>
+				<FavoritesContextProvider>
+					<ProjectPreviewContextProvider>
+						<RouterProvider router={router}></RouterProvider>
+					</ProjectPreviewContextProvider>
+				</FavoritesContextProvider>
+			</AuthUserContextProvider>
 		</>
 	);
 };

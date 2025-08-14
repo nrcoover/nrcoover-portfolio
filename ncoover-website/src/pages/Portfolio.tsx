@@ -10,6 +10,8 @@ import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
 import { createProjectPath } from "../helpers/paths-helper";
 import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
 
+import LoginForm from "../components/portfolio/forms/login-form/LoginForm";
+import { AuthUserContext } from "../store/auth-user-context/AuthUserContext";
 import { FavoritesContext } from "../store/favorites-context/FavoritesContext";
 import classes from "./styles/Portfolio.module.css";
 
@@ -39,6 +41,7 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 };
 
 const Portfolio = () => {
+	const { loginModal } = useContext(AuthUserContext);
 	const { previewModal, selectedProject } = useContext(ProjectPreviewContext);
 	const { favoriteProjects } = useContext(FavoritesContext);
 
@@ -48,6 +51,7 @@ const Portfolio = () => {
 	return (
 		<main className={classes.portfolio}>
 			<ProjectPreview ref={previewModal} project={selectedProject} />
+			<LoginForm ref={loginModal} />
 			<SideNavigation />
 			<HeroBanner />
 			{favoriteProjects.length > 0 && (
