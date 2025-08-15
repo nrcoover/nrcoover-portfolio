@@ -2,6 +2,8 @@ import { useContext, useState, type Ref } from "react";
 import { AuthUserContext } from "../../../../store/auth-user-context/AuthUserContext";
 import Modal from "../../../common/modal/Modal";
 
+import classes from "./LoginForm.module.css";
+
 interface LoginFormProps {
 	ref: Ref<HTMLDialogElement> | undefined;
 }
@@ -23,8 +25,12 @@ const LoginForm = ({ ref }: LoginFormProps) => {
 	};
 
 	return (
-		<Modal ref={ref} onClose={() => {}}>
-			<div>
+		<Modal
+			ref={ref}
+			onClose={() => {}}
+			title={user ? "You are already logged in!" : "Login or Create User"}
+		>
+			<div className={classes.login}>
 				{user ? (
 					<>
 						<h3>Welcome, {user.username}</h3>

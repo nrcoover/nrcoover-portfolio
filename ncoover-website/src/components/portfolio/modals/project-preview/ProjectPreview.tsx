@@ -72,10 +72,11 @@ const ProjectPreview = ({ ref, project }: ProjectPreviewProps) => {
 	if (!project) {
 		return (
 			<div className={classes.preview}>
-				<Modal ref={ref} onClose={handleCloseModal}>
-					<div className={classes.previewTitle}>
-						<h3>Project Not Found!</h3>
-					</div>
+				<Modal
+					ref={ref}
+					onClose={handleCloseModal}
+					title={"Project Not Found!"}
+				>
 					<p>
 						Either the project could not be found or there was an issue loading
 						the data.

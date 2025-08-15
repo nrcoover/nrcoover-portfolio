@@ -30,3 +30,18 @@
 	margin: 0;
 	accent-color: #46cebe;
 }
+
+.title {
+	padding-top: 0.5rem;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: #21a89b;
+}
+
+.title h3 {
+	font-family: "Handjet", monospace;
+	font-size: 3rem;
+	text-transform: uppercase;
+	border-bottom: solid white 3px;
+}
