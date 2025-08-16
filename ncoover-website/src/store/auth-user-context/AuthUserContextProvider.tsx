@@ -20,6 +20,11 @@ const AuthUserContextProvider = ({
 		loginModal.current?.showModal();
 	};
 
+	const closeLoginModal = () => {
+		setIsModalOpen(false);
+		loginModal.current?.close();
+	};
+
 	useEffect(() => {
 		const storedUser = localStorage.getItem("mockUser");
 		if (storedUser) {
@@ -35,19 +40,24 @@ const AuthUserContextProvider = ({
 	}
 
 	async function login(username: string, password: string) {
+		console.log(`Passed User: ${username} / Passed Password: ${password}`);
 		const storedUser = localStorage.getItem("mockUser");
 		if (!storedUser) return false;
 
 		const parsedUser: User = JSON.parse(storedUser);
 		const passwordHash = await hashPassword(password);
 
+		console.log(passwordHash);
+
 		if (
 			parsedUser.username === username &&
 			parsedUser.passwordHash === passwordHash
 		) {
 			setUser(parsedUser);
+			console.log("Logged in!");
 			return true;
 		}
+		console.log("Loggin failed!");
 		return false;
 	}
 
@@ -71,6 +81,7 @@ const AuthUserContextProvider = ({
 		isModalOpen,
 		loginModal,
 		openLoginModal,
+		closeLoginModal,
 		user,
 		createUser,
 		login,

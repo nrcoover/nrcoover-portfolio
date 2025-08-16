@@ -11,14 +11,6 @@ interface LoginFormProps {
 const LoginForm = ({ ref }: LoginFormProps) => {
 	// const { createUser, login, user, logout } = useContext(AuthUserContext);
 	const { user } = useContext(AuthUserContext);
-	// const [username, setUsername] = useState("");
-	// const [password, setPassword] = useState("");
-	// const [message, setMessage] = useState("");
-	// const [showPassword, setShowPassword] = useState(false);
-
-	// // Disable login unless valid username & password
-	// const loginDisabled =
-	// 	username.trim().length === 0 || password.trim().length <= 4;
 
 	// const handleCreate = async () => {
 	// 	await createUser(username, password);
@@ -34,74 +26,9 @@ const LoginForm = ({ ref }: LoginFormProps) => {
 		<Modal
 			ref={ref}
 			onClose={() => {}}
-			title={user ? "You are already logged in!" : "Login or Create User"}
+			title={user ? `Welcome, ${user.username}` : "Login or Create User"}
 		>
 			<CredentialsForm></CredentialsForm>
-			{/* <div id={classes.Login} className={classes.login}>
-				{user ? (
-					<>
-						<h3>Welcome, {user.username}</h3>
-						<button onClick={logout}>Logout</button>
-					</>
-				) : (
-					<>
-						<form className={classes.inputContainer} action="">
-							<div className={classes.formGroup}>
-								<input
-									id={classes.Username}
-									value={username}
-									onChange={(e) => setUsername(e.target.value)}
-									placeholder="Username"
-								/>
-								<label className={classes.floatingLabel} htmlFor="Username">
-									Username
-								</label>
-							</div>
-
-							<div className={classes.formGroup}>
-								<input
-									id={classes.Password}
-									type={showPassword ? "text" : "password"}
-									value={password}
-									onChange={(e) => setPassword(e.target.value)}
-									placeholder="Password"
-								/>
-								<label className={classes.floatingLabel} htmlFor="Password">
-									Password
-								</label>
-								<div className={classes.showHideContainer}>
-									{!showPassword ? (
-										<button className={classes.ShowButton} type="button" onClick={() => setShowPassword(true)}>
-											Show
-										</button>
-									) : (
-										<button
-											type="button"
-											onClick={() => setShowPassword(false)}
-										>
-											Hide
-										</button>
-									)}
-								</div>
-							</div>
-
-							<div className={classes.buttonContainer}>
-								<button type="button" onClick={handleCreate}>
-									Create Account
-								</button>
-								<button
-									type="button"
-									onClick={handleLogin}
-									disabled={loginDisabled}
-								>
-									Login
-								</button>
-							</div>
-						</form>
-					</>
-				)}
-				<p>{message}</p>
-			</div> */}
 		</Modal>
 	);
 };

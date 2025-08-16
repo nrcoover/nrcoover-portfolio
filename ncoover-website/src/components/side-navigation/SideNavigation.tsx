@@ -71,17 +71,14 @@ const SideNavigation = () => {
 						</li>
 					) : (
 						<li className={globalClasses.iconContainer}>
-							<NavLink
-								to={PATHS.Home}
-								className={({ isActive }) =>
-									isActive
-										? (classes.active, globalClasses.iconContainer)
-										: globalClasses.iconContainer
-								}
-								end
-							>
-								<Icon source={iconUi.Profile} />
-							</NavLink>
+							<div className={globalClasses.iconContainer}>
+								<button
+									onClick={handleOpenLoginFormModal}
+									className={"iconButton"}
+								>
+									<Icon source={iconUi.Profile} />
+								</button>
+							</div>
 						</li>
 					)}
 					<li className={globalClasses.iconContainer}>

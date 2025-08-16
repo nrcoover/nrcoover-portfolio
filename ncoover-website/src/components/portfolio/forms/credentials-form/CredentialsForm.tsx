@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthUserContext } from "../../../../store/auth-user-context/AuthUserContext";
 import classes from "./CredentialsForm.module.css";
 
 const CredentialsForm: React.FC = () => {
+	const { createUser, login, user, logout, deleteAccount, closeLoginModal } =
+		useContext(AuthUserContext);
+
+	const [message, setMessage] = useState("");
+
 	// Login state
 	const [loginUsername, setLoginUsername] = useState("");
 	const [loginPassword, setLoginPassword] = useState("");
@@ -15,6 +21,31 @@ const CredentialsForm: React.FC = () => {
 	const isLoginValid = loginUsername.length > 0 && loginPassword.length > 4;
 	const isSignupValid = signupUsername.length > 0 && signupPassword.length > 4;
 
+	const handleCreate = async () => {
+		await createUser(loginUsername, loginPassword);
+		setMessage("");
+		clearInputs();
+	};
+
+	const handleLogin = async () => {
+		const success = await login(loginUsername, loginPassword);
+		console.log(success);
+		if (success) {
+			clearInputs();
+		} else {
+			setMessage("Invalid Credentials, please try again!");
+		}
+	};
+
+	const clearInputs = () => {
+		setLoginUsername("");
+		setLoginPassword("");
+		setShowLoginPassword(false);
+		setSignupUsername("");
+		setSignupPassword("");
+		setShowSignupPassword(false);
+	};
+
 	const toggleLoginPasswordVisibility = () => {
 		setShowLoginPassword((prev) => !prev);
 	};
@@ -22,6 +53,73 @@ const CredentialsForm: React.FC = () => {
 	const toggleSignupPasswordVisibility = () => {
 		setShowSignupPassword((prev) => !prev);
 	};
+
+	const handleCloseModal = () => {
+		closeLoginModal();
+	};
+
+	const handleLogout = () => {
+		logout();
+		handleCloseModal();
+	};
+
+	const handleDeleteAccount = () => {
+		deleteAccount();
+		handleCloseModal();
+	};
+
+	if (user) {
+		return (
+			<section className={classes.credentials}>
+				<div className={classes.login}>
+					<h4>Options</h4>
+					<p>
+						You can logout, knowing your favorited items will be saved in your
+						browser's local storage!
+					</p>
+					<button
+						className={classes.loginButton}
+						type="button"
+						onClick={handleLogout}
+					>
+						Logout
+					</button>
+					<div className={classes.orSeparator}>
+						<div className={classes.orSeparatorLine}></div>
+						<p className={classes.orSeparatorText}>or</p>
+						<div className={classes.orSeparatorLine}></div>
+					</div>
+					<p>
+						Delete account and remove all data from local storage! (This cannot
+						be undone!)
+					</p>
+					<button
+						className={classes.loginButton}
+						type="button"
+						onClick={handleDeleteAccount}
+					>
+						Delete Account
+					</button>
+				</div>
+				<div className={classes.verticalSeparator}></div>
+				<div className={classes.login}>
+					<p>
+						Hello, {user.username}! You are currently logged in to your mock
+						account! Please remember that this account exists only in the local
+						storage of your browser and is not registered with any backend
+						server.
+					</p>
+					<button
+						className={classes.loginButton}
+						type="button"
+						onClick={handleCloseModal}
+					>
+						Close
+					</button>
+				</div>
+			</section>
+		);
+	}
 
 	return (
 		<section className={classes.credentials}>
@@ -44,7 +142,10 @@ const CredentialsForm: React.FC = () => {
 							placeholder="Username"
 							title="Must be a valid username."
 							value={loginUsername}
-							onChange={(e) => setLoginUsername(e.target.value)}
+							onChange={(e) => {
+								setLoginUsername(e.target.value);
+								setMessage("");
+							}}
 							required
 							type="text"
 						/>
@@ -60,7 +161,10 @@ const CredentialsForm: React.FC = () => {
 							placeholder="Password"
 							title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters."
 							value={loginPassword}
-							onChange={(e) => setLoginPassword(e.target.value)}
+							onChange={(e) => {
+								setLoginPassword(e.target.value);
+								setMessage("");
+							}}
 							required
 							type={showLoginPassword ? "text" : "password"}
 						/>
@@ -90,9 +194,16 @@ const CredentialsForm: React.FC = () => {
 						)}
 					</div>
 
+					{message != "" && (
+						<>
+							<div>{message}</div>
+						</>
+					)}
+
 					<button
 						id="loginButton"
 						className={classes.loginButton}
+						onClick={handleLogin}
 						name="submit"
 						type="button"
 						disabled={!isLoginValid}
@@ -163,6 +274,7 @@ const CredentialsForm: React.FC = () => {
 
 					<button
 						id="signupButton"
+						onClick={handleCreate}
 						className={classes.loginButton}
 						name="submit"
 						type="button"
@@ -185,7 +297,11 @@ const CredentialsForm: React.FC = () => {
 					be overridden by any new account added to this device. If you wish not
 					to create an account, you may proceed as "Guest".
 				</p>
-				<button className={classes.loginButton} type="button">
+				<button
+					className={classes.loginButton}
+					type="button"
+					onClick={handleCloseModal}
+				>
 					Proceed As Guest
 				</button>
 			</div>
