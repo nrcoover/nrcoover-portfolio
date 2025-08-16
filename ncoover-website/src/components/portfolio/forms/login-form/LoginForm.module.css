@@ -1,0 +1,149 @@
+.login {
+	display: flex;
+	flex-direction: column;
+	min-width: none;
+}
+
+.login input {
+	max-width: 200px;
+}
+
+.buttonContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.buttonContainer button {
+	margin: 1rem 0.5rem;
+}
+
+.inputContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+
+.inputContainer input {
+	margin: 0.5rem;
+	padding: 0.8rem;
+	border-radius: 8px;
+	height: 2.5rem;
+}
+
+/* SLSKDEJF:SLKDJF:LSKDJF */
+.formGroup input[type="password"]::-ms-reveal {
+	display: none;
+}
+
+#Login .formGroup {
+	position: relative;
+	transition: all 0.3s;
+}
+
+.formGroup .floatingLable {
+	color: white;
+	display: block;
+	font-size: 0.78em;
+	position: absolute;
+	transform: translate(0.78em, -2.65em);
+	transform-origin: 0 0;
+	transition: all 0.1s;
+	z-index: 1;
+}
+
+/* .formGroup button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+	font-weight: 600;
+	right: 0;
+	top: 0;
+	transform: translate(-0.75em, 0.75em);
+	position: absolute;
+	visibility: hidden;
+} */
+
+/* .formGroup button:active {
+	opacity: 0.6;
+} */
+
+.formGroup input:not(:placeholder-shown) ~ #ShowButton {
+	visibility: visible;
+}
+
+.formGroup input:not(:placeholder-shown) + .floatingLable {
+	transform: translate(0.75em, -3.15em) scale(0.8);
+}
+
+#Username:not(:placeholder-shown) {
+	padding-bottom: 0.3em;
+	padding-top: 1.3em;
+}
+
+#Password:not(:placeholder-shown) {
+	padding-bottom: 0.35em;
+	padding-top: 1.25em;
+	padding-right: 4.19em;
+}
+
+.floatingLable {
+	cursor: text;
+}
+
+#login form {
+	display: flex;
+	flex-direction: column;
+}
+
+#login input {
+	background-color: #fafafa;
+	border: 1px solid var(--ig-grey-light);
+	border-radius: 0.2em;
+	display: block;
+	font-family: inherit;
+	font-size: 0.78em;
+	margin-bottom: 0.5em;
+	padding: 0.8em 0.7em;
+	width: 100%;
+}
+
+input[type="text"]#username:focus,
+input[type="password"]#password:focus {
+	border: 1px solid rgba(138, 138, 138, 0.7);
+	outline: none;
+}
+
+#login input::placeholder {
+	font-family: inherit;
+	color: transparent;
+}
+
+#login input[value="Log In"] {
+	color: white;
+	background-color: var(--ig-blue);
+	border: 1px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	border-radius: 0.4em;
+	font-size: 0.875em;
+	font-weight: 500;
+	margin: 0.5em 0 0.2em;
+	padding: 0.36em 0.7em 0.42em;
+}
+
+#login input[value="Log In"]:hover {
+	cursor: pointer;
+}
+
+#login input[value="Log In"]:disabled {
+	cursor: inherit;
+	opacity: 0.35;
+}
+
+#login input[value="Log In"]:enabled {
+	opacity: 1;
+}
+
+#login input[value="Log In"]:active {
+	opacity: 0.6;
+}
