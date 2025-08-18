@@ -1,5 +1,6 @@
 main {
 	position: relative;
+	background-color: var(--background-secondary);
 }
 
 .portfolio {

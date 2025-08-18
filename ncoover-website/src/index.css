@@ -13,6 +13,49 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	--side-navigation-width-offset: 6rem;
+
+	/* === Core Brand Colors === */
+	--color-red: rgb(229, 9, 20); /* Netflix red (primary brand) */
+	--color-red-rgb: 229, 9, 20; /* Netflix red (primary brand) */
+	--color-red-dark: rgb(178, 7, 16); /* Darker red for hover/active */
+	--color-red-light: rgb(255, 60, 70); /* Accent red for glow/shadows */
+	--color-red-light-rgb: 255, 60, 70; /* Accent red for glow/shadows */
+
+	--color-black: rgb(20, 20, 20); /* Near-black background */
+	--color-gray-dark: rgb(31, 31, 31); /* Card / container background */
+	--color-gray: rgb(42, 42, 42); /* UI elements (borders, dividers) */
+	--color-gray-light: rgb(179, 179, 179); /* Muted text / secondary labels */
+
+	--color-white: rgb(255, 255, 255); /* Primary text */
+	--color-offwhite: rgb(229, 229, 229); /* Secondary text (less contrast) */
+
+	/* === Text === */
+	--text-primary: var(--color-white);
+	--text-secondary: var(--color-offwhite);
+	--text-accent: var(--color-red);
+
+	/* === Backgrounds === */
+	--background-primary: var(--color-black);
+	--background-secondary: var(--color-gray-dark);
+	--background-overlay: rgba(20, 20, 20, 0.85); /* modal overlays */
+
+	/* === Borders / Dividers === */
+	--border-color: var(--color-gray);
+	--border-accent: var(--color-red);
+
+	/* === Accents / Effects === */
+	--accent: var(--color-red);
+	--shadow-glow: 0 0 6px 6px rgba(var(--color-red-light-rgb), 0.5);
+
+	/* === Buttons === */
+	--button-background: var(--color-red-dark);
+	--button-background-hover: var(--color-red);
+	--button-text: var(--color-white);
+	--button-border: transparent;
+
+	/* === Focus / Accessibility === */
+	--focus-outline: 2px solid var(--color-red-light);
+	--focus-outline-offset: 2px;
 }
 
 *,
@@ -31,7 +74,7 @@ a {
 	text-decoration: inherit;
 }
 a:hover {
-	color: #535bf2;
+	color: var(--color-red-dark);
 }
 
 body {
@@ -59,7 +102,7 @@ button {
 	transition: border-color 0.25s;
 }
 button:hover {
-	border-color: #646cff;
+	border-color: var(--color-red-dark);
 }
 button:focus,
 button:focus-visible {

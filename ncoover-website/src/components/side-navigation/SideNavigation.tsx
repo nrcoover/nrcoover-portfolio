@@ -65,7 +65,7 @@ const SideNavigation = () => {
 									onClick={handleOpenLoginFormModal}
 									className={"iconButton"}
 								>
-									<Icon source={iconUi.Login} />
+									<Icon className={classes.icon} source={iconUi.Login} />
 								</button>
 							</div>
 						</li>

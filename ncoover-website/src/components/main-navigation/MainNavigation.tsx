@@ -17,7 +17,7 @@ const MainNavigation = () => {
 			<header className={classes.header}>
 				<nav>
 					<ul
-						className={`${classes.list} ${isPortfolio ? classes.sideNavigationOffset : ""}`}
+						className={`${classes.list} ${isPortfolio ? `${classes.sideNavigationOffset}` : ""}`}
 					>
 						<li>
 							<NavLink

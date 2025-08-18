@@ -41,10 +41,12 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 	useEffect(() => {
 		if (!cardRef.current) return;
 
+		// TODO: Fix spacing bug with added margin
 		const updateCardWidth = () => {
 			if (!cardRef.current) return;
 			const style = getComputedStyle(cardRef.current);
 			const marginRight = parseFloat(style.marginRight);
+			// const marginLeft = parseFloat(style.marginLeft);
 			setCardWidth(cardRef.current.offsetWidth + marginRight);
 		};
 

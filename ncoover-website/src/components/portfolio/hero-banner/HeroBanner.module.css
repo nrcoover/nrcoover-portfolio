@@ -1,5 +1,5 @@
 .hero {
-	background-color: aquamarine;
+	background-color: var(--background-secondary);
 	height: 50vh;
 	display: flex;
 	flex-direction: row;
@@ -10,21 +10,18 @@
 
 .textWrapper {
 	text-align: left;
-	background-color: aqua;
 	padding: 2rem;
 }
 
 .heroItem {
 	flex: 33.333%;
 	/* width: 20%; */
-	border: solid green 3px;
 }
 
 .heroImage {
 	height: inherit;
 	width: auto;
 	flex: 100%;
-	border: solid red 3px;
 	overflow: hidden;
 }
 

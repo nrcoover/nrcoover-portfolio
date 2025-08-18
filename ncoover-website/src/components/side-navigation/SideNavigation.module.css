@@ -17,9 +17,10 @@ ul {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: purple;
+	background-color: var(--background-primary);
 	height: 100vh;
 	top: 0;
+	box-shadow: var(--shadow-glow);
 }
 
 .list {
@@ -37,4 +38,8 @@ ul {
 .list a.active {
 	color: var(--color-primary-800);
 	text-decoration: underline;
+}
+
+.icon svg {
+	fill: white;
 }

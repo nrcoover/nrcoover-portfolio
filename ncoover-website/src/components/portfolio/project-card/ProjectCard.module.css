@@ -31,7 +31,7 @@
 }
 
 .primaryTagGlow {
-	box-shadow: 0 0 16px rgb(255, 166, 0);
+	box-shadow: 0 0 6px 6px rgba(var(--color-red-light-rgb), 0.5);
 	border-radius: 8px;
 }
 
@@ -68,22 +68,28 @@
 
 .projectCard {
 	box-sizing: border-box;
-	margin: 3px;
+	/* margin: 3px; */
 	transition:
 		transform 0.3s ease,
 		box-shadow 0.3s ease,
-		outline 0.1s ease;
+		outline 0.1s ease,
+		margin 0.3s ease;
 }
 
 .selected {
 	transform: scale(1.05);
 	outline: 3px solid rgb(255, 255, 255);
+	margin: 0 2rem 0 0;
 	border-radius: 8px;
 	z-index: 2;
 }
 
 .projectSpacer {
 	margin-left: 1rem;
+}
+
+.selectedProjectSpacer {
+	margin-left: 2rem;
 }
 
 .displayNone {

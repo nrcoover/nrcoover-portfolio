@@ -75,7 +75,11 @@ const ProjectCard = ({
 	};
 
 	return (
-		<div className={classes.projectSpacer}>
+		<div
+			className={
+				selected ? classes.selectedProjectSpacer : classes.projectSpacer
+			}
+		>
 			<article
 				role="group"
 				aria-label={project.title}
