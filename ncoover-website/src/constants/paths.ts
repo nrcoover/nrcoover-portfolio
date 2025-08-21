@@ -7,15 +7,16 @@ const createPath = (root: string, subpath?: string) => {
 
 const ROOTS = {
 	HOME: "/",
-	PORTFOLIO: "portfolio",
-	ABOUT_ME: "about-me",
-	CONTACT: "contact",
+	PORTFOLIO: "/portfolio",
+	ABOUT_ME: "/about-me",
+	CONTACT: "/contact",
 };
 
 export const PATHS = {
-	Home: "/",
+	Home: ROOTS.HOME,
 	Portfolio: {
 		Root: createPath(ROOTS.PORTFOLIO),
+		AlreadyHere: createPath(ROOTS.PORTFOLIO, "you-are-already-here"),
 		ProjectOne: createPath(ROOTS.PORTFOLIO, "ProjectOne"),
 	},
 	AboutMe: ROOTS.ABOUT_ME,

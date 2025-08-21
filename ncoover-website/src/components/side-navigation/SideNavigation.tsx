@@ -15,6 +15,8 @@ const SideNavigation = () => {
 		openLoginModal();
 	};
 
+	const isTrue = true;
+
 	return (
 		<div className={classes.navigationWrapper}>
 			<nav className={classes.sideNavigation}>
@@ -29,9 +31,55 @@ const SideNavigation = () => {
 							}
 							end
 						>
-							<Icon source={iconUi.Search} />
+							<Icon source={iconUi.Home} />
+							{isTrue && <>home</>}
 						</NavLink>
 					</li>
+					<li className={globalClasses.iconContainer}>
+						<NavLink
+							to={PATHS.Portfolio.AlreadyHere}
+							className={({ isActive }) =>
+								isActive
+									? (classes.active, globalClasses.iconContainer)
+									: globalClasses.iconContainer
+							}
+							end
+						>
+							<Icon source={iconUi.Folder} />
+							{isTrue && <>portfolio</>}
+						</NavLink>
+					</li>
+					<li className={globalClasses.iconContainer}>
+						<NavLink
+							to={PATHS.AboutMe}
+							className={({ isActive }) =>
+								isActive
+									? (classes.active, globalClasses.iconContainer)
+									: globalClasses.iconContainer
+							}
+							end
+						>
+							<Icon source={iconUi.Info} />
+							{isTrue && <>about me</>}
+						</NavLink>
+					</li>
+					<li className={globalClasses.iconContainer}>
+						<NavLink
+							to={PATHS.Contact}
+							className={({ isActive }) =>
+								isActive
+									? (classes.active, globalClasses.iconContainer)
+									: globalClasses.iconContainer
+							}
+							end
+						>
+							<Icon source={iconUi.Contact} />
+							{isTrue && <>contact</>}
+						</NavLink>
+					</li>
+				</ul>
+				<div className={classes.separator}></div>
+				<ul className={classes.list}>
 					<li className={globalClasses.iconContainer}>
 						<NavLink
 							to={PATHS.Home}
@@ -42,7 +90,43 @@ const SideNavigation = () => {
 							}
 							end
 						>
-							<Icon source={iconUi.Home} />
+							<Icon source={iconUi.Search} />
+							{isTrue && <>search</>}
+						</NavLink>
+					</li>
+					{isGuest ? (
+						<li className={globalClasses.iconContainer}>
+							<button
+								onClick={handleOpenLoginFormModal}
+								className={"iconButton"}
+							>
+								<Icon className={classes.icon} source={iconUi.Login} />
+							</button>
+							{isTrue && <>profile</>}
+						</li>
+					) : (
+						<li className={globalClasses.iconContainer}>
+							<button
+								onClick={handleOpenLoginFormModal}
+								className={"iconButton"}
+							>
+								<Icon source={iconUi.ProfileCircle} />
+							</button>
+							{isTrue && <>Profile</>}
+						</li>
+					)}
+					<li className={globalClasses.iconContainer}>
+						<NavLink
+							to={PATHS.Home}
+							className={({ isActive }) =>
+								isActive
+									? (classes.active, globalClasses.iconContainer)
+									: globalClasses.iconContainer
+							}
+							end
+						>
+							<Icon source={iconUi.LightMode} />
+							{isTrue && <>light mode</>}
 						</NavLink>
 					</li>
 					<li className={globalClasses.iconContainer}>
@@ -56,31 +140,10 @@ const SideNavigation = () => {
 							end
 						>
 							<Icon source={iconUi.Favorite} />
+							{isTrue && <>favorites</>}
 						</NavLink>
 					</li>
-					{isGuest ? (
-						<li className={globalClasses.iconContainer}>
-							<div className={globalClasses.iconContainer}>
-								<button
-									onClick={handleOpenLoginFormModal}
-									className={"iconButton"}
-								>
-									<Icon className={classes.icon} source={iconUi.Login} />
-								</button>
-							</div>
-						</li>
-					) : (
-						<li className={globalClasses.iconContainer}>
-							<div className={globalClasses.iconContainer}>
-								<button
-									onClick={handleOpenLoginFormModal}
-									className={"iconButton"}
-								>
-									<Icon source={iconUi.Profile} />
-								</button>
-							</div>
-						</li>
-					)}
+
 					<li className={globalClasses.iconContainer}>
 						<NavLink
 							to={PATHS.Home}
@@ -92,6 +155,7 @@ const SideNavigation = () => {
 							end
 						>
 							<Icon source={iconUi.Settings} />
+							{isTrue && <>settings</>}
 						</NavLink>
 					</li>
 				</ul>

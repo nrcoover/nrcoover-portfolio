@@ -51,6 +51,7 @@
 	scroll-snap-align: start;
 }
 
+/* TODO: investigate if this is part of my card spacing issue... */
 .cardSpacer {
 	min-width: 2rem; /* match witdh of project item*/
 	flex-shrink: 0;

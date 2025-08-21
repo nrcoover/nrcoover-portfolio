@@ -40,13 +40,17 @@ export const iconSocial = {
 } as const;
 
 export const iconUi = {
+	Contact: "ui.Contact",
 	DarkMode: "ui.DarkMode",
 	Favorite: "ui.Favorite",
 	FavoriteOutline: "ui.FavoriteOutline",
+	Folder: "ui.Folder",
 	Home: "ui.Home",
+	Info: "ui.Info",
 	LightMode: "ui.LightMode",
 	Login: "ui.Login",
 	Profile: "ui.Profile",
+	ProfileCircle: "ui.ProfileCircle",
 	Search: "ui.Search",
 	Settings: "ui.Settings",
 	Star: "ui.Star",
