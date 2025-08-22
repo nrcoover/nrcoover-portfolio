@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { hashPassword } from "../../utility/hashing/cryptoUtils";
 import { AuthUserContext, type User } from "./AuthUserContext";
+import type { Project } from "../../components/portfolio/project-card/ProjectCard";
 
 interface AuthUserContextProviderProps {
 	children: React.ReactNode;
@@ -59,7 +60,16 @@ const AuthUserContextProvider = ({
 		return false;
 	}
 
-	const updateUserFavorites = (favorites: number[]) => {
+	const getUserFavoritesById = (): Project[] => {
+		if (!user) return [];
+		const localUser = localStorage.getItem("mockUser");
+		const favorites: Project[] = localUser
+			? JSON.parse(localUser).favorites
+			: [];
+		return favorites;
+	};
+
+	const updateUserFavorites = (favorites: Project[]) => {
 		if (!user) return;
 		const updatedUser = { ...user, favorites };
 		setUser(updatedUser);
@@ -89,6 +99,7 @@ const AuthUserContextProvider = ({
 		logout,
 		deleteAccount,
 		isLoggedIn,
+		getUserFavoritesById,
 	};
 
 	return (

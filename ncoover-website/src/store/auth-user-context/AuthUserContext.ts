@@ -1,9 +1,10 @@
 import { createContext } from "react";
+import type { Project } from "../../components/portfolio/project-card/ProjectCard";
 
 export type User = {
 	username: string;
 	passwordHash: string;
-	favorites: number[];
+	favorites: Project[];
 };
 
 interface AuthUserContextProps {
@@ -14,10 +15,11 @@ interface AuthUserContextProps {
 	user: User | null;
 	createUser: (username: string, password: string) => Promise<void>;
 	login: (username: string, password: string) => Promise<boolean>;
-	updateUserFavorites: (favorites: number[]) => void;
+	updateUserFavorites: (favorites: Project[]) => void;
 	logout: () => void;
 	deleteAccount: () => Promise<void>;
 	isLoggedIn: boolean;
+	getUserFavoritesById: () => Project[];
 }
 
 export const AuthUserContext = createContext<AuthUserContextProps>({
@@ -32,4 +34,5 @@ export const AuthUserContext = createContext<AuthUserContextProps>({
 	logout: () => {},
 	deleteAccount: async () => {},
 	isLoggedIn: false,
+	getUserFavoritesById: () => [],
 });
