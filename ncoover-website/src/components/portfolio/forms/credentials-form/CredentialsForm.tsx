@@ -22,7 +22,7 @@ const CredentialsForm: React.FC = () => {
 	const isSignupValid = signupUsername.length > 0 && signupPassword.length > 4;
 
 	const handleCreate = async () => {
-		await createUser(loginUsername, loginPassword);
+		await createUser(signupUsername, signupPassword);
 		setMessage("");
 		clearInputs();
 	};
