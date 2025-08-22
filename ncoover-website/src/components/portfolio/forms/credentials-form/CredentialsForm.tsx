@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { AuthUserContext } from "../../../../store/auth-user-context/AuthUserContext";
 import classes from "./CredentialsForm.module.css";
 
-const CredentialsForm = () => {
+const CredentialsForm: React.FC = () => {
 	const { createUser, login, user, logout, deleteAccount, closeLoginModal } =
 		useContext(AuthUserContext);
 

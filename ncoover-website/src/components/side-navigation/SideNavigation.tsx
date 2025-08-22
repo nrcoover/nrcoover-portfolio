@@ -9,7 +9,7 @@ import Icon from "../common/icon/Icon";
 import classes from "./SideNavigation.module.css";
 
 const SideNavigation = () => {
-	const { isGuest, openLoginModal } = useContext(AuthUserContext);
+	const { isLoggedIn, openLoginModal } = useContext(AuthUserContext);
 
 	const handleOpenLoginFormModal = () => {
 		openLoginModal();
@@ -17,9 +17,12 @@ const SideNavigation = () => {
 
 	const isTrue = true;
 
+	console.log(iconUi.Profile);
+
 	return (
 		<div className={classes.navigationWrapper}>
 			<nav className={classes.sideNavigation}>
+				{`Is Logged In: ${isLoggedIn.toString()}`}
 				<ul className={classes.list}>
 					<li className={globalClasses.iconContainer}>
 						<NavLink
@@ -94,17 +97,7 @@ const SideNavigation = () => {
 							{isTrue && <>search</>}
 						</NavLink>
 					</li>
-					{isGuest ? (
-						<li className={globalClasses.iconContainer}>
-							<button
-								onClick={handleOpenLoginFormModal}
-								className={"iconButton"}
-							>
-								<Icon className={classes.icon} source={iconUi.Login} />
-							</button>
-							{isTrue && <>profile</>}
-						</li>
-					) : (
+					{isLoggedIn ? (
 						<li className={globalClasses.iconContainer}>
 							<button
 								onClick={handleOpenLoginFormModal}
@@ -113,6 +106,16 @@ const SideNavigation = () => {
 								<Icon source={iconUi.ProfileCircle} />
 							</button>
 							{isTrue && <>Profile</>}
+						</li>
+					) : (
+						<li className={globalClasses.iconContainer}>
+							<button
+								onClick={handleOpenLoginFormModal}
+								className={"iconButton"}
+							>
+								<Icon source={iconUi.Login} />
+							</button>
+							{isTrue && <>Login</>}
 						</li>
 					)}
 					<li className={globalClasses.iconContainer}>

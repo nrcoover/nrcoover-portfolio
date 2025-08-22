@@ -17,7 +17,7 @@ interface AuthUserContextProps {
 	updateUserFavorites: (favorites: number[]) => void;
 	logout: () => void;
 	deleteAccount: () => Promise<void>;
-	isGuest: boolean;
+	isLoggedIn: boolean;
 }
 
 export const AuthUserContext = createContext<AuthUserContextProps>({
@@ -31,5 +31,5 @@ export const AuthUserContext = createContext<AuthUserContextProps>({
 	updateUserFavorites: () => {},
 	logout: () => {},
 	deleteAccount: async () => {},
-	isGuest: true,
+	isLoggedIn: false,
 });

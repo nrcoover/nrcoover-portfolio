@@ -11,9 +11,8 @@ const AuthUserContextProvider = ({
 }: AuthUserContextProviderProps) => {
 	const [user, setUser] = useState<User | null>(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const loginModal = useRef<HTMLDialogElement | null>(null);
-
-	const isGuest = user == null;
 
 	const openLoginModal = () => {
 		setIsModalOpen(true);
@@ -69,11 +68,13 @@ const AuthUserContextProvider = ({
 	};
 
 	const logout = () => {
+		setIsLoggedIn(false);
 		setUser(null);
 	};
 
 	async function deleteAccount() {
 		localStorage.removeItem("mockUser");
+		setIsLoggedIn(false);
 		setUser(null);
 	}
 
@@ -88,7 +89,7 @@ const AuthUserContextProvider = ({
 		updateUserFavorites,
 		logout,
 		deleteAccount,
-		isGuest,
+		isLoggedIn,
 	};
 
 	return (
