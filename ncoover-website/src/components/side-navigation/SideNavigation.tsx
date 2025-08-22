@@ -22,7 +22,6 @@ const SideNavigation = () => {
 	return (
 		<div className={classes.navigationWrapper}>
 			<nav className={classes.sideNavigation}>
-				{`Is Logged In: ${isLoggedIn.toString()}`}
 				<ul className={classes.list}>
 					<li className={globalClasses.iconContainer}>
 						<NavLink
