@@ -26,8 +26,11 @@ const router = createBrowserRouter([
 			{
 				path: PATHS.Portfolio.Root,
 				element: <Portfolio />,
+				children: [
+					{ path: PATHS.Portfolio.AlreadyHere, element: <Portfolio /> },
+					{ path: PATHS.Portfolio.Favorites, element: <Portfolio /> },
+				],
 			},
-			{ path: PATHS.Portfolio.AlreadyHere, element: <Portfolio /> },
 			{
 				path: `${PATHS.Portfolio.Root}/:projectTitle`,
 				element: <ProjectDetails />,

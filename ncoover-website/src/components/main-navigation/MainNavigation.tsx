@@ -8,6 +8,7 @@ const MainNavigation = () => {
 	const location = useLocation();
 	const [isPortfolio, setIsPortfolio] = useState(false);
 
+	// TODO: Move this logic to a context?
 	useEffect(() => {
 		setIsPortfolio(location.pathname.includes("portfolio"));
 	}, [location.pathname]);

@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { PATHS } from "../../constants/paths";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { iconUi } from "../../constants/iconTypes";
 import globalClasses from "../../global.module.css";
 import { AuthUserContext } from "../../store/auth-user-context/AuthUserContext";
@@ -9,15 +9,20 @@ import Icon from "../common/icon/Icon";
 import classes from "./SideNavigation.module.css";
 
 const SideNavigation = () => {
+	const location = useLocation();
+	const [currentPath, setCurrentPath] = useState("");
 	const { isLoggedIn, openLoginModal } = useContext(AuthUserContext);
 
 	const handleOpenLoginFormModal = () => {
 		openLoginModal();
 	};
 
-	const isTrue = true;
+	// TODO: Move this logic to a context?
+	useEffect(() => {
+		setCurrentPath(location.pathname);
+	}, [location.pathname]);
 
-	console.log(iconUi.Profile);
+	const isTrue = true;
 
 	return (
 		<div className={classes.navigationWrapper}>
@@ -39,7 +44,11 @@ const SideNavigation = () => {
 					</li>
 					<li className={globalClasses.iconContainer}>
 						<NavLink
-							to={PATHS.Portfolio.AlreadyHere}
+							to={
+								currentPath === PATHS.Portfolio.Root
+									? PATHS.Portfolio.AlreadyHere
+									: PATHS.Portfolio.Root
+							}
 							className={({ isActive }) =>
 								isActive
 									? (classes.active, globalClasses.iconContainer)
@@ -133,7 +142,7 @@ const SideNavigation = () => {
 					</li>
 					<li className={globalClasses.iconContainer}>
 						<NavLink
-							to={PATHS.Home}
+							to={PATHS.Portfolio.Favorites}
 							className={({ isActive }) =>
 								isActive
 									? (classes.active, globalClasses.iconContainer)
