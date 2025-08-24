@@ -11,6 +11,7 @@ import ImageCarousel from "../../image-carousel/ImageCarousel";
 import type { Project } from "../../project-card/ProjectCard";
 
 import globalClasses from "../../../../global.module.css";
+import Separator from "../../../common/separator/Separator";
 import Containerizer from "../../../common/wrappers/containerizer/Containerizer";
 import classes from "./ProjectPreview.module.css";
 
@@ -115,14 +116,8 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 					<ImageCarousel images={imagesPaths}></ImageCarousel>
 				</div>
 			</div>
-			<div>
-				<p>
-					Tags: {primaryTag} (<i>Primary Tag</i>)
-					{otherTags.map((tag) => (
-						<>, {tag}</>
-					))}
-				</p>
-			</div>
+			<Separator width={"auto"} />
+
 			<h4>Project Links</h4>
 			<div className={classes.previewIconsWrapper}>
 				<ul className={classes.previewIcons}>
@@ -177,6 +172,14 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 						<p>{getIconName(iconSocial.Website)}</p>
 					</li>
 				</ul>
+			</div>
+			<div>
+				<p id={classes.Tags}>
+					Tags: {primaryTag} (<i>Primary Tag</i>)
+					{otherTags.map((tag) => (
+						<>, {tag}</>
+					))}
+				</p>
 			</div>
 
 			{ref && <div className={classes.closeButton}>{closeButton}</div>}

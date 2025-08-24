@@ -42,9 +42,3 @@ ul {
 	color: var(--color-primary-800);
 	text-decoration: underline;
 }
-
-.separator {
-	width: 60%;
-	border: solid white 1px;
-	margin: 4rem;
-}

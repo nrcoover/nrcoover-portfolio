@@ -2,7 +2,7 @@ export const CATEGORIES = {
 	featured: "Featured",
 	newArrivals: "New Arrivals",
 	miniGames: "Mini Games",
-	ai: "A. I.",
+	ai: "A.I.",
 	react: "React",
 	typeScript: "TypeScript",
 	cSharp: "C#",

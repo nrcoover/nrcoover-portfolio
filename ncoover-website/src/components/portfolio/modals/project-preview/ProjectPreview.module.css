@@ -2,6 +2,7 @@
 	margin: 0.5rem 0;
 	font-size: 1.2rem;
 	overflow-y: auto;
+	text-align: justify;
 }
 
 .preview button {
@@ -42,7 +43,7 @@
 
 .preview h4 {
 	font-family: "Handjet", monospace;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 
 .previewContent p {
@@ -73,6 +74,7 @@
 
 .previewIcons li {
 	padding: 0.5rem;
+	margin: 1.25rem;
 }
 
 .closeButton {
@@ -116,6 +118,11 @@
 .previewLink {
 	width: 3rem;
 	height: 3rem;
+}
+
+#Tags {
+	text-align: center;
+	font-size: 0.85rem;
 }
 
 @keyframes slide-in-from-top {

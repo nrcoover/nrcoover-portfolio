@@ -6,6 +6,7 @@ import { iconUi } from "../../constants/iconTypes";
 import globalClasses from "../../global.module.css";
 import { AuthUserContext } from "../../store/auth-user-context/AuthUserContext";
 import Icon from "../common/icon/Icon";
+import Separator from "../common/separator/Separator";
 import classes from "./SideNavigation.module.css";
 
 const SideNavigation = () => {
@@ -89,7 +90,7 @@ const SideNavigation = () => {
 						</NavLink>
 					</li>
 				</ul>
-				<div className={classes.separator}></div>
+				<Separator width={"60%"} margin={"4rem"} />
 				<ul className={classes.list}>
 					<li className={globalClasses.iconContainer}>
 						<NavLink
