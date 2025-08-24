@@ -1,0 +1,10 @@
+.containerizer {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--background-primary);
+	border-radius: 1rem;
+	margin: 2rem;
+	padding: 1rem 2rem 2rem 2rem;
+	max-width: 100%;
+	overflow: hidden;
+}

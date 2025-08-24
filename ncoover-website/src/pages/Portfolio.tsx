@@ -80,8 +80,8 @@ const Portfolio = () => {
 		[PATHS.Portfolio.Root]: sharedPortfolioContent,
 		[PATHS.Portfolio.AlreadyHere]: sharedPortfolioContent,
 		[PATHS.Portfolio.Favorites]: (
+			// TODO: Convert ProjectPreview to optional component without modal
 			<>
-				<ProjectPreview ref={previewModal} project={selectedProject} />
 				{favoriteProjects.length > 0 ? (
 					<Carousel title={"Favorites"} projects={favoriteProjects} />
 				) : (
@@ -89,6 +89,7 @@ const Portfolio = () => {
 					// TODO: Finish filling out this part with button to return to portfolio
 					// TODO: Make portfolio url dynamic, only add "already-here" if coming FROM the portfolio page
 				)}
+				<ProjectPreview ref={undefined} project={selectedProject} />
 			</>
 		),
 	};

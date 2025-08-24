@@ -4,6 +4,7 @@ import PreviewButton from "../../common/ui/preview-button/PreviewButton";
 
 import classes from "./ProjectCard.module.css";
 
+// TODO: Move to isolated Types file.
 export type Image = {
 	src: string;
 	alt: string;

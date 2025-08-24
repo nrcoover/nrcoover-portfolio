@@ -32,7 +32,7 @@ const Modal = ({
 				onClose={onClose}
 			>
 				{title && (
-					<div className={classes.title}>
+					<div className={classes.modalTitle}>
 						<h3>{title}</h3>
 					</div>
 				)}

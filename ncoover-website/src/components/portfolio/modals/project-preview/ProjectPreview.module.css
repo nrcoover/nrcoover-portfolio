@@ -9,22 +9,21 @@
 	padding: 0.5rem 1rem;
 	border: none;
 	border-radius: 4px;
-	background: #12352f;
-	color: #edfcfa;
 	font-size: 1.2rem;
 	cursor: pointer;
+	background-color: var(--button-background);
 }
 
 .preview button:hover {
-	background: #051715;
+	background-color: var(--button-background-hover);
 }
 
 .previewTitle {
 	padding-top: 0.5rem;
 	position: sticky;
 	top: 0;
+	background-color: var(--background-primary);
 	z-index: 10;
-	background-color: #21a89b;
 }
 
 .preview h3 {
@@ -52,7 +51,6 @@
 }
 
 .previewItem {
-	background-color: pink;
 	margin: 0.5rem;
 	flex: 1;
 }
@@ -67,7 +65,6 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	background-color: palevioletred;
 }
 
 .previewIcons p {

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import ProjectCard, { type Project } from "../project-card/ProjectCard";
 
+import Containerizer from "../../common/wrappers/containerizer/Containerizer";
 import classes from "./Carousel.module.css";
 
 interface CarouselProps {
@@ -67,8 +68,8 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 	}, [scroll]);
 
 	return (
-		<section aria-label={title} className={classes.carousel}>
-			<h2>{title}</h2>
+		<Containerizer aria-label={title}>
+			<h2 className={classes.title}>{title}</h2>
 			<div className={classes.controls}>
 				<button
 					className={classes.arrowControl}
@@ -110,7 +111,7 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 					▶
 				</button>
 			</div>
-		</section>
+		</Containerizer>
 	);
 };
 

@@ -9,11 +9,12 @@
 	border: none;
 	border-radius: 8px;
 	padding: 0 2rem 2rem 2rem;
-	background-color: #21a89b;
+	background-color: var(--background-primary);
 	z-index: 10;
 	align-self: center;
 	justify-self: center;
 	position: fixed;
+	box-shadow: var(--shadow-glow);
 }
 
 .modal[open] {
@@ -31,15 +32,15 @@
 	accent-color: #46cebe;
 }
 
-.title {
+.modalTitle {
 	padding-top: 0.5rem;
 	position: sticky;
 	top: 0;
 	z-index: 10;
-	background-color: #21a89b;
+	background-color: var(--background-primary);
 }
 
-.title h3 {
+.modalTitle h3 {
 	font-family: "Handjet", monospace;
 	font-size: 3rem;
 	text-transform: uppercase;
