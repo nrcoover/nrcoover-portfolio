@@ -67,11 +67,11 @@ const ProjectCard = ({
 	const isAiGeneratedImage = project.imageData.coverArt.isAiGeneratedImage;
 
 	const handleSelect = () => {
+		setSelectedProject(project);
 		scrollToIndex(index);
 	};
 
 	const handlePreviewClick = () => {
-		setSelectedProject(project);
 		openPreviewModal();
 	};
 
