@@ -1,27 +1,23 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { PATHS } from "../../constants/paths";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { iconUi } from "../../constants/iconTypes";
 import globalClasses from "../../global.module.css";
 import { AuthUserContext } from "../../store/auth-user-context/AuthUserContext";
+import { LocationContext } from "../../store/location-context/LocationContext";
 import Icon from "../common/icon/Icon";
 import Separator from "../common/separator/Separator";
 import classes from "./SideNavigation.module.css";
 
 const SideNavigation = () => {
-	const location = useLocation();
-	const [currentPath, setCurrentPath] = useState("");
+	const { locationPath } = useContext(LocationContext);
+
 	const { isLoggedIn, openLoginModal } = useContext(AuthUserContext);
 
 	const handleOpenLoginFormModal = () => {
 		openLoginModal();
 	};
-
-	// TODO: Move this logic to a context?
-	useEffect(() => {
-		setCurrentPath(location.pathname);
-	}, [location.pathname]);
 
 	const isTrue = true;
 
@@ -46,7 +42,7 @@ const SideNavigation = () => {
 					<li className={globalClasses.iconContainer}>
 						<NavLink
 							to={
-								currentPath === PATHS.Portfolio.Root
+								locationPath === PATHS.Portfolio.Root
 									? PATHS.Portfolio.AlreadyHere
 									: PATHS.Portfolio.Root
 							}

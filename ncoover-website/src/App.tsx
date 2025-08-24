@@ -9,9 +9,10 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import ProjectDetails from "./pages/ProjectDetails";
 import Root from "./pages/Root";
-import FavoritesContextProvider from "./store/favorites-context/FavoritesContextProvider";
-import ProjectPreviewContextProvider from "./store/project-preview-context/ProjectPreviewContextProvider";
 import AuthUserContextProvider from "./store/auth-user-context/AuthUserContextProvider";
+import FavoritesContextProvider from "./store/favorites-context/FavoritesContextProvider";
+import LocationContextProvider from "./store/location-context/LocationContextProvider";
+import ProjectPreviewContextProvider from "./store/project-preview-context/ProjectPreviewContextProvider";
 
 const router = createBrowserRouter([
 	{
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: PATHS.Portfolio.Root,
-				element: <Portfolio />,
+				element: (
+					<LocationContextProvider>
+						<Portfolio />
+					</LocationContextProvider>
+				),
 				children: [
 					{ path: PATHS.Portfolio.AlreadyHere, element: <Portfolio /> },
 					{ path: PATHS.Portfolio.Favorites, element: <Portfolio /> },

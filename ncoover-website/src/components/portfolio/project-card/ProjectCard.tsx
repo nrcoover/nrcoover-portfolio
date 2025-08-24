@@ -2,7 +2,9 @@ import { useContext } from "react";
 import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext";
 import PreviewButton from "../../common/ui/preview-button/PreviewButton";
 
+import { LocationContext } from "../../../store/location-context/LocationContext";
 import classes from "./ProjectCard.module.css";
+import { PATHS } from "../../../constants/paths";
 
 // TODO: Move to isolated Types file.
 export type Image = {
@@ -62,6 +64,7 @@ const ProjectCard = ({
 	const { isModalOpen, setSelectedProject, openPreviewModal } = useContext(
 		ProjectPreviewContext
 	);
+	const { locationPath } = useContext(LocationContext);
 
 	const isPrimaryCategory = project.tagData.primaryTag === category;
 	const isAiGeneratedImage = project.imageData.coverArt.isAiGeneratedImage;
@@ -109,11 +112,13 @@ const ProjectCard = ({
 							selected ? "" : classes.hiddenPreviewBox
 						}`}
 					>
-						<PreviewButton
-							selected={selected}
-							handlePreviewClick={handlePreviewClick}
-							isModalOpen={isModalOpen}
-						/>
+						{locationPath != PATHS.Portfolio.Favorites && (
+							<PreviewButton
+								selected={selected}
+								handlePreviewClick={handlePreviewClick}
+								isModalOpen={isModalOpen}
+							/>
+						)}
 					</div>
 				</div>
 			</article>

@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState, type JSX } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useContext, useState, type JSX } from "react";
+import { Link } from "react-router-dom";
 import Carousel from "../components/portfolio/carousel/Carousel";
 import HeroBanner from "../components/portfolio/hero-banner/HeroBanner";
 import ProjectPreview from "../components/portfolio/modals/project-preview/ProjectPreview";
@@ -11,11 +11,12 @@ import { createProjectPath } from "../helpers/paths-helper";
 import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
 
 import LoginForm from "../components/portfolio/forms/login-form/LoginForm";
+import { PATHS } from "../constants/paths";
 import { AuthUserContext } from "../store/auth-user-context/AuthUserContext";
 import { FavoritesContext } from "../store/favorites-context/FavoritesContext";
-import classes from "./styles/Portfolio.module.css";
+import { LocationContext } from "../store/location-context/LocationContext";
 import ErrorDefault from "./ErrorDefault";
-import { PATHS } from "../constants/paths";
+import classes from "./styles/Portfolio.module.css";
 
 const filterProjects = (category: string, projects: Project[]): Project[] => {
 	const primaryProjects = projects
@@ -44,20 +45,13 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 
 const Portfolio = () => {
 	const { loginModal } = useContext(AuthUserContext);
-	const { previewModal, selectedProject } = useContext(ProjectPreviewContext);
+	const { locationPath } = useContext(LocationContext);
 	const { favoriteProjects } = useContext(FavoritesContext);
-
-	const location = useLocation();
+	const { previewModal, selectedProject } = useContext(ProjectPreviewContext);
 
 	const dummy_projects = JSON.parse(DUMMY_PROJECTS_JSON);
 
 	const [projects] = useState<Project[]>(dummy_projects);
-	const [currentPath, setCurrentPath] = useState("");
-
-	// TODO: Move this logic to a context?
-	useEffect(() => {
-		setCurrentPath(location.pathname);
-	}, [location.pathname]);
 
 	const sharedPortfolioContent = (
 		<>
@@ -92,11 +86,11 @@ const Portfolio = () => {
 		),
 	};
 
-	const mainContent = contentMap[currentPath] ?? <ErrorDefault />;
+	const mainContent = contentMap[locationPath] ?? <ErrorDefault />;
 
 	return (
 		<>
-			{currentPath.toString()}
+			{locationPath.toString()}
 			<main className={classes.portfolio}>
 				<LoginForm ref={loginModal} />
 				<SideNavigation />
