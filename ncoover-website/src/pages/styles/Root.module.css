@@ -1,0 +1,25 @@
+.sideNavigationOffset {
+	margin-left: var(--side-navigation-width-offset);
+}
+
+a {
+	font-weight: 500;
+	color: white;
+	text-decoration: inherit;
+}
+
+a:hover {
+	color: var(--color-red);
+}
+
+.logo {
+	font-size: 1.75rem;
+	font-weight: 700;
+	opacity: 45%;
+	margin-bottom: 1rem;
+}
+
+.logo span {
+	color: var(--color-red);
+	margin-left: 0.15rem;
+}

@@ -17,7 +17,11 @@ import ProjectPreviewContextProvider from "./store/project-preview-context/Proje
 const router = createBrowserRouter([
 	{
 		path: PATHS.Home,
-		element: <Root />,
+		element: (
+			<LocationContextProvider>
+				<Root />
+			</LocationContextProvider>
+		),
 		errorElement: <ErrorDefault />,
 		children: [
 			{
@@ -26,11 +30,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: PATHS.Portfolio.Root,
-				element: (
-					<LocationContextProvider>
-						<Portfolio />
-					</LocationContextProvider>
-				),
+				element: <Portfolio />,
 				children: [
 					{ path: PATHS.Portfolio.AlreadyHere, element: <Portfolio /> },
 					{ path: PATHS.Portfolio.Favorites, element: <Portfolio /> },

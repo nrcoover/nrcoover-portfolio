@@ -110,7 +110,7 @@ const SideNavigation = () => {
 							>
 								<Icon source={iconUi.ProfileCircle} />
 							</button>
-							{isTrue && <>Profile</>}
+							{isTrue && <>profile</>}
 						</li>
 					) : (
 						<li className={globalClasses.iconContainer}>
@@ -120,7 +120,7 @@ const SideNavigation = () => {
 							>
 								<Icon source={iconUi.Login} />
 							</button>
-							{isTrue && <>Login</>}
+							{isTrue && <>login</>}
 						</li>
 					)}
 					<li className={globalClasses.iconContainer}>
