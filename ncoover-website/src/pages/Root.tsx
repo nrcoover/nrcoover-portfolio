@@ -239,10 +239,11 @@ const Root = () => {
 								</li>
 								<Separator />
 							</ul>
-							<p>© {new Date().getUTCFullYear()}</p>
 						</>
 					)}
+					{!isPortfolio && <Separator />}
 				</nav>
+				<p>© {new Date().getUTCFullYear()}</p>
 			</footer>
 		</>
 	);
