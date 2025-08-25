@@ -8,6 +8,10 @@ import { AuthUserContext } from "../store/auth-user-context/AuthUserContext";
 import { PATHS } from "../constants/paths";
 import { LocationContext } from "../store/location-context/LocationContext";
 
+import Icon from "../components/common/icon/Icon";
+import { iconSocial } from "../constants/iconTypes";
+import { getIconName } from "../helpers/icon-helper";
+
 import globalClasses from "../global.module.css";
 import classes from "./styles/Root.module.css";
 
@@ -34,6 +38,7 @@ const Root = () => {
 					nr<span>C</span>oover
 				</p>
 				<nav className={classes.sideNavigation}>
+					<Separator />
 					<h3>{isPortfolio && "main "}menu</h3>
 					<ul className={classes.list}>
 						<li className={globalClasses.iconContainer}>
@@ -93,6 +98,67 @@ const Root = () => {
 							</NavLink>
 						</li>
 					</ul>
+					<h3 className={classes.externalSitesTitle}>external sites</h3>
+					<div className={classes.previewIconsWrapper}>
+						<ul className={classes.previewIcons}>
+							<li className={globalClasses.iconContainer}>
+								<NavLink
+									to={"https://www.linkedin.com/in/nrcoover/"}
+									className={({ isActive }) =>
+										isActive
+											? (classes.active, globalClasses.iconContainer)
+											: globalClasses.iconContainer
+									}
+									end
+								>
+									<Icon source={iconSocial.LinkedIn} />
+								</NavLink>
+								<p>{getIconName(iconSocial.LinkedIn)}</p>
+							</li>
+							<li className={globalClasses.iconContainer}>
+								<NavLink
+									to={"https://x.com/coovercode"}
+									className={`${({ isActive }: { isActive: boolean }) =>
+										isActive
+											? (classes.active, globalClasses.iconContainer)
+											: globalClasses.iconContainer}`}
+									end
+								>
+									<Icon source={iconSocial.Twitter} />
+								</NavLink>
+								<p>{getIconName(iconSocial.Twitter)}</p>
+							</li>
+							<li className={globalClasses.iconContainer}>
+								<NavLink
+									to={"https://github.com/nrcoover"}
+									className={({ isActive }) =>
+										isActive
+											? (classes.active, globalClasses.iconContainer)
+											: globalClasses.iconContainer
+									}
+									end
+								>
+									<Icon source={iconSocial.GitHub} />
+								</NavLink>
+								<p>{getIconName(iconSocial.GitHub)}</p>
+							</li>
+							<li className={globalClasses.iconContainer}>
+								<NavLink
+									to={"https://codepen.io/nrcoover"}
+									className={({ isActive }) =>
+										isActive
+											? (classes.active, globalClasses.iconContainer)
+											: globalClasses.iconContainer
+									}
+									end
+								>
+									<Icon source={iconSocial.CodePen} />
+								</NavLink>
+								<p>{getIconName(iconSocial.CodePen)}</p>
+							</li>
+						</ul>
+					</div>
+
 					{isPortfolio && (
 						<>
 							<Separator />
@@ -171,7 +237,9 @@ const Root = () => {
 										{isTrue && <>settings</>}
 									</NavLink>
 								</li>
+								<Separator />
 							</ul>
+							<p>© {new Date().getUTCFullYear()}</p>
 						</>
 					)}
 				</nav>

@@ -28,6 +28,7 @@ export const iconSocial = {
 	Facbook: "social.Facebook",
 	GitHub: "social.GitHub",
 	Instagram: "social.Instagram",
+	LinkedIn: "social.LinkedIn",
 	Mastodon: "social.Mastodon",
 	Reddit: "social.Reddit",
 	Steam: "social.Steam",
