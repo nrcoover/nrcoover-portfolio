@@ -37,6 +37,7 @@
 	/* === Backgrounds === */
 	--background-primary: var(--color-black);
 	--background-secondary: var(--color-gray-dark);
+	--background-tertiary: var(--color-gray);
 	--background-overlay: rgba(20, 20, 20, 0.85); /* modal overlays */
 
 	/* === Borders / Dividers === */
