@@ -114,6 +114,7 @@ const ProjectCard = ({
 					/>
 
 					<PrimaryTagIcon
+						primaryTag={project.tagData.primaryTag}
 						maxWidth={"1.5rem"}
 						absoluteLocations={[
 							absoluteLocationTypes.Right,

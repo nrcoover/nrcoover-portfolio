@@ -67,6 +67,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 		<>
 			<div className={classes.previewTitle}>
 				<PrimaryTagIcon
+					primaryTag={project.tagData.primaryTag}
 					maxWidth={"3rem"}
 					absoluteLocations={[
 						absoluteLocationTypes.Left,

@@ -7,9 +7,10 @@ import {
 import Icon from "../../icon/Icon";
 
 import classes from "./PrimaryTagIcon.module.css";
+import { tagToIconMap } from "../../../../helpers/tagToIconMapHellper";
 
 interface PrimaryTagIconProps {
-	iconSource?: IconSource;
+	primaryTag: string;
 	maxWidth?: string;
 	maxHeight?: string;
 	absoluteLocations?: AbsoluteLocationKey[];
@@ -17,7 +18,7 @@ interface PrimaryTagIconProps {
 }
 
 const PrimaryTagIcon = ({
-	iconSource = iconUi.QuestionMark,
+	primaryTag,
 	maxWidth = "3rem",
 	maxHeight = maxWidth,
 	absoluteLocations = [],
@@ -35,7 +36,8 @@ const PrimaryTagIcon = ({
 		}, {}),
 	};
 
-	console.log(sizingStyles);
+	const iconSource: IconSource =
+		tagToIconMap[primaryTag] ?? iconUi.QuestionMark;
 
 	return (
 		<div className={classes.primaryTagIcon} style={absoluteStyles}>
