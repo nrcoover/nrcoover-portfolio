@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext";
 import PreviewButton from "../../common/ui/preview-button/PreviewButton";
 
-import { LocationContext } from "../../../store/location-context/LocationContext";
-import classes from "./ProjectCard.module.css";
 import { PATHS } from "../../../constants/paths";
+// import { absoluteLocationTypes } from "../../../constants/styles";
+import { LocationContext } from "../../../store/location-context/LocationContext";
 import FavoriteButton from "../../common/ui/favorite-button/FavoriteButton";
+import PrimaryTagIcon from "../../common/ui/primary-tag-icon/PrimaryTagIcon";
+import classes from "./ProjectCard.module.css";
 
 // TODO: Move to isolated Types file.
 export type Image = {
@@ -104,9 +106,12 @@ const ProjectCard = ({
 						</div>
 					)}
 
-					<div className={classes.favoriteButton}>
-						<FavoriteButton project={project} maxWidth={"2rem"} />
-					</div>
+					<FavoriteButton project={project} maxWidth={"2rem"} />
+
+					<PrimaryTagIcon
+						maxWidth={"1.5rem"}
+						absoluteLocations={["Right", "Bottom"]}
+					/>
 
 					<div className={classes.titleBox}>
 						<h3>{project.title}</h3>

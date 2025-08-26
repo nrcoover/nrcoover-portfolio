@@ -1,9 +1,10 @@
-import { svgMusic, svgSocial, svgUi } from "./iconSvg";
+import { svgMusic, svgSocial, svgUi, svgDev } from "./iconSvg";
 
 export const iconMap = {
 	music: svgMusic,
 	social: svgSocial,
 	ui: svgUi,
+	dev: svgDev,
 } as const;
 
 type InnerKeys<T> = T extends Record<string, unknown> ? keyof T : never;

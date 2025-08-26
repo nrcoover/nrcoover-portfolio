@@ -1,15 +1,17 @@
 export type IconSource =
 	| (typeof iconMusic)[keyof typeof iconMusic]
 	| (typeof iconSocial)[keyof typeof iconSocial]
-	| (typeof iconUi)[keyof typeof iconUi];
+	| (typeof iconUi)[keyof typeof iconUi]
+	| (typeof iconDev)[keyof typeof iconDev];
 
 // TYPES
-export type IconTypes = "music" | "social" | "ui";
+export type IconTypes = "music" | "social" | "ui" | "dev";
 
 export const iconTypes = {
 	Music: "music",
 	Social: "social",
 	Ui: "ui",
+	Dev: "dev",
 } as const;
 
 // LABELS
@@ -57,6 +59,10 @@ export const iconUi = {
 	Star: "ui.Star",
 } as const;
 
+export const iconDev = {
+	React: "dev.React",
+} as const;
+
 export type IconLabelMap = {
 	music: keyof typeof iconMusic;
 	social: keyof typeof iconSocial;
@@ -67,4 +73,5 @@ export type IconLabelMap = {
 export type IconData =
 	| { type: "music"; label: keyof typeof iconMusic }
 	| { type: "social"; label: keyof typeof iconSocial }
-	| { type: "ui"; label: keyof typeof iconUi };
+	| { type: "ui"; label: keyof typeof iconUi }
+	| { type: "dev"; label: keyof typeof iconDev };
