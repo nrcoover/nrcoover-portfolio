@@ -46,18 +46,21 @@ const Portfolio = () => {
 	const { loginModal } = useContext(AuthUserContext);
 	const { locationPath } = useContext(LocationContext);
 	const { favoriteProjects } = useContext(FavoritesContext);
-
 	const { previewModal, setSelectedProject, selectedProject } = useContext(
 		ProjectPreviewContext
 	);
+
+	const isFavoritesPage = locationPath === PATHS.Portfolio.Favorites;
 
 	const dummy_projects = JSON.parse(DUMMY_PROJECTS_JSON);
 
 	const [projects] = useState<Project[]>(dummy_projects);
 
 	useEffect(() => {
-		setSelectedProject(favoriteProjects[0]);
-	}, [favoriteProjects, setSelectedProject]);
+		if (isFavoritesPage) {
+			setSelectedProject(favoriteProjects[0]);
+		}
+	}, [favoriteProjects, isFavoritesPage, setSelectedProject]);
 
 	const sharedPortfolioContent = (
 		<>
