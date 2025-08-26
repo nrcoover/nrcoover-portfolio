@@ -57,6 +57,7 @@ export const iconUi = {
 	Search: "ui.Search",
 	Settings: "ui.Settings",
 	Star: "ui.Star",
+	QuestionMark: "ui.QuestionMark",
 } as const;
 
 export const iconDev = {

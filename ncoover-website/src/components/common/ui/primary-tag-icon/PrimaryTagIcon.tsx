@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { iconDev } from "../../../../constants/iconTypes";
+import { iconUi, type IconSource } from "../../../../constants/iconTypes";
 import {
 	absoluteLocation,
 	type AbsoluteLocationKey,
@@ -9,6 +9,7 @@ import Icon from "../../icon/Icon";
 import classes from "./PrimaryTagIcon.module.css";
 
 interface PrimaryTagIconProps {
+	iconSource?: IconSource;
 	maxWidth?: string;
 	maxHeight?: string;
 	absoluteLocations?: AbsoluteLocationKey[];
@@ -16,12 +17,12 @@ interface PrimaryTagIconProps {
 }
 
 const PrimaryTagIcon = ({
+	iconSource = iconUi.QuestionMark,
 	maxWidth = "3rem",
 	maxHeight = maxWidth,
 	absoluteLocations = [],
 	margin = "0",
 }: PrimaryTagIconProps) => {
-	// Merge sizing + positioning into a single CSSProperties object
 	const sizingStyles: CSSProperties = {
 		maxHeight,
 		maxWidth,
@@ -39,7 +40,7 @@ const PrimaryTagIcon = ({
 	return (
 		<div className={classes.primaryTagIcon} style={absoluteStyles}>
 			<Icon
-				source={iconDev.React}
+				source={iconSource}
 				className={classes.iconSizing}
 				style={sizingStyles}
 			/>
