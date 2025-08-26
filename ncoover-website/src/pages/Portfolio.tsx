@@ -1,4 +1,4 @@
-import { useContext, useState, type JSX } from "react";
+import { useContext, useEffect, useState, type JSX } from "react";
 import Carousel from "../components/portfolio/carousel/Carousel";
 import HeroBanner from "../components/portfolio/hero-banner/HeroBanner";
 import ProjectPreview from "../components/portfolio/modals/project-preview/ProjectPreview";
@@ -46,11 +46,18 @@ const Portfolio = () => {
 	const { loginModal } = useContext(AuthUserContext);
 	const { locationPath } = useContext(LocationContext);
 	const { favoriteProjects } = useContext(FavoritesContext);
-	const { previewModal, selectedProject } = useContext(ProjectPreviewContext);
+
+	const { previewModal, setSelectedProject, selectedProject } = useContext(
+		ProjectPreviewContext
+	);
 
 	const dummy_projects = JSON.parse(DUMMY_PROJECTS_JSON);
 
 	const [projects] = useState<Project[]>(dummy_projects);
+
+	useEffect(() => {
+		setSelectedProject(favoriteProjects[0]);
+	}, [favoriteProjects, setSelectedProject]);
 
 	const sharedPortfolioContent = (
 		<>
