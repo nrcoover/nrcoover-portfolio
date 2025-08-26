@@ -64,7 +64,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const previewContent = (
 		<>
 			<div className={classes.previewTitle}>
-				<FavoriteButton project={project} />
+				<FavoriteButton project={project} padding={".5rem 0"} />
 				<h3>{title}</h3>
 			</div>
 			<div className={classes.previewContent}>

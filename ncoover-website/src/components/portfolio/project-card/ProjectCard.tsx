@@ -106,7 +106,11 @@ const ProjectCard = ({
 						</div>
 					)}
 
-					<FavoriteButton project={project} maxWidth={"2rem"} />
+					<FavoriteButton
+						project={project}
+						maxWidth={"2rem"}
+						padding={".5rem"}
+					/>
 
 					<PrimaryTagIcon
 						maxWidth={"1.5rem"}

@@ -10,12 +10,14 @@ interface FavoriteButtonProps {
 	project: Project | undefined;
 	maxWidth?: string;
 	maxHeight?: string;
+	padding?: string;
 }
 
 const FavoriteButton = ({
 	project,
 	maxWidth = "3rem",
 	maxHeight = maxWidth,
+	padding = "0",
 }: FavoriteButtonProps) => {
 	const { favoriteProjectsIds, addFavorite, removeFavorite } =
 		useContext(FavoritesContext);
@@ -50,6 +52,7 @@ const FavoriteButton = ({
 				type="button"
 				onClick={isFavoriteProject ? handleRemoveFavorite : handleAddFavorite}
 				disabled={!project}
+				style={{ padding: padding }}
 			>
 				<Icon
 					source={isFavoriteProject ? iconUi.Favorite : iconUi.FavoriteOutline}
