@@ -12,17 +12,20 @@ interface PrimaryTagIconProps {
 	maxWidth?: string;
 	maxHeight?: string;
 	absoluteLocations?: AbsoluteLocationKey[];
+	margin?: string;
 }
 
 const PrimaryTagIcon = ({
 	maxWidth = "3rem",
 	maxHeight = maxWidth,
 	absoluteLocations = [],
+	margin = "0",
 }: PrimaryTagIconProps) => {
 	// Merge sizing + positioning into a single CSSProperties object
 	const sizingStyles: CSSProperties = {
 		maxHeight,
 		maxWidth,
+		margin: margin,
 	};
 
 	const absoluteStyles = {

@@ -72,6 +72,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 						absoluteLocationTypes.Left,
 						absoluteLocationTypes.Bottom,
 					]}
+					margin={".75rem 0"}
 				/>
 				<h3>{title}</h3>
 				<FavoriteButton project={project} padding={".5rem 0"} />

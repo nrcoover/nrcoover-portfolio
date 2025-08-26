@@ -119,6 +119,7 @@ const ProjectCard = ({
 							absoluteLocationTypes.Right,
 							absoluteLocationTypes.Bottom,
 						]}
+						margin={"0.75rem"}
 					/>
 
 					<div className={classes.titleBox}>
