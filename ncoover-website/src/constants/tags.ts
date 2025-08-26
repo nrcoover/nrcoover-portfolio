@@ -1,4 +1,4 @@
-export const TAGS = {
+export const TAGS: Record<string, string> = {
 	// Frontend
 	html: "html",
 	html5: "html5",

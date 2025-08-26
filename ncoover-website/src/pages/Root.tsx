@@ -10,7 +10,7 @@ import { LocationContext } from "../store/location-context/LocationContext";
 
 import Icon from "../components/common/icon/Icon";
 import { iconSocial } from "../constants/iconTypes";
-import { getIconName } from "../helpers/icon-helper";
+import { getIconName } from "../helpers/iconHelper";
 
 import globalClasses from "../global.module.css";
 import classes from "./styles/Root.module.css";

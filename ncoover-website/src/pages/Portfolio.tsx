@@ -17,13 +17,14 @@ import ErrorDefault from "./ErrorDefault";
 import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
 import PROJECTS_JSON from "../data/projects";
 
+import { getCategoryForTag } from "../helpers/tagMappingHelpers.ts";
 import classes from "./styles/Portfolio.module.css";
 
 const filterProjects = (category: string, projects: Project[]): Project[] => {
 	const primaryProjects = projects
 		.filter((project) => {
 			const primaryTag = project.tagData.primaryTag;
-			return primaryTag === category;
+			return getCategoryForTag(primaryTag) === category;
 		})
 		.sort(
 			(a: Project, b: Project) =>
@@ -60,7 +61,8 @@ const Portfolio = () => {
 	console.log(dummyProjectsData);
 	console.log(projectsData);
 
-	const [projects] = useState<Project[]>(dummyProjectsData);
+	// const [projects] = useState<Project[]>(dummyProjectsData);
+	const [projects] = useState<Project[]>(projectsData);
 
 	useEffect(() => {
 		if (isFavoritesPage) {

@@ -63,8 +63,9 @@ const ProjectCard = ({
 				<div className={classes.coverArtContainer}>
 					<img
 						src={
-							project.imageData.coverArt.coverArtPath ??
-							"../../../../public/images/projects/cover-art/typescript-project_ai-generated.png"
+							project.imageData.coverArt.coverArtPath
+								? project.imageData.coverArt.coverArtPath
+								: "../../../../public/images/projects/cover-art/typescript-project_ai-generated.png"
 						}
 						alt={`Cover art for ${project.title}`}
 					/>

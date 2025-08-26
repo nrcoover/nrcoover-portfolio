@@ -2,7 +2,7 @@ import { useContext, type Ref } from "react";
 import { NavLink } from "react-router-dom";
 import { iconSocial } from "../../../../constants/iconTypes";
 import { PATHS } from "../../../../constants/paths";
-import { getIconName } from "../../../../helpers/icon-helper";
+import { getIconName } from "../../../../helpers/iconHelper.ts";
 import { ProjectPreviewContext } from "../../../../store/project-preview-context/ProjectPreviewContext";
 import type { Project } from "../../../../typings/index.d.ts";
 import Icon from "../../../common/icon/Icon";

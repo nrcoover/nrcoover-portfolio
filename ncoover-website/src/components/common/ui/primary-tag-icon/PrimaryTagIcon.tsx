@@ -7,7 +7,7 @@ import {
 import Icon from "../../icon/Icon";
 
 import classes from "./PrimaryTagIcon.module.css";
-import { tagToIconMap } from "../../../../helpers/tagToIconMapHellper";
+import { tagToIconMap } from "../../../../helpers/tagMappingHelpers";
 
 interface PrimaryTagIconProps {
 	primaryTag: string;
