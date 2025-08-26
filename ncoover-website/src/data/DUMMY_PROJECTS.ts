@@ -7,7 +7,9 @@ const DUMMY_PROJECTS: Project[] = [
 		title: "A Fine React Project",
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-		dateAdded: new Date(2024, 11, 2),
+		dateCreated: new Date(2024, 11, 2),
+		dateUpdated: new Date(),
+		isFeatured: true,
 		isFavorite: false,
 		imageData: {
 			coverArt: {
@@ -45,7 +47,9 @@ const DUMMY_PROJECTS: Project[] = [
 		title: "A rare A.I. Project",
 		description:
 			"Netus nisi platea curae praesent leo facilisis ultricies, maecenas clom nostra hendrerit convallis ad felis sodales, sapien commodo pulvinar massa ante sem. Torquent habitant feugiat velit et consequat facilisi ridiculus curae nulla ac id felis, fermentum nullam dapibus mauris facilisis varius conubia taciti ornare hac ullamcorper.",
-		dateAdded: new Date(2025, 2, 23),
+		dateCreated: new Date(2025, 2, 23),
+		dateUpdated: new Date(),
+		isFeatured: false,
 		isFavorite: false,
 		imageData: {
 			coverArt: {
@@ -83,7 +87,9 @@ const DUMMY_PROJECTS: Project[] = [
 		title: "A Wild JavaScript Project Has Appeared!",
 		description:
 			"Aliquam magna ultricies clom non tortor nulla libero facilisi nec eget, euismod condimentum praesent at sagittis imperdiet rhoncus felis morbi, potenti conubia sed vel parturient lobortis suscipit nibh viverra. Molestie fusce elementum a libero natoque nostra habitant dapibus lobortis parturient ultrices condimentum, faucibus porttitor posuere dictum massa primis platea nisi aenean enim magnis.",
-		dateAdded: new Date(2025, 7, 8),
+		dateCreated: new Date(2025, 7, 8),
+		dateUpdated: new Date(),
+		isFeatured: true,
 		isFavorite: false,
 		imageData: {
 			coverArt: {
@@ -121,7 +127,9 @@ const DUMMY_PROJECTS: Project[] = [
 		title: "A Finer React Project",
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-		dateAdded: new Date(2024, 11, 2),
+		dateCreated: new Date(2024, 11, 2),
+		dateUpdated: new Date(),
+		isFeatured: false,
 		isFavorite: false,
 		imageData: {
 			coverArt: {
@@ -159,7 +167,9 @@ const DUMMY_PROJECTS: Project[] = [
 		title: "A rarer A.I. Project",
 		description:
 			"Netus nisi platea curae praesent leo facilisis ultricies, maecenas clom nostra hendrerit convallis ad felis sodales, sapien commodo pulvinar massa ante sem. Torquent habitant feugiat velit et consequat facilisi ridiculus curae nulla ac id felis, fermentum nullam dapibus mauris facilisis varius conubia taciti ornare hac ullamcorper.",
-		dateAdded: new Date(2025, 2, 23),
+		dateCreated: new Date(2025, 2, 23),
+		dateUpdated: new Date(),
+		isFeatured: false,
 		isFavorite: false,
 		imageData: {
 			coverArt: {
@@ -197,7 +207,9 @@ const DUMMY_PROJECTS: Project[] = [
 		title: "A Wilder JavaScript Project Has Appeared!",
 		description:
 			"Aliquam magna ultricies clom non tortor nulla libero facilisi nec eget, euismod condimentum praesent at sagittis imperdiet rhoncus felis morbi, potenti conubia sed vel parturient lobortis suscipit nibh viverra. Molestie fusce elementum a libero natoque nostra habitant dapibus lobortis parturient ultrices condimentum, faucibus porttitor posuere dictum massa primis platea nisi aenean enim magnis.",
-		dateAdded: new Date(2025, 7, 8),
+		dateCreated: new Date(2025, 7, 8),
+		dateUpdated: new Date(),
+		isFeatured: false,
 		isFavorite: false,
 		imageData: {
 			coverArt: {

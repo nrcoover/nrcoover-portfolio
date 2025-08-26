@@ -1,142 +1,5 @@
-export type Image = {
-	src: string;
-	alt: string;
-};
-
-export type CoverArt = {
-	coverArtPath: string;
-	isAiGeneratedImage: boolean;
-};
-
-export type ImageData = {
-	coverArt: CoverArt;
-	imagesPaths: Image[];
-};
-
-export type TagData = {
-	primaryTag: string;
-	otherTags: string[];
-};
-
-export type CodeLinks = {
-	type: string;
-	url: string;
-};
-
-export type Project = {
-	id: number;
-	title: string;
-	description: string;
-	dateCreated: Date;
-	dateUpdated: Date;
-	isFeatured: boolean;
-	isFavorite: boolean;
-	imageData: ImageData;
-	tagData: TagData;
-	links: CodeLinks[];
-};
-
-const TAGS = {
-	// Frontend
-	html: "html",
-	html5: "html5",
-	css: "css",
-	sass: "sass",
-	scss: "scss",
-	responsiveWebDesign: "responsive web design (rwd)",
-	less: "less",
-
-	javascript: "javascript",
-	typescript: "typescript",
-	react: "react",
-	vue: "vue",
-	angular: "angular",
-	svelte: "svelte",
-	nextjs: "nextjs",
-	nuxtjs: "nuxtjs",
-	redux: "redux",
-	mobx: "mobx",
-	jquery: "jquery",
-	bootstrap: "bootstrap",
-	tailwind: "tailwind",
-	materialui: "materialui",
-	chakraui: "chakraui",
-	vite: "vite",
-	webpack: "webpack",
-	parcel: "parcel",
-	babel: "babel",
-
-	// Backend
-	nodejs: "nodejs",
-	express: "express",
-	nestjs: "nestjs",
-	fastify: "fastify",
-	hapi: "hapi",
-	koa: "koa",
-	php: "php",
-	laravel: "laravel",
-	ruby: "ruby",
-	rails: "rails",
-	python: "python",
-	django: "django",
-	flask: "flask",
-	fastapi: "fastapi",
-	csharp: "csharp",
-	dotnet: "dotnet",
-	java: "java",
-	spring: "spring",
-	golang: "golang",
-	rust: "rust",
-
-	// Full Stack / Other
-	graphql: "graphql",
-	restapi: "restapi",
-	apollo: "apollo",
-	prisma: "prisma",
-	mongodb: "mongodb",
-	postgresql: "postgresql",
-	mysql: "mysql",
-	sqlite: "sqlite",
-	firebase: "firebase",
-	supabase: "supabase",
-	aws: "aws",
-	azure: "azure",
-	docker: "docker",
-	kubernetes: "kubernetes",
-	git: "git",
-	github: "github",
-	gitlab: "gitlab",
-	bitbucket: "bitbucket",
-	jest: "jest",
-	mocha: "mocha",
-	cypress: "cypress",
-	playwright: "playwright",
-	storybook: "storybook",
-};
-
-const CATEGORIES = {
-	featured: "Featured",
-	newArrivals: "New Arrivals",
-	miniGames: "Mini Games",
-	ai: "A. I.",
-	react: "React",
-	typeScript: "TypeScript",
-	cSharp: "C#",
-	javaScript: "Vanilla JavaScript",
-	simpleWeb: "HTML &amp; CSS",
-};
-
-// const CATEGORIES_ARRAY = [
-// 	CATEGORIES.featured,
-// 	CATEGORIES.newArrivals,
-// 	CATEGORIES.miniGames,
-// 	CATEGORIES.ai,
-// 	CATEGORIES.react,
-// 	CATEGORIES.typeScript,
-// 	CATEGORIES.cSharp,
-// 	CATEGORIES.javaScript,
-// 	CATEGORIES.simpleWeb,
-// ];
+import { TAGS } from "../constants/tags";
+import type { Project } from "../typings";
 
 const PROJECTS: Project[] = [
 	{
@@ -144,7 +7,6 @@ const PROJECTS: Project[] = [
 		title: "",
 		description: "",
 		dateCreated: new Date(),
-
 		dateUpdated: new Date(),
 		isFeatured: false,
 		isFavorite: false,
@@ -169,7 +31,7 @@ const PROJECTS: Project[] = [
 			],
 		},
 		tagData: {
-			primaryTag: CATEGORIES.javaScript,
+			primaryTag: TAGS.javascript,
 			otherTags: [],
 		},
 		links: [

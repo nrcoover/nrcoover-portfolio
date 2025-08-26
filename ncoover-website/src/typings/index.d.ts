@@ -27,7 +27,9 @@ export type Project = {
 	id: number;
 	title: string;
 	description: string;
-	dateAdded: Date;
+	dateCreated: Date;
+	dateUpdated: Date;
+	isFeatured: boolean;
 	isFavorite: boolean;
 	imageData: ImageData;
 	tagData: TagData;

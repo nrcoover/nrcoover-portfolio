@@ -27,7 +27,7 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 		})
 		.sort(
 			(a: Project, b: Project) =>
-				new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()
+				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
 		);
 
 	const secondaryProjects = projects
@@ -38,7 +38,7 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 		})
 		.sort(
 			(a: Project, b: Project) =>
-				new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()
+				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
 		);
 
 	return [...primaryProjects, ...secondaryProjects];
