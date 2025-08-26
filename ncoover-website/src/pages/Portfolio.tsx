@@ -5,7 +5,6 @@ import ProjectPreview from "../components/portfolio/modals/project-preview/Proje
 import type { Project } from "../components/portfolio/project-card/ProjectCard";
 import SideNavigation from "../components/side-navigation/SideNavigation";
 import CATEGORIES_ARRAY from "../constants/projectCategories";
-import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
 import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
 
 import LoginForm from "../components/portfolio/forms/login-form/LoginForm";
@@ -15,6 +14,8 @@ import { FavoritesContext } from "../store/favorites-context/FavoritesContext";
 import { LocationContext } from "../store/location-context/LocationContext";
 import ErrorDefault from "./ErrorDefault";
 
+import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
+import PROJECTS_JSON from "../data/projects";
 import classes from "./styles/Portfolio.module.css";
 
 const filterProjects = (category: string, projects: Project[]): Project[] => {
@@ -52,9 +53,13 @@ const Portfolio = () => {
 
 	const isFavoritesPage = locationPath === PATHS.Portfolio.Favorites;
 
-	const dummy_projects = JSON.parse(DUMMY_PROJECTS_JSON);
+	const dummyProjectsData = JSON.parse(DUMMY_PROJECTS_JSON);
+	const projectsData = JSON.parse(PROJECTS_JSON);
 
-	const [projects] = useState<Project[]>(dummy_projects);
+	console.log(dummyProjectsData);
+	console.log(projectsData);
+
+	const [projects] = useState<Project[]>(dummyProjectsData);
 
 	useEffect(() => {
 		if (isFavoritesPage) {
