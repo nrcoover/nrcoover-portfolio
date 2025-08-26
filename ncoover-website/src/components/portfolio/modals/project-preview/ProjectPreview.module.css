@@ -90,31 +90,6 @@
 	margin: 0;
 }
 
-.favoriteButton {
-	position: absolute;
-	float: right;
-	z-index: 10;
-	top: 0%;
-	right: 0%;
-	background-color: none;
-}
-
-.favoriteButton button {
-	background: none;
-	fill: rgb(255, 255, 255);
-	opacity: 100%;
-}
-
-.favoriteButton button:hover {
-	background: none;
-	fill: red;
-	opacity: 70%;
-}
-
-.favoriteButton svg {
-	stroke-width: 15px;
-}
-
 .previewLink {
 	width: 3rem;
 	height: 3rem;

@@ -1,9 +1,8 @@
 import { useContext, type Ref } from "react";
 import { NavLink } from "react-router-dom";
-import { iconSocial, iconUi } from "../../../../constants/iconTypes";
+import { iconSocial } from "../../../../constants/iconTypes";
 import { PATHS } from "../../../../constants/paths";
 import { getIconName } from "../../../../helpers/icon-helper";
-import { FavoritesContext } from "../../../../store/favorites-context/FavoritesContext";
 import { ProjectPreviewContext } from "../../../../store/project-preview-context/ProjectPreviewContext";
 import Icon from "../../../common/icon/Icon";
 import Modal from "../../../common/modal/Modal";
@@ -12,6 +11,7 @@ import type { Project } from "../../project-card/ProjectCard";
 
 import globalClasses from "../../../../global.module.css";
 import Separator from "../../../common/separator/Separator";
+import FavoriteButton from "../../../common/ui/favorite-button/FavoriteButton";
 import Containerizer from "../../../common/wrappers/containerizer/Containerizer";
 import classes from "./ProjectPreview.module.css";
 
@@ -23,48 +23,14 @@ interface ProjectPreviewProps {
 // TODO: Change to useing Projects native IsFavorite property once data is retrieved from database and not hardcoded.
 const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const { closePreviewModal } = useContext(ProjectPreviewContext);
-	const { favoriteProjectsIds, addFavorite, removeFavorite } =
-		useContext(FavoritesContext);
-
-	const isFavoriteProject =
-		!!project && favoriteProjectsIds.includes(project.id);
 
 	const handleCloseModal = () => {
 		closePreviewModal();
 	};
 
-	const handleAddFavorite = () => {
-		if (!project) {
-			return;
-		}
-		console.log(project.id);
-		addFavorite(project);
-	};
-
-	const handleRemoveFavorite = () => {
-		if (!project) {
-			return;
-		}
-		console.log("Item removed");
-		removeFavorite(project.id);
-	};
-
 	const closeButton = (
 		<button type="button" onClick={handleCloseModal}>
 			Close
-		</button>
-	);
-
-	const favoriteButton = (
-		<button
-			type="button"
-			onClick={isFavoriteProject ? handleRemoveFavorite : handleAddFavorite}
-			disabled={!project}
-		>
-			<Icon
-				source={isFavoriteProject ? iconUi.Favorite : iconUi.FavoriteOutline}
-				className={classes.previewLink}
-			/>
 		</button>
 	);
 
@@ -98,7 +64,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const previewContent = (
 		<>
 			<div className={classes.previewTitle}>
-				<div className={classes.favoriteButton}>{favoriteButton}</div>
+				<FavoriteButton project={project} />
 				<h3>{title}</h3>
 			</div>
 			<div className={classes.previewContent}>

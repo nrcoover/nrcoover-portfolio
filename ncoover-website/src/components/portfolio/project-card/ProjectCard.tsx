@@ -5,6 +5,7 @@ import PreviewButton from "../../common/ui/preview-button/PreviewButton";
 import { LocationContext } from "../../../store/location-context/LocationContext";
 import classes from "./ProjectCard.module.css";
 import { PATHS } from "../../../constants/paths";
+import FavoriteButton from "../../common/ui/favorite-button/FavoriteButton";
 
 // TODO: Move to isolated Types file.
 export type Image = {
@@ -102,6 +103,10 @@ const ProjectCard = ({
 							<p>A.I. Generated Image</p>
 						</div>
 					)}
+
+					<div className={classes.favoriteButton}>
+						<FavoriteButton project={project} maxWidth={"2rem"} />
+					</div>
 
 					<div className={classes.titleBox}>
 						<h3>{project.title}</h3>

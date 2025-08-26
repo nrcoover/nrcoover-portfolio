@@ -1,0 +1,39 @@
+.link {
+	width: 3rem;
+	height: 3rem;
+}
+
+.favoriteButton {
+	position: absolute;
+	float: right;
+	z-index: 10;
+	top: 0%;
+	right: 0%;
+	background-color: none;
+}
+
+.favoriteButton button {
+	background: none !important;
+	fill: rgb(255, 255, 255);
+	opacity: 100%;
+	outline: none;
+	margin: none;
+	border: none;
+}
+
+.favoriteButton button:active,
+.favoriteButton button:hover,
+.favoriteButton button:focus,
+.favoriteButton button:focus-visible {
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.favoriteButton button:hover {
+	opacity: 70%;
+}
+
+.favoriteButton svg {
+	stroke-width: 15px;
+}
