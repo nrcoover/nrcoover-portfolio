@@ -4,6 +4,7 @@ import PreviewButton from "../../common/ui/preview-button/PreviewButton";
 
 import { PATHS } from "../../../constants/paths";
 // import { absoluteLocationTypes } from "../../../constants/styles";
+import { absoluteLocationTypes } from "../../../constants/styles";
 import { LocationContext } from "../../../store/location-context/LocationContext";
 import FavoriteButton from "../../common/ui/favorite-button/FavoriteButton";
 import PrimaryTagIcon from "../../common/ui/primary-tag-icon/PrimaryTagIcon";
@@ -114,7 +115,10 @@ const ProjectCard = ({
 
 					<PrimaryTagIcon
 						maxWidth={"1.5rem"}
-						absoluteLocations={["Right", "Bottom"]}
+						absoluteLocations={[
+							absoluteLocationTypes.Right,
+							absoluteLocationTypes.Bottom,
+						]}
 					/>
 
 					<div className={classes.titleBox}>

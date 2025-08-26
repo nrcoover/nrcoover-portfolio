@@ -9,9 +9,11 @@ import Modal from "../../../common/modal/Modal";
 import ImageCarousel from "../../image-carousel/ImageCarousel";
 import type { Project } from "../../project-card/ProjectCard";
 
+import { absoluteLocationTypes } from "../../../../constants/styles";
 import globalClasses from "../../../../global.module.css";
 import Separator from "../../../common/separator/Separator";
 import FavoriteButton from "../../../common/ui/favorite-button/FavoriteButton";
+import PrimaryTagIcon from "../../../common/ui/primary-tag-icon/PrimaryTagIcon";
 import Containerizer from "../../../common/wrappers/containerizer/Containerizer";
 import classes from "./ProjectPreview.module.css";
 
@@ -64,8 +66,15 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const previewContent = (
 		<>
 			<div className={classes.previewTitle}>
-				<FavoriteButton project={project} padding={".5rem 0"} />
+				<PrimaryTagIcon
+					maxWidth={"3rem"}
+					absoluteLocations={[
+						absoluteLocationTypes.Left,
+						absoluteLocationTypes.Bottom,
+					]}
+				/>
 				<h3>{title}</h3>
+				<FavoriteButton project={project} padding={".5rem 0"} />
 			</div>
 			<div className={classes.previewContent}>
 				<div className={classes.previewItem}>
