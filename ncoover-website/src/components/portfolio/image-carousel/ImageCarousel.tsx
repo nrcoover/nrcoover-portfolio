@@ -1,6 +1,6 @@
 import { useState } from "react";
+import type { Image } from "../../../typings/index.d.ts";
 import ImageWrapper from "../../common/wrappers/image-wrapper/ImageWrapper";
-import type { Image } from "../../portfolio/project-card/ProjectCard";
 
 import classes from "./ImageCarousel.module.css";
 

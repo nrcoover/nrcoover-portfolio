@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import type { Project } from "../../components/portfolio/project-card/ProjectCard";
+import type { Project } from "../../typings/index.d.ts";
 import { AuthUserContext } from "../auth-user-context/AuthUserContext";
 import { FavoritesContext } from "./FavoritesContext";
 

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { iconUi } from "../../../../constants/iconTypes";
 import { FavoritesContext } from "../../../../store/favorites-context/FavoritesContext";
-import type { Project } from "../../../portfolio/project-card/ProjectCard";
+import type { Project } from "../../../../typings/index.d.ts";
 import Icon from "../../icon/Icon";
 
 import classes from "./FavoriteButton.module.css";

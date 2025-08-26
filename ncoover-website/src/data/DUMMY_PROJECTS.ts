@@ -1,4 +1,4 @@
-import type { Project } from "../components/portfolio/project-card/ProjectCard";
+import type { Project } from "../typings/index.d";
 import CATEGORIES_ARRAY, { CATEGORIES } from "../constants/projectCategories";
 
 const DUMMY_PROJECTS: Project[] = [

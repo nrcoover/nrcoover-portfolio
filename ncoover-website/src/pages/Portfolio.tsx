@@ -2,10 +2,10 @@ import { useContext, useEffect, useState, type JSX } from "react";
 import Carousel from "../components/portfolio/carousel/Carousel";
 import HeroBanner from "../components/portfolio/hero-banner/HeroBanner";
 import ProjectPreview from "../components/portfolio/modals/project-preview/ProjectPreview";
-import type { Project } from "../components/portfolio/project-card/ProjectCard";
 import SideNavigation from "../components/side-navigation/SideNavigation";
 import CATEGORIES_ARRAY from "../constants/projectCategories";
 import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
+import type { Project } from "../typings/index.d.ts";
 
 import LoginForm from "../components/portfolio/forms/login-form/LoginForm";
 import { PATHS } from "../constants/paths";
@@ -16,6 +16,7 @@ import ErrorDefault from "./ErrorDefault";
 
 import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
 import PROJECTS_JSON from "../data/projects";
+
 import classes from "./styles/Portfolio.module.css";
 
 const filterProjects = (category: string, projects: Project[]): Project[] => {

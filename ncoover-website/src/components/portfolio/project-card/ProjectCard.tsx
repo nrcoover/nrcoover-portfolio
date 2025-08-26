@@ -3,49 +3,13 @@ import { ProjectPreviewContext } from "../../../store/project-preview-context/Pr
 import PreviewButton from "../../common/ui/preview-button/PreviewButton";
 
 import { PATHS } from "../../../constants/paths";
-// import { absoluteLocationTypes } from "../../../constants/styles";
 import { absoluteLocationTypes } from "../../../constants/styles";
 import { LocationContext } from "../../../store/location-context/LocationContext";
+import type { Project } from "../../../typings";
 import FavoriteButton from "../../common/ui/favorite-button/FavoriteButton";
 import PrimaryTagIcon from "../../common/ui/primary-tag-icon/PrimaryTagIcon";
+
 import classes from "./ProjectCard.module.css";
-
-// TODO: Move to isolated Types file.
-export type Image = {
-	src: string;
-	alt: string;
-};
-
-export type CoverArt = {
-	coverArtPath: string;
-	isAiGeneratedImage: boolean;
-};
-
-export type ImageData = {
-	coverArt: CoverArt;
-	imagesPaths: Image[];
-};
-
-export type TagData = {
-	primaryTag: string;
-	otherTags: string[];
-};
-
-export type CodeLinks = {
-	type: string;
-	url: string;
-};
-
-export type Project = {
-	id: number;
-	title: string;
-	description: string;
-	dateAdded: Date;
-	isFavorite: boolean;
-	imageData: ImageData;
-	tagData: TagData;
-	links: CodeLinks[];
-};
 
 interface ProjectCardProps {
 	project: Project;

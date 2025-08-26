@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { Project } from "../../components/portfolio/project-card/ProjectCard.tsx";
+import type { Project } from "../../typings/index.d";
 
 interface FavoritesContextProps {
 	favoriteProjects: Project[];

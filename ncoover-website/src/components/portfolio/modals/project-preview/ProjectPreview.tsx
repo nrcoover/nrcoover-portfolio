@@ -4,10 +4,10 @@ import { iconSocial } from "../../../../constants/iconTypes";
 import { PATHS } from "../../../../constants/paths";
 import { getIconName } from "../../../../helpers/icon-helper";
 import { ProjectPreviewContext } from "../../../../store/project-preview-context/ProjectPreviewContext";
+import type { Project } from "../../../../typings/index.d.ts";
 import Icon from "../../../common/icon/Icon";
 import Modal from "../../../common/modal/Modal";
 import ImageCarousel from "../../image-carousel/ImageCarousel";
-import type { Project } from "../../project-card/ProjectCard";
 
 import { absoluteLocationTypes } from "../../../../constants/styles";
 import globalClasses from "../../../../global.module.css";
@@ -15,6 +15,7 @@ import Separator from "../../../common/separator/Separator";
 import FavoriteButton from "../../../common/ui/favorite-button/FavoriteButton";
 import PrimaryTagIcon from "../../../common/ui/primary-tag-icon/PrimaryTagIcon";
 import Containerizer from "../../../common/wrappers/containerizer/Containerizer";
+
 import classes from "./ProjectPreview.module.css";
 
 interface ProjectPreviewProps {

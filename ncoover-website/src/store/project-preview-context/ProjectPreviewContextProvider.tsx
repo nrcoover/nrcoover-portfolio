@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
+import type { Project } from "../../typings/index.d.ts";
 import { ProjectPreviewContext } from "./ProjectPreviewContext";
-import type { Project } from "../../components/portfolio/project-card/ProjectCard";
 
 interface ProjectPreviewContextProviderProps {
 	children: React.ReactNode;

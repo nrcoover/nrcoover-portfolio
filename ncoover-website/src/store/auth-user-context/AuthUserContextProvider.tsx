@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import type { Project } from "../../typings/index.d.ts";
 import { hashPassword } from "../../utility/hashing/cryptoUtils";
 import { AuthUserContext, type User } from "./AuthUserContext";
-import type { Project } from "../../components/portfolio/project-card/ProjectCard";
 
 interface AuthUserContextProviderProps {
 	children: React.ReactNode;

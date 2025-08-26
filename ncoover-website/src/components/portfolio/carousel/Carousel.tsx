@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import ProjectCard, { type Project } from "../project-card/ProjectCard";
 
+import type { Project } from "../../../typings";
 import Containerizer from "../../common/wrappers/containerizer/Containerizer";
+import ProjectCard from "../project-card/ProjectCard";
 import classes from "./Carousel.module.css";
 
 interface CarouselProps {
