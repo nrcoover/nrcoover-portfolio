@@ -490,7 +490,8 @@ const PROJECTS: Project[] = [
 		isFavorite: false,
 		imageData: {
 			coverArt: {
-				coverArtPath: "",
+				coverArtPath:
+					"../../public/images/projects/cover-art/cover-art_the-indie-game-dev.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
