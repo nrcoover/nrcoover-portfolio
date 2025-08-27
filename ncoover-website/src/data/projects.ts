@@ -44,14 +44,15 @@ const PROJECTS: Project[] = [
 		id: 1,
 		title: "Instagram Login Page Clone (2021)",
 		description:
-			"An exercise in HTML, CSS, and JavaScript, this project aims to create a pixel-perfect recreation of the Instagram Login page. This page does connect to a backend database, but features layered cyclic images and mock input functionality.",
+			"An exercise in HTML, CSS, and JavaScript, this project aims to create a pixel-perfect recreation of the Instagram Login page. This page does not connect to a backend database, but features layered cyclic images and mock input functionality.",
 		dateCreated: new Date(2021, 9, 17),
 		dateUpdated: new Date(2021, 12, 26),
 		isFeatured: true,
 		isFavorite: false,
 		imageData: {
 			coverArt: {
-				coverArtPath: "",
+				coverArtPath:
+					"../../public/images/projects/cover-art/cover-art_instagram-login-page-clone.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -98,7 +99,8 @@ const PROJECTS: Project[] = [
 		isFavorite: false,
 		imageData: {
 			coverArt: {
-				coverArtPath: "",
+				coverArtPath:
+					"../../public/images/projects/cover-art/cover-art_manual-in-lorem-ipsum.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
