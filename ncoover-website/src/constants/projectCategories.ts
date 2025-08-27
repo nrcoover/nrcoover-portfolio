@@ -1,4 +1,5 @@
 export const CATEGORIES = {
+	favorites: "Favorites",
 	featured: "Featured",
 	newArrivals: "New Arrivals",
 	miniGames: "Mini Games",
@@ -11,6 +12,7 @@ export const CATEGORIES = {
 };
 
 const CATEGORIES_ARRAY = [
+	CATEGORIES.favorites,
 	CATEGORIES.featured,
 	CATEGORIES.newArrivals,
 	CATEGORIES.miniGames,

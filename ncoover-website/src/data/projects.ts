@@ -2,44 +2,44 @@ import { TAGS } from "../constants/tags";
 import type { Project } from "../typings";
 
 const PROJECTS: Project[] = [
-	{
-		id: 0,
-		title: "",
-		description: "",
-		dateCreated: new Date(),
-		dateUpdated: new Date(),
-		isFeatured: false,
-		isFavorite: false,
-		imageData: {
-			coverArt: {
-				coverArtPath: "",
-				isAiGeneratedImage: false,
-			},
-			imagesPaths: [
-				{
-					src: "",
-					alt: "",
-				},
-				{
-					src: "",
-					alt: "",
-				},
-				{
-					src: "",
-					alt: "",
-				},
-			],
-		},
-		tagData: {
-			primaryTag: TAGS.javascript,
-			otherTags: [],
-		},
-		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "" },
-			{ type: "website", url: "" },
-		],
-	},
+	// {
+	// 	id: 0,
+	// 	title: "",
+	// 	description: "",
+	// 	dateCreated: new Date(),
+	// 	dateUpdated: new Date(),
+	// 	isFeatured: false,
+	// 	isFavorite: false,
+	// 	imageData: {
+	// 		coverArt: {
+	// 			coverArtPath: "",
+	// 			isAiGeneratedImage: false,
+	// 		},
+	// 		imagesPaths: [
+	// 			{
+	// 				src: "",
+	// 				alt: "",
+	// 			},
+	// 			{
+	// 				src: "",
+	// 				alt: "",
+	// 			},
+	// 			{
+	// 				src: "",
+	// 				alt: "",
+	// 			},
+	// 		],
+	// 	},
+	// 	tagData: {
+	// 		primaryTag: TAGS.javascript,
+	// 		otherTags: [],
+	// 	},
+	// 	links: [
+	// 		{ type: "github", url: "" },
+	// 		{ type: "codepen", url: "" },
+	// 		{ type: "website", url: "" },
+	// 	],
+	// },
 	{
 		id: 1,
 		title: "Instagram Login Page Clone (2021)",
@@ -51,8 +51,7 @@ const PROJECTS: Project[] = [
 		isFavorite: false,
 		imageData: {
 			coverArt: {
-				coverArtPath:
-					"../../public/placeholder-images/pexels-xexusdesigner-777001.jpg",
+				coverArtPath: "",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -749,50 +748,50 @@ const PROJECTS: Project[] = [
 			{ type: "website", url: "" },
 		],
 	},
-	{
-		id: 18,
-		title: "",
-		description: "",
-		dateCreated: new Date(),
-		dateUpdated: new Date(),
-		isFeatured: false,
-		isFavorite: false,
-		imageData: {
-			coverArt: {
-				coverArtPath: "",
-				isAiGeneratedImage: false,
-			},
-			imagesPaths: [
-				{
-					src: "",
-					alt: "",
-				},
-				{
-					src: "",
-					alt: "",
-				},
-				{
-					src: "",
-					alt: "",
-				},
-			],
-		},
-		tagData: {
-			primaryTag: TAGS.javascript,
-			otherTags: [
-				TAGS.html,
-				TAGS.html5,
-				TAGS.css,
-				TAGS.responsiveWebDesign,
-				TAGS.javascript,
-			],
-		},
-		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "" },
-			{ type: "website", url: "" },
-		],
-	},
+	// {
+	// 	id: 18,
+	// 	title: "",
+	// 	description: "",
+	// 	dateCreated: new Date(),
+	// 	dateUpdated: new Date(),
+	// 	isFeatured: false,
+	// 	isFavorite: false,
+	// 	imageData: {
+	// 		coverArt: {
+	// 			coverArtPath: "",
+	// 			isAiGeneratedImage: false,
+	// 		},
+	// 		imagesPaths: [
+	// 			{
+	// 				src: "",
+	// 				alt: "",
+	// 			},
+	// 			{
+	// 				src: "",
+	// 				alt: "",
+	// 			},
+	// 			{
+	// 				src: "",
+	// 				alt: "",
+	// 			},
+	// 		],
+	// 	},
+	// 	tagData: {
+	// 		primaryTag: TAGS.javascript,
+	// 		otherTags: [
+	// 			TAGS.html,
+	// 			TAGS.html5,
+	// 			TAGS.css,
+	// 			TAGS.responsiveWebDesign,
+	// 			TAGS.javascript,
+	// 		],
+	// 	},
+	// 	links: [
+	// 		{ type: "github", url: "" },
+	// 		{ type: "codepen", url: "" },
+	// 		{ type: "website", url: "" },
+	// 	],
+	// },
 ];
 
 const PROJECTS_JSON = JSON.stringify(PROJECTS);

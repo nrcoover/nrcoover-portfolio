@@ -3,7 +3,7 @@ import Carousel from "../components/portfolio/carousel/Carousel";
 import HeroBanner from "../components/portfolio/hero-banner/HeroBanner";
 import ProjectPreview from "../components/portfolio/modals/project-preview/ProjectPreview";
 import SideNavigation from "../components/side-navigation/SideNavigation";
-import CATEGORIES_ARRAY from "../constants/projectCategories";
+import CATEGORIES_ARRAY, { CATEGORIES } from "../constants/projectCategories";
 import { ProjectPreviewContext } from "../store/project-preview-context/ProjectPreviewContext";
 import type { Project } from "../typings/index.d.ts";
 
@@ -70,12 +70,37 @@ const Portfolio = () => {
 		}
 	}, [favoriteProjects, isFavoritesPage, setSelectedProject]);
 
+	const featuredProjects = projects.filter((project) => project.isFeatured);
+
+	const today = new Date();
+	const timespanInDays = 90;
+
+	const pastDateSetup = new Date(today);
+	pastDateSetup.setDate(pastDateSetup.getDate() - timespanInDays);
+
+	const newArrivalCutOff: Date = pastDateSetup;
+	const newArrivalProjects = projects.filter(
+		(project) => new Date(project.dateUpdated) > newArrivalCutOff
+	);
+
+	console.log("Featured: ", featuredProjects);
+	console.log("New Arrivals: ", newArrivalProjects);
+
 	const sharedPortfolioContent = (
 		<>
 			<ProjectPreview ref={previewModal} project={selectedProject} />
 			<HeroBanner />
 			{favoriteProjects.length > 0 && (
-				<Carousel title={"Favorites"} projects={favoriteProjects} />
+				<Carousel title={CATEGORIES.favorites} projects={favoriteProjects} />
+			)}
+			{featuredProjects.length > 0 && (
+				<Carousel title={CATEGORIES.featured} projects={featuredProjects} />
+			)}
+			{newArrivalProjects.length > 0 && (
+				<Carousel
+					title={CATEGORIES.newArrivals}
+					projects={newArrivalProjects}
+				/>
 			)}
 			{CATEGORIES_ARRAY &&
 				CATEGORIES_ARRAY.map((category) => {

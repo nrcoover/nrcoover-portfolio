@@ -13,5 +13,5 @@ export function getCategoryForTag(tag: string): string | null {
 			return category;
 		}
 	}
-	return null; // if no mapping found
+	return null;
 }
