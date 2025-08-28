@@ -67,6 +67,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const previewContent = (
 		<>
 			<div className={classes.previewTitle}>
+				{/* TODO: Reavaluate absolute positioning of Primary Tag and Favorite Button (may not need to be absolute now that it is within a flex container) */}
 				<PrimaryTagIcon
 					primaryTag={project.tagData.primaryTag}
 					maxWidth={"3rem"}
@@ -76,12 +77,16 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 					]}
 					margin={".75rem 0"}
 				/>
-				{/* TODO: Replace wrapped text with ...  */}
-				<h3>{title}</h3>
+				<div className={classes.titleWrapper}>
+					<h3>{title}</h3>
+				</div>
 				<FavoriteButton project={project} padding={".5rem 0"} />
+				<Separator width={"100%"} margin={"0"}></Separator>
 			</div>
 			<div className={classes.previewContent}>
 				<div className={classes.previewItem}>
+					<h4>Title</h4>
+					<p>{title}</p>
 					<h4>Project Description</h4>
 					<p>{description}</p>
 					<h4>Image Description</h4>
