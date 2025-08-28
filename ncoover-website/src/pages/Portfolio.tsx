@@ -14,10 +14,12 @@ import { FavoritesContext } from "../store/favorites-context/FavoritesContext";
 import { LocationContext } from "../store/location-context/LocationContext";
 import ErrorDefault from "./ErrorDefault";
 
-import DUMMY_PROJECTS_JSON from "../data/DUMMY_PROJECTS";
 import PROJECTS_JSON from "../data/projects";
 
-import { getCategoryForTag } from "../helpers/tagMappingHelpers.ts";
+import {
+	getCategoryForTag,
+	getTagsForCategory,
+} from "../helpers/tagMappingHelpers.ts";
 import classes from "./styles/Portfolio.module.css";
 
 const filterProjects = (category: string, projects: Project[]): Project[] => {
@@ -32,11 +34,19 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 		)
 		.reverse();
 
+	const categoryTags = getTagsForCategory(category) ?? [];
+
 	const secondaryProjects = projects
 		.filter((project) => {
 			const primaryTag = project.tagData.primaryTag;
-			const tags = project.tagData.otherTags;
-			return tags.includes(category) && primaryTag !== category;
+			const otherTags = project.tagData.otherTags;
+
+			// Only include projects where an "otherTag" belongs to this category
+			// but the primaryTag is NOT part of this category
+			return (
+				otherTags.some((tag) => categoryTags.includes(tag)) &&
+				getCategoryForTag(primaryTag) !== category
+			);
 		})
 		.sort(
 			(a: Project, b: Project) =>
@@ -57,13 +67,8 @@ const Portfolio = () => {
 
 	const isFavoritesPage = locationPath === PATHS.Portfolio.Favorites;
 
-	const dummyProjectsData = JSON.parse(DUMMY_PROJECTS_JSON);
 	const projectsData = JSON.parse(PROJECTS_JSON);
 
-	console.log(dummyProjectsData);
-	console.log(projectsData);
-
-	// const [projects] = useState<Project[]>(dummyProjectsData);
 	const [projects] = useState<Project[]>(projectsData);
 
 	useEffect(() => {
@@ -95,9 +100,6 @@ const Portfolio = () => {
 		)
 		.reverse();
 
-	console.log("Featured: ", featuredProjects);
-	console.log("New Arrivals: ", newArrivalProjects);
-
 	const sharedPortfolioContent = (
 		<>
 			<ProjectPreview ref={previewModal} project={selectedProject} />
@@ -118,7 +120,13 @@ const Portfolio = () => {
 				CATEGORIES_ARRAY.map((category) => {
 					const filteredProjects = filterProjects(category, projects);
 					if (filteredProjects.length > 0) {
-						return <Carousel title={category} projects={filteredProjects} />;
+						return (
+							<Carousel
+								key={category}
+								title={category}
+								projects={filteredProjects}
+							/>
+						);
 					}
 				})}
 		</>

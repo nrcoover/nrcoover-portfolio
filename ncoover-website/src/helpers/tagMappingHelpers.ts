@@ -24,3 +24,10 @@ export function getCategoryForTag(tag: string): string | null {
 	}
 	return null;
 }
+
+export function getTagsForCategory(category: string): string[] | null {
+	if (CATEGORY_TAGS_MAP[category]) {
+		return CATEGORY_TAGS_MAP[category];
+	}
+	return null;
+}
