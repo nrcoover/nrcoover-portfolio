@@ -9,6 +9,7 @@ import type { Project } from "../../../typings";
 import FavoriteButton from "../../common/ui/favorite-button/FavoriteButton";
 import PrimaryTagIcon from "../../common/ui/primary-tag-icon/PrimaryTagIcon";
 
+import { getCategoryForTag } from "../../../helpers/tagMappingHelpers";
 import classes from "./ProjectCard.module.css";
 
 interface ProjectCardProps {
@@ -34,7 +35,18 @@ const ProjectCard = ({
 	);
 	const { locationPath } = useContext(LocationContext);
 
-	const isPrimaryCategory = project.tagData.primaryTag === category;
+	const isPrimaryCategory =
+		getCategoryForTag(project.tagData.primaryTag) === category;
+
+	// console.log(
+	// 	"Primary Tag: ",
+	// 	project.tagData.primaryTag,
+	// 	"; Category for tag:",
+	// 	getCategoryForTag(project.tagData.primaryTag)
+	// );
+	// console.log("Category: ", category);
+	// console.log("Is Primary Category: ", isPrimaryCategory);
+
 	const isAiGeneratedImage = project.imageData.coverArt.isAiGeneratedImage;
 
 	const handleSelect = () => {
@@ -65,7 +77,7 @@ const ProjectCard = ({
 						src={
 							project.imageData.coverArt.coverArtPath
 								? project.imageData.coverArt.coverArtPath
-								: "/images/projects/cover-art/typescript-project_ai-generated.png"
+								: "/images/projects/cover-art/typescript-project_ai-generated.png" //TODO: Update default image
 						}
 						alt={`Cover art for ${project.title}`}
 					/>

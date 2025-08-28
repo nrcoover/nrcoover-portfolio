@@ -61,7 +61,17 @@ export const iconUi = {
 } as const;
 
 export const iconDev = {
+	Bootstrap: "dev.Bootstrap",
+	CSharp: "dev.CSharp",
+	Css: "dev.Css",
+	Html: "dev.Html",
+	Html5: "dev.Html5",
+	JavaScript: "dev.JavaScript",
+	Python: "dev.Python",
 	React: "dev.React",
+	Sass: "dev.Sass",
+	Scss: "dev.Scss",
+	TypeScript: "dev.TypeScript",
 } as const;
 
 export type IconLabelMap = {

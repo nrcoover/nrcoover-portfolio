@@ -76,6 +76,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 					]}
 					margin={".75rem 0"}
 				/>
+				{/* TODO: Replace wrapped text with ...  */}
 				<h3>{title}</h3>
 				<FavoriteButton project={project} padding={".5rem 0"} />
 			</div>
