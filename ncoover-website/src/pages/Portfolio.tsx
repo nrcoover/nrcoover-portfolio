@@ -72,18 +72,28 @@ const Portfolio = () => {
 		}
 	}, [favoriteProjects, isFavoritesPage, setSelectedProject]);
 
-	const featuredProjects = projects.filter((project) => project.isFeatured);
+	const featuredProjects = projects
+		.filter((project) => project.isFeatured)
+		.sort(
+			(a: Project, b: Project) =>
+				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
+		)
+		.reverse();
 
 	const today = new Date();
-	const timespanInDays = 90;
+	const timespanInDays = 1300; //TODO: adjust to reasonable number of days (1300 is not "new" lol)
 
 	const pastDateSetup = new Date(today);
 	pastDateSetup.setDate(pastDateSetup.getDate() - timespanInDays);
 
 	const newArrivalCutOff: Date = pastDateSetup;
-	const newArrivalProjects = projects.filter(
-		(project) => new Date(project.dateUpdated) > newArrivalCutOff
-	);
+	const newArrivalProjects = projects
+		.filter((project) => new Date(project.dateUpdated) > newArrivalCutOff)
+		.sort(
+			(a: Project, b: Project) =>
+				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
+		)
+		.reverse();
 
 	console.log("Featured: ", featuredProjects);
 	console.log("New Arrivals: ", newArrivalProjects);
