@@ -2,44 +2,44 @@ import { TAGS } from "../constants/tags";
 import type { Project } from "../typings";
 
 const PROJECTS: Project[] = [
-	// {
-	// 	id: 0,
-	// 	title: "",
-	// 	description: "",
-	// 	dateCreated: new Date(),
-	// 	dateUpdated: new Date(),
-	// 	isFeatured: false,
-	// 	isFavorite: false,
-	// 	imageData: {
-	// 		coverArt: {
-	// 			coverArtPath: "",
-	// 			isAiGeneratedImage: false,
-	// 		},
-	// 		imagesPaths: [
-	// 			{
-	// 				src: "",
-	// 				alt: "",
-	// 			},
-	// 			{
-	// 				src: "",
-	// 				alt: "",
-	// 			},
-	// 			{
-	// 				src: "",
-	// 				alt: "",
-	// 			},
-	// 		],
-	// 	},
-	// 	tagData: {
-	// 		primaryTag: TAGS.javascript,
-	// 		otherTags: [],
-	// 	},
-	// 	links: [
-	// 		{ type: "github", url: "" },
-	// 		{ type: "codepen", url: "" },
-	// 		{ type: "website", url: "" },
-	// 	],
-	// },
+	{
+		id: 0,
+		title: "",
+		description: "",
+		dateCreated: new Date(),
+		dateUpdated: new Date(),
+		isFeatured: false,
+		isFavorite: false,
+		imageData: {
+			coverArt: {
+				coverArtPath: "",
+				isAiGeneratedImage: false,
+			},
+			imagesPaths: [
+				{
+					src: "",
+					alt: "",
+				},
+				{
+					src: "",
+					alt: "",
+				},
+				{
+					src: "",
+					alt: "",
+				},
+			],
+		},
+		tagData: {
+			primaryTag: TAGS.javascript,
+			otherTags: [],
+		},
+		links: [
+			{ type: "github", url: "" },
+			{ type: "codepen", url: "" },
+			{ type: "website", url: "" },
+		],
+	},
 	{
 		id: 1,
 		title: "Instagram Login Page Clone (2021)",
@@ -52,20 +52,20 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_instagram-login-page-clone.png",
+					"/images/projects/cover-art/cover-art_instagram-login-page-clone.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
 				{
-					src: "../placeholder-images/pexels-xexusdesigner-777001.jpg",
+					src: "/placeholder-images/pexels-xexusdesigner-777001.jpg",
 					alt: "Test image 1",
 				},
 				{
-					src: "../placeholder-images/pexels-joshsorenson-1714208.jpg",
+					src: "/placeholder-images/pexels-joshsorenson-1714208.jpg",
 					alt: "Test image 2",
 				},
 				{
-					src: "../placeholder-images/pexels-designecologist-1779487.jpg",
+					src: "/placeholder-images/pexels-designecologist-1779487.jpg",
 					alt: "Test image 3",
 				},
 			],
@@ -100,7 +100,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_manual-in-lorem-ipsum.png",
+					"/images/projects/cover-art/cover-art_manual-in-lorem-ipsum.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -139,7 +139,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_freemote-blog-replica.png",
+					"/images/projects/cover-art/cover-art_freemote-blog-replica.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -178,7 +178,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_alpacas-product-details-page.png",
+					"/images/projects/cover-art/cover-art_alpacas-product-details-page.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -217,7 +217,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_boxes-plus-landing-page.png",
+					"/images/projects/cover-art/cover-art_boxes-plus-landing-page.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -256,7 +256,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_adidas-landing-page.png",
+					"/images/projects/cover-art/cover-art_adidas-landing-page.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -298,7 +298,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_adidas-landing-page-alternate-design.png",
+					"/images/projects/cover-art/cover-art_adidas-landing-page-alternate-design.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -340,7 +340,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_cayce-pollard-resume.png",
+					"/images/projects/cover-art/cover-art_cayce-pollard-resume.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -382,7 +382,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_how-to-use-flexbox.png",
+					"/images/projects/cover-art/cover-art_how-to-use-flexbox.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -421,7 +421,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_mock-login-form.png",
+					"/images/projects/cover-art/cover-art_mock-login-form.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -461,7 +461,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_setting-out-to-sea.png",
+					"/images/projects/cover-art/cover-art_setting-out-to-sea.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -500,7 +500,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_the-indie-game-dev.png",
+					"/images/projects/cover-art/cover-art_the-indie-game-dev.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -539,7 +539,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_food-service-delivery-summary.png",
+					"/images/projects/cover-art/cover-art_food-service-delivery-summary.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -579,7 +579,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_maxstrong-exercise-coach.png",
+					"/images/projects/cover-art/cover-art_maxstrong-exercise-coach.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -627,7 +627,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_remotely-aok-job-board.png",
+					"/images/projects/cover-art/cover-art_remotely-aok-job-board.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -676,7 +676,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/cover-art_ui-tab-selector-dark-mode.png",
+					"/images/projects/cover-art/cover-art_ui-tab-selector-dark-mode.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -725,7 +725,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"../images/projects/cover-art/ai-cover-art_quizapalooza.png",
+					"/images/projects/cover-art/ai-cover-art_quizapalooza.png",
 				isAiGeneratedImage: true,
 			},
 			imagesPaths: [

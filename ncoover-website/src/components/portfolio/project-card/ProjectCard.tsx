@@ -65,7 +65,7 @@ const ProjectCard = ({
 						src={
 							project.imageData.coverArt.coverArtPath
 								? project.imageData.coverArt.coverArtPath
-								: "../../../../public/images/projects/cover-art/typescript-project_ai-generated.png"
+								: "/images/projects/cover-art/typescript-project_ai-generated.png"
 						}
 						alt={`Cover art for ${project.title}`}
 					/>
