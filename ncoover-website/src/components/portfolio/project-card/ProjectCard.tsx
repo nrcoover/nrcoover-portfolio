@@ -91,10 +91,6 @@ const ProjectCard = ({
 						margin={"0.75rem"}
 					/>
 
-					<div className={classes.titleBox}>
-						<h3>{project.title}</h3>
-						<p>{project.description}</p>
-					</div>
 					<div
 						className={`${classes.previewBox} ${
 							selected ? "" : classes.hiddenPreviewBox
