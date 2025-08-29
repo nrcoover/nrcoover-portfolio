@@ -1,3 +1,11 @@
+export type Settings = {
+	displayMode: string;
+	displayAllDecorators: boolean;
+	displayImageAiLabel: boolean;
+	displayFavoritesIcon: boolean;
+	displayPrimaryTagIcon: boolean;
+};
+
 export type Image = {
 	src: string;
 	alt: string;

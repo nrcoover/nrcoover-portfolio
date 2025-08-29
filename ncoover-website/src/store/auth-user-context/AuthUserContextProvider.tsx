@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import type { Project } from "../../typings/index.d.ts";
+import type { Project, Settings } from "../../typings/index.d.ts";
 import { hashPassword } from "../../utility/hashing/cryptoUtils";
 import { AuthUserContext, type User } from "./AuthUserContext";
+import { defaultSettings } from "../settings-context/SettingsContext.ts";
 
 interface AuthUserContextProviderProps {
 	children: React.ReactNode;
@@ -33,7 +34,12 @@ const AuthUserContextProvider = ({
 
 	async function createUser(username: string, password: string) {
 		const passwordHash = await hashPassword(password);
-		const newUser: User = { username, passwordHash, favorites: [] };
+		const newUser: User = {
+			username,
+			passwordHash,
+			favorites: [],
+			settings: defaultSettings,
+		};
 		localStorage.setItem("mockUser", JSON.stringify(newUser));
 		setUser(newUser);
 	}
@@ -76,6 +82,20 @@ const AuthUserContextProvider = ({
 		localStorage.setItem("mockUser", JSON.stringify(updatedUser));
 	};
 
+	const getUserSettings = (): Settings => {
+		if (!user) return defaultSettings;
+		const localUser = localStorage.getItem("mockUser");
+		const settings: Settings = localUser ? JSON.parse(localUser).settings : {};
+		return settings;
+	};
+
+	const updateUserSettings = (settings: Settings) => {
+		if (!user) return;
+		const updatedUser = { ...user, settings };
+		setUser(updatedUser);
+		localStorage.setItem("mockUser", JSON.stringify(updatedUser));
+	};
+
 	const logout = () => {
 		setUser(null);
 	};
@@ -95,11 +115,13 @@ const AuthUserContextProvider = ({
 		user,
 		createUser,
 		login,
+		getUserFavoritesById,
 		updateUserFavorites,
+		getUserSettings,
+		updateUserSettings,
 		logout,
 		deleteAccount,
 		isLoggedIn,
-		getUserFavoritesById,
 	};
 
 	return (

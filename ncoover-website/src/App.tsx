@@ -13,6 +13,7 @@ import AuthUserContextProvider from "./store/auth-user-context/AuthUserContextPr
 import FavoritesContextProvider from "./store/favorites-context/FavoritesContextProvider";
 import LocationContextProvider from "./store/location-context/LocationContextProvider";
 import ProjectPreviewContextProvider from "./store/project-preview-context/ProjectPreviewContextProvider";
+import SettingsContextProvider from "./store/settings-context/SettingsContextProvider";
 
 const router = createBrowserRouter([
 	{
@@ -56,11 +57,13 @@ const App = () => {
 	return (
 		<>
 			<AuthUserContextProvider>
-				<FavoritesContextProvider>
-					<ProjectPreviewContextProvider>
-						<RouterProvider router={router}></RouterProvider>
-					</ProjectPreviewContextProvider>
-				</FavoritesContextProvider>
+				<SettingsContextProvider>
+					<FavoritesContextProvider>
+						<ProjectPreviewContextProvider>
+							<RouterProvider router={router}></RouterProvider>
+						</ProjectPreviewContextProvider>
+					</FavoritesContextProvider>
+				</SettingsContextProvider>
 			</AuthUserContextProvider>
 		</>
 	);

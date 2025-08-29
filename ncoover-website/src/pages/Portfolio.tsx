@@ -16,6 +16,7 @@ import ErrorDefault from "./ErrorDefault";
 
 import PROJECTS_JSON from "../data/projects";
 
+import UserSettings from "../components/portfolio/modals/user-settings/UserSettings.tsx";
 import {
 	getCategoryForTag,
 	getTagsForCategory,
@@ -104,6 +105,7 @@ const Portfolio = () => {
 		<>
 			<ProjectPreview ref={previewModal} project={selectedProject} />
 			<HeroBanner />
+			<UserSettings />
 			{favoriteProjects.length > 0 && (
 				<Carousel title={CATEGORIES.favorites} projects={favoriteProjects} />
 			)}
