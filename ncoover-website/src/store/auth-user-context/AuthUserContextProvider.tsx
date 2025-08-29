@@ -97,6 +97,8 @@ const AuthUserContextProvider = ({
 	};
 
 	const logout = () => {
+		// TODO: rather than set user to null, create new property for user "isLoggedIn" and set to false
+		// might want to make IsLoggedIn a separate state, rather than saving as a property of user. (not sure if this would cause issues with the login process)
 		setUser(null);
 	};
 
