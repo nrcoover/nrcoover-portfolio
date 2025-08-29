@@ -18,7 +18,7 @@ const SettingsContextProvider = ({
 	const { isLoggedIn, getUserSettings, updateUserSettings, user } =
 		useContext(AuthUserContext);
 
-	const [, setUserSettings] = useState(defaultSettings);
+	const [userSettings, setUserSettings] = useState(defaultSettings);
 
 	// Sync settings when user logs in/out
 	useEffect(() => {
@@ -82,6 +82,7 @@ const SettingsContextProvider = ({
 	};
 
 	const contextsetting = {
+		userSettings,
 		toggleSetting,
 	};
 

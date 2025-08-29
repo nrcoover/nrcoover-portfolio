@@ -11,7 +11,7 @@ import classes from "./UserSettings.module.css";
 
 const UserSettings = () => {
 	const { user, closeLoginModal } = useContext(AuthUserContext);
-	const { toggleSetting } = useContext(SettingsContext);
+	const { userSettings, toggleSetting } = useContext(SettingsContext);
 
 	const handleCloseModal = () => {
 		closeLoginModal();
@@ -37,15 +37,12 @@ const UserSettings = () => {
 		toggleSetting(SETTINGS_LABELS.primaryTagIcon);
 	};
 
-	console.log(user?.settings);
-
 	const sharedContent = (
 		<>
-			{/* {user?.settings} */}
 			Theme
 			<Toggle
 				title={"Light / Dark Mode"}
-				isOn={user?.settings?.displayMode === DISPLAY_MODE.light ? false : true}
+				isOn={userSettings.displayMode === DISPLAY_MODE.dark}
 				onToggle={handleDisplayModeSetting}
 				leftLabel={"Light"}
 				rightLabel={"Dark"}
@@ -53,38 +50,22 @@ const UserSettings = () => {
 			Project Decorators
 			<Toggle
 				title={"All Decorators"}
-				isOn={
-					user?.settings?.displayAllDecorators
-						? user.settings.displayAllDecorators
-						: false
-				}
+				isOn={userSettings.displayAllDecorators}
 				onToggle={handleAllDecoratorsSetting}
 			/>
 			<Toggle
 				title={"Image A.I. Label"}
-				isOn={
-					user?.settings?.displayImageAiLabel
-						? user.settings.displayImageAiLabel
-						: false
-				}
+				isOn={userSettings.displayImageAiLabel}
 				onToggle={handleImageAiLabelSetting}
 			/>
 			<Toggle
 				title={"Favorites Icon"}
-				isOn={
-					user?.settings?.displayFavoritesIcon
-						? user.settings.displayFavoritesIcon
-						: false
-				}
+				isOn={userSettings.displayFavoritesIcon}
 				onToggle={handleFavoritesIconSetting}
 			/>
 			<Toggle
 				title={"Primary Tag Icon"}
-				isOn={
-					user?.settings?.displayPrimaryTagIcon
-						? user.settings.displayPrimaryTagIcon
-						: false
-				}
+				isOn={userSettings.displayPrimaryTagIcon}
 				onToggle={handlePrimaryTagIconSetting}
 			/>
 			<button
