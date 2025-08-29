@@ -3,9 +3,9 @@ import type { Settings } from "../../typings";
 import { AuthUserContext } from "../auth-user-context/AuthUserContext";
 import {
 	defaultSettings,
+	DISPLAY_MODE,
 	SETTINGS_LABELS,
 	SettingsContext,
-	type DisplayMode,
 } from "./SettingsContext";
 
 interface SettingsContextProviderProps {
@@ -18,62 +18,58 @@ const SettingsContextProvider = ({
 	const { isLoggedIn, getUserSettings, updateUserSettings, user } =
 		useContext(AuthUserContext);
 
-	const [userSettings, setUserSettings] = useState(defaultSettings);
+	const [, setUserSettings] = useState(defaultSettings);
 
 	// Sync settings when user logs in/out
 	useEffect(() => {
 		if (isLoggedIn) {
-			setUserSettings(getUserSettings() ?? userSettings);
+			setUserSettings(getUserSettings() ?? defaultSettings);
 		} else {
 			setUserSettings(defaultSettings);
 		}
-	}, [getUserSettings, isLoggedIn, user, userSettings]);
+	}, [getUserSettings, isLoggedIn, user]);
 
-	const toggleSetting = (
-		label: string,
-		setting: DisplayMode | boolean
-	): void => {
+	const toggleSetting = (label: string): void => {
 		setUserSettings((settings) => {
-			let updatedSettings: Settings = settings;
+			let updatedSettings: Settings = { ...settings };
 
 			switch (label) {
 				case SETTINGS_LABELS.displayMode:
-					if (typeof setting === "string") {
-						updatedSettings.displayMode = setting;
-					}
+					updatedSettings.displayMode =
+						settings.displayMode === DISPLAY_MODE.dark
+							? DISPLAY_MODE.light
+							: DISPLAY_MODE.dark;
 					break;
 
 				case SETTINGS_LABELS.allDecorators:
-					if (typeof setting === "boolean") {
-						updatedSettings = {
-							...settings,
-							displayAllDecorators: setting,
-							displayImageAiLabel: setting,
-							displayFavoritesIcon: setting,
-							displayPrimaryTagIcon: setting,
-						};
-					}
+					updatedSettings = {
+						...settings,
+						displayAllDecorators: !settings.displayAllDecorators,
+						displayImageAiLabel: !settings.displayAllDecorators,
+						displayFavoritesIcon: !settings.displayAllDecorators,
+						displayPrimaryTagIcon: !settings.displayAllDecorators,
+					};
 					break;
 
 				case SETTINGS_LABELS.imageAiLabel:
-					if (typeof setting === "boolean") {
-						updatedSettings.displayImageAiLabel = setting;
-					}
+					updatedSettings = {
+						...settings,
+						displayImageAiLabel: !settings.displayImageAiLabel,
+					};
 					break;
 
 				case SETTINGS_LABELS.favoritesIcon:
-					if (typeof setting === "boolean") {
-						updatedSettings.displayFavoritesIcon = setting;
-					}
+					updatedSettings = {
+						...settings,
+						displayFavoritesIcon: !settings.displayFavoritesIcon,
+					};
 					break;
 
 				case SETTINGS_LABELS.primaryTagIcon:
-					if (typeof setting === "boolean") {
-						updatedSettings.displayPrimaryTagIcon = setting;
-					}
-					break;
-
-				default:
+					updatedSettings = {
+						...settings,
+						displayPrimaryTagIcon: !settings.displayPrimaryTagIcon,
+					};
 					break;
 			}
 

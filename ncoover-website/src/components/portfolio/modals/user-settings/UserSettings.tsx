@@ -18,29 +18,75 @@ const UserSettings = () => {
 	};
 
 	const handleDisplayModeSetting = () => {
-		toggleSetting(SETTINGS_LABELS.displayMode, DISPLAY_MODE.light);
+		toggleSetting(SETTINGS_LABELS.displayMode);
 	};
+
+	const handleAllDecoratorsSetting = () => {
+		toggleSetting(SETTINGS_LABELS.allDecorators);
+	};
+
+	const handleImageAiLabelSetting = () => {
+		toggleSetting(SETTINGS_LABELS.imageAiLabel);
+	};
+
+	const handleFavoritesIconSetting = () => {
+		toggleSetting(SETTINGS_LABELS.favoritesIcon);
+	};
+
+	const handlePrimaryTagIconSetting = () => {
+		toggleSetting(SETTINGS_LABELS.primaryTagIcon);
+	};
+
+	console.log(user?.settings);
 
 	const sharedContent = (
 		<>
-			{user?.settings}
+			{/* {user?.settings} */}
 			Theme
 			<Toggle
 				title={"Light / Dark Mode"}
-				isOn={false}
-				onToggle={() => {}}
+				isOn={user?.settings?.displayMode === DISPLAY_MODE.light ? false : true}
+				onToggle={handleDisplayModeSetting}
 				leftLabel={"Light"}
 				rightLabel={"Dark"}
 			/>
 			Project Decorators
 			<Toggle
 				title={"All Decorators"}
-				isOn={false}
-				onToggle={handleDisplayModeSetting}
+				isOn={
+					user?.settings?.displayAllDecorators
+						? user.settings.displayAllDecorators
+						: false
+				}
+				onToggle={handleAllDecoratorsSetting}
 			/>
-			<Toggle title={"Image A.I. Label"} isOn={false} onToggle={() => {}} />
-			<Toggle title={"Favorites Icon"} isOn={false} onToggle={() => {}} />
-			<Toggle title={"Primary Tag Icon"} isOn={false} onToggle={() => {}} />
+			<Toggle
+				title={"Image A.I. Label"}
+				isOn={
+					user?.settings?.displayImageAiLabel
+						? user.settings.displayImageAiLabel
+						: false
+				}
+				onToggle={handleImageAiLabelSetting}
+			/>
+			<Toggle
+				title={"Favorites Icon"}
+				isOn={
+					user?.settings?.displayFavoritesIcon
+						? user.settings.displayFavoritesIcon
+						: false
+				}
+				onToggle={handleFavoritesIconSetting}
+			/>
+			<Toggle
+				title={"Primary Tag Icon"}
+				isOn={
+					user?.settings?.displayPrimaryTagIcon
+						? user.settings.displayPrimaryTagIcon
+						: false
+				}
+				onToggle={handlePrimaryTagIconSetting}
+			/>
 			<button
 				className={classes.loginButton}
 				type="button"

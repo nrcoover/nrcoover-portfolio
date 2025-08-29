@@ -25,7 +25,7 @@ export const SETTINGS_LABELS = {
 export type DisplayMode = (typeof DISPLAY_MODE)[keyof typeof DISPLAY_MODE];
 
 interface SettingsContextProps {
-	toggleSetting: (label: string, setting: DisplayMode | boolean) => void;
+	toggleSetting: (label: string) => void;
 }
 
 export const SettingsContext = createContext<SettingsContextProps>({
