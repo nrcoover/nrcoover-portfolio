@@ -9,18 +9,7 @@ interface LoginFormProps {
 }
 
 const LoginForm = ({ ref }: LoginFormProps) => {
-	// const { createUser, login, user, logout } = useContext(AuthUserContext);
 	const { user } = useContext(AuthUserContext);
-
-	// const handleCreate = async () => {
-	// 	await createUser(username, password);
-	// 	setMessage("User created and logged in!");
-	// };
-
-	// const handleLogin = async () => {
-	// 	const success = await login(username, password);
-	// 	setMessage(success ? "Login successful!" : "Invalid credentials.");
-	// };
 
 	return (
 		<Modal
