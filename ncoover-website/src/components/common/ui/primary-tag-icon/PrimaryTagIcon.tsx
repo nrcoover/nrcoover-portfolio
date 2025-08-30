@@ -39,13 +39,6 @@ const PrimaryTagIcon = ({
 	const iconSource: IconSource =
 		tagToIconMap[primaryTag] ?? iconUi.QuestionMark;
 
-	// console.log(
-	// 	"Primary Tag: ",
-	// 	primaryTag,
-	// 	"; Mapping: ",
-	// 	tagToIconMap[primaryTag]
-	// );
-
 	return (
 		<div className={classes.primaryTagIcon} style={absoluteStyles}>
 			<Icon

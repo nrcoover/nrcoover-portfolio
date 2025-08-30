@@ -29,7 +29,6 @@ const CredentialsForm: React.FC = () => {
 
 	const handleLogin = async () => {
 		const success = await login(loginUsername, loginPassword);
-		console.log(success);
 		if (success) {
 			clearInputs();
 		} else {

@@ -34,7 +34,6 @@ const FavoriteButton = ({
 		if (!project) {
 			return;
 		}
-		console.log(project.id);
 		addFavorite(project);
 	};
 
@@ -42,7 +41,6 @@ const FavoriteButton = ({
 		if (!project) {
 			return;
 		}
-		console.log("Item removed");
 		removeFavorite(project.id);
 	};
 
