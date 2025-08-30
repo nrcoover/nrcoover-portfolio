@@ -11,6 +11,7 @@ import PrimaryTagIcon from "../../common/ui/primary-tag-icon/PrimaryTagIcon";
 
 import { getCategoryForTag } from "../../../helpers/tagMappingHelpers";
 import classes from "./ProjectCard.module.css";
+import { SettingsContext } from "../../../store/settings-context/SettingsContext";
 
 interface ProjectCardProps {
 	project: Project;
@@ -33,7 +34,11 @@ const ProjectCard = ({
 	const { isModalOpen, setSelectedProject, openPreviewModal } = useContext(
 		ProjectPreviewContext
 	);
+	const { userSettings } = useContext(SettingsContext);
 	const { locationPath } = useContext(LocationContext);
+
+	const { displayFavoritesIcon, displayImageAiLabel, displayPrimaryTagIcon } =
+		userSettings;
 
 	const isPrimaryCategory =
 		getCategoryForTag(project.tagData.primaryTag) === category;
@@ -81,27 +86,31 @@ const ProjectCard = ({
 						}
 						alt={`Cover art for ${project.title}`}
 					/>
-					{isAiGeneratedImage && (
+					{isAiGeneratedImage && displayImageAiLabel && (
 						<div className={classes.aiNotice}>
 							<p>A.I. Generated Image</p>
 						</div>
 					)}
 
-					<FavoriteButton
-						project={project}
-						maxWidth={"2rem"}
-						padding={".5rem"}
-					/>
+					{displayFavoritesIcon && (
+						<FavoriteButton
+							project={project}
+							maxWidth={"2rem"}
+							padding={".5rem"}
+						/>
+					)}
 
-					<PrimaryTagIcon
-						primaryTag={project.tagData.primaryTag}
-						maxWidth={"1.5rem"}
-						absoluteLocations={[
-							absoluteLocationTypes.Right,
-							absoluteLocationTypes.Bottom,
-						]}
-						margin={"0.75rem"}
-					/>
+					{displayPrimaryTagIcon && (
+						<PrimaryTagIcon
+							primaryTag={project.tagData.primaryTag}
+							maxWidth={"1.5rem"}
+							absoluteLocations={[
+								absoluteLocationTypes.Right,
+								absoluteLocationTypes.Bottom,
+							]}
+							margin={"0.75rem"}
+						/>
+					)}
 
 					<div
 						className={`${classes.previewBox} ${
