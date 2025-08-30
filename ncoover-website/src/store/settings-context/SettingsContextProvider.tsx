@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import type { Settings } from "../../typings";
 import { AuthUserContext } from "../auth-user-context/AuthUserContext";
 import {
@@ -18,7 +18,20 @@ const SettingsContextProvider = ({
 	const { isLoggedIn, getUserSettings, updateUserSettings, user } =
 		useContext(AuthUserContext);
 
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [userSettings, setUserSettings] = useState(defaultSettings);
+
+	const settingsModal = useRef<HTMLDialogElement | null>(null);
+
+	const openSettingsModal = () => {
+		setIsModalOpen(true);
+		settingsModal.current?.showModal();
+	};
+
+	const closeSettingsModal = () => {
+		setIsModalOpen(false);
+		settingsModal.current?.close();
+	};
 
 	// Sync settings when user logs in/out
 	useEffect(() => {
@@ -82,6 +95,10 @@ const SettingsContextProvider = ({
 	};
 
 	const contextsetting = {
+		isModalOpen,
+		settingsModal,
+		openSettingsModal,
+		closeSettingsModal,
 		userSettings,
 		toggleSetting,
 	};

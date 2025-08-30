@@ -6,17 +6,22 @@ import { iconUi } from "../../constants/iconTypes";
 import globalClasses from "../../global.module.css";
 import { AuthUserContext } from "../../store/auth-user-context/AuthUserContext";
 import { LocationContext } from "../../store/location-context/LocationContext";
+import { SettingsContext } from "../../store/settings-context/SettingsContext";
 import Icon from "../common/icon/Icon";
 import Separator from "../common/separator/Separator";
 import classes from "./SideNavigation.module.css";
 
 const SideNavigation = () => {
 	const { locationPath } = useContext(LocationContext);
-
 	const { isLoggedIn, openLoginModal } = useContext(AuthUserContext);
+	const { openSettingsModal } = useContext(SettingsContext);
 
 	const handleOpenLoginFormModal = () => {
 		openLoginModal();
+	};
+
+	const handleOpenSettingsModal = () => {
+		openSettingsModal();
 	};
 
 	const isTrue = true;
@@ -153,6 +158,13 @@ const SideNavigation = () => {
 					</li>
 
 					<li className={globalClasses.iconContainer}>
+						<button onClick={handleOpenSettingsModal} className={"iconButton"}>
+							<Icon source={iconUi.Settings} />
+						</button>
+						{isTrue && <>settings</>}
+					</li>
+
+					<li className={globalClasses.iconContainer}>
 						<NavLink
 							to={PATHS.Home}
 							className={({ isActive }) =>
@@ -161,10 +173,7 @@ const SideNavigation = () => {
 									: globalClasses.iconContainer
 							}
 							end
-						>
-							<Icon source={iconUi.Settings} />
-							{isTrue && <>settings</>}
-						</NavLink>
+						></NavLink>
 					</li>
 				</ul>
 			</nav>

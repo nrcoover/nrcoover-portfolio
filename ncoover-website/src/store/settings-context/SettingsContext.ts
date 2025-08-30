@@ -25,11 +25,19 @@ export const SETTINGS_LABELS = {
 export type DisplayMode = (typeof DISPLAY_MODE)[keyof typeof DISPLAY_MODE];
 
 interface SettingsContextProps {
+	isModalOpen: boolean;
+	settingsModal: React.RefObject<HTMLDialogElement | null>;
+	openSettingsModal: () => void;
+	closeSettingsModal: () => void;
 	userSettings: Settings;
 	toggleSetting: (label: string) => void;
 }
 
 export const SettingsContext = createContext<SettingsContextProps>({
+	isModalOpen: false,
+	settingsModal: { current: null },
+	openSettingsModal: () => {},
+	closeSettingsModal: () => {},
 	userSettings: defaultSettings,
 	toggleSetting: () => {},
 });

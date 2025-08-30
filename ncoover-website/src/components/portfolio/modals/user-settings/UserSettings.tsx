@@ -7,14 +7,15 @@ import {
 } from "../../../../store/settings-context/SettingsContext";
 import Toggle from "../../../common/ui/toggle/Toggle";
 import classes from "./UserSettings.module.css";
-// import Modal from "../../../common/modal/Modal";
+import Modal from "../../../common/modal/Modal";
 
 const UserSettings = () => {
-	const { user, closeLoginModal } = useContext(AuthUserContext);
-	const { userSettings, toggleSetting } = useContext(SettingsContext);
+	const { user } = useContext(AuthUserContext);
+	const { userSettings, toggleSetting, settingsModal, closeSettingsModal } =
+		useContext(SettingsContext);
 
 	const handleCloseModal = () => {
-		closeLoginModal();
+		closeSettingsModal();
 	};
 
 	const handleDisplayModeSetting = () => {
@@ -39,54 +40,60 @@ const UserSettings = () => {
 
 	const sharedContent = (
 		<>
-			Theme
-			<Toggle
-				title={"Light / Dark Mode"}
-				isOn={userSettings.displayMode === DISPLAY_MODE.dark}
-				onToggle={handleDisplayModeSetting}
-				leftLabel={"Light"}
-				rightLabel={"Dark"}
-			/>
-			Project Decorators
-			<Toggle
-				title={"All Decorators"}
-				isOn={userSettings.displayAllDecorators}
-				onToggle={handleAllDecoratorsSetting}
-			/>
-			<Toggle
-				title={"Image A.I. Label"}
-				isOn={userSettings.displayImageAiLabel}
-				onToggle={handleImageAiLabelSetting}
-			/>
-			<Toggle
-				title={"Favorites Icon"}
-				isOn={userSettings.displayFavoritesIcon}
-				onToggle={handleFavoritesIconSetting}
-			/>
-			<Toggle
-				title={"Primary Tag Icon"}
-				isOn={userSettings.displayPrimaryTagIcon}
-				onToggle={handlePrimaryTagIconSetting}
-			/>
-			<button
-				className={classes.loginButton}
-				type="button"
-				onClick={handleCloseModal}
+			<Modal
+				ref={settingsModal}
+				title={"Settings"}
+				maxHeight={"100%"}
+				onClose={() => {}}
 			>
-				Close
-			</button>
+				<section className={classes.settingsWrapper}>
+					<div className={classes.groupedSettings}>
+						<h2>Theme Settings</h2>
+						<Toggle
+							title={"Light / Dark Mode"}
+							isOn={userSettings.displayMode === DISPLAY_MODE.dark}
+							onToggle={handleDisplayModeSetting}
+							leftLabel={"Light"}
+							rightLabel={"Dark"}
+						/>
+					</div>
+					<div className={classes.groupedSettings}>
+						<h2>Decorator Settings</h2>
+						<Toggle
+							title={"All Decorators"}
+							isOn={userSettings.displayAllDecorators}
+							onToggle={handleAllDecoratorsSetting}
+						/>
+						<Toggle
+							title={"Image A.I. Label"}
+							isOn={userSettings.displayImageAiLabel}
+							onToggle={handleImageAiLabelSetting}
+						/>
+						<Toggle
+							title={"Favorites Icon"}
+							isOn={userSettings.displayFavoritesIcon}
+							onToggle={handleFavoritesIconSetting}
+						/>
+						<Toggle
+							title={"Primary Tag Icon"}
+							isOn={userSettings.displayPrimaryTagIcon}
+							onToggle={handlePrimaryTagIconSetting}
+						/>
+					</div>
+					<button
+						className={classes.loginButton}
+						type="button"
+						onClick={handleCloseModal}
+					>
+						Close
+					</button>
+				</section>
+			</Modal>
 		</>
 	);
 
 	if (user) {
-		return (
-			<>
-				{sharedContent}
-				{/* <Modal ref={undefined} onClose={() => {}}>
-					{sharedContent}
-				</Modal> */}
-			</>
-		);
+		return <>{sharedContent}</>;
 	}
 
 	return <>{sharedContent}</>;
