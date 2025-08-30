@@ -61,6 +61,7 @@ const SettingsContextProvider = ({
 						displayImageAiLabel: !settings.displayAllDecorators,
 						displayFavoritesIcon: !settings.displayAllDecorators,
 						displayPrimaryTagIcon: !settings.displayAllDecorators,
+						displayPrimaryTagGlow: !settings.displayAllDecorators,
 					};
 					break;
 
@@ -82,6 +83,13 @@ const SettingsContextProvider = ({
 					updatedSettings = {
 						...settings,
 						displayPrimaryTagIcon: !settings.displayPrimaryTagIcon,
+					};
+					break;
+
+				case SETTINGS_LABELS.primaryTagGlow:
+					updatedSettings = {
+						...settings,
+						displayPrimaryTagGlow: !settings.displayPrimaryTagGlow,
 					};
 					break;
 			}

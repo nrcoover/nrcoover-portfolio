@@ -38,11 +38,15 @@ const UserSettings = () => {
 		toggleSetting(SETTINGS_LABELS.primaryTagIcon);
 	};
 
+	const handlePrimaryTagGlowSetting = () => {
+		toggleSetting(SETTINGS_LABELS.primaryTagGlow);
+	};
+
 	const sharedContent = (
 		<>
 			<Modal
 				ref={settingsModal}
-				title={"Settings"}
+				title={user ? "User Settings" : "Settings"}
 				maxHeight={"100%"}
 				onClose={() => {}}
 			>
@@ -78,6 +82,11 @@ const UserSettings = () => {
 							title={"Primary Tag Icon"}
 							isOn={userSettings.displayPrimaryTagIcon}
 							onToggle={handlePrimaryTagIconSetting}
+						/>
+						<Toggle
+							title={"Primary Tag Glow"}
+							isOn={userSettings.displayPrimaryTagGlow}
+							onToggle={handlePrimaryTagGlowSetting}
 						/>
 					</div>
 					<button

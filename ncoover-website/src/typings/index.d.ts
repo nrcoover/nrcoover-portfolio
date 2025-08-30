@@ -4,6 +4,7 @@ export type Settings = {
 	displayImageAiLabel: boolean;
 	displayFavoritesIcon: boolean;
 	displayPrimaryTagIcon: boolean;
+	displayPrimaryTagGlow: boolean;
 };
 
 export type Image = {

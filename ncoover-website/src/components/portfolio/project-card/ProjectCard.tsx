@@ -37,8 +37,12 @@ const ProjectCard = ({
 	const { userSettings } = useContext(SettingsContext);
 	const { locationPath } = useContext(LocationContext);
 
-	const { displayFavoritesIcon, displayImageAiLabel, displayPrimaryTagIcon } =
-		userSettings;
+	const {
+		displayFavoritesIcon,
+		displayImageAiLabel,
+		displayPrimaryTagIcon,
+		displayPrimaryTagGlow,
+	} = userSettings;
 
 	const isPrimaryCategory =
 		getCategoryForTag(project.tagData.primaryTag) === category;
@@ -72,7 +76,7 @@ const ProjectCard = ({
 			<article
 				role="group"
 				aria-label={project.title}
-				className={`${classes.projectCard} ${selected ? classes.selected : ""} ${isPrimaryCategory ? classes.primaryTagGlow : ""}`}
+				className={`${classes.projectCard} ${selected ? classes.selected : ""} ${isPrimaryCategory && displayPrimaryTagGlow ? classes.primaryTagGlow : ""}`}
 				aria-selected={selected}
 				tabIndex={selected ? TAB_FOCUSABLE : TAB_SKIP}
 				onClick={handleSelect}

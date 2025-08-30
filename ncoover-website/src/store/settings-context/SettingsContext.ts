@@ -8,10 +8,11 @@ export const DISPLAY_MODE = {
 
 export const defaultSettings: Settings = {
 	displayMode: DISPLAY_MODE.dark,
-	displayAllDecorators: false,
-	displayImageAiLabel: false,
-	displayFavoritesIcon: false,
-	displayPrimaryTagIcon: false,
+	displayAllDecorators: true,
+	displayImageAiLabel: true,
+	displayFavoritesIcon: true,
+	displayPrimaryTagIcon: true,
+	displayPrimaryTagGlow: true,
 };
 
 export const SETTINGS_LABELS = {
@@ -19,7 +20,8 @@ export const SETTINGS_LABELS = {
 	allDecorators: "All Decorators",
 	imageAiLabel: "Image I.A. Label",
 	favoritesIcon: "Favorites Icon",
-	primaryTagIcon: "PrimaryTagIcon",
+	primaryTagIcon: "Primary Tag Icon",
+	primaryTagGlow: "Primary Tag Glow",
 };
 
 export type DisplayMode = (typeof DISPLAY_MODE)[keyof typeof DISPLAY_MODE];
