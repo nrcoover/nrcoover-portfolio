@@ -14,6 +14,22 @@
 
 	--side-navigation-width-offset: 6rem;
 
+	/* Primary Tag Glow colors as RGB triplets (no alpha) */
+	--bootstrap-rgb: 144, 19, 254; /* #9013FE */
+	--css-rgb: 51, 169, 220; /* #33A9DC */
+	--csharp-rgb: 155, 79, 150; /* #9B4F96 */
+	--html-rgb: 241, 101, 41; /* #F16529 */
+	--html5-rgb: 241, 101, 41; /* #F16529 */
+	--javascript-rgb: 240, 219, 79; /* #F0DB4F */
+	--python-rgb: 90, 159, 212; /* #5A9FD4 */
+	--react-rgb: 97, 218, 251; /* #61DAFB */
+	--sass-rgb: 203, 102, 153; /* #CB6699 */
+	--scss-rgb: 203, 102, 153; /* #CB6699 */
+	--typescript-rgb: 0, 122, 204; /* #007ACC */
+
+	/* The dynamic “slot” for Primary Tag Glow color to be set */
+	--glow-rgb: var(--react-rgb);
+
 	/* === Core Brand Colors === */
 	--color-red: rgb(229, 9, 20); /* Netflix red (primary brand) */
 	--color-red-rgb: 229, 9, 20; /* Netflix red (primary brand) */

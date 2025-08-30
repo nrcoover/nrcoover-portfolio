@@ -31,8 +31,15 @@
 }
 
 .primaryTagGlow {
-	box-shadow: 0 0 6px 6px rgba(var(--color-red-light-rgb), 0.5);
+	box-shadow: 0 0 5px 5px rgba(var(--glow-rgb), 0.75);
 	border-radius: 8px;
+	/* outline: solid black 2px; */
+}
+
+.primaryTagGlowSelected {
+	box-shadow: 0 0 8px 8px rgba(var(--glow-rgb), 0.75);
+	border-radius: 8px;
+	/* outline: solid black 2px; */
 }
 
 .previewBox {

@@ -107,7 +107,7 @@ const AuthUserContextProvider = ({
 		setUser(null);
 	}
 
-	const isLoggedIn = !!user;
+	const isLoggedIn = !!user; //extract to user variable?
 
 	const contextValue = {
 		isModalOpen,

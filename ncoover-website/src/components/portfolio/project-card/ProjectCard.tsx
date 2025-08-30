@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useContext } from "react";
 import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext";
 import PreviewButton from "../../common/ui/preview-button/PreviewButton";
@@ -9,9 +10,10 @@ import type { Project } from "../../../typings";
 import FavoriteButton from "../../common/ui/favorite-button/FavoriteButton";
 import PrimaryTagIcon from "../../common/ui/primary-tag-icon/PrimaryTagIcon";
 
+import { TAG_TO_GLOW_VAR } from "../../../constants/glowColors";
 import { getCategoryForTag } from "../../../helpers/tagMappingHelpers";
-import classes from "./ProjectCard.module.css";
 import { SettingsContext } from "../../../store/settings-context/SettingsContext";
+import classes from "./ProjectCard.module.css";
 
 interface ProjectCardProps {
 	project: Project;
@@ -20,6 +22,8 @@ interface ProjectCardProps {
 	scrollToIndex: (index: number) => void;
 	category: string;
 }
+
+type GlowStyle = CSSProperties & { ["--glow-rgb"]?: string };
 
 const TAB_FOCUSABLE = 0;
 const TAB_SKIP = -1;
@@ -44,14 +48,17 @@ const ProjectCard = ({
 		displayPrimaryTagGlow,
 	} = userSettings;
 
-	const isPrimaryCategory =
-		getCategoryForTag(project.tagData.primaryTag) === category;
+	const primaryTag = project.tagData.primaryTag;
+	const isPrimaryCategory = getCategoryForTag(primaryTag) === category;
+
+	const cssVarName = TAG_TO_GLOW_VAR[primaryTag.toLowerCase()] ?? "--react-rgb";
+	const style: GlowStyle = { ["--glow-rgb"]: `var(${cssVarName})` };
 
 	// console.log(
 	// 	"Primary Tag: ",
-	// 	project.tagData.primaryTag,
+	// 	primaryTag,
 	// 	"; Category for tag:",
-	// 	getCategoryForTag(project.tagData.primaryTag)
+	// 	getCategoryForTag(primaryTag)
 	// );
 	// console.log("Category: ", category);
 	// console.log("Is Primary Category: ", isPrimaryCategory);
@@ -76,8 +83,9 @@ const ProjectCard = ({
 			<article
 				role="group"
 				aria-label={project.title}
-				className={`${classes.projectCard} ${selected ? classes.selected : ""} ${isPrimaryCategory && displayPrimaryTagGlow ? classes.primaryTagGlow : ""}`}
+				className={`${classes.projectCard} ${selected ? classes.selected : ""} ${selected ? classes.primaryTagGlowSelected : ""} ${isPrimaryCategory && displayPrimaryTagGlow ? classes.primaryTagGlow : ""}`}
 				aria-selected={selected}
+				style={style}
 				tabIndex={selected ? TAB_FOCUSABLE : TAB_SKIP}
 				onClick={handleSelect}
 			>
@@ -106,7 +114,7 @@ const ProjectCard = ({
 
 					{displayPrimaryTagIcon && (
 						<PrimaryTagIcon
-							primaryTag={project.tagData.primaryTag}
+							primaryTag={primaryTag}
 							maxWidth={"1.5rem"}
 							absoluteLocations={[
 								absoluteLocationTypes.Right,
