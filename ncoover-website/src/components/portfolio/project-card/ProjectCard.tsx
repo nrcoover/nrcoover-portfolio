@@ -83,7 +83,16 @@ const ProjectCard = ({
 			<article
 				role="group"
 				aria-label={project.title}
-				className={`${classes.projectCard} ${selected ? classes.selected : ""} ${selected ? classes.primaryTagGlowSelected : ""} ${isPrimaryCategory && displayPrimaryTagGlow ? classes.primaryTagGlow : ""}`}
+				className={`
+					${classes.projectCard} 
+					${selected ? classes.selected : ""} 
+					${
+						isPrimaryCategory && displayPrimaryTagGlow && selected
+							? classes.primaryTagGlowSelected
+							: ""
+					} 
+					${isPrimaryCategory && displayPrimaryTagGlow ? classes.primaryTagGlow : ""}
+					`}
 				aria-selected={selected}
 				style={style}
 				tabIndex={selected ? TAB_FOCUSABLE : TAB_SKIP}

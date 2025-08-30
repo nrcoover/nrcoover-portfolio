@@ -29,7 +29,7 @@
 	overflow-y: hidden;
 	white-space: nowrap;
 	scroll-behavior: smooth;
-	padding: 1rem 0;
+	padding: 2rem 0;
 	margin: 0 1rem;
 	scrollbar-width: none;
 	scroll-snap-type: x mandatory;
