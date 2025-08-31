@@ -1,10 +1,9 @@
-import { useContext, type Ref } from "react";
+import { useContext, useEffect, useState, type Ref } from "react";
 import { NavLink } from "react-router-dom";
 import { iconSocial } from "../../../../constants/iconTypes";
-import { PATHS } from "../../../../constants/paths";
 import { getIconName } from "../../../../helpers/iconHelper.ts";
 import { ProjectPreviewContext } from "../../../../store/project-preview-context/ProjectPreviewContext";
-import type { Project } from "../../../../typings/index.d.ts";
+import type { Image, Project } from "../../../../typings/index.d.ts";
 import Icon from "../../../common/icon/Icon";
 import Modal from "../../../common/modal/Modal";
 import ImageCarousel from "../../image-carousel/ImageCarousel";
@@ -23,9 +22,17 @@ interface ProjectPreviewProps {
 	project: Project | undefined;
 }
 
-// TODO: Change to useing Projects native IsFavorite property once data is retrieved from database and not hardcoded.
+// TODO: Change to using Projects native IsFavorite property once data is retrieved from database and not hardcoded.
 const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const { closePreviewModal } = useContext(ProjectPreviewContext);
+
+	const [selectedImage, setSelectedImage] = useState<Image | undefined>(
+		project?.imageData?.imagesPaths[0]
+	);
+
+	useEffect(() => {
+		setSelectedImage(project?.imageData?.imagesPaths[0]);
+	}, [project?.imageData?.imagesPaths]);
 
 	const handleCloseModal = () => {
 		closePreviewModal();
@@ -36,6 +43,8 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 			Close
 		</button>
 	);
+
+	const defaultImageCaption = "This image has no description.";
 
 	// use for debugging
 	// project = undefined;
@@ -64,6 +73,16 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const { imagesPaths } = imageData;
 	const { primaryTag, otherTags } = tagData;
 
+	const gitHubUrl = project?.links?.find(
+		(link) => link.type === iconSocial.GitHub
+	)?.url;
+	const codePenUrl = project?.links?.find(
+		(link) => link.type === iconSocial.CodePen
+	)?.url;
+	const websiteUrl = project?.links?.find(
+		(link) => link.type === iconSocial.Website
+	)?.url;
+
 	const previewContent = (
 		<>
 			<div className={classes.previewTitle}>
@@ -90,14 +109,13 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 					<h4>Project Description</h4>
 					<p>{description}</p>
 					<h4>Image Description</h4>
-					<p>
-						This is a bunch of placeholder text until I can get the real
-						descriptions dynamically implemented. Thank you for your continued
-						patience and understanding.
-					</p>
+					<p>{selectedImage?.caption ?? defaultImageCaption}</p>
 				</div>
 				<div className={classes.previewItem}>
-					<ImageCarousel images={imagesPaths}></ImageCarousel>
+					<ImageCarousel
+						images={imagesPaths}
+						onImageSelection={setSelectedImage}
+					></ImageCarousel>
 				</div>
 			</div>
 			<Separator width={"auto"} />
@@ -105,56 +123,64 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 			<h4>Project Links</h4>
 			<div className={classes.previewIconsWrapper}>
 				<ul className={classes.previewIcons}>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Home}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon
-								source={iconSocial.GitHub}
-								className={classes.previewLink}
-							/>
-						</NavLink>
-						<p>{getIconName(iconSocial.GitHub)}</p>
-					</li>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Home}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon
-								source={iconSocial.CodePen}
-								className={classes.previewLink}
-							/>
-						</NavLink>
-						<p>{getIconName(iconSocial.CodePen)}</p>
-					</li>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Home}
-							className={`${({ isActive }: { isActive: boolean }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer}`}
-							end
-						>
-							<Icon
-								source={iconSocial.Website}
-								className={classes.previewLink}
-							/>
-						</NavLink>
-						<p>{getIconName(iconSocial.Website)}</p>
-					</li>
+					{gitHubUrl && (
+						<li className={globalClasses.iconContainer}>
+							<>
+								<NavLink
+									to={gitHubUrl}
+									className={({ isActive }) =>
+										isActive
+											? (classes.active, globalClasses.iconContainer)
+											: globalClasses.iconContainer
+									}
+									end
+								>
+									<Icon
+										source={iconSocial.GitHub}
+										className={classes.previewLink}
+									/>
+								</NavLink>
+								<p>{getIconName(iconSocial.GitHub)}</p>
+							</>
+						</li>
+					)}
+					{codePenUrl && (
+						<li className={globalClasses.iconContainer}>
+							<NavLink
+								to={codePenUrl}
+								className={({ isActive }) =>
+									isActive
+										? (classes.active, globalClasses.iconContainer)
+										: globalClasses.iconContainer
+								}
+								end
+							>
+								<Icon
+									source={iconSocial.CodePen}
+									className={classes.previewLink}
+								/>
+							</NavLink>
+							<p>{getIconName(iconSocial.CodePen)}</p>
+						</li>
+					)}
+					{websiteUrl && (
+						<li className={globalClasses.iconContainer}>
+							<NavLink
+								to={websiteUrl}
+								className={`${({ isActive }: { isActive: boolean }) =>
+									isActive
+										? (classes.active, globalClasses.iconContainer)
+										: globalClasses.iconContainer}`}
+								end
+							>
+								<Icon
+									source={iconSocial.Website}
+									className={classes.previewLink}
+								/>
+							</NavLink>
+							<p>{getIconName(iconSocial.Website)}</p>
+						</li>
+					)}
 				</ul>
 			</div>
 			<div>

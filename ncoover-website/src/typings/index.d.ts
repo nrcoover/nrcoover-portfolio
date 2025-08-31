@@ -10,6 +10,7 @@ export type Settings = {
 export type Image = {
 	src: string;
 	alt: string;
+	caption?: string;
 };
 
 export type CoverArt = {

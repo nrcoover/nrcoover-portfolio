@@ -6,17 +6,26 @@ import classes from "./ImageCarousel.module.css";
 
 interface ImageCarouselProps {
 	images: Image[];
+	onImageSelection: React.Dispatch<React.SetStateAction<Image | undefined>>;
 }
 
-const ImageCarousel = ({ images = [] }: ImageCarouselProps) => {
+const ImageCarousel = ({
+	images = [],
+	onImageSelection,
+}: ImageCarouselProps) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [nextIndex, setNextIndex] = useState<number | null>(null);
 	const [isFading, setIsFading] = useState(false);
+
+	const handleImageSelection = (image: Image) => {
+		onImageSelection(image);
+	};
 
 	const startTransition = (newIndex: number) => {
 		if (isFading) return; // prevent spam clicks
 		setNextIndex(newIndex);
 		setIsFading(true);
+		handleImageSelection(images[newIndex]); // update selected image for accurate caption display;
 		setTimeout(() => {
 			setCurrentIndex(newIndex);
 			setNextIndex(null);

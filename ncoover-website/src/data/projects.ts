@@ -1,3 +1,4 @@
+import { iconSocial } from "../constants/iconTypes";
 import { TAGS } from "../constants/tags";
 import type { Project } from "../typings";
 
@@ -59,14 +60,17 @@ const PROJECTS: Project[] = [
 				{
 					src: "/placeholder-images/pexels-xexusdesigner-777001.jpg",
 					alt: "Test image 1",
+					caption: "Test image 1 caption.",
 				},
 				{
 					src: "/placeholder-images/pexels-joshsorenson-1714208.jpg",
 					alt: "Test image 2",
+					caption: "Test image 2 caption.",
 				},
 				{
 					src: "/placeholder-images/pexels-designecologist-1779487.jpg",
 					alt: "Test image 3",
+					caption: "Test image 3 caption.",
 				},
 			],
 		},
@@ -82,11 +86,14 @@ const PROJECTS: Project[] = [
 		},
 		links: [
 			{
-				type: "github",
+				type: iconSocial.GitHub,
 				url: "https://github.com/nrcoover/instagram-login-clone",
 			},
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/oNwEjXQ" },
-			{ type: "website", url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/oNwEjXQ",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
