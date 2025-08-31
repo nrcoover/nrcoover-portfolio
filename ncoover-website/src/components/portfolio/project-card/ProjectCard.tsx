@@ -51,7 +51,8 @@ const ProjectCard = ({
 	const primaryTag = project.tagData.primaryTag;
 	const isPrimaryCategory = getCategoryForTag(primaryTag) === category;
 
-	const cssVarName = TAG_TO_GLOW_VAR[primaryTag.toLowerCase()] ?? "--react-rgb";
+	const cssVarName =
+		TAG_TO_GLOW_VAR[primaryTag?.toLowerCase()] ?? "--react-rgb";
 	const style: GlowStyle = { ["--glow-rgb"]: `var(${cssVarName})` };
 
 	const isAiGeneratedImage = project.imageData.coverArt.isAiGeneratedImage;

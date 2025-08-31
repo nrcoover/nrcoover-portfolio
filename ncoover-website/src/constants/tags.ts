@@ -74,3 +74,10 @@ export const TAGS: Record<string, string> = {
 	playwright: "playwright",
 	storybook: "storybook",
 };
+
+export const valuesArray: string[] = Object.values(TAGS);
+export const keysArray: string[] = Object.keys(TAGS);
+export const entriesArray = Object.entries(TAGS).map(([key, value]) => ({
+	key,
+	value,
+}));

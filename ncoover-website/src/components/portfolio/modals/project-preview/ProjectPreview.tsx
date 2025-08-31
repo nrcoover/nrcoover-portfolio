@@ -15,6 +15,7 @@ import FavoriteButton from "../../../common/ui/favorite-button/FavoriteButton";
 import PrimaryTagIcon from "../../../common/ui/primary-tag-icon/PrimaryTagIcon";
 import Containerizer from "../../../common/wrappers/containerizer/Containerizer";
 
+import { DEFAULT_PROJECT } from "../../../../data/projects.ts";
 import classes from "./ProjectPreview.module.css";
 
 interface ProjectPreviewProps {
@@ -22,17 +23,42 @@ interface ProjectPreviewProps {
 	project: Project | undefined;
 }
 
+const defaultData: Project = DEFAULT_PROJECT;
+
+function projectIncludesImages(project: Project): boolean {
+	const images = project?.imageData.imagesPaths;
+	const filteredImages = images?.filter((imagePath) => imagePath.src !== "");
+	const includesImages: boolean =
+		filteredImages != undefined && filteredImages?.length >= 1;
+	return includesImages;
+}
+
 // TODO: Change to using Projects native IsFavorite property once data is retrieved from database and not hardcoded.
 const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const { closePreviewModal } = useContext(ProjectPreviewContext);
 
+	const [hasImages, setHasImages] = useState<boolean>();
 	const [selectedImage, setSelectedImage] = useState<Image | undefined>(
 		project?.imageData?.imagesPaths[0]
 	);
 
 	useEffect(() => {
-		setSelectedImage(project?.imageData?.imagesPaths[0]);
-	}, [project?.imageData?.imagesPaths]);
+		const includesImages =
+			project !== undefined && projectIncludesImages(project);
+
+		setHasImages(includesImages);
+	}, [project]);
+
+	useEffect(() => {
+		const includesImages =
+			project !== undefined && projectIncludesImages(project);
+
+		const selectedImage = includesImages
+			? project?.imageData?.imagesPaths[0]
+			: defaultData.imageData.imagesPaths[0];
+
+		setSelectedImage(selectedImage);
+	}, [project, project?.imageData?.imagesPaths]);
 
 	const handleCloseModal = () => {
 		closePreviewModal();
@@ -73,13 +99,13 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const { imagesPaths } = imageData;
 	const { primaryTag, otherTags } = tagData;
 
-	const gitHubUrl = project?.links?.find(
+	const gitHubUrl = (project.links ?? defaultData.links).find(
 		(link) => link.type === iconSocial.GitHub
 	)?.url;
-	const codePenUrl = project?.links?.find(
+	const codePenUrl = (project.links ?? defaultData.links).find(
 		(link) => link.type === iconSocial.CodePen
 	)?.url;
-	const websiteUrl = project?.links?.find(
+	const websiteUrl = (project.links ?? defaultData.links).find(
 		(link) => link.type === iconSocial.Website
 	)?.url;
 
@@ -88,7 +114,9 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 			<div className={classes.previewTitle}>
 				{/* TODO: Reavaluate absolute positioning of Primary Tag and Favorite Button (may not need to be absolute now that it is within a flex container) */}
 				<PrimaryTagIcon
-					primaryTag={project.tagData.primaryTag}
+					primaryTag={
+						project.tagData.primaryTag ?? defaultData.tagData.primaryTag
+					}
 					maxWidth={"3rem"}
 					absoluteLocations={[
 						absoluteLocationTypes.Left,
@@ -105,15 +133,23 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 			<div className={classes.previewContent}>
 				<div className={classes.previewItem}>
 					<h4>Title</h4>
-					<p>{title}</p>
+					<p>{title ?? defaultData.title}</p>
 					<h4>Project Description</h4>
-					<p>{description}</p>
+					<p>
+						{description && description !== ""
+							? description
+							: defaultData.description}
+					</p>
 					<h4>Image Description</h4>
 					<p>{selectedImage?.caption ?? defaultImageCaption}</p>
 				</div>
 				<div className={classes.previewItem}>
 					<ImageCarousel
-						images={imagesPaths}
+						images={
+							imagesPaths && hasImages
+								? imagesPaths
+								: defaultData.imageData.imagesPaths
+						}
 						onImageSelection={setSelectedImage}
 					></ImageCarousel>
 				</div>
@@ -185,8 +221,9 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 			</div>
 			<div>
 				<p id={classes.Tags}>
-					Tags: {primaryTag} (<i>Primary Tag</i>)
-					{otherTags.map((tag) => (
+					Tags: {primaryTag ?? defaultData.tagData.primaryTag} (
+					<i>Primary Tag</i>)
+					{(otherTags ?? defaultData.tagData.otherTags).map((tag) => (
 						<>, {tag}</>
 					))}
 				</p>

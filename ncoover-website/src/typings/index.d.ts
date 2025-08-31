@@ -44,4 +44,5 @@ export type Project = {
 	imageData: ImageData;
 	tagData: TagData;
 	links: CodeLinks[];
+	isDefaultData?: boolean;
 };

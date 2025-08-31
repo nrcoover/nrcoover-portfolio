@@ -27,7 +27,9 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 	const primaryProjects = projects
 		.filter((project) => {
 			const primaryTag = project.tagData.primaryTag;
-			return getCategoryForTag(primaryTag) === category;
+			return (
+				getCategoryForTag(primaryTag) === category && !project.isDefaultData
+			);
 		})
 		.sort(
 			(a: Project, b: Project) =>
@@ -46,7 +48,8 @@ const filterProjects = (category: string, projects: Project[]): Project[] => {
 			// but the primaryTag is NOT part of this category
 			return (
 				otherTags.some((tag) => categoryTags.includes(tag)) &&
-				getCategoryForTag(primaryTag) !== category
+				getCategoryForTag(primaryTag) !== category &&
+				!project.isDefaultData
 			);
 		})
 		.sort(
