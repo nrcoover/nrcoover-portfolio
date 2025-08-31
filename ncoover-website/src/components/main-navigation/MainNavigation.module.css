@@ -10,7 +10,9 @@ ul {
 
 .headerWrapper {
 	width: inherit;
-	background-color: brown;
+	margin-bottom: 0.75rem;
+	/* background-color: brown; */
+	box-shadow: var(--shadow-glow);
 }
 
 .header {
@@ -19,7 +21,7 @@ ul {
 	padding: 1.5rem;
 	display: flex;
 	justify-content: center;
-	background-color: pink;
+	/* background-color: pink; */
 }
 
 .list {
