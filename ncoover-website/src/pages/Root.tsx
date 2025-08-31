@@ -12,6 +12,7 @@ import Icon from "../components/common/icon/Icon";
 import { iconSocial } from "../constants/iconTypes";
 import { getIconName } from "../helpers/iconHelper";
 
+import Logo from "../components/common/logo/Logo";
 import globalClasses from "../global.module.css";
 import classes from "./styles/Root.module.css";
 
@@ -34,9 +35,7 @@ const Root = () => {
 				<Outlet></Outlet>
 			</main>
 			<footer className={isPortfolio ? classes.sideNavigationOffset : ""}>
-				<p className={classes.logo}>
-					nr<span>C</span>oover
-				</p>
+				<Logo />
 				<nav className={classes.sideNavigation}>
 					<Separator />
 					<h3>{isPortfolio && "main "}menu</h3>

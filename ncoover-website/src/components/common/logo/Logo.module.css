@@ -1,0 +1,10 @@
+.logo {
+	font-size: 1.75rem;
+	font-weight: 700;
+	opacity: 45%;
+}
+
+.logo span {
+	color: var(--color-red);
+	margin-left: 0.15rem;
+}

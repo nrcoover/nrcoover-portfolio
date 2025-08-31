@@ -2,6 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { PATHS } from "../../constants/paths";
 
 import { useEffect, useState } from "react";
+// import Logo from "../common/logo/Logo";
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
@@ -16,6 +17,9 @@ const MainNavigation = () => {
 	return (
 		<div className={classes.headerWrapper}>
 			<header className={classes.header}>
+				{/* <div className={classes.logoWrapper}>
+					<Logo />
+				</div> */}
 				<nav>
 					<ul
 						className={`${classes.list} ${isPortfolio ? `${classes.sideNavigationOffset}` : ""}`}
