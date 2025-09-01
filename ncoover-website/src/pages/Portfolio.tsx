@@ -14,52 +14,14 @@ import { FavoritesContext } from "../store/favorites-context/FavoritesContext";
 import { LocationContext } from "../store/location-context/LocationContext";
 import ErrorDefault from "./ErrorDefault";
 
-import PROJECTS_JSON from "../data/projects";
-
 import UserSettings from "../components/portfolio/modals/user-settings/UserSettings.tsx";
 import {
-	getCategoryForTag,
-	getTagsForCategory,
-} from "../helpers/tagMappingHelpers.ts";
+	filterFeaturedProjects,
+	filterNewArrivalProjects,
+	filterProjects,
+	getProjects,
+} from "../helpers/projectHelper.ts";
 import classes from "./styles/Portfolio.module.css";
-
-const filterProjects = (category: string, projects: Project[]): Project[] => {
-	const primaryProjects = projects
-		.filter((project) => {
-			const primaryTag = project.tagData.primaryTag;
-			return (
-				getCategoryForTag(primaryTag) === category && !project.isDefaultData
-			);
-		})
-		.sort(
-			(a: Project, b: Project) =>
-				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
-		)
-		.reverse();
-
-	const categoryTags = getTagsForCategory(category) ?? [];
-
-	const secondaryProjects = projects
-		.filter((project) => {
-			const primaryTag = project.tagData.primaryTag;
-			const otherTags = project.tagData.otherTags;
-
-			// Only include projects where an "otherTag" belongs to this category
-			// but the primaryTag is NOT part of this category
-			return (
-				otherTags.some((tag) => categoryTags.includes(tag)) &&
-				getCategoryForTag(primaryTag) !== category &&
-				!project.isDefaultData
-			);
-		})
-		.sort(
-			(a: Project, b: Project) =>
-				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
-		)
-		.reverse();
-
-	return [...primaryProjects, ...secondaryProjects];
-};
 
 const Portfolio = () => {
 	const { loginModal } = useContext(AuthUserContext);
@@ -71,9 +33,7 @@ const Portfolio = () => {
 
 	const isFavoritesPage = locationPath === PATHS.Portfolio.Favorites;
 
-	const projectsData = JSON.parse(PROJECTS_JSON);
-
-	const [projects] = useState<Project[]>(projectsData);
+	const [projects] = useState<Project[]>(getProjects());
 
 	useEffect(() => {
 		if (isFavoritesPage) {
@@ -81,28 +41,8 @@ const Portfolio = () => {
 		}
 	}, [favoriteProjects, isFavoritesPage, setSelectedProject]);
 
-	const featuredProjects = projects
-		.filter((project) => project.isFeatured)
-		.sort(
-			(a: Project, b: Project) =>
-				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
-		)
-		.reverse();
-
-	const today = new Date();
-	const timespanInDays = 1300; //TODO: adjust to reasonable number of days (1300 is not "new" lol)
-
-	const pastDateSetup = new Date(today);
-	pastDateSetup.setDate(pastDateSetup.getDate() - timespanInDays);
-
-	const newArrivalCutOff: Date = pastDateSetup;
-	const newArrivalProjects = projects
-		.filter((project) => new Date(project.dateUpdated) > newArrivalCutOff)
-		.sort(
-			(a: Project, b: Project) =>
-				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
-		)
-		.reverse();
+	const featuredProjects = filterFeaturedProjects(projects);
+	const newArrivalProjects = filterNewArrivalProjects(projects);
 
 	const sharedPortfolioContent = (
 		<>
@@ -157,7 +97,6 @@ const Portfolio = () => {
 
 	return (
 		<>
-			{locationPath.toString()}
 			<main className={classes.portfolio}>
 				<LoginForm ref={loginModal} />
 				<SideNavigation />

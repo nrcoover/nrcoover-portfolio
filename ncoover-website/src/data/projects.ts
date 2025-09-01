@@ -56,6 +56,17 @@ export const DEFAULT_PROJECT: Project = {
 		},
 		{ type: iconSocial.Website, url: "https://www.nrcoover.com/" },
 	],
+	heroFeatureData: {
+		banner: {
+			src: "/images/projects/feature-banners/ai-cover-art_missing-project_feature-banner.png",
+			alt: 'Movie poster of a sad, broken, weathered robot with a missing arm in a beaufiul cyberpunk city. The poster reads "Missing Project".',
+		},
+
+		shortTitle: "Missing Project",
+		shortDescription:
+			"A futuristic epic about a robot searching for meaning amidst missing data...",
+		isAiGeneratedImage: true,
+	},
 	isDefaultData: true,
 };
 

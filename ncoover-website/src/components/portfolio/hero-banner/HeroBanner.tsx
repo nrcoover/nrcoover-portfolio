@@ -1,21 +1,88 @@
+import { useEffect, useState } from "react";
+import { DEFAULT_PROJECT } from "../../../data/projects.ts";
+import {
+	filterFeaturedProjects,
+	getProjects,
+} from "../../../helpers/projectHelper";
+import type { Project } from "../../../typings";
 import classes from "./HeroBanner.module.css";
 
 const HeroBanner = () => {
-	return (
-		<section aria-label="Featured project" className={classes.hero}>
+	const [heroProjects, setHeroProjects] = useState<Project[]>();
+	const [activeDisplayIndex, setActiveDisplayIndex] = useState<number>(0);
+
+	const featuredProjects = filterFeaturedProjects(getProjects());
+	const defaultProject: Project = DEFAULT_PROJECT;
+
+	useEffect(() => {
+		setHeroProjects(
+			featuredProjects.filter((project) => project.heroFeatureData != undefined)
+		);
+	}, [featuredProjects]);
+
+	useEffect(() => {
+		const numberOfFeatures = heroProjects?.length ?? 0;
+
+		if (numberOfFeatures > 1) {
+			const timerId = setTimeout(() => {
+				const newIndex =
+					activeDisplayIndex >= numberOfFeatures ? 0 : activeDisplayIndex + 1;
+				setActiveDisplayIndex(newIndex);
+			}, 3000);
+
+			return () => {
+				clearTimeout(timerId);
+			};
+		}
+	}, [activeDisplayIndex, heroProjects?.length]);
+
+	const display = heroProjects ? heroProjects[activeDisplayIndex] : undefined;
+
+	const defaultContent = (
+		<>
 			<div className={`${classes.heroItem} ${classes.textWrapper}`}>
-				<h1>DEVFLIX</h1>
-				<h2>Example Feature</h2>
-				<p>This is a featured item</p>
+				<h1>
+					DEV<span>FLIX</span>
+				</h1>
+				<h2>{defaultProject.heroFeatureData?.shortTitle}</h2>
+				<p>{defaultProject.heroFeatureData?.shortDescription}</p>
+				<button>Preview</button>
+				{/* TODO: Replace above button with re-usable component? */}
 			</div>
 			<div className={`${classes.heroItem} ${classes.heroImage}`}>
-				{/* TODO: Create dynamic image array that cycles through */}
 				<img
-					src="/placeholder-images/pexels-designecologist-1779487.jpg"
-					alt="test because it no work" //TODO: Remove this alt or update properly
+					src={defaultProject.heroFeatureData?.banner.src}
+					alt={defaultProject.heroFeatureData?.banner.alt}
 				/>
 			</div>
-			<div className={classes.heroItem}>Placeholder</div>
+			{/* <div className={`${classes.heroItem} ${classes.buttonWrapper}`}>
+				Placeholder
+			</div> */}
+		</>
+	);
+
+	return (
+		<section aria-label="Featured project" className={classes.hero}>
+			{heroProjects?.length != 0 && display !== undefined ? (
+				<>
+					<div className={`${classes.heroItem} ${classes.textWrapper}`}>
+						<h1>DEVFLIX</h1>
+						<h2>{display.heroFeatureData?.shortTitle}</h2>
+						<p>{display.heroFeatureData?.shortDescription}</p>
+					</div>
+					<div className={`${classes.heroItem} ${classes.heroImage}`}>
+						<img
+							src={display.heroFeatureData?.banner.src}
+							alt={display.heroFeatureData?.banner.alt}
+						/>
+					</div>
+					{/* <div className={`${classes.heroItem} ${classes.buttonWrapper}`}>
+						Placeholder
+					</div> */}
+				</>
+			) : (
+				<>{defaultContent}</>
+			)}
 		</section>
 	);
 };

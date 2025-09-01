@@ -3,33 +3,63 @@
 	height: 50vh;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: end;
 	justify-content: space-between;
 	overflow: hidden;
 }
 
 .textWrapper {
 	text-align: left;
+	position: absolute;
 	padding: 2rem;
+	z-index: 10;
+	left: 0;
+	max-width: 22rem;
 }
+
+.textWrapper h1 {
+	margin-bottom: 1rem;
+}
+
+.textWrapper h2 {
+	margin-bottom: 0.75rem;
+}
+
+.textWrapper p {
+	margin-bottom: 1rem;
+}
+
+.textWrapper span {
+	color: var(--color-red-dark);
+}
+
+/* .buttonWrapper {
+	text-align: left;
+	position: absolute;
+	padding: 2rem;
+	z-index: 10;
+	right: 0;
+} */
 
 .heroItem {
 	flex: 33.333%;
-	/* width: 20%; */
 }
 
 .heroImage {
 	height: inherit;
-	width: auto;
-	flex: 100%;
+	align-items: center;
+	justify-content: center;
 	overflow: hidden;
 }
 
 .heroImage img {
 	width: 100%;
 	height: 100%;
+	max-width: 85vw;
+
+	object-position: 50% 10%;
 	object-fit: cover;
-	justify-self: center;
+	justify-self: end;
 	display: block;
 
 	/* Fade left and right edges */

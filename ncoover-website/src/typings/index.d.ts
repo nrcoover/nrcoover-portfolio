@@ -33,6 +33,13 @@ export type CodeLinks = {
 	url: string;
 };
 
+export type HeroData = {
+	banner: Image;
+	shortTitle: string;
+	shortDescription: string;
+	isAiGeneratedImage: boolean;
+};
+
 export type Project = {
 	id: number;
 	title: string;
@@ -44,5 +51,6 @@ export type Project = {
 	imageData: ImageData;
 	tagData: TagData;
 	links: CodeLinks[];
+	heroFeatureData?: HeroData;
 	isDefaultData?: boolean;
 };
