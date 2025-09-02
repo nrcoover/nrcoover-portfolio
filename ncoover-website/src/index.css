@@ -122,6 +122,7 @@ button {
 
 button:hover {
 	border-color: var(--button-background-hover);
+	background-color: var(--button-background-hover);
 }
 
 button:focus,

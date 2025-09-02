@@ -1,32 +1,49 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { DEFAULT_PROJECT } from "../../../data/projects.ts";
 import {
 	filterFeaturedProjects,
 	getProjects,
 } from "../../../helpers/projectHelper";
+import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext.ts";
 import type { Project } from "../../../typings";
+import PreviewButton from "../../common/ui/preview-button/PreviewButton.tsx";
 import classes from "./HeroBanner.module.css";
 
 const HeroBanner = () => {
-	const [heroProjects, setHeroProjects] = useState<Project[]>();
+	const { isModalOpen, setSelectedProject, openPreviewModal } = useContext(
+		ProjectPreviewContext
+	);
+
 	const [activeDisplayIndex, setActiveDisplayIndex] = useState<number>(0);
 
-	const featuredProjects = filterFeaturedProjects(getProjects());
-	const defaultProject: Project = DEFAULT_PROJECT;
+	const featuredProjects = useMemo(() => {
+		return filterFeaturedProjects(getProjects());
+	}, []);
 
-	useEffect(() => {
-		setHeroProjects(
-			featuredProjects.filter((project) => project.heroFeatureData != undefined)
-		);
-	}, [featuredProjects]);
+	const heroProjects = useMemo(
+		() => featuredProjects.filter((p) => p.heroFeatureData !== undefined),
+		[featuredProjects]
+	);
+
+	console.log("HeroProjects:");
+	console.log(heroProjects);
+
+	const defaultProject: Project = DEFAULT_PROJECT;
+	const display =
+		heroProjects.length > 0 ? heroProjects[activeDisplayIndex] : defaultProject;
+
+	const handlePreviewClick = () => {
+		setSelectedProject(display);
+		console.log(display);
+		openPreviewModal();
+	};
 
 	useEffect(() => {
 		const numberOfFeatures = heroProjects?.length ?? 0;
 
 		if (numberOfFeatures > 1) {
 			const timerId = setTimeout(() => {
-				const newIndex =
-					activeDisplayIndex >= numberOfFeatures ? 0 : activeDisplayIndex + 1;
+				const newIndex = (activeDisplayIndex + 1) % numberOfFeatures;
 				setActiveDisplayIndex(newIndex);
 			}, 3000);
 
@@ -36,8 +53,6 @@ const HeroBanner = () => {
 		}
 	}, [activeDisplayIndex, heroProjects?.length]);
 
-	const display = heroProjects ? heroProjects[activeDisplayIndex] : undefined;
-
 	const defaultContent = (
 		<>
 			<div className={`${classes.heroItem} ${classes.textWrapper}`}>
@@ -46,8 +61,11 @@ const HeroBanner = () => {
 				</h1>
 				<h2>{defaultProject.heroFeatureData?.shortTitle}</h2>
 				<p>{defaultProject.heroFeatureData?.shortDescription}</p>
-				<button>Preview</button>
-				{/* TODO: Replace above button with re-usable component? */}
+				<PreviewButton
+					selected={true}
+					handlePreviewClick={handlePreviewClick}
+					isModalOpen={isModalOpen}
+				/>
 			</div>
 			<div className={`${classes.heroItem} ${classes.heroImage}`}>
 				<img

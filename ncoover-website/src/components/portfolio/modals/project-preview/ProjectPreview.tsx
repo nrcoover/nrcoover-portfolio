@@ -224,7 +224,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 					Tags: {primaryTag ?? defaultData.tagData.primaryTag} (
 					<i>Primary Tag</i>)
 					{(otherTags ?? defaultData.tagData.otherTags).map((tag) => (
-						<>, {tag}</>
+						<span key={tag}>, {tag}</span>
 					))}
 				</p>
 			</div>
