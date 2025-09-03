@@ -139,7 +139,40 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 				</div>
 				<Separator width={"100%"} margin={"0"}></Separator>
 			</div>
-			<div className={classes.previewContent}>
+
+			{/* only visible on small screens */}
+			<div
+				className={`${classes.previewContent} ${classes.contentSmallDisplay}`}
+			>
+				<div className={classes.previewItem}>
+					<h4>Title</h4>
+					<p>{title ?? defaultData.title}</p>
+					<h4>Project Description</h4>
+					<p>
+						{description && description !== ""
+							? description
+							: defaultData.description}
+					</p>
+				</div>
+				<div className={classes.previewItem}>
+					<ImageCarousel
+						images={
+							imagesPaths && hasImages
+								? imagesPaths
+								: defaultData.imageData.imagesPaths
+						}
+						onImageSelection={setSelectedImage}
+					></ImageCarousel>
+					<h4>Image Description</h4>
+					<p>{selectedImage?.caption ?? defaultImageCaption}</p>
+				</div>
+			</div>
+
+			{/* only visible on large screens */}
+			{/* TODO: Figure out how to do a word-wrap around the Image Carousel as a floating element on larger screens. */}
+			<div
+				className={`${classes.previewContent} ${classes.contentLargeDisplay}`}
+			>
 				<div className={classes.previewItem}>
 					<h4>Title</h4>
 					<p>{title ?? defaultData.title}</p>
