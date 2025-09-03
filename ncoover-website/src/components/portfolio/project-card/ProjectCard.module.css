@@ -85,3 +85,63 @@
 	transition: display 2.3 ease;
 	display: none;
 }
+
+/* ---------------------------
+   Responsive adjustments
+----------------------------*/
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+	.coverArtContainer {
+		width: 90vw; /* Nearly full width */
+	}
+
+	.projectCard {
+		margin: 0.5rem 0; /* Vertical stack spacing */
+	}
+
+	.previewBox button {
+		margin-bottom: 0.5rem;
+	}
+}
+
+/* Tablets portrait (≤768px) */
+@media (max-width: 768px) {
+	.coverArtContainer {
+		width: 30vw;
+	}
+
+	.projectCard {
+		margin: 0.75rem;
+	}
+
+	.previewBox button {
+		margin-bottom: 0.5rem;
+		padding: 0.5rem 0.75rem;
+		width: auto;
+		text-align: center;
+		justify-content: center;
+	}
+}
+
+/* Tablets landscape / small laptops (≤1024px) */
+@media (max-width: 1024px) {
+	.coverArtContainer {
+		width: 30vw;
+	}
+
+	.projectCard {
+		margin: 0.75rem;
+	}
+}
+
+/* Extra large desktops (≥1440px) */
+@media (min-width: 1440px) {
+	.coverArtContainer {
+		width: 35vh;
+	}
+
+	.projectCard {
+		margin: 1rem;
+	}
+}

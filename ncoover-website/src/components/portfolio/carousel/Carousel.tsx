@@ -68,17 +68,42 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 		return () => scrollRef.current?.removeEventListener("keydown", handleKey);
 	}, [scroll]);
 
+	const leftControl = (
+		<>
+			<button
+				className={classes.arrowControl}
+				onClick={() => scroll("left")}
+				aria-label="Scroll left"
+			>
+				◀
+			</button>
+		</>
+	);
+
+	const rightControl = (
+		<>
+			<button
+				className={classes.arrowControl}
+				onClick={() => scroll("right")}
+				aria-label="Scroll right"
+			>
+				▶
+			</button>
+		</>
+	);
+
+	const controls = (
+		<>
+			{leftControl}
+			{rightControl}
+		</>
+	);
+
 	return (
 		<Containerizer aria-label={title}>
 			<h2 className={classes.title}>{title}</h2>
 			<div className={classes.controls}>
-				<button
-					className={classes.arrowControl}
-					onClick={() => scroll("left")}
-					aria-label="Scroll left"
-				>
-					◀
-				</button>
+				<div className={classes.largeScreenControls}>{leftControl}</div>
 				<div
 					className={classes.projectContainer}
 					ref={scrollRef}
@@ -104,14 +129,9 @@ const Carousel = ({ title, projects }: CarouselProps) => {
 					))}
 					<div className={classes.cardSpacer} aria-hidden="true" />
 				</div>
-				<button
-					className={classes.arrowControl}
-					onClick={() => scroll("right")}
-					aria-label="Scroll right"
-				>
-					▶
-				</button>
+				<div className={classes.largeScreenControls}>{rightControl}</div>
 			</div>
+			<div className={classes.smallScreenControls}>{controls}</div>
 		</Containerizer>
 	);
 };

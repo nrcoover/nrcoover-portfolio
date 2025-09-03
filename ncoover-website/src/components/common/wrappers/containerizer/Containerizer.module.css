@@ -8,3 +8,34 @@
 	max-width: 100%;
 	overflow: hidden;
 }
+
+/* ---------------------------
+   Responsive adjustments
+----------------------------*/
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+	.containerizer {
+		margin: 0.5rem;
+		padding: 1rem;
+		border-radius: 0.5rem;
+	}
+}
+
+/* Tablets portrait (≤768px) */
+@media (max-width: 768px) {
+	.containerizer {
+		margin: 1rem;
+		padding: 1rem 1.5rem;
+		border-radius: 0.75rem;
+	}
+}
+
+/* Tablets landscape / small laptops (≤1024px) */
+@media (max-width: 1024px) {
+	.containerizer {
+		margin: 1.5rem;
+		padding: 1rem 2rem;
+		border-radius: 0.85rem;
+	}
+}
