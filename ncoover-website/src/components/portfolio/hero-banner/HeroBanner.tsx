@@ -6,6 +6,7 @@ import {
 } from "../../../helpers/projectHelper";
 import { ProjectPreviewContext } from "../../../store/project-preview-context/ProjectPreviewContext.ts";
 import type { Project } from "../../../typings";
+import AiNotice from "../../common/ai-notice/AiNotice.tsx";
 import PreviewButton from "../../common/ui/preview-button/PreviewButton.tsx";
 import classes from "./HeroBanner.module.css";
 
@@ -68,10 +69,17 @@ const HeroBanner = () => {
 				/>
 			</div>
 			<div className={`${classes.heroItem} ${classes.heroImage}`}>
-				<img
-					src={defaultProject.heroFeatureData?.banner.src}
-					alt={defaultProject.heroFeatureData?.banner.alt}
-				/>
+				<div className={classes.heroImageWrapper}>
+					<img
+						src={defaultProject.heroFeatureData?.banner.src}
+						alt={defaultProject.heroFeatureData?.banner.alt}
+					/>
+					<div className={classes.aiNoticeWrapper}>
+						<AiNotice
+							showNotice={display.heroFeatureData?.isAiGeneratedImage ?? true}
+						/>
+					</div>
+				</div>
 			</div>
 			{/* <div className={`${classes.heroItem} ${classes.buttonWrapper}`}>
 				Placeholder
@@ -93,6 +101,11 @@ const HeroBanner = () => {
 							src={display.heroFeatureData?.banner.src}
 							alt={display.heroFeatureData?.banner.alt}
 						/>
+						<div className={classes.aiNoticeWrapper}>
+							<AiNotice
+								showNotice={display.heroFeatureData?.isAiGeneratedImage ?? true}
+							/>
+						</div>
 					</div>
 					{/* <div className={`${classes.heroItem} ${classes.buttonWrapper}`}>
 						Placeholder

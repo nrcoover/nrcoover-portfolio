@@ -1,0 +1,11 @@
+.aiNotice {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	z-index: 1;
+	background-color: black;
+	opacity: 50%;
+	width: inherit;
+	border-radius: 8px 8px 0 0;
+	font-size: small;
+}

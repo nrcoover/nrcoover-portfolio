@@ -13,6 +13,7 @@ import PrimaryTagIcon from "../../common/ui/primary-tag-icon/PrimaryTagIcon";
 import { TAG_TO_GLOW_VAR } from "../../../constants/glowColors";
 import { getCategoryForTag } from "../../../helpers/tagMappingHelpers";
 import { SettingsContext } from "../../../store/settings-context/SettingsContext";
+import AiNotice from "../../common/ai-notice/AiNotice";
 import classes from "./ProjectCard.module.css";
 
 interface ProjectCardProps {
@@ -41,12 +42,8 @@ const ProjectCard = ({
 	const { userSettings } = useContext(SettingsContext);
 	const { locationPath } = useContext(LocationContext);
 
-	const {
-		displayFavoritesIcon,
-		displayImageAiLabel,
-		displayPrimaryTagIcon,
-		displayPrimaryTagGlow,
-	} = userSettings;
+	const { displayFavoritesIcon, displayPrimaryTagIcon, displayPrimaryTagGlow } =
+		userSettings;
 
 	const primaryTag = project.tagData.primaryTag;
 	const isPrimaryCategory = getCategoryForTag(primaryTag) === category;
@@ -99,11 +96,10 @@ const ProjectCard = ({
 						}
 						alt={`Cover art for ${project.title}`}
 					/>
-					{isAiGeneratedImage && displayImageAiLabel && (
-						<div className={classes.aiNotice}>
-							<p>A.I. Generated Image</p>
-						</div>
-					)}
+					<AiNotice
+						showNotice={isAiGeneratedImage}
+						absoluteLocations={[absoluteLocationTypes.Top]}
+					/>
 
 					{displayFavoritesIcon && (
 						<FavoriteButton

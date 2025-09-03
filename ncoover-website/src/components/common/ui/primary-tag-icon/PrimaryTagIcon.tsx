@@ -1,13 +1,11 @@
 import type { CSSProperties } from "react";
 import { iconUi, type IconSource } from "../../../../constants/iconTypes";
-import {
-	absoluteLocation,
-	type AbsoluteLocationKey,
-} from "../../../../constants/styles";
+import { type AbsoluteLocationKey } from "../../../../constants/styles";
 import Icon from "../../icon/Icon";
 
-import classes from "./PrimaryTagIcon.module.css";
+import { getAbsoluteStyles } from "../../../../helpers/stylesHelpers";
 import { tagToIconMap } from "../../../../helpers/tagMappingHelpers";
+import classes from "./PrimaryTagIcon.module.css";
 
 interface PrimaryTagIconProps {
 	primaryTag: string;
@@ -30,11 +28,7 @@ const PrimaryTagIcon = ({
 		margin: margin,
 	};
 
-	const absoluteStyles = {
-		...absoluteLocations.reduce((acc, key) => {
-			return { ...acc, ...absoluteLocation[key] };
-		}, {}),
-	};
+	const absoluteStyles = getAbsoluteStyles(absoluteLocations);
 
 	const iconSource: IconSource =
 		tagToIconMap[primaryTag] ?? iconUi.QuestionMark;
