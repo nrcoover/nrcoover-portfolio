@@ -105,7 +105,11 @@ const ProjectCard = ({
 						<FavoriteButton
 							project={project}
 							maxWidth={"2rem"}
-							padding={".5rem"}
+							margin={".5rem"}
+							absoluteLocations={[
+								absoluteLocationTypes.Right,
+								absoluteLocationTypes.Top,
+							]}
 						/>
 					)}
 

@@ -127,7 +127,16 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 				<div className={classes.titleWrapper}>
 					<h3>{title}</h3>
 				</div>
-				<FavoriteButton project={project} padding={".5rem 0"} />
+				<div className={classes.favoriteButtonWrapper}>
+					<FavoriteButton
+						project={project}
+						margin={".5rem 0"}
+						absoluteLocations={[
+							absoluteLocationTypes.Right,
+							absoluteLocationTypes.Bottom,
+						]}
+					/>
+				</div>
 				<Separator width={"100%"} margin={"0"}></Separator>
 			</div>
 			<div className={classes.previewContent}>

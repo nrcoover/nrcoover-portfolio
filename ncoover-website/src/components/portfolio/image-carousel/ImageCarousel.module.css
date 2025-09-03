@@ -45,3 +45,62 @@
 .navButton:hover {
 	background: rgba(0, 0, 0, 0.8);
 }
+
+/* ---------------------------
+   Responsive adjustments
+----------------------------*/
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+	.carousel {
+		gap: 0.5rem;
+	}
+
+	.navButton {
+		padding: 0.25rem 0.5rem;
+		font-size: 1.2rem;
+	}
+
+	.image {
+		object-fit: contain; /* don’t crop too aggressively on tiny screens */
+	}
+}
+
+/* Tablets portrait (≤768px) */
+@media (max-width: 768px) {
+	.navButton {
+		padding: 0.4rem 0.8rem;
+		font-size: 1.3rem;
+	}
+
+	.image {
+		object-fit: contain;
+	}
+}
+
+/* Tablets landscape / small laptops (≤1024px) */
+@media (max-width: 1024px) {
+	.carousel {
+		gap: 0.75rem;
+	}
+
+	.navButton {
+		font-size: 1.4rem;
+	}
+}
+
+/* Extra large desktops (≥1440px) */
+@media (min-width: 1440px) {
+	.carousel {
+		gap: 2rem;
+	}
+
+	.navButton {
+		padding: 0.75rem 1.5rem;
+		font-size: 2rem;
+	}
+
+	.image {
+		object-fit: cover; /* more cinematic feel on big screens */
+	}
+}

@@ -4,23 +4,29 @@ import { FavoritesContext } from "../../../../store/favorites-context/FavoritesC
 import type { Project } from "../../../../typings/index.d.ts";
 import Icon from "../../icon/Icon";
 
+import type { AbsoluteLocationKey } from "../../../../constants/styles.ts";
 import classes from "./FavoriteButton.module.css";
+import { getAbsoluteStyles } from "../../../../helpers/stylesHelpers.ts";
 
 interface FavoriteButtonProps {
 	project: Project | undefined;
 	maxWidth?: string;
 	maxHeight?: string;
-	padding?: string;
+	absoluteLocations?: AbsoluteLocationKey[];
+	margin?: string;
 }
 
 const FavoriteButton = ({
 	project,
 	maxWidth = "3rem",
 	maxHeight = maxWidth,
-	padding = "0",
+	absoluteLocations = [],
+	margin = "0",
 }: FavoriteButtonProps) => {
 	const { favoriteProjectsIds, addFavorite, removeFavorite } =
 		useContext(FavoritesContext);
+
+	const absoluteStyles = getAbsoluteStyles(absoluteLocations);
 
 	const sizingStyles = {
 		maxHeight,
@@ -45,17 +51,17 @@ const FavoriteButton = ({
 	};
 
 	return (
-		<div className={classes.favoriteButton}>
+		<div className={classes.favoriteButton} style={{ ...absoluteStyles }}>
 			<button
 				type="button"
 				onClick={isFavoriteProject ? handleRemoveFavorite : handleAddFavorite}
 				disabled={!project}
-				style={{ padding: padding }}
+				style={{ margin: margin }}
 			>
 				<Icon
 					source={isFavoriteProject ? iconUi.Favorite : iconUi.FavoriteOutline}
 					className={classes.link}
-					style={sizingStyles}
+					style={{ ...sizingStyles }}
 				/>
 			</button>
 		</div>

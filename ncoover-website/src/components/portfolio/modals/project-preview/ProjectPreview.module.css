@@ -49,6 +49,11 @@
 	max-width: 80%;
 }
 
+/* TODO: Replace this "workaround" with configuring the Favorite Button component to use 50% for absolute locations... */
+.favoriteButtonWrapper {
+	margin-top: -0.25rem;
+}
+
 .previewContent {
 	margin-top: 1rem;
 	display: flex;
@@ -113,6 +118,122 @@
 #Tags {
 	text-align: center;
 	font-size: 0.85rem;
+}
+
+@keyframes slide-in-from-top {
+	0% {
+		transform: translateY(-15%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes flash {
+	0% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+
+/* ---------------------------
+   Responsive adjustments
+----------------------------*/
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+	.previewContent {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.preview h3 {
+		font-size: 2rem;
+		white-space: normal;
+	}
+
+	.preview h4 {
+		font-size: 1.2rem;
+	}
+
+	.preview p {
+		font-size: 1rem;
+	}
+
+	.previewIcons {
+		justify-content: center;
+	}
+
+	.previewIcons li {
+		margin: 0.75rem;
+	}
+}
+
+/* Tablets portrait (≤768px) */
+@media (max-width: 768px) {
+	.previewContent {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.preview h3 {
+		font-size: 2.25rem;
+	}
+
+	.preview h4 {
+		font-size: 1.3rem;
+	}
+
+	.preview p {
+		font-size: 1.05rem;
+	}
+}
+
+/* Tablets landscape / small laptops (≤1024px) */
+@media (max-width: 1024px) {
+	.preview h3 {
+		font-size: 2.5rem;
+	}
+
+	.preview h4 {
+		font-size: 1.35rem;
+	}
+
+	.previewContent {
+		gap: 1rem;
+		flex-direction: column;
+	}
+
+	.favoriteButtonWrapper {
+		margin-top: 0;
+	}
+}
+
+/* Extra large desktops (≥1440px) */
+@media (min-width: 1440px) {
+	.preview h3 {
+		font-size: 3.25rem;
+	}
+
+	.preview h4 {
+		font-size: 1.75rem;
+	}
+
+	.preview p {
+		font-size: 1.25rem;
+	}
+
+	.previewContent {
+		gap: 2rem;
+	}
 }
 
 @keyframes slide-in-from-top {
