@@ -104,6 +104,7 @@ const HeroBanner = () => {
 						<div className={classes.aiNoticeWrapper}>
 							<AiNotice
 								showNotice={display.heroFeatureData?.isAiGeneratedImage ?? true}
+								useFadedEdges={true}
 							/>
 						</div>
 					</div>
