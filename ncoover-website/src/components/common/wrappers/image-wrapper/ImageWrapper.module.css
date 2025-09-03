@@ -2,15 +2,16 @@
 	position: relative;
 	box-sizing: border-box;
 	display: flex;
-	overflow: hidden;
-	flex: 100%;
 	align-items: center;
 	justify-content: center;
+	width: 100%; /* responsive */
+	overflow: hidden;
 }
 
 .imageWrapper img {
-	object-fit: cover;
-	height: 100%;
 	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	border-radius: 8px;
+	display: block; /* removes inline-gap issue */
 }

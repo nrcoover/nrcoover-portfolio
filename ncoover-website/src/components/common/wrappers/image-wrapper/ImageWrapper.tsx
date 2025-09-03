@@ -2,32 +2,19 @@ import classes from "./ImageWrapper.module.css";
 
 type ImageWrapperProps = {
 	children: React.ReactNode;
-	height: string;
-	width: string;
-	maxHeight?: string;
-	maxWidth?: string;
+	aspectRatio?: string; // e.g., "16/9", "4/3", "1/1"
+	maxWidth?: string; // e.g., "600px", "90%", "clamp(300px, 80vw, 1200px)"
 };
 
 const ImageWrapper = ({
 	children,
-	height,
-	width,
-	maxHeight,
-	maxWidth,
+	aspectRatio = "4/4",
+	maxWidth = "100%",
 }: ImageWrapperProps) => {
-	const sizingStyles = {
-		height,
-		width,
-		maxHeight: maxHeight ?? "",
-		maxWidth: maxWidth ?? "",
-	};
-
 	return (
-		<>
-			<div style={sizingStyles} className={classes.imageWrapper}>
-				{children}
-			</div>
-		</>
+		<div className={classes.imageWrapper} style={{ aspectRatio, maxWidth }}>
+			{children}
+		</div>
 	);
 };
 

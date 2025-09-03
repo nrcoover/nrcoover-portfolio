@@ -49,12 +49,7 @@ const ImageCarousel = ({
 				&#8592;
 			</button>
 
-			<ImageWrapper
-				height={"50vh"}
-				width={"50vw"}
-				maxHeight={"500px"}
-				maxWidth={"500px"}
-			>
+			<ImageWrapper maxWidth={"500px"}>
 				{/* Current Image */}
 				<img
 					src={images[currentIndex].src}
