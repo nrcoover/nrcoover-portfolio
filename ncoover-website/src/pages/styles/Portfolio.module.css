@@ -6,3 +6,10 @@ main {
 .portfolio {
 	margin-left: var(--side-navigation-width-offset);
 }
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+	.portfolio {
+		margin-left: 0;
+	}
+}

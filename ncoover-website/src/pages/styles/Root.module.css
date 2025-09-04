@@ -42,3 +42,10 @@ a:hover {
 .externalSitesTitle {
 	margin-top: 2rem;
 }
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+	.sideNavigationOffset {
+		margin-left: 0;
+	}
+}

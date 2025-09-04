@@ -1,8 +1,7 @@
+import { type ReactNode, useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { PATHS } from "../../constants/paths";
-
-import { useContext } from "react";
 import { iconUi } from "../../constants/iconTypes";
+import { PATHS } from "../../constants/paths";
 import globalClasses from "../../global.module.css";
 import { AuthUserContext } from "../../store/auth-user-context/AuthUserContext";
 import { LocationContext } from "../../store/location-context/LocationContext";
@@ -11,173 +10,171 @@ import Icon from "../common/icon/Icon";
 import Separator from "../common/separator/Separator";
 import classes from "./SideNavigation.module.css";
 
+type NavItem = {
+	id: string;
+	label: string;
+	icon: ReactNode;
+	to?: string;
+	onClick?: () => void;
+	section?: "top" | "bottom"; // split into two groups
+};
+
 const SideNavigation = () => {
 	const { locationPath } = useContext(LocationContext);
 	const { isLoggedIn, openLoginModal } = useContext(AuthUserContext);
 	const { openSettingsModal } = useContext(SettingsContext);
 
-	const handleOpenLoginFormModal = () => {
-		openLoginModal();
-	};
+	const [menuOpen, setMenuOpen] = useState(false);
 
-	const handleOpenSettingsModal = () => {
-		openSettingsModal();
-	};
+	const toggleMenu = () => setMenuOpen((prev) => !prev);
 
-	const isTrue = true;
+	// Shared nav items definition
+	const NAV_ITEMS: NavItem[] = [
+		{
+			id: "home",
+			label: "home",
+			icon: <Icon source={iconUi.Home} />,
+			to: PATHS.Home,
+			section: "top",
+		},
+		{
+			id: "portfolio",
+			label: "portfolio",
+			icon: <Icon source={iconUi.Folder} />,
+			to:
+				locationPath === PATHS.Portfolio.Root
+					? PATHS.Portfolio.AlreadyHere
+					: PATHS.Portfolio.Root,
+			section: "top",
+		},
+		{
+			id: "about",
+			label: "about me",
+			icon: <Icon source={iconUi.Info} />,
+			to: PATHS.AboutMe,
+			section: "top",
+		},
+		{
+			id: "contact",
+			label: "contact",
+			icon: <Icon source={iconUi.Contact} />,
+			to: PATHS.Contact,
+			section: "top",
+		},
+
+		{
+			id: "search",
+			label: "search",
+			icon: <Icon source={iconUi.Search} />,
+			to: PATHS.Home,
+			section: "bottom",
+		},
+
+		isLoggedIn
+			? {
+					id: "profile",
+					label: "profile",
+					icon: <Icon source={iconUi.ProfileCircle} />,
+					onClick: openLoginModal,
+					section: "bottom",
+				}
+			: {
+					id: "login",
+					label: "login",
+					icon: <Icon source={iconUi.Login} />,
+					onClick: openLoginModal,
+					section: "bottom",
+				},
+
+		{
+			id: "light",
+			label: "light mode",
+			icon: <Icon source={iconUi.LightMode} />,
+			to: PATHS.Home,
+			section: "bottom",
+		},
+		{
+			id: "favorites",
+			label: "favorites",
+			icon: <Icon source={iconUi.Favorite} />,
+			to: PATHS.Portfolio.Favorites,
+			section: "bottom",
+		},
+		{
+			id: "settings",
+			label: "settings",
+			icon: <Icon source={iconUi.Settings} />,
+			onClick: openSettingsModal,
+			section: "bottom",
+		},
+	];
+
+	const renderNavItems = (section: "top" | "bottom", isMobile = false) =>
+		NAV_ITEMS.filter((item) => item.section === section).map((item) => (
+			<li
+				key={item.id}
+				className={`${globalClasses.iconContainer} ${classes.listItem}`}
+			>
+				{item.to ? (
+					<NavLink
+						to={item.to}
+						onClick={isMobile ? toggleMenu : undefined}
+						className={({ isActive }) =>
+							isActive
+								? `${classes.active} ${globalClasses.iconContainer}`
+								: globalClasses.iconContainer
+						}
+						end
+					>
+						{item.icon} {item.label}
+					</NavLink>
+				) : (
+					<button
+						onClick={() => {
+							item.onClick?.();
+							if (isMobile) toggleMenu();
+						}}
+						className={`${globalClasses.iconContainer}`}
+					>
+						{item.icon} {item.label}
+					</button>
+				)}
+			</li>
+		));
 
 	return (
-		<div className={classes.navigationWrapper}>
-			<nav className={classes.sideNavigation}>
-				<ul className={classes.list}>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Home}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon source={iconUi.Home} />
-							{isTrue && <>home</>}
-						</NavLink>
-					</li>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={
-								locationPath === PATHS.Portfolio.Root
-									? PATHS.Portfolio.AlreadyHere
-									: PATHS.Portfolio.Root
-							}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon source={iconUi.Folder} />
-							{isTrue && <>portfolio</>}
-						</NavLink>
-					</li>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.AboutMe}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon source={iconUi.Info} />
-							{isTrue && <>about me</>}
-						</NavLink>
-					</li>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Contact}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon source={iconUi.Contact} />
-							{isTrue && <>contact</>}
-						</NavLink>
-					</li>
-				</ul>
-				<Separator width={"60%"} margin={"4rem"} />
-				<ul className={classes.list}>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Home}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon source={iconUi.Search} />
-							{isTrue && <>search</>}
-						</NavLink>
-					</li>
-					{isLoggedIn ? (
-						<li className={globalClasses.iconContainer}>
-							<button
-								onClick={handleOpenLoginFormModal}
-								className={"iconButton"}
-							>
-								<Icon source={iconUi.ProfileCircle} />
-							</button>
-							{isTrue && <>profile</>}
-						</li>
-					) : (
-						<li className={globalClasses.iconContainer}>
-							<button
-								onClick={handleOpenLoginFormModal}
-								className={"iconButton"}
-							>
-								<Icon source={iconUi.Login} />
-							</button>
-							{isTrue && <>login</>}
-						</li>
-					)}
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Home}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon source={iconUi.LightMode} />
-							{isTrue && <>light mode</>}
-						</NavLink>
-					</li>
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Portfolio.Favorites}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						>
-							<Icon source={iconUi.Favorite} />
-							{isTrue && <>favorites</>}
-						</NavLink>
-					</li>
+		<>
+			{/* Desktop Sidebar */}
+			<div className={classes.navigationWrapper}>
+				<nav className={classes.sideNavigation}>
+					<ul className={classes.list}>{renderNavItems("top")}</ul>
+					<Separator width={"60%"} margin={"4rem"} />
+					<ul className={classes.list}>{renderNavItems("bottom")}</ul>
+				</nav>
+			</div>
 
-					<li className={globalClasses.iconContainer}>
-						<button onClick={handleOpenSettingsModal} className={"iconButton"}>
-							<Icon source={iconUi.Settings} />
-						</button>
-						{isTrue && <>settings</>}
-					</li>
+			{/* Mobile Bottom Bar */}
+			<div className={classes.mobileNavBar}>
+				<button className={classes.menuButton} onClick={toggleMenu}>
+					{menuOpen ? "Close" : "Menu"}
+				</button>
+			</div>
 
-					<li className={globalClasses.iconContainer}>
-						<NavLink
-							to={PATHS.Home}
-							className={({ isActive }) =>
-								isActive
-									? (classes.active, globalClasses.iconContainer)
-									: globalClasses.iconContainer
-							}
-							end
-						></NavLink>
-					</li>
-				</ul>
-			</nav>
-		</div>
+			{/* Fullscreen Overlay Menu (mobile) */}
+			{menuOpen && (
+				<div className={classes.mobileMenuOverlay}>
+					<nav className={classes.mobileMenuContent}>
+						<ul className={classes.mobileList}>
+							{renderNavItems("top", true)}
+						</ul>
+						<Separator width={"60%"} margin={"2rem"} />
+						<ul className={classes.mobileList}>
+							{renderNavItems("bottom", true)}
+						</ul>
+					</nav>
+				</div>
+			)}
+		</>
 	);
 };
 
