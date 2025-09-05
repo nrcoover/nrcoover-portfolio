@@ -182,10 +182,21 @@
 
 /* Tablets portrait (≤768px) */
 @media (max-width: 768px) {
+	.previewTitle {
+		margin: 0 1.25rem;
+		padding-top: 0;
+	}
+
 	.previewContent {
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
+		padding: 0.5rem 1rem 0rem;
+		margin-top: 0;
+	}
+
+	#Tags {
+		margin: 0 1rem 0.5rem;
 	}
 
 	.preview h3 {
