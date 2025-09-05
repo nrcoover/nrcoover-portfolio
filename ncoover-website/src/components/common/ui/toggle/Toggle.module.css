@@ -48,3 +48,33 @@
 .toggleIsActive {
 	justify-content: flex-end;
 }
+
+@media (max-width: 870px) {
+	.panelElement {
+		/* background-color: var(--color-red-light);
+	box-shadow: 2px 2px 5px var(--background-secondary); */
+		min-width: 100%;
+		width: 100%;
+		border-radius: 10px;
+		text-align: center;
+		padding: 0.5em 1rem;
+		transition: background-color 1s;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		font-size: small;
+	}
+
+	.toggleContentsWrapper {
+		gap: 0.1rem;
+		padding: 0.1rem 0.5rem;
+		width: 95%;
+		min-width: 95%;
+		max-width: 3.5em;
+	}
+
+	.label {
+		font-size: 0.8rem;
+	}
+}
