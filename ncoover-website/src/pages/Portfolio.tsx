@@ -48,7 +48,6 @@ const Portfolio = () => {
 		<>
 			<ProjectPreview ref={previewModal} project={selectedProject} />
 			<HeroBanner />
-			<UserSettings />
 			{favoriteProjects.length > 0 && (
 				<Carousel title={CATEGORIES.favorites} projects={favoriteProjects} />
 			)}
@@ -99,6 +98,7 @@ const Portfolio = () => {
 		<>
 			<main className={classes.portfolio}>
 				<LoginForm ref={loginModal} />
+				<UserSettings />
 				<SideNavigation />
 				{mainContent}
 			</main>
