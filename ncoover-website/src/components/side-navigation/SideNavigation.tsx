@@ -62,13 +62,14 @@ const SideNavigation = () => {
 			section: "top",
 		},
 
-		{
-			id: "search",
-			label: "search",
-			icon: <Icon source={iconUi.Search} />,
-			to: PATHS.Home,
-			section: "bottom",
-		},
+		// TODO: Implement Search feature
+		// {
+		// 	id: "search",
+		// 	label: "search",
+		// 	icon: <Icon source={iconUi.Search} />,
+		// 	to: PATHS.Home,
+		// 	section: "bottom",
+		// },
 
 		isLoggedIn
 			? {
@@ -86,13 +87,14 @@ const SideNavigation = () => {
 					section: "bottom",
 				},
 
-		{
-			id: "light",
-			label: "light mode",
-			icon: <Icon source={iconUi.LightMode} />,
-			to: PATHS.Home,
-			section: "bottom",
-		},
+		// TODO: Implement Light/Dark mode feature
+		// {
+		// 	id: "light",
+		// 	label: "light mode",
+		// 	icon: <Icon source={iconUi.LightMode} />,
+		// 	to: PATHS.Home,
+		// 	section: "bottom",
+		// },
 		{
 			id: "favorites",
 			label: "favorites",
