@@ -1,7 +1,0 @@
-{
-	"name": "nrcoover-portfolio-root",
-	"private": true,
-	"scripts": {
-		"copy:images": "mkdir -p dist && cp -r images dist/images || (if exist images xcopy images dist\\images /E /I /Y)"
-	}
-}
