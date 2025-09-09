@@ -226,7 +226,7 @@ const AboutMe = () => {
 									platform
 								</strong>
 								. Through my coursework, I've built several{" "}
-								<a href="./portfolio.html" target="_blank">
+								<a href="/portfolio/" target="_blank">
 									Shopify eCommerce Store demos
 								</a>
 								, learned about store setup and migration, and gained experience

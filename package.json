@@ -1,0 +1,14 @@
+{
+	"name": "nrcoover-portfolio",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"build:react": "cd react-website && npm install && npm run build",
+		"dev:react": "cd react-website && npm install && npm run dev",
+		"dev:all": "concurrently \"npm run dev:react\" \"npx serve . -p 8888\""
+	},
+	"devDependencies": {
+		"concurrently": "^8.2.0",
+		"serve": "^14.2.0"
+	}
+}

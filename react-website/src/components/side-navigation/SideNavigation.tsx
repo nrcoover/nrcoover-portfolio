@@ -15,6 +15,7 @@ type NavItem = {
 	label: string;
 	icon: ReactNode;
 	to?: string;
+	href?: string;
 	onClick?: () => void;
 	section?: "top" | "bottom"; // split into two groups
 };
@@ -30,11 +31,13 @@ const SideNavigation = () => {
 
 	// Shared nav items definition
 	const NAV_ITEMS: NavItem[] = [
+		// TODO: replace hrefs when new react pages get implemented.
 		{
 			id: "home",
 			label: "home",
 			icon: <Icon source={iconUi.Home} />,
-			to: PATHS.Home,
+			href: "/index.html",
+			// to: PATHS.Home,
 			section: "top",
 		},
 		{
@@ -51,16 +54,17 @@ const SideNavigation = () => {
 			id: "about",
 			label: "about me",
 			icon: <Icon source={iconUi.Info} />,
-			to: PATHS.AboutMe,
+			href: "/about-me.html",
+			// to: PATHS.AboutMe,
 			section: "top",
 		},
-		{
-			id: "contact",
-			label: "contact",
-			icon: <Icon source={iconUi.Contact} />,
-			to: PATHS.Contact,
-			section: "top",
-		},
+		// {
+		// 	id: "contact",
+		// 	label: "contact",
+		// 	icon: <Icon source={iconUi.Contact} />,
+		// 	to: PATHS.Contact,
+		// 	section: "top",
+		// },
 
 		// TODO: Implement Search feature
 		// {
@@ -117,29 +121,39 @@ const SideNavigation = () => {
 				key={item.id}
 				className={`${globalClasses.iconContainer} ${classes.listItem}`}
 			>
-				{item.to ? (
-					<NavLink
-						to={item.to}
-						onClick={isMobile ? toggleMenu : undefined}
-						className={({ isActive }) =>
-							isActive
-								? `${classes.active} ${globalClasses.iconContainer}`
-								: globalClasses.iconContainer
-						}
-						end
-					>
-						{item.icon} {item.label}
-					</NavLink>
+				{item.href ? (
+					<>
+						<a href={item.href} className={`${globalClasses.iconContainer}`}>
+							{item.icon} {item.label}
+						</a>
+					</>
 				) : (
-					<button
-						onClick={() => {
-							item.onClick?.();
-							if (isMobile) toggleMenu();
-						}}
-						className={`${globalClasses.iconContainer}`}
-					>
-						{item.icon} {item.label}
-					</button>
+					<>
+						{item.to ? (
+							<NavLink
+								to={item.to}
+								onClick={isMobile ? toggleMenu : undefined}
+								className={({ isActive }) =>
+									isActive
+										? `${classes.active} ${globalClasses.iconContainer}`
+										: globalClasses.iconContainer
+								}
+								end
+							>
+								{item.icon} {item.label}
+							</NavLink>
+						) : (
+							<button
+								onClick={() => {
+									item.onClick?.();
+									if (isMobile) toggleMenu();
+								}}
+								className={`${globalClasses.iconContainer}`}
+							>
+								{item.icon} {item.label}
+							</button>
+						)}
+					</>
 				)}
 			</li>
 		));
