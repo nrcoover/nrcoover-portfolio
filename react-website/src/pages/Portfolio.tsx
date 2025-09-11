@@ -14,7 +14,11 @@ import { FavoritesContext } from "../store/favorites-context/FavoritesContext";
 import { LocationContext } from "../store/location-context/LocationContext";
 import ErrorDefault from "./ErrorDefault";
 
+import { NavLink } from "react-router-dom";
+import globalClasses from "../global.module.css";
+import ImageWrapper from "../components/common/wrappers/image-wrapper/ImageWrapper.tsx";
 import UserSettings from "../components/portfolio/modals/user-settings/UserSettings.tsx";
+import { providePathRoot } from "../helpers/assetHelper.ts";
 import {
 	filterFeaturedProjects,
 	filterNewArrivalProjects,
@@ -84,7 +88,39 @@ const Portfolio = () => {
 				{favoriteProjects.length > 0 ? (
 					<Carousel title={"Favorites"} projects={favoriteProjects} />
 				) : (
-					<>no favorites to see here...</>
+					<>
+						<div className={classes.sadPug}>
+							<h1>FAVORITES</h1>
+							<h3>no favorites to see here</h3>
+							<ImageWrapper maxWidth={"25rem"}>
+								<img
+									className={classes.sadPugImage}
+									src={providePathRoot(
+										"images/defaults/quiter-pug-medium_pexels-charles-1851164.jpg"
+									)}
+									alt="A black pug stares sadly at you..."
+								/>
+							</ImageWrapper>
+							<p>
+								You are greeted by a sad pug. His eyes stare desparingly into
+								yours. He knows your sorrow. You lack a favorite project, which
+								makes your sadness the extreme compared to his dismal existance.
+								Quick! Make haste! Return to the projects page and rid yourself
+								of this bleak, favorite-lacking reality!
+							</p>
+							<NavLink
+								to={PATHS.Portfolio.Root}
+								className={({ isActive }) =>
+									isActive
+										? `${classes.active} ${globalClasses.iconContainer}`
+										: globalClasses.iconContainer
+								}
+								end
+							>
+								<button>Return to Portfolio</button>
+							</NavLink>
+						</div>
+					</>
 					// TODO: Finish filling out this part with button to return to portfolio
 				)}
 				<ProjectPreview ref={undefined} project={selectedProject} />
