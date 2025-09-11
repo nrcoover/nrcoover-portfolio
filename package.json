@@ -5,7 +5,9 @@
 	"scripts": {
 		"build:react": "cd react-website && npm install && npm run build",
 		"dev:react": "cd react-website && npm install && npm run dev",
-		"dev:all": "concurrently \"npm run dev:react\" \"npx serve . -p 8888\""
+		"dev:all": "concurrently \"npm run dev:react\" \"npx serve . -p 8888\"",
+		"preview:react": "cd react-website && npm install && npm run preview",
+		"preview:all": "concurrently \"npm run build:react\" \"npm run preview:react\" \"npx serve . -p 8888\""
 	},
 	"devDependencies": {
 		"concurrently": "^8.2.0",

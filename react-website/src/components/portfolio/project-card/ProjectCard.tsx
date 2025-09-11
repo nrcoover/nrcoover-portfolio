@@ -15,6 +15,7 @@ import { getCategoryForTag } from "../../../helpers/tagMappingHelpers";
 import { SettingsContext } from "../../../store/settings-context/SettingsContext";
 import AiNotice from "../../common/ai-notice/AiNotice";
 import classes from "./ProjectCard.module.css";
+import { providePathRoot } from "../../../helpers/assetHelper";
 
 interface ProjectCardProps {
 	project: Project;
@@ -91,8 +92,10 @@ const ProjectCard = ({
 					<img
 						src={
 							project.imageData.coverArt.coverArtPath
-								? project.imageData.coverArt.coverArtPath
-								: "/images/projects/cover-art/typescript-project_ai-generated.png" //TODO: Update default image
+								? providePathRoot(project.imageData.coverArt.coverArtPath)
+								: providePathRoot(
+										"images/projects/cover-art/typescript-project_ai-generated.png"
+									) //TODO: Update default image
 						}
 						alt={`Cover art for ${project.title}`}
 					/>

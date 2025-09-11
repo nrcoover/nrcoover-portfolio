@@ -14,24 +14,24 @@ export const DEFAULT_PROJECT: Project = {
 	imageData: {
 		coverArt: {
 			coverArtPath:
-				"/images/projects/cover-art/ai-cover-art_missing-project.png",
+				"images/projects/cover-art/ai-cover-art_missing-project.png",
 			isAiGeneratedImage: true,
 		},
 		imagesPaths: [
 			{
-				src: "/images/projects/cover-art/ai-cover-art_missing-project.png",
+				src: "images/projects/cover-art/ai-cover-art_missing-project.png",
 				alt: 'Movie poster of a sad, broken, weathered robot with a missing arm in a beaufiul cyberpunk city. The poster reads "Missing Project".',
 				caption:
 					"Uh oh! Looks like we're having trouble communicating with the backend servers to provide you the details for this project. We apologize for the inconvenience, but please, enjoy this a.i. generated movie poster to make you feel happy (and perhaps a little bit sad) about the missing data. Poor thing doesn't even have his right arm! (Image complements of Chat-GPT5)",
 			},
 			{
-				src: "/images/projects/details/default-project_pexels-googledeepmind-18069362.jpg",
+				src: "images/projects/details/default-project_pexels-googledeepmind-18069362.jpg",
 				alt: "3D Render of butterfikes in a patch of forest floor vegetation, including moss, bark, and grass.",
 				caption:
 					"Actually, we're just joshing you. This application doesn't communicate with a backend server. The truth is our creator hasn't inputed data for this project yet, and didn't want to leave you with nothing. Instead, our creator cleverly provided you with this cool placeholder image from pexels.com, a great resource for royalty-free images!",
 			},
 			{
-				src: "../../public/images/projects/details/default-project_pexels-terricks-noah-282960-840326.jpg",
+				src: "images/projects/details/default-project_pexels-terricks-noah-282960-840326.jpg",
 				alt: "A cute puppy nuzzles his nose into his owner's hands, hiding his face slightly with his paw. The puppies cute eyes look up longingly, grateful for the attention.",
 				caption:
 					"Well, looks like the jig is up! (Sorry for deceiving you...), but perhaps we can make it up to you with this image of a cute puppy! (Another great photo from www.pexels.com). Speaking of puppies, since this project doesn't have any data yet, why not take a look at the project titled \"Quizapalooza\"? It's a small quiz web application built with JavaScript that rewards correct answers with more adorably cute puppies, and scient has proven that cutness and raise serotonin levels! (But then again, I wouldn't trust that last statement as 67.5% of all statistics are made up on the spot...)",
@@ -58,7 +58,7 @@ export const DEFAULT_PROJECT: Project = {
 	],
 	heroFeatureData: {
 		banner: {
-			src: "/images/projects/feature-banners/ai-cover-art_missing-project_feature-banner.png",
+			src: "images/projects/feature-banners/ai-cover-art_missing-project_feature-banner.png",
 			alt: 'Movie poster of a sad, broken, weathered robot with a missing arm in a beaufiul cyberpunk city. The poster reads "Missing Project".',
 		},
 
@@ -83,24 +83,24 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/ai-cover-art_missing-project.png",
+					"images/projects/cover-art/ai-cover-art_missing-project.png",
 				isAiGeneratedImage: true,
 			},
 			imagesPaths: [
 				{
-					src: "/images/projects/cover-art/ai-cover-art_missing-project.png",
+					src: "images/projects/cover-art/ai-cover-art_missing-project.png",
 					alt: 'Movie poster of a sad, broken, weathered robot with a missing arm in a beaufiul cyberpunk city. The poster reads "Missing Project".',
 					caption:
 						"Uh oh! Looks like we're having trouble communicating with the backend servers to provide you the details for this project. We apologize for the inconvenience, but please, enjoy this a.i. generated movie poster to make you feel happy (and perhaps a little bit sad) about the missing data. Poor thing doesn't even have his right arm! (Image complements of Chat-GPT5)",
 				},
 				{
-					src: "/images/projects/details/default-project_pexels-googledeepmind-18069362.jpg",
+					src: "images/projects/details/default-project_pexels-googledeepmind-18069362.jpg",
 					alt: "3D Render of butterfikes in a patch of forest floor vegetation, including moss, bark, and grass.",
 					caption:
 						"Actually, we're just joshing you. This application doesn't communicate with a backend server. The truth is our creator hasn't inputed data for this project yet, and didn't want to leave you with nothing. Instead, our creator cleverly provided you with this cool placeholder image from pexels.com, a great resource for royalty-free images!",
 				},
 				{
-					src: "/images/projects/details/default-project_pexels-terricks-noah-282960-840326.jpg",
+					src: "images/projects/details/default-project_pexels-terricks-noah-282960-840326.jpg",
 					alt: "A cute puppy nuzzles his nose into his owner's hands, hiding his face slightly with his paw. The puppies cute eyes look up longingly, grateful for the attention.",
 					caption:
 						"Well, looks like the jig is up! (Sorry for deceiving you...), but perhaps we can make it up to you with this image of a cute puppy! (Another great photo from www.pexels.com). Speaking of puppies, since this project doesn't have any data yet, why not take a look at the project titled \"Quizapalooza\"? It's a small quiz web application built with JavaScript that rewards correct answers with more adorably cute puppies, and scient has proven that cutness and raise serotonin levels! (But then again, I wouldn't trust that last statement as 67.5% of all statistics are made up on the spot...)",
@@ -139,7 +139,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_instagram-login-page-clone.png",
+					"images/projects/cover-art/cover-art_instagram-login-page-clone.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -193,7 +193,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_manual-in-lorem-ipsum.png",
+					"images/projects/cover-art/cover-art_manual-in-lorem-ipsum.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -232,7 +232,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_freemote-blog-replica.png",
+					"images/projects/cover-art/cover-art_freemote-blog-replica.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -271,7 +271,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_alpacas-product-details-page.png",
+					"images/projects/cover-art/cover-art_alpacas-product-details-page.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -310,7 +310,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_boxes-plus-landing-page.png",
+					"images/projects/cover-art/cover-art_boxes-plus-landing-page.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -349,7 +349,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_adidas-landing-page.png",
+					"images/projects/cover-art/cover-art_adidas-landing-page.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -391,7 +391,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_adidas-landing-page-alternate-design.png",
+					"images/projects/cover-art/cover-art_adidas-landing-page-alternate-design.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -433,7 +433,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_cayce-pollard-resume.png",
+					"images/projects/cover-art/cover-art_cayce-pollard-resume.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -475,7 +475,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_how-to-use-flexbox.png",
+					"images/projects/cover-art/cover-art_how-to-use-flexbox.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -513,8 +513,7 @@ const PROJECTS: Project[] = [
 		isFavorite: false,
 		imageData: {
 			coverArt: {
-				coverArtPath:
-					"/images/projects/cover-art/cover-art_mock-login-form.png",
+				coverArtPath: "images/projects/cover-art/cover-art_mock-login-form.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -554,7 +553,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_setting-out-to-sea.png",
+					"images/projects/cover-art/cover-art_setting-out-to-sea.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -593,7 +592,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_the-indie-game-dev.png",
+					"images/projects/cover-art/cover-art_the-indie-game-dev.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -632,7 +631,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_food-service-delivery-summary.png",
+					"images/projects/cover-art/cover-art_food-service-delivery-summary.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -672,7 +671,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_maxstrong-exercise-coach.png",
+					"images/projects/cover-art/cover-art_maxstrong-exercise-coach.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -720,7 +719,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_remotely-aok-job-board.png",
+					"images/projects/cover-art/cover-art_remotely-aok-job-board.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -769,7 +768,7 @@ const PROJECTS: Project[] = [
 		imageData: {
 			coverArt: {
 				coverArtPath:
-					"/images/projects/cover-art/cover-art_ui-tab-selector-dark-mode.png",
+					"images/projects/cover-art/cover-art_ui-tab-selector-dark-mode.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
@@ -817,8 +816,7 @@ const PROJECTS: Project[] = [
 		isFavorite: false,
 		imageData: {
 			coverArt: {
-				coverArtPath:
-					"/images/projects/cover-art/ai-cover-art_quizapalooza.png",
+				coverArtPath: "images/projects/cover-art/ai-cover-art_quizapalooza.png",
 				isAiGeneratedImage: true,
 			},
 			imagesPaths: [

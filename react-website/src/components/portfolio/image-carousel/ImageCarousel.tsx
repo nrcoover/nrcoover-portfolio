@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Image } from "../../../typings/index.d.ts";
 import ImageWrapper from "../../common/wrappers/image-wrapper/ImageWrapper";
 
+import { providePathRoot } from "../../../helpers/assetHelper.ts";
 import classes from "./ImageCarousel.module.css";
 
 interface ImageCarouselProps {
@@ -52,7 +53,7 @@ const ImageCarousel = ({
 			<ImageWrapper maxWidth={"500px"}>
 				{/* Current Image */}
 				<img
-					src={images[currentIndex].src}
+					src={providePathRoot(images[currentIndex].src)}
 					alt={images[currentIndex].alt || `Slide ${currentIndex + 1}`}
 					className={classes.image}
 				/>
@@ -60,7 +61,7 @@ const ImageCarousel = ({
 				{/* Next Image (fading in) */}
 				{nextIndex !== null && (
 					<img
-						src={images[nextIndex].src}
+						src={providePathRoot(images[nextIndex].src)}
 						alt={images[nextIndex].alt || `Slide ${nextIndex + 1}`}
 						className={`${classes.image} ${classes.fadeIn}`}
 					/>

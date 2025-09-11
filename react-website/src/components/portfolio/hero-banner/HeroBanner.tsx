@@ -1,5 +1,6 @@
 import { useContext, useEffect, useMemo, useState } from "react";
 import { DEFAULT_PROJECT } from "../../../data/projects.ts";
+import { providePathRoot } from "../../../helpers/assetHelper.ts";
 import {
 	filterFeaturedProjects,
 	getProjects,
@@ -71,7 +72,7 @@ const HeroBanner = () => {
 			<div className={`${classes.heroItem} ${classes.heroImage}`}>
 				<div className={classes.heroImageWrapper}>
 					<img
-						src={defaultProject.heroFeatureData?.banner.src}
+						src={providePathRoot(defaultProject.heroFeatureData?.banner.src)}
 						alt={defaultProject.heroFeatureData?.banner.alt}
 					/>
 					<div className={classes.aiNoticeWrapper}>
@@ -98,7 +99,7 @@ const HeroBanner = () => {
 					</div>
 					<div className={`${classes.heroItem} ${classes.heroImage}`}>
 						<img
-							src={display.heroFeatureData?.banner.src}
+							src={providePathRoot(display.heroFeatureData?.banner.src)}
 							alt={display.heroFeatureData?.banner.alt}
 						/>
 						<div className={classes.aiNoticeWrapper}>
