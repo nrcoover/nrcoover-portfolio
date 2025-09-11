@@ -94,8 +94,8 @@ const ProjectCard = ({
 							project.imageData.coverArt.coverArtPath
 								? providePathRoot(project.imageData.coverArt.coverArtPath)
 								: providePathRoot(
-										"images/projects/cover-art/typescript-project_ai-generated.png"
-									) //TODO: Update default image
+										"images/projects/cover-art/ai-cover-art_missing-project.png"
+									)
 						}
 						alt={`Cover art for ${project.title}`}
 					/>
