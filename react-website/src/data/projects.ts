@@ -159,7 +159,7 @@ const PROJECTS: Project[] = [
 					src: "images/projects/details/instagram-login-clone_detail-3_html-sample.PNG",
 					alt: "A sample of HTML markup for a pixel-perfect recreation of the Instagram login page from 2021.",
 					caption:
-						"An example of HTML markup used to create this pixel-perfect recreation of Instagram's Login page. To view the rest of the code, visit Codepen or GitHub using the links below.",
+						"An example of the HTML markup used to create this pixel-perfect recreation of Instagram's Login page. To view the rest of the code, visit Codepen or GitHub using the links below.",
 				},
 				{
 					src: "images/projects/details/instagram-login-clone_detail-4_css-javascript-sample.PNG",
@@ -200,7 +200,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 2,
 		title: "Online Manual (Written in Lorem Ipsum)",
-		description: "",
+		description:
+			'As in exercise in CSS, this project features use of CSS grids and pseudo classes for creating a mock "Online Manual" with responsive design. The text is written in "Lorem Ipsum", the placeholder text, and was created via an online text generator.',
 		dateCreated: new Date(2021, 8, 15),
 		dateUpdated: new Date(2021, 9, 28),
 		isFeatured: false,
@@ -213,16 +214,22 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/lorem-ipsum-manual_detail-1_main-page.PNG",
+					alt: "A digital online manual written in the gibberish placeholder text, Lorem Ipsum.",
+					caption:
+						"A digital online manual written in the gibberish placeholder text, Lorem Ipsum. It is built with a responsive design and features a side text navigation panel.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/lorem-ipsum-manual_detail-2_html-sample.PNG",
+					alt: "A sample of HTML markup for an online digital manual written in Lorem Ipsum.",
+					caption:
+						"An example of the HTML markup used to create this digital manual, featuring semantic HTML (or HTML5). To view the rest of the code, visit Codepen using the link below.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/lorem-ipsum-manual_detail-3_css-sample.PNG",
+					alt: "A sample of CSS for an online digital manual written in Lorem Ipsum.",
+					caption:
+						"An example of the CSS used to create this digital manual, featuring the use of CSS grid and pseudo-classes. To view the rest of the code, visit Codepen using the link below.",
 				},
 			],
 		},
