@@ -144,19 +144,34 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "/placeholder-images/pexels-xexusdesigner-777001.jpg",
-					alt: "Test image 1",
-					caption: "Test image 1 caption.",
+					src: "images/projects/details/instagram-login-clone_detail-1_main-page.PNG",
+					alt: "Pixel-perfect Instagram login clone from 2021, featuring input fields for a login and cycling photos on a cell phone.",
+					caption:
+						"A pixel-perfect recreation of the Instagram login page from 2021, featuring responsive design, motion keyframes in CSS, and JavaScript for input field functionality.",
 				},
 				{
-					src: "/placeholder-images/pexels-joshsorenson-1714208.jpg",
-					alt: "Test image 2",
-					caption: "Test image 2 caption.",
+					src: "images/projects/details/instagram-login-clone_detail-2_responsive-login.PNG",
+					alt: "Pixel-perfect Instagram login clone from 2021, featuring input fields for a login with responsive web design.",
+					caption:
+						"Using CSS media queries for responsive web design, this version of the login page removes the cell phone display from smaller screens, leaving the size and spacing for the login intact.",
 				},
 				{
-					src: "/placeholder-images/pexels-designecologist-1779487.jpg",
-					alt: "Test image 3",
-					caption: "Test image 3 caption.",
+					src: "images/projects/details/instagram-login-clone_detail-3_html-sample.PNG",
+					alt: "A sample of HTML markup for a pixel-perfect recreation of the Instagram login page from 2021.",
+					caption:
+						"An example of HTML markup used to create this pixel-perfect recreation of Instagram's Login page. To view the rest of the code, visit Codepen or GitHub using the links below.",
+				},
+				{
+					src: "images/projects/details/instagram-login-clone_detail-4_css-javascript-sample.PNG",
+					alt: "A sample of CSS and JavaScript code for a pixel-perfect recreation of the Instagram login page from 2021.",
+					caption:
+						"An example of the CSS and JavaScript used to add interactivity and functionality to the project. The CSS uses key frames to create an infinite cycling of the displayed images by programmatically changing the z-index of each image, similar to removing the top card from a deck of cards and placing it on the bottom. To view the rest of the code, visit Codepen or GitHub using the links below.",
+				},
+				{
+					src: "images/projects/details/instagram-login-clone_detail-5_phishing-false-positive.PNG",
+					alt: "Screenshot of multiple displays showing code, and an Instagram login page in development, and an Avast warning of a phishing attempt detected from a suspicious file.",
+					caption:
+						"This project was created as an exercise in CSS for the online coding school, Freemote. During development, as the finishing touches were being added, the computer locked down the files, Avast placing them into quarantine under suspicion of a phishing attempt. I suppose my efforts to create a pixel-perfect recreation were a little too close to the original.",
 				},
 			],
 		},
