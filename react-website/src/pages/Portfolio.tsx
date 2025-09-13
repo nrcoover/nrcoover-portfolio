@@ -102,11 +102,13 @@ const Portfolio = () => {
 								/>
 							</ImageWrapper>
 							<p>
-								You are greeted by a sad pug. His eyes stare desparingly into
-								yours. He knows your sorrow. You lack a favorite project, which
-								makes your sadness the extreme compared to his dismal existance.
-								Quick! Make haste! Return to the projects page and rid yourself
-								of this bleak, favorite-lacking reality!
+								<i>
+									You are greeted by a sad pug. His eyes stare desparingly into
+									yours. He knows your sorrow. You lack a favorite project,
+									which makes your sadness the extreme compared to his dismal
+									existance. Quick! Make haste! Return to the projects page and
+									rid yourself of this bleak, favorite-lacking reality!
+								</i>
 							</p>
 							<NavLink
 								to={PATHS.Portfolio.Root}

@@ -62,7 +62,9 @@ const HeroBanner = () => {
 					DEV<span>FLIX</span>
 				</h1>
 				<h2>{defaultProject.heroFeatureData?.shortTitle}</h2>
-				<p>{defaultProject.heroFeatureData?.shortDescription}</p>
+				<i>
+					<p>{defaultProject.heroFeatureData?.shortDescription}</p>
+				</i>
 				<PreviewButton
 					selected={true}
 					handlePreviewClick={handlePreviewClick}
@@ -95,7 +97,9 @@ const HeroBanner = () => {
 					<div className={`${classes.heroItem} ${classes.textWrapper}`}>
 						<h1>DEVFLIX</h1>
 						<h2>{display.heroFeatureData?.shortTitle}</h2>
-						<p>{display.heroFeatureData?.shortDescription}</p>
+						<i>
+							<p>{display.heroFeatureData?.shortDescription}</p>
+						</i>
 					</div>
 					<div className={`${classes.heroItem} ${classes.heroImage}`}>
 						<img
