@@ -238,9 +238,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/ZEKZqXr" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/ZEKZqXr",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -277,9 +280,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/JjJdRwz" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/JjJdRwz",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -316,9 +322,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/mdmzXPX" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/mdmzXPX",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -355,9 +364,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/abWQYQK" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/abWQYQK",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -395,11 +407,14 @@ const PROJECTS: Project[] = [
 		},
 		links: [
 			{
-				type: "github",
+				type: iconSocial.GitHub,
 				url: "https://github.com/nrcoover/adidas-coming-soon-clone",
 			},
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/gOoaRBr" },
-			{ type: "website", url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/gOoaRBr",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -437,11 +452,14 @@ const PROJECTS: Project[] = [
 		},
 		links: [
 			{
-				type: "github",
+				type: iconSocial.GitHub,
 				url: "https://github.com/nrcoover/adidas-coming-soon-clone-v2",
 			},
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/JjMYLez" },
-			{ type: "website", url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/JjMYLez",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -479,11 +497,14 @@ const PROJECTS: Project[] = [
 		},
 		links: [
 			{
-				type: "github",
+				type: iconSocial.GitHub,
 				url: "https://github.com/nrcoover/minimalist-resume-clone",
 			},
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/PojXmzV" },
-			{ type: "website", url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/PojXmzV",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -520,9 +541,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/dyRGJxw" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/dyRGJxw",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -558,9 +582,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/jOmKZay" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/jOmKZay",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -598,9 +625,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/abWGaME" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/abWGaME",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -637,9 +667,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/mdmGwMJ" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/mdmGwMJ",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -677,9 +710,12 @@ const PROJECTS: Project[] = [
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
 		},
 		links: [
-			{ type: "github", url: "" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/yLpgMoY" },
-			{ type: "website", url: "" },
+			{ type: iconSocial.GitHub, url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/yLpgMoY",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -723,11 +759,14 @@ const PROJECTS: Project[] = [
 		},
 		links: [
 			{
-				type: "github",
+				type: iconSocial.GitHub,
 				url: "https://github.com/nrcoover/maxstrong-exercise-clone",
 			},
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/oNpeggv" },
-			{ type: "website", url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/oNpeggv",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -774,9 +813,15 @@ const PROJECTS: Project[] = [
 		},
 
 		links: [
-			{ type: "github", url: "https://github.com/nrcoover/job-board-api" },
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/GRQKVmp" },
-			{ type: "website", url: "" },
+			{
+				type: iconSocial.GitHub,
+				url: "https://github.com/nrcoover/job-board-api",
+			},
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/GRQKVmp",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -833,12 +878,15 @@ const PROJECTS: Project[] = [
 		},
 		links: [
 			{
-				type: "github",
+				type: iconSocial.GitHub,
 				url: "https://github.com/nrcoover/mini-project-tab-selector",
 			},
 
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/ZEvvZay" },
-			{ type: "website", url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/ZEvvZay",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	{
@@ -931,12 +979,15 @@ const PROJECTS: Project[] = [
 		},
 		links: [
 			{
-				type: "github",
+				type: iconSocial.GitHub,
 				url: "https://github.com/nrcoover/quizapalooza-web-app",
 			},
 
-			{ type: "codepen", url: "https://codepen.io/nrcoover/pen/dyJQeoQ" },
-			{ type: "website", url: "" },
+			{
+				type: iconSocial.CodePen,
+				url: "https://codepen.io/nrcoover/pen/dyJQeoQ",
+			},
+			{ type: iconSocial.Website, url: "" },
 		],
 	},
 	// {
@@ -978,9 +1029,9 @@ const PROJECTS: Project[] = [
 	// 		],
 	// 	},
 	// 	links: [
-	// 		{ type: "github", url: "" },
-	// 		{ type: "codepen", url: "" },
-	// 		{ type: "website", url: "" },
+	// 		{ type: iconSocial.GitHub, url: "" },
+	// 		{ type: iconSocial.CodePen, url: "" },
+	// 		{ type: iconSocial.Website, url: "" },
 	// 	],
 	// },
 ];
