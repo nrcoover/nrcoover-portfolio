@@ -782,7 +782,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 16,
 		title: "UI/UX Tab Selector With Dark Mode and Language Toggle",
-		description: "",
+		description:
+			"A UI/UX (User Interface / User Experience) toggle selector. It offers the ability to switch between three different options, while also selecting between light and dark mode and English or Spanish language. Also, the switch from light to dark and vice versa occurs with CSS ease, providing a smooth transition.",
 		dateCreated: new Date(2022, 4, 4),
 		dateUpdated: new Date(2022, 4, 4),
 		isFeatured: true,
@@ -795,16 +796,28 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/ui-toggle_detail-1_main-page.png",
+					alt: "Web project with a light color theme displaying two toggles and a panel with three options. The two toggles are for switching between light and dark mode and for switching between English and Spanish language.",
+					caption:
+						"This small UI project includes multiple setting toggles and tab selectors. The current settings are light mode with English language (although the text for the options is actually Lorem Ipsum, the generated placeholder text.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/ui-toggle_detail-2_dark-mode.png",
+					alt: "Web project with a light color theme displaying two toggles and a panel with three options. The two toggles are for switching between light and dark mode and for switching between English and Spanish language.",
+					caption:
+						"This small UI project includes multiple setting toggles and tab selectors. The current settings are dark mode with English language (although the text for the options is actually Lorem Ipsum, the generated placeholder text.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/ui-toggle_detail-3_spanish.png",
+					alt: "Web project with a light color theme displaying two toggles and a panel with three options. The two toggles are for switching between light and dark mode and for switching between English and Spanish language.",
+					caption:
+						"This small UI project includes multiple setting toggles and tab selectors. The current settings are light mode with Spanish language (although the text for the options is actually Lorem Ipsum, the generated placeholder text.",
+				},
+				{
+					src: "images/projects/details/ui-toggle_detail-4_javascript-sample.png",
+					alt: "A sample of JavaScript code.",
+					caption:
+						'This JavaScript sample displays the code responsible for switching the light or dark mode colors. Given that the function is actually responsible for turning on dark mode and also returning to light mode, a better function name may have been "toggleColorTheme()".',
 				},
 			],
 		},
