@@ -772,7 +772,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 15,
 		title: "Remotely A-O-K | Online Job Board with API",
-		description: "",
+		description:
+			'This project builds an appealing frontend UI (User Interface) for displaying job postings on a job board. It calls a backend API from "remoteok.com" and displays the data in ascending order with a JavaScript XMLHttp request.',
 		dateCreated: new Date(2022, 4, 30),
 		dateUpdated: new Date(2022, 4, 30),
 		isFeatured: false,
@@ -785,16 +786,22 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/remotely-job-board_detail-1_main-page.png",
+					alt: "An online job board displaying API data from the Remote Ok website.",
+					caption:
+						"This Job Board UI displays job postings from the Remotely Ok website in ascending order and features a JavaScript call to a backend API to gather data. It alternates the row color using css rules, and includes a button for navigating to the job posting's details page.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/remotely-job-board_detail-2_javascript-sample.png",
+					alt: "A sample of JavaScript code calling a backend API with an XMLHttp request.",
+					caption:
+						"This JavaScript sample displays the API call to the Remotely Ok job postings API. It uses the XMLHttpRequest API to call the API and gather the data.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/remotely-job-board_detail-3_scss-sass-sample.png",
+					alt: "A sample of SCSS/SASS code.",
+					caption:
+						"A sample of the original SCSS/SASS code written for this project before converting to traditional CSS for the CodePen version. You can view the original SCSS/SASS code by clicking the GitHub link below, or click the CodePen link to view the converted CSS.",
 				},
 			],
 		},
@@ -811,7 +818,6 @@ const PROJECTS: Project[] = [
 				TAGS.javascript,
 			],
 		},
-
 		links: [
 			{
 				type: iconSocial.GitHub,
