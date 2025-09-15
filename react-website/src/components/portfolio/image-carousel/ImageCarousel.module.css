@@ -3,7 +3,88 @@
 	align-items: center;
 	justify-content: center;
 	gap: 1rem;
-	margin: 1rem 0;
+	margin: 1rem 0 0;
+}
+
+/* keep wrapper positioned normally; counter handles absolute stacking */
+.imageCountWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative; /* so absolute children inside .counter are scoped */
+}
+
+.imageCountWrapper p {
+	font-size: medium !important;
+	margin: 0;
+	z-index: 1;
+}
+
+.imageCount {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* small inline container for the numeric counter so digits overlap nicely */
+.counter {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	margin: 0 0.25rem;
+	/* min-width is provided inline from TSX so we don't hardcode digits here */
+	text-align: center;
+	line-height: 1;
+	height: 1em; /* helps vertical alignment */
+	overflow: visible;
+}
+
+.fadeNumber {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity 0.5s ease-in-out;
+	opacity: 1;
+	pointer-events: none;
+	height: 1em;
+	transform: translateY(1px);
+}
+
+.fadeIn {
+	opacity: 0;
+	animation: fadeInAnim 0.5s forwards;
+}
+
+.fadeOut {
+	opacity: 1;
+	animation: fadeOutAnim 0.5s forwards;
+}
+
+.fadeInInitial {
+	opacity: 1;
+}
+
+/* keyframes */
+@keyframes fadeInAnim {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOutAnim {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }
 
 .image {
@@ -16,21 +97,6 @@
 	opacity: 1;
 	transition: opacity 0.5s ease-in-out;
 	z-index: 1;
-}
-
-.fadeIn {
-	opacity: 0;
-	animation: fadeInAnim 0.5s forwards;
-	z-index: 2;
-}
-
-@keyframes fadeInAnim {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
 }
 
 .navButton {
