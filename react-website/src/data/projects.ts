@@ -843,16 +843,64 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/quizapalooza_detail-1_main-page.png",
+					alt: "The start menu of a web quiz application about eCommerce.",
+					caption:
+						'"Quizapalooza" was a final project of the JavaScript course from the online coding bootcamp, Freemote. It features three questions about e-commerce in a timed quiz. It uses DOM manipulation to present varying failure and success pages based on user interaction and rewards successful users with a variety of cute puppy images on quiz completion.',
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/quizapalooza_detail-2_question-example.png",
+					alt: 'An example question from an online quiz about eCommerce. The question reads "If Shopify is so good, why are Shopify developers necessary?"',
+					caption:
+						"An example question from the quiz. Selecting the correct answer advances the user to the following question. Selecting a wrong answer results in a quiz failure.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/quizapalooza_detail-3_wrong-answer.png",
+					alt: 'A failure notice displays in red for answering incorrectly to a quiz question. It informs the user that a wrong answer was selected and offers a prompt with two options: "Retry" or "Quit"',
+					caption:
+						"The failure page is displayed when a user answers a question incorrectly. From here, the user can choose to retry the exam or quit. Retrying begins back at the first question, and quitting will present the user with a confirmation notice before returning to the menu screen.",
+				},
+				{
+					src: "images/projects/details/quizapalooza_detail-4_timeout.png",
+					alt: 'A failure notice displays in red for a timeout failure. It informs the user that time has run out to complete the quiz and offers a prompt with two options: "Retry" or "Quit"',
+					caption:
+						"The failure page is displayed when a user runs out of time before completing the exam. From here, the user can choose to retry the exam or quit. Retrying begins back at the first question, and quitting will present the user with a confirmation notice before returning to the menu screen.",
+				},
+				{
+					src: "images/projects/details/quizapalooza_detail-5_puppy-reward.png",
+					alt: "A notice of congratulations for completing the quiz correctly and promptly. An image of cute puppies is displayed as a reward.",
+					caption:
+						"When a user completes the quiz successfully by answering all questions correctly and before the timer has run out, they are rewarded with an image of cute puppies. From here, the user can choose to retry the exam or quit. Multiple varying images of cute puppies will be cycled through on consecutive successful attempts, providing the user with a new reward for each success.",
+				},
+				{
+					src: "images/projects/details/quizapalooza_detail-6_html-sample.png",
+					alt: "An example of HTML markup code.",
+					caption:
+						'A sample of the HTML used to create this web exam. It features semantic HTML (or HTML5), and a touch of dry humor: "As a reminder, excellence is mandatory..."',
+				},
+				{
+					src: "images/projects/details/quizapalooza_detail-7_css-sample.png",
+					alt: "An example of CSS code.",
+					caption:
+						"A sample of the CSS code written for this web exam. This has been converted from the original SCSS/SASS that was used for styling this application. You can view the original SCSS/SASS on GitHub following the link below, or view the converted CSS on Codepen following the other link below.",
+				},
+				{
+					src: "images/projects/details/quizapalooza_detail-8_scss-sample.png",
+					alt: "An example of SCSS/SASS code displayed in Visual Studio Code.",
+					caption:
+						"A sample of the SCSS/SASS code written for this web exam is displayed in Visual Studio Code. This was converted into traditional CSS for the Codepen version of the application. You can view the original SCSS/SASS on GitHub following the link below, or view the converted CSS on Codepen following the other link below.",
+				},
+				{
+					src: "images/projects/details/quizapalooza_detail-9_javascript-sample.png",
+					alt: "An example of JavaScript code.",
+					caption:
+						"A sample of the JavaScript code used to write this web exam. This particular function is responsible for delegating which failure menu should be displayed depending on the state of the application. It tracks both the state of the answers (if any have been answered incorrectly) and the state of the timer (checking if the time has run out).",
+				},
+				{
+					src: "images/projects/details/quizapalooza_detail-10_quitting-pug.png",
+					alt: 'A failure display in red with a black pug looking sad. The display reads "Hello. It me." and makes a joke about an Adele lyric.',
+					caption:
+						"This page displays when a user chooses to quit after failing the quiz. It displays a sad pug in an attempt to convince the user to try again before quitting the exam entirely. From here, the user can choose to retry the exam or quit. Retrying begins back at the first question, and quitting returns the user to the start menu.",
 				},
 			],
 		},
