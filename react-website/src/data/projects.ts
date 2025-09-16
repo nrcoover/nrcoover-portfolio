@@ -721,7 +721,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 14,
 		title: "MaxStrong - Exercise Coach | Landing Page Clone",
-		description: "",
+		description:
+			'This project is a clone landing page for a "Max Strong" website for an Exercise Coach. Built with Responsive Design principles in mind, this is primarily constructed with HTML and CSS.',
 		dateCreated: new Date(2022, 3, 30),
 		dateUpdated: new Date(2022, 3, 31),
 		isFeatured: false,
@@ -734,16 +735,22 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/maxstrong_detail-1_main-page.png",
+					alt: "Landing page of a website for an exercise coach.",
+					caption:
+						'Main content of the landing page, including top navigation display and categories of content divided with semantic HTML using elements like "article" and "section".',
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/maxstrong_detail-2_main-page-continued.png",
+					alt: "More content of a landing page of a website for an exercise coach.",
+					caption:
+						"More of the landing page content is displayed further down when scrolling horizontally on the page. Notice that the navigation remains at the top of the page, even as you scroll. This page also includes a footer with more mock navigation, which can be viewed by clicking the CodePen or GitHub link below.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/maxstrong_detail-3_responsive-design.png",
+					alt: "Code snippets of HTML, CSS, and JavaScript alongside a responsive design display of a landing page of a website for an exercise coach.",
+					caption:
+						"This displays the landing page as it would appear on smaller screens, and is built with responsive design using CSS media queries. Snippets of HTML and a little bit of JavaScript are also included above and below the CSS snippet.",
 				},
 			],
 		},
