@@ -1003,8 +1003,114 @@ const PROJECTS: Project[] = [
 			{ type: iconSocial.Website, url: "" },
 		],
 	},
+	{
+		id: 18,
+		title: "Nicklefritz Website",
+		description:
+			'A website built for the online personality, "Nicklefritz", including three pages for: content creation, music production, and game development. Hosted on Netlify and built with React, this application features the use of react libraries and APIs like "React Router", "Context Provider", and some Express.js for backend hosting of music files.',
+		dateCreated: new Date(2025, 3, 17),
+		dateUpdated: new Date(2025, 3, 31),
+		isFeatured: true,
+		isFavorite: false,
+		imageData: {
+			coverArt: {
+				coverArtPath: "",
+				isAiGeneratedImage: false,
+			},
+			imagesPaths: [
+				{
+					src: "images/projects/details/nicklefritz_detail-1_content-creater-home.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-2_content-creater-videos.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-3_content-creater-playlists.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-4_game-dev-home.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-5_game-dev-origin.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-6_game-dev-contact.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-7_music-production-home.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-8_music-production-player.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-9_music-production-early-works.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-10_all-pages.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-11_color-theme-context.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-12_react-router.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-13_music-player-code.png",
+					alt: "",
+					caption: "",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-14_music-express-js.png",
+					alt: "",
+					caption: "",
+				},
+			],
+		},
+		tagData: {
+			primaryTag: TAGS.react,
+			otherTags: [
+				TAGS.html,
+				TAGS.html5,
+				TAGS.css,
+				TAGS.responsiveWebDesign,
+				TAGS.javascript,
+				TAGS.react,
+				TAGS.typescript,
+				TAGS.express,
+			],
+		},
+		links: [
+			{ type: iconSocial.GitHub, url: "" },
+			{ type: iconSocial.CodePen, url: "" },
+			{ type: iconSocial.Website, url: "https://www.nicklefritz.com/" },
+		],
+	},
 	// {
-	// 	id: 18,
+	// 	id: 19,
 	// 	title: "",
 	// 	description: "",
 	// 	dateCreated: new Date(),
