@@ -20,6 +20,8 @@ const ImageCarousel = ({
 	const [nextIndex, setNextIndex] = useState<number | null>(null);
 	const [isFading, setIsFading] = useState(false);
 
+	const hasMultipleImages = images && images.length > 1;
+
 	const handleImageSelection = (image: Image) => {
 		onImageSelection(image);
 	};
@@ -48,7 +50,11 @@ const ImageCarousel = ({
 	return (
 		<>
 			<div className={classes.carousel}>
-				<button onClick={goToPrevious} className={classes.navButton}>
+				<button
+					onClick={goToPrevious}
+					className={classes.navButton}
+					disabled={!hasMultipleImages}
+				>
 					&#8592;
 				</button>
 
@@ -70,7 +76,11 @@ const ImageCarousel = ({
 					)}
 				</ImageWrapper>
 
-				<button onClick={goToNext} className={classes.navButton}>
+				<button
+					onClick={goToNext}
+					className={classes.navButton}
+					disabled={!hasMultipleImages}
+				>
 					&#8594;
 				</button>
 			</div>
