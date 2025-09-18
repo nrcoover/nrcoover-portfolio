@@ -1014,79 +1014,100 @@ const PROJECTS: Project[] = [
 		isFavorite: false,
 		imageData: {
 			coverArt: {
-				coverArtPath: "",
+				coverArtPath:
+					"images/projects/cover-art/cover-art_nicklefritz-website.png",
 				isAiGeneratedImage: false,
 			},
 			imagesPaths: [
 				{
 					src: "images/projects/details/nicklefritz_detail-1_content-creater-home.png",
-					alt: "",
-					caption: "",
+					alt: "The main page for the content creator, Nicklefritz. It features an artistic rendering of Nicklefritz, a man with strawberry-blond hair holding a candle, along with a bio about his gaming channel on YouTube. The background color for the page is teal. Below the bio is a featured YouTube video of Nicklefritz playing the battle royale game, Fortnite.",
+					caption:
+						"The home page of the Nicklefritz website. Built with React, it utilizes React Router for paging and routing, as well as a context API to manage the color theme, which changes between pages. The home page includes navigation, a hero banner with a bio, and a featured YouTube video of Nicklefritz playing the battle royale game, Fortnite.",
 				},
 				{
 					src: "images/projects/details/nicklefritz_detail-2_content-creater-videos.png",
-					alt: "",
-					caption: "",
+					alt: "Another section of the Nicklefritz home page; this section features a collection of social media links and then a section with a variety of YouTube videos from the Nicklefritz YouTube channel.",
+					caption:
+						"Two more sections can be seen here on the home page. First is a collection of social media links. Below is another section where multiple videos are displayed, mapped from a list to reusable Video components; each one is an iFrame under the hood, allowing for playback from YouTube integrated into the website. These videos feature some of the more popular uploads to the Nicklefritz YouTube channel.",
 				},
 				{
 					src: "images/projects/details/nicklefritz_detail-3_content-creater-playlists.png",
-					alt: "",
-					caption: "",
-				},
-				{
-					src: "images/projects/details/nicklefritz_detail-4_game-dev-home.png",
-					alt: "",
-					caption: "",
-				},
-				{
-					src: "images/projects/details/nicklefritz_detail-5_game-dev-origin.png",
-					alt: "",
-					caption: "",
-				},
-				{
-					src: "images/projects/details/nicklefritz_detail-6_game-dev-contact.png",
-					alt: "",
-					caption: "",
-				},
-				{
-					src: "images/projects/details/nicklefritz_detail-7_music-production-home.png",
-					alt: "",
-					caption: "",
-				},
-				{
-					src: "images/projects/details/nicklefritz_detail-8_music-production-player.png",
-					alt: "",
-					caption: "",
-				},
-				{
-					src: "images/projects/details/nicklefritz_detail-9_music-production-early-works.png",
-					alt: "",
-					caption: "",
-				},
-				{
-					src: "images/projects/details/nicklefritz_detail-10_all-pages.png",
-					alt: "",
-					caption: "",
-				},
-				{
-					src: "images/projects/details/nicklefritz_detail-11_color-theme-context.png",
-					alt: "",
-					caption: "",
+					alt: "More content from the Nicklefritz home page; this section features a variety of YouTube Playlists from the Nicklefritz YouTube channel.",
+					caption:
+						"Building on the Video component, the Playlist section is mapped from a list of playlists over a reusable Playlist component. Each one houses a button to dynamically navigate to a YouTube playlist and an iFrame for streaming the first video of each playlist. Each Playlist is wrapped with a light background to distinguish it from the single video player components. Those featured are some of the more popular playlists from the Nicklefritz YouTube channel.",
 				},
 				{
 					src: "images/projects/details/nicklefritz_detail-12_react-router.png",
-					alt: "",
-					caption: "",
+					alt: "A JavaScript/React code sample of React Router being used to control page routes.",
+					caption:
+						"This sample of React code displays the use of React Router for managing the routes of the website, giving the SPA (Single Page Application) the appearance of containing multiple pages as a classic website would while remaining on the same page.",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-4_game-dev-home.png",
+					alt: 'The Game Developer page from the Nicklefritz website. It is similar in appearance to the home page, aside from the color theme, which has changed from teal to a deep purple. The artistic rendering of Nicklefritz is still visible in the center with a bio beneath, this time it writes about Nicklefrit\'z endeavor with game development, and below is a single featured video from the "Nicklefritz Dev" channel.',
+					caption:
+						'The top of the "Game Developer" Page. Uses reusable components to create a near-identical header to the home page with a profile picture and bio, dynamically changing the content based on the route. Additionally, the color theme has changed to a deep purple by using the Context API to create a "Theme Context", which changes based on the route with React Router.',
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-5_game-dev-origin.png",
+					alt: 'More content of the Game Developer page from the Nicklefritz website. This page includes a section titled "Origin Story", which explains how Nicklefritz got started with game development. Below that is a section titled "Contact Me", which includes a contact form for contacting Nicklefritz for business inquiries.',
+					caption:
+						'Static written paragraphs are housed in a reusable "wrapper component", accepting the "children prop" to allow for dynamically placed content. Below is another reusable component for a contact form, which exists on all three pages, dynamically styled by the Theme Context Provider. The contact form includes a hidden "honey pot" field to detect and deter spam bots.',
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-6_game-dev-contact.png",
+					alt: 'While still on the "Game Developer" page of the Nicklefritz website, there is now an overlay panel on top of the "Origin Story" and "Contact Me" sections. The panel reads "Your message has been sent, thank you" with a confirmation button to close the panel and return to the page.',
+					caption:
+						'After filling out the contact form and clicking "Send Message", the user will receive a confirmation notice in the form of an overlay modal alerting them that their message has been sent.',
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-15_contact-form-code-sample.png",
+					alt: "A JavaScript/React code sample of the code written to create the Contact Form component.",
+					caption:
+						"This sample of React code displays some of the form handling written for when the user submits a message with the Contact Form. The encode function is ensuring data is formatted properly for submission through Netlify.",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-7_music-production-home.png",
+					alt: 'The Music Producer page from the Nicklefritz website. It is similar in appearance to the home page, aside from the color theme, which has changed from teal to a moody, deep pink. The artistic rendering of Nicklefritz is still visible in the center with a bio beneath, this time it writes about Nicklefrit\'z endeavor with music production, and below is a single featured video of his Spotify Single Debut for a song titled "The Ballad of Tiny Box Tim".',
+					caption:
+						'The top of the "Music Producer" Page. Uses reusable components to create a near-identical header to the home page with a profile picture and bio, dynamically changing the content based on the route. Additionally, the color theme has changed to a moody pink by using the Context API to create a "Theme Context", which changes based on the route with React Router.',
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-8_music-production-player.png",
+					alt: 'More content of the Music Producer page is displayed from the Nicklefritz website. A "Socials" section holds multiple icons to various music-related social networks, like "Spotify", or "Soundcloud", and a "Music" section displays a list of demo songs that can be directly played within the browser.',
+					caption:
+						'The Music Producer page includes more reusable components, like the "Socials" and "Origin Story" sections, but also includes a unique section for music playback. Using a reusable playback component, several demo songs are mapped to their own music player. Local state in the parent component manages the currently-playing song to ensure multiple tracks aren\'t playing simultaneously.',
 				},
 				{
 					src: "images/projects/details/nicklefritz_detail-13_music-player-code.png",
-					alt: "",
-					caption: "",
+					alt: "A JavaScript/React code sample of the code written to create the music player component.",
+					caption:
+						"This sample of React code displays some of what was written for creating the music player components responsible for playing the music demos in the browser. The demo songs are served from a backend Express.js server.",
 				},
 				{
 					src: "images/projects/details/nicklefritz_detail-14_music-express-js.png",
-					alt: "",
-					caption: "",
+					alt: "An Express.js code sample displaying the code written for the backend server responsible for providing the music to the website's frontend.",
+					caption:
+						"This Express.js code sample creates the backend server responsible for providing music to the website's frontend. While the frontend is hosted on Netlify, the backend for this website is hosted by Railway.",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-9_music-production-early-works.png",
+					alt: 'Additional content of the Music Producer page from the Nicklefritz website is displayed. This section is titled "Early Works" and features multiple YouTube uploads of early songs written by Nicklefritz on an alternative YouTube channel.',
+					caption:
+						'The "Early Works" sections display multiple original songs by Nicklefritz from the early years of his writing music. These YouTube uploads are displayed using the same Video component from the home page.',
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-10_all-pages.png",
+					alt: "A screenshot display of the three pages of the Nicklefritz website placed together, side by side to compare their content. From left to right: The Home page (Content Creator page), the Game Developer page, and the Music Producer page.",
+					caption:
+						"A screenshot display of the three pages of the Nicklefritz website placed together, side by side to compare their content. From left to right: The Home page (Content Creator page), the Game Developer page, and the Music Producer page.",
+				},
+				{
+					src: "images/projects/details/nicklefritz_detail-11_color-theme-context.png",
+					alt: "A JavaScript/React code sample of a theme context using the Context API.",
+					caption:
+						"This sample of React code portrays a portion of the Theme Context created using the React Context API. The code makes use of TypeScript and creates a Theme Map for dynamically changing the values of CSS variables, effectively altering the displayed theme on each page.",
 				},
 			],
 		},
