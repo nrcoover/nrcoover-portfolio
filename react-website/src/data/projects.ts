@@ -1130,8 +1130,44 @@ const PROJECTS: Project[] = [
 			{ type: iconSocial.Website, url: "https://www.nicklefritz.com/" },
 		],
 	},
+	{
+		id: 19,
+		title: "TypeScript - A Linked List",
+		description: "",
+		dateCreated: new Date(2025, 7, 31),
+		dateUpdated: new Date(2025, 7, 31),
+		isFeatured: false,
+		isFavorite: false,
+		imageData: {
+			coverArt: {
+				coverArtPath:
+					"images/projects/cover-art/ai-cover-art_typescript-linked-list.png",
+				isAiGeneratedImage: true,
+			},
+			imagesPaths: [
+				{
+					src: "../../public/images/projects/details/typescript-linked-list_detail-1_code-sample.png",
+					alt: "A code sample of React and TypeScript; the code creates a linked list.",
+					caption:
+						'This is a simple project; an exercise in using TypeScript to create a linked list. It was created while following a prompt for a coding challenge from the Udemy course "Understanding TypeScript" by instructor, Maximilian Schwarzmüller, an AWS certified Professional Web Developer.',
+				},
+			],
+		},
+		tagData: {
+			primaryTag: TAGS.typescript,
+			otherTags: [TAGS.javascript, TAGS.typescript],
+		},
+		links: [
+			{
+				type: iconSocial.GitHub,
+				url: "https://github.com/nrcoover/TypeScript_LinkedList",
+			},
+			{ type: iconSocial.CodePen, url: "" },
+			{ type: iconSocial.Website, url: "" },
+		],
+	},
 	// {
-	// 	id: 19,
+	// 	id: 20,
 	// 	title: "",
 	// 	description: "",
 	// 	dateCreated: new Date(),
@@ -1147,14 +1183,17 @@ const PROJECTS: Project[] = [
 	// 			{
 	// 				src: "",
 	// 				alt: "",
+	// 				caption: "",
 	// 			},
 	// 			{
 	// 				src: "",
 	// 				alt: "",
+	// 				caption: "",
 	// 			},
 	// 			{
 	// 				src: "",
 	// 				alt: "",
+	// 				caption: "",
 	// 			},
 	// 		],
 	// 	},
