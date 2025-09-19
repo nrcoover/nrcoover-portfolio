@@ -466,7 +466,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 8,
 		title: '"Cayce Pollard" | Online Résumé Card Clone',
-		description: "",
+		description:
+			"This is a digital online résumé card for a woman named Cayce Pollard. It utilizes responsive design with CSS media queries and generates icons with HTML SVG elements.",
 		dateCreated: new Date(2021, 9, 27),
 		dateUpdated: new Date(2021, 12, 17),
 		isFeatured: false,
@@ -479,16 +480,28 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/cayce-pollard-resume_detail-1_main-page.png",
+					alt: 'An online résumé for a woman named Cacye Pollard. It features multiple sections, including "About", "Recent Work", and "Contact".',
+					caption:
+						'Built with semantic HTML (HTML5) and CSS, this stylized resume features multiple sections, including "About", "Recent Work", and "Contact". Using responsive design, the résumé card increases in size on larger screens. The text of the About and Recent Work sections is generated using an Ipsum Lorem generator for placeholder text.',
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/cayce-pollard-resume_detail-2_html-sample.png",
+					alt: "A sample of HTML markup.",
+					caption:
+						"This sample of HTML displays the markup used to create the Contact section. It utilizes SVG elements to create the icons. SVGs are preferred over PNG images as they scale with screen size and don't cause pixelation issues.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/cayce-pollard-resume_detail-3_html-sample.png",
+					alt: "A sample of HTML markup utilizing SVG elements.",
+					caption:
+						'At the bottom of the HTML markup, the SVGs are defined. Placing them at the bottom and referencing them helps maintain clean, uncluttered HTML. Notice the SVGs are defined here with the "symbol" and "path" child elements, whereas the previous image used the SVG "use" child element.',
+				},
+				{
+					src: "images/projects/details/cayce-pollard-resume_detail-4_html-sample.png",
+					alt: "A sample of CSS stylesheet language.",
+					caption:
+						'This sample of CSS stylesheet language displays styling on classes, element IDs, and pseudo-classes. A background image is applied with the "::before" pseudo-class attribute, "background-image", and responsive design is implemented with media queries.',
 				},
 			],
 		},
