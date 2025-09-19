@@ -552,7 +552,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 10,
 		title: "Mock Login Form",
-		description: "",
+		description:
+			'Another project from the "Freemote" coding bootcamp, this was an exercise in creating a classic web form for a login page. It\'s merely a "mock" login page as it holds no real functionality and uses only HTML and CSS to create the appearance of a login page.',
 		dateCreated: new Date(2021, 8, 1),
 		dateUpdated: new Date(2021, 9, 28),
 		isFeatured: false,
@@ -564,16 +565,22 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/mock-login-form_detail-1_main-page.png",
+					alt: "A login form with input fields for Username and Password, and a dropdown to select Gender. The backdrop for the form is a white and red striped banner.",
+					caption:
+						'This mock login form features three input fields: A Username and Password field with placeholder text that disappears on input, and a dropdown selection for Gender. The Password field is of type "password" to ensure text is hidden behind bullets. This form also includes a submission button.',
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/mock-login-form_detail-2_html-sample.png",
+					alt: "A sample of HTML markup.",
+					caption:
+						"This sample of HTML markup displays the HTML used to create this mock login form. It features several input elements with their matching label elements and a button element for the submission button.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/mock-login-form_detail-3_css-sample.png",
+					alt: "A sample of CSS style sheet language",
+					caption:
+						"This image of CSS style sheet language displays a sample of the CSS used to style this mock login form. The striped background of red and white is not an image, but is created using CSS rules. Click the link to the CodePen to see the CSS and HTML in its entirety.",
 				},
 			],
 		},
