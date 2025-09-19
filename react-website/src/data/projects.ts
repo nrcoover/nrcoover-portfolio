@@ -636,7 +636,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 12,
 		title: "The Indie Game Developer | Video Embed Project",
-		description: "",
+		description:
+			'Another early project of the "Freemote" coding bootcamp, the prompt was to create an HTML page with CSS featuring a favorite YouTube video using the iframe HTML element. This project features the YouTube video "How Making Indie Games Changed My Life" by David Wehle.',
 		dateCreated: new Date(2021, 8, 4),
 		dateUpdated: new Date(2021, 9, 28),
 		isFeatured: false,
@@ -649,16 +650,28 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/indie-game-dev_detail-1_main-page.png",
+					alt: 'A teal colored webpage; it reads "Envision the future. Build your world." and features a YouTube video titled "How Making Indie Games Changed My Life". At the bottom of the page is a small icon shaped like the head of a fox.',
+					caption:
+						"This web page, hosted on CodePen, features a video provided via an iframe HTML element and a colored background with a glowing sun, all created in CSS.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/indie-game-dev_detail-2_the-fox-say.png",
+					alt: "An icon shaped like a fox's head made entirely from CSS style sheet language.",
+					caption:
+						"This icon, designed to look like the head of a fox, was created entirely with CSS rules. It's a reference to the main character - a fox - of David Wehle's second commercial game, \"The First Tree\".",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/indie-game-dev_detail-3_html-sample.png",
+					alt: "A sample of HTML markup.",
+					caption:
+						"This HTML sample displays the HTML markup used to generate this page. Click the CodePen link below to see the rest of the code.",
+				},
+				{
+					src: "images/projects/details/indie-game-dev_detail-4_css-sample.png",
+					alt: "A sample of CSS style sheet language.",
+					caption:
+						"This sample of CSS style sheet language displays a portion of the CSS used to generate the icon shaped like a fox's head. To see the rest of the code, click the CodePen link below.",
 				},
 			],
 		},
@@ -1029,13 +1042,13 @@ const PROJECTS: Project[] = [
 					src: "images/projects/details/nicklefritz_detail-2_content-creater-videos.png",
 					alt: "Another section of the Nicklefritz home page; this section features a collection of social media links and then a section with a variety of YouTube videos from the Nicklefritz YouTube channel.",
 					caption:
-						"Two more sections can be seen here on the home page. First is a collection of social media links. Below is another section where multiple videos are displayed, mapped from a list to reusable Video components; each one is an iFrame under the hood, allowing for playback from YouTube integrated into the website. These videos feature some of the more popular uploads to the Nicklefritz YouTube channel.",
+						"Two more sections can be seen here on the home page. First is a collection of social media links. Below is another section where multiple videos are displayed, mapped from a list to reusable Video components; each one is an iframe under the hood, allowing for playback from YouTube integrated into the website. These videos feature some of the more popular uploads to the Nicklefritz YouTube channel.",
 				},
 				{
 					src: "images/projects/details/nicklefritz_detail-3_content-creater-playlists.png",
 					alt: "More content from the Nicklefritz home page; this section features a variety of YouTube Playlists from the Nicklefritz YouTube channel.",
 					caption:
-						"Building on the Video component, the Playlist section is mapped from a list of playlists over a reusable Playlist component. Each one houses a button to dynamically navigate to a YouTube playlist and an iFrame for streaming the first video of each playlist. Each Playlist is wrapped with a light background to distinguish it from the single video player components. Those featured are some of the more popular playlists from the Nicklefritz YouTube channel.",
+						"Building on the Video component, the Playlist section is mapped from a list of playlists over a reusable Playlist component. Each one houses a button to dynamically navigate to a YouTube playlist and an iframe for streaming the first video of each playlist. Each Playlist is wrapped with a light background to distinguish it from the single video player components. Those featured are some of the more popular playlists from the Nicklefritz YouTube channel.",
 				},
 				{
 					src: "images/projects/details/nicklefritz_detail-12_react-router.png",
@@ -1146,7 +1159,7 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "../../public/images/projects/details/typescript-linked-list_detail-1_code-sample.png",
+					src: "images/projects/details/typescript-linked-list_detail-1_code-sample.png",
 					alt: "A code sample of React and TypeScript; the code creates a linked list.",
 					caption:
 						'This is a simple project; an exercise in using TypeScript to create a linked list. It was created while following a prompt for a coding challenge from the Udemy course "Understanding TypeScript" by instructor, Maximilian Schwarzmüller, an AWS certified Professional Web Developer.',
