@@ -601,10 +601,10 @@ const PROJECTS: Project[] = [
 	{
 		id: 11,
 		title: "Setting Out to Sea | The First Web Dev Project",
-		description: "",
+		description:
+			'The first dev project created while taking the "Freemote" coding bootcamp program. This is an HTML and CSS project designed to be an introduction of oneself, offering a brief background of the aspiring web developer.',
 		dateCreated: new Date(2021, 7, 30),
 		dateUpdated: new Date(2021, 9, 28),
-
 		isFeatured: false,
 		isFavorite: false,
 		imageData: {
@@ -615,16 +615,16 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/setting-out-to-sea_detail-1_main-page.png",
+					alt: 'A colorful blog post designed with bright colors of sunset orange, seafoam green, deep ocean blue, and evening yellow. It contains a title, "A Sea-Worthy Introduction" and contains three sections titled: "A Long History Down a Long Road", "And From the Darkness, a New Dawn", and "Future\'s Look\'in so Bright, Gotta Wear Shades".',
+					caption:
+						'A colorful blog post designed with bright colors of sunset orange, seafoam green, deep ocean blue, and evening yellow. The color theme was chosen to mimic a sunset over the ocean. It contains a title, "A Sea-Worthy Introduction" and contains three sections titled: "A Long History Down a Long Road", "And From the Darkness, a New Dawn", and "Future\'s Look\'in so Bright, Gotta Wear Shades".',
 				},
 				{
-					src: "",
-					alt: "",
-				},
-				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/setting-out-to-sea_detail-2_html-and-css-sample.png",
+					alt: "A sample of HTML markup and CSS stylesheet language.",
+					caption:
+						'This code sample displays the HTML markup and CSS stylesheet language used to create this "Sea-Worthy Introduction". It features the use of various common HTML elements, like "span", "p", "i", "br", "h3", and anchor tags, and various CSS rules, applying styling, positioning, and padding to various text elements.',
 				},
 			],
 		},
