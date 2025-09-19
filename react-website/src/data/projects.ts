@@ -664,16 +664,16 @@ const PROJECTS: Project[] = [
 						"This web page, hosted on CodePen, features a video provided via an iframe HTML element and a colored background with a glowing sun, all created in CSS.",
 				},
 				{
-					src: "images/projects/details/indie-game-dev_detail-2_the-fox-say.png",
-					alt: "An icon shaped like a fox's head made entirely from CSS style sheet language.",
-					caption:
-						"This icon, designed to look like the head of a fox, was created entirely with CSS rules. It's a reference to the main character - a fox - of David Wehle's second commercial game, \"The First Tree\".",
-				},
-				{
 					src: "images/projects/details/indie-game-dev_detail-3_html-sample.png",
 					alt: "A sample of HTML markup.",
 					caption:
 						"This HTML sample displays the HTML markup used to generate this page. Click the CodePen link below to see the rest of the code.",
+				},
+				{
+					src: "images/projects/details/indie-game-dev_detail-2_the-fox-say.png",
+					alt: "An icon shaped like a fox's head made entirely from CSS style sheet language.",
+					caption:
+						"This icon, designed to look like the head of a fox, was created entirely with CSS rules. It's a reference to the main character - a fox - of David Wehle's second commercial game, \"The First Tree\".",
 				},
 				{
 					src: "images/projects/details/indie-game-dev_detail-4_css-sample.png",
