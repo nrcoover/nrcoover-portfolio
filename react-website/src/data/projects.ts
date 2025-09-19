@@ -511,7 +511,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 9,
 		title: "How to use Flex Box",
-		description: "",
+		description:
+			"As an introduction to CSS Flex Box, this project of the Freemote coding bootcamp creates a display explaining the different positionings that can be accomplished using the flexibility of Flex Box.",
 		dateCreated: new Date(2021, 8, 30),
 		dateUpdated: new Date(2021, 9, 28),
 		isFeatured: false,
@@ -524,16 +525,16 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/how-to-use-flexbox_detail-1_main-page.png",
+					alt: "A colorful display of a neon corridor with text box examples of how to position HTML elements using a variety of Flex Box techniques.",
+					caption:
+						"A colorful display of a neon corridor with text box examples of how to position HTML elements using a variety of Flex Box techniques.",
 				},
 				{
-					src: "",
-					alt: "",
-				},
-				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/how-to-use-flexbox_detail-2_html-and-css-sample.png",
+					alt: "A sample of HTML markup and CSS stylesheet language.",
+					caption:
+						"A sample of HTML markup and CSS stylesheet language used to create this display of the variety of ways Flex Box can position HTML elements. Click the CodePen link below to view the code in its entirety.",
 				},
 			],
 		},
