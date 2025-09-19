@@ -700,7 +700,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 13,
 		title: "Food Service Delivery Summary | Clone",
-		description: "",
+		description:
+			"This project is designed to simulate a food service order confirmation screen. The multiple images give the appearance of working through a multiple-page ordering process. It uses HTML, CSS, and responsive design principles.",
 		dateCreated: new Date(2022, 3, 24),
 		dateUpdated: new Date(2022, 3, 24),
 		isFeatured: false,
@@ -713,16 +714,22 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/food-service-delivery-summary_detail-1_main-page.png",
+					alt: "Three screenshots of a food ordering app are placed side by side on a green background.",
+					caption:
+						"This displays three images, ordered and styled with CSS to create a mock ordering service. They are designed to appear as if a user is midway through the ordering process on a food app. It features several buttons with color changes on hover using CSS pseudo-classes.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/food-service-delivery-summary_detail-2_responsive-design.png",
+					alt: "A single screenshot of a food ordering app placed against a green backdrop with dark green zig-zags.",
+					caption:
+						"This image displays the responsive design of the web project. On smaller screens, only one image is displayed instead of three, and the background has changed from a solid green backdrop to one with darker green zigzags.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/food-service-delivery-summary_detail-3_html-and-css-sample.png",
+					alt: "A sample of HTML markup and CSS stylesheet language.",
+					caption:
+						'An example display of the HTML markup and CSS stylesheet language used to create this project. The HTML is semantic HTML (or HTML5), utilizing elements such as "article" and "section". The CSS uses CSS nesting structured like SCSS and makes use of pseudo-classes, class combinators, and flexbox. Click the CodePen link below to view the rest of the code.',
 				},
 			],
 		},
@@ -740,6 +747,7 @@ const PROJECTS: Project[] = [
 			{ type: iconSocial.Website, url: "" },
 		],
 	},
+
 	{
 		id: 14,
 		title: "MaxStrong - Exercise Coach | Landing Page Clone",
@@ -1205,17 +1213,17 @@ const PROJECTS: Project[] = [
 	// 		},
 	// 		imagesPaths: [
 	// 			{
-	// 				src: "",
+	// 				src: "../../public/images/projects/details",
 	// 				alt: "",
 	// 				caption: "",
 	// 			},
 	// 			{
-	// 				src: "",
+	// 				src: "../../public/images/projects/details",
 	// 				alt: "",
 	// 				caption: "",
 	// 			},
 	// 			{
-	// 				src: "",
+	// 				src: "../../public/images/projects/details",
 	// 				alt: "",
 	// 				caption: "",
 	// 			},
