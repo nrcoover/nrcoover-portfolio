@@ -249,7 +249,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 3,
 		title: "Freemote Blog Layout Replica",
-		description: "",
+		description:
+			"An exercise in HTML and CSS, this Freemote project creates a clone mockup of the Freemote Blog articles landing page.",
 		dateCreated: new Date(2021, 8, 26),
 		dateUpdated: new Date(2021, 9, 28),
 		isFeatured: false,
@@ -262,16 +263,16 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/freemote-blog-replica_detail-1_main-page.png",
+					alt: 'A web clone of a blog titled, "Freemote Blog". It contains four mock articles titled, "How to make your web design unique," "Landing for Business", "Dashboard Design", and "UI Secrets They Don\'t Want You To Know"',
+					caption:
+						'A clone of the "Freemote Blog" landing page. It features four mock article links displayed in a grid-type layout. Each featured article makes use of the HTML "img" image element and includes the "src" and "alt" attributes.',
 				},
 				{
-					src: "",
-					alt: "",
-				},
-				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/freemote-blog-replica_detail-2_html-and-css-sample.png",
+					alt: "A sample of HTML markup and CSS stylesheet language.",
+					caption:
+						"This is a sample of the HTML markup and CSS stylesheet lanaguage used to create this Blog articles landing page mockup. Click the CodePen link below to view the entire code.",
 				},
 			],
 		},
