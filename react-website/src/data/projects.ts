@@ -925,7 +925,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 17,
 		title: "Quizapalooza - eCommerce Quiz | Online Quiz Web Application",
-		description: "",
+		description:
+			'"Quizapalooza" was a final project of the JavaScript course from the online coding bootcamp, Freemote. It features three questions about e-commerce in a timed quiz. It uses DOM manipulation to present varying failure and success pages based on user interaction and rewards successful users with a variety of cute puppy images on quiz completion.',
 		dateCreated: new Date(2022, 4, 16),
 		dateUpdated: new Date(2022, 4, 16),
 		isFeatured: true,
@@ -940,7 +941,7 @@ const PROJECTS: Project[] = [
 					src: "images/projects/details/quizapalooza_detail-1_main-page.png",
 					alt: "The start menu of a web quiz application about eCommerce.",
 					caption:
-						'"Quizapalooza" was a final project of the JavaScript course from the online coding bootcamp, Freemote. It features three questions about e-commerce in a timed quiz. It uses DOM manipulation to present varying failure and success pages based on user interaction and rewards successful users with a variety of cute puppy images on quiz completion.',
+						'The start menu for the online eCommerce quiz, "Quizapalooza," features a title banner, a dialogue box describing the quiz, and a "Start" button to begin the timed online exam.',
 				},
 				{
 					src: "images/projects/details/quizapalooza_detail-2_question-example.png",
@@ -1153,7 +1154,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 19,
 		title: "TypeScript - A Linked List",
-		description: "",
+		description:
+			'This is a simple project; an exercise in using TypeScript to create a linked list. It was created while following a prompt for a coding challenge from the Udemy course "Understanding TypeScript" by instructor, Maximilian Schwarzmüller, an AWS certified Professional Web Developer.',
 		dateCreated: new Date(2025, 7, 31),
 		dateUpdated: new Date(2025, 7, 31),
 		isFeatured: false,
@@ -1169,7 +1171,7 @@ const PROJECTS: Project[] = [
 					src: "images/projects/details/typescript-linked-list_detail-1_code-sample.png",
 					alt: "A code sample of React and TypeScript; the code creates a linked list.",
 					caption:
-						'This is a simple project; an exercise in using TypeScript to create a linked list. It was created while following a prompt for a coding challenge from the Udemy course "Understanding TypeScript" by instructor, Maximilian Schwarzmüller, an AWS certified Professional Web Developer.',
+						'This TypeScript code creates a linked list, making use of "generics" and "custom types."',
 				},
 			],
 		},
