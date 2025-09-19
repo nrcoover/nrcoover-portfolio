@@ -292,7 +292,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 4,
 		title: "For the Love of Alpacas | Product Details Page",
-		description: "",
+		description:
+			'This is a mock "Product Details" for a fictional company specializing in Alpaca Wool products. Each image can be hovered over with the cursor to reveal details about the company and its products. (The fictional marketing team may also have had some fun writing some jokes into these details...)',
 		dateCreated: new Date(2021, 8, 6),
 		dateUpdated: new Date(2021, 9, 28),
 		isFeatured: false,
@@ -305,16 +306,34 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/alpacas-product-details-page_detail-1_main-page.png",
+					alt: 'A mock "Product Details" for a fictional company specializing in Alpaca Wool products. Each image can be hovered over with the cursor to reveal details about the company and its products. There are seven images altogether, organized in a square with three rows of images. Each image is a different image of an alpaca, except for the seventh image, which, humorously, contains a sheep.',
+					caption:
+						"This is the Product Details page. It includes: a header banner, a display of multiple images containing mostly alpacas, and a footer with mock navigation. You can visit the CodePen link below to mouse over the images and see the detail-revealing functionality in action (and you might get to read a couple of jokes too!).",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/alpacas-product-details-page_detail-2_joke-blankey.png",
+					alt: "A collage of images containing mostly alpacas. The image in the top left has been selected to reveal the following text about the company's products; it reads: \"Our products were built with comfort in mind! (...you'll be as comfy as a baby alpaca swaddled in a blanky!)\". The blurred image behind the text shows a baby alpaca being held in the arms of a lady and wrapped in the extra fabric of the lady's garment.",
+					caption:
+						"A collage of images containing mostly alpacas. The image in the top left has been selected to reveal the following text about the company's products; it reads: \"Our products were built with comfort in mind! (...you'll be as comfy as a baby alpaca swaddled in a blanky!)\". The blurred image behind the text shows a baby alpaca being held in the arms of a lady and wrapped in the extra fabric of the lady's garment.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/alpacas-product-details-page_detail-3_joke-love.png",
+					alt: "A collage of images containing mostly alpacas. The image in the middle has been selected to reveal the following text about the company's products; it reads: \"Every item we make is constructed with love and care in Japan! (...our joke team had nothing clever to say here, because even they know there's nothing funny about love!)\". The blurred image behind the text shows a woman in a white, flowery dress kissing the nose of an alpaca with dark brown fleece, which the author of this website is only now realizing that alpaca's don't have wool, but instead have fleece, so the whole idea of this fictional company is rather comical (maybe that's why they haven't received any orders in the multiple years they've been around…).",
+					caption:
+						"A collage of images containing mostly alpacas. The image in the middle has been selected to reveal the following text about the company's products; it reads: \"Every item we make is constructed with love and care in Japan! (...our joke team had nothing clever to say here, because even they know there's nothing funny about love!)\". The blurred image behind the text shows a woman in a white, flowery dress kissing the nose of an alpaca with dark brown fleece, which the author of this website is only now realizing that alpaca's don't have wool, but instead have fleece, so the whole idea of this fictional company is rather comical (maybe that's why they haven't received any orders in the multiple years they've been around…).",
+				},
+				{
+					src: "images/projects/details/alpacas-product-details-page_detail-4_joke-bob.png",
+					alt: 'A collage of images containing mostly alpacas. The image in the bottom right has been selected to reveal the following text about the company\'s products; it reads: "This is "Bob". Bob doesn\'t know he isn\'t a sheep. (...but he still approves of our products!)". The blurred image behind the text shows a sheep wearing a rainbow color standing next to a man in a decorative red vest.',
+					caption:
+						'A collage of images containing mostly alpacas. The image in the bottom right has been selected to reveal the following text about the company\'s products; it reads: "This is "Bob". Bob doesn\'t know he isn\'t a sheep. (...but he still approves of our products!)". The blurred image behind the text shows a sheep wearing a rainbow color standing next to a man in a decorative red vest.',
+				},
+				{
+					src: "images/projects/details/alpacas-product-details-page_detail-5_html-and-css-sample.png",
+					alt: "A sample of HTML5 markup and CSS stylesheet language.",
+					caption:
+						"This HTML features several image (img) elements pulling sources from Pexels.com, a royalty-free image and video website. The CSS uses Grid Template attributes to structure the image gallery and incorporates responsive design. Click on the CodePen link below to see the rest of the code.",
 				},
 			],
 		},
