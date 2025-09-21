@@ -402,7 +402,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 6,
 		title: 'Adidas "Coming Soon" Landing Page Clone',
-		description: "",
+		description:
+			'This project includes two alternative designs to conceptualize the idea that some websites might have alternative landing pages that are offered to some users when visiting the site. This sort of thing is often used in "A/B Testing" of website designs. These pages are built with semantic HTML (HTML5) and CSS.',
 		dateCreated: new Date(2022, 3, 16),
 		dateUpdated: new Date(2022, 3, 17),
 		isFeatured: false,
@@ -415,16 +416,28 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/adidas-landing-page_detail-1_main-page.png",
+					alt: 'An "Adidas" store landing page. There is an image of a female model wearing an Adidas jacket, and the website reads, "We\'re Coming Soon. Hello friends! We are currently building our new sports and comfort clothing store. Add your email address below to stay up-to-date with announcements and our launch proposals." There is an input field for providing an email address.',
+					caption:
+						'An "Adidas" store landing page. There is an image of a female model wearing an Adidas jacket, and the website reads, "We\'re Coming Soon. Hello friends! We are currently building our new sports and comfort clothing store. Add your email address below to stay up-to-date with announcements and our launch proposals." There is an input field for providing an email address.',
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/adidas-landing-page_detail-2_alternate-page.png",
+					alt: 'An "Adidas" store landing page. There is an image of a close-up of a model\'s leg wearing an Adidas shoe as they jump in a puddle of water, and the website reads, "We\'re Coming Soon. Hello friends! We are currently building our new sports and comfort clothing store. Add your email address below to stay up-to-date with announcements and our launch proposals." There is an input field for providing an email address.',
+					caption:
+						"This is an alternate version of the website's design. On the Portfolio page, a separate project is available for this version; however, it is intentionally left without project details to display the default data that would be shown in the event of a failure to fetch the project details. Instead, the data for this alternate design have been featured here with its parent design.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/adidas-landing-page_detail-3_responsive-design-compare.png",
+					alt: "A comparative display of the two previous images side-by-side in a responsive design format, displaying how each website would appear on smaller screens. The left image features the website design with the female model wearing the jacket, and the right image features the website design with the model's leg wearing a show splashing in water.",
+					caption:
+						"A comparative display of the two website designs side by side as they would each appear on smaller screens. These versions of the website feature changes made with responsive design principles. The biggest differences between the two versions include the image used, the color scheme, and the design of the input field's button.",
+				},
+				{
+					src: "images/projects/details/adidas-landing-page_detail-4_html-and-css-sample.png",
+					alt: "A sample of HTML5 markup and CSS stylesheet language.",
+					caption:
+						"This is a sample of the semantic HTML (HTML5) used to create this landing page and the CSS media queries used to generate a responsive design for both versions of this landing page.",
 				},
 			],
 		},
