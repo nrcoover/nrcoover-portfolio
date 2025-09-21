@@ -353,7 +353,8 @@ const PROJECTS: Project[] = [
 	{
 		id: 5,
 		title: "Boxes Plus | Landing Page",
-		description: "",
+		description:
+			"As part of the CSS curriculum for the Freemote online coding bootcamp, this project was an assignment on learning about the Box Model: a fundamental concept describing how all HTML elements are rendered as rectangular boxes.",
 		dateCreated: new Date(2021, 8, 8),
 		dateUpdated: new Date(2021, 9, 28),
 		isFeatured: false,
@@ -366,16 +367,22 @@ const PROJECTS: Project[] = [
 			},
 			imagesPaths: [
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/boxes-plus-landing-page_detail-1_main-page.png",
+					alt: 'A landing page for a fictitious delivery service titled "Boxes Plus". The main image is of a woman smiling while carrying a large cardboard box against a bright yellow background. The slogan reads, "Delivering quality since before 1974".',
+					caption:
+						'A landing page for a fictitious delivery service titled "Boxes Plus". Playing on the theme of the assignment\'s prompt, this project humorously describes a company all about delivering empty cardboard boxes. The website makes use of the Box Model and utilizes CSS flexbox for creating responsive design.',
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/boxes-plus-landing-page_detail-2_main-page-bottom.png",
+					alt: "More content from the landing page, this image displays several sections of the website, including a subscription tier selection, a customer review section, and the footer for navigation. An example of the customer reviews: \"Before I was a patron, I'd always run into issues with not having enough boxes for my boxing needs, but now I have all the boxes I could ever want! I had no idea there were so many uses for boxes! I don't even need furniture anymore!\" -John Doe.",
+					caption:
+						"More content from the landing page, this image displays several sections of the website, including a subscription tier selection, a customer review section, and the footer for navigation. An example of the customer reviews: \"Before I was a patron, I'd always run into issues with not having enough boxes for my boxing needs, but now I have all the boxes I could ever want! I had no idea there were so many uses for boxes! I don't even need furniture anymore!\" -John Doe.",
 				},
 				{
-					src: "",
-					alt: "",
+					src: "images/projects/details/boxes-plus-landing-page_detail-3_html-and-css-sample.png",
+					alt: "A sample of HTML5 markup and CSS stylesheet language.",
+					caption:
+						"This is a sample of the semantic HTML (HTML5) markup written for displaying this web page (left). The CSS sample (right) displays some of the CSS used for styling the customer testimonials.",
 				},
 			],
 		},
