@@ -785,7 +785,6 @@ const PROJECTS: Project[] = [
 				},
 			],
 		},
-
 		tagData: {
 			primaryTag: TAGS.css,
 			otherTags: [TAGS.html, TAGS.html5, TAGS.css, TAGS.responsiveWebDesign],
@@ -799,7 +798,6 @@ const PROJECTS: Project[] = [
 			{ type: iconSocial.Website, url: "" },
 		],
 	},
-
 	{
 		id: 14,
 		title: "MaxStrong - Exercise Coach | Landing Page Clone",
@@ -1250,8 +1248,75 @@ const PROJECTS: Project[] = [
 			{ type: iconSocial.Website, url: "" },
 		],
 	},
+	{
+		id: 20,
+		title: "Expense Tracker",
+		description:
+			'A modern twist on the classic "To-Do List", this project is an expense tracker, categorizing lists of expenses by month and year, and displaying a quantitative and comparative view of the total cost of those expenses from month to month of a selected year. This was one of the primary early assignments from the Udemy course "React - The Complete Guide 2025 (incl. Next.js, Redux)" by Maximilian Schwarzmüller.',
+		dateCreated: new Date(2023, 4, 5),
+		dateUpdated: new Date(2023, 7, 31),
+		isFeatured: false,
+		isFavorite: false,
+		imageData: {
+			coverArt: {
+				coverArtPath: "images/projects/cover-art/cover-art_expense-tracker.png",
+				isAiGeneratedImage: false,
+			},
+			imagesPaths: [
+				{
+					src: "images/projects/details/expense-tracker_detail-1_main-page.png",
+					alt: "A web application for tracking expenses and comparing total costs from a month-to-month basis over a selected year.",
+					caption:
+						"The UI for this web application features a filterable chart for comparing the total cost of expenses by year. New expenses can be registered and added to the list, filtered by year, and each item for each month will add to the amount the bar is filled within the chart. The max level is defined by the most expensive month per year, and comparative monthly percentages are calculated based on the greatest monthly expense.",
+				},
+				{
+					src: "images/projects/details/expense-tracker_detail-2_chart-code-sample.png",
+					alt: "A sample of React code including two open files for two different React components in Visual Studio Code.",
+					caption:
+						'The "ChartBar" component (top) becomes a child of the parent "Chart" component (bottom). Data point arrays are passed from the Chart to the Chart Bar and mapped to create a bar for each month of the year. The height of the chart bar for each month is dynamically determined by the total cost of the most expensive month in a given year and the percentage calculated from that value. CSS is dynamically applied via class names to apply that percentage to the amount of the bar that gets filled in with color.',
+				},
+				{
+					src: "images/projects/details/expense-tracker_detail-3_expense-form.png",
+					alt: "A web application for tracking expenses and comparing total costs from a month-to-month basis over a selected year. There is a form at the top of the application for adding a new expense to the list of expenses for the given year.",
+					caption:
+						'The UI for this application includes a form that appears after clicking on the "Register Expense button." A new item can be added after filling in each field and selecting a date, or the form can be closed by clicking the "Cancel" button.',
+				},
+				{
+					src: "images/projects/details/expense-tracker_detail-4_expense-form-jsx.png",
+					alt: "A sample of React code displaying a JSX component for a submission form.",
+					caption:
+						"This is the JSX used to create the submission form for adding a new expense to the expense tracker.",
+				},
+				{
+					src: "images/projects/details/expense-tracker_detail-5_expense-form-event-handlers.png",
+					alt: "A sample of React code displaying the event handlers for a submission form.",
+					caption:
+						"These are some the event handlers written to support the JSX component for form submission from the previous image. Seen here are the specific handlers for the two input fields, the date selector, and the cancel button. To see the rest of the code, click the GitHub link below.",
+				},
+			],
+		},
+		tagData: {
+			primaryTag: TAGS.react,
+			otherTags: [
+				TAGS.html,
+				TAGS.html5,
+				TAGS.css,
+				TAGS.responsiveWebDesign,
+				TAGS.javascript,
+				TAGS.react,
+			],
+		},
+		links: [
+			{
+				type: iconSocial.GitHub,
+				url: "https://github.com/nrcoover/expense-tracker-with-react",
+			},
+			{ type: iconSocial.CodePen, url: "" },
+			{ type: iconSocial.Website, url: "" },
+		],
+	},
 	// {
-	// 	id: 20,
+	// 	id: 0,
 	// 	title: "",
 	// 	description: "",
 	// 	dateCreated: new Date(),
