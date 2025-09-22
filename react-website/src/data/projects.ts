@@ -1315,6 +1315,55 @@ const PROJECTS: Project[] = [
 			{ type: iconSocial.Website, url: "" },
 		],
 	},
+	{
+		id: 21,
+		title: "Investment Calculator",
+		description:
+			'As an introductory assignment, this project comes from the Udemy course "Understanding TypeScript" by Maximilian Schwarzmüller, and introduces type definitions and how to compile TypeScript files down to classic JavaScript.',
+		dateCreated: new Date(2025, 7, 18),
+		dateUpdated: new Date(2025, 7, 18),
+		isFeatured: false,
+		isFavorite: false,
+		imageData: {
+			coverArt: {
+				coverArtPath:
+					"images/projects/cover-art/cover-art_investment-calculator.png",
+				isAiGeneratedImage: false,
+			},
+			imagesPaths: [
+				{
+					src: "images/projects/details/investment-calculator_detail-1_main-function.png",
+					alt: "A function written in TypeScript for calculating the interest earned on an investment.",
+					caption:
+						"A function written in TypeScript for calculating the interest earned on an investment.",
+				},
+				{
+					src: "images/projects/details/investment-calculator_detail-2_js-compiled.png",
+					alt: "A function written in TypeScript for calculating the interest earned on an investment compiled down to JavaScript.",
+					caption:
+						'A function written in TypeScript for calculating the interest earned on an investment, compiled down to JavaScript. It was compiled down from TypeScript using the "tsc" command along with a tsconfig.json file.',
+				},
+				{
+					src: "images/projects/details/investment-calculator_detail-3_node-calculate.png",
+					alt: "Several files open in Visual Studio Code. There is a file written in TypeScript, a file written in JavaScript, and then the Visual Studio Code Terminal is open to run the function from the compiled JavaScript file with Node.",
+					caption:
+						"At the top of this Visual Studio Code instance is the TypeScript file displaying a couple of type definitions. The lower half is an open terminal running the compiled JavaScript file with Node, and the overlay contains the starting values for calculating the interest returned on the investment. These values could be changed and the function rerun to generate new results!",
+				},
+			],
+		},
+		tagData: {
+			primaryTag: TAGS.typescript,
+			otherTags: [TAGS.javascript, TAGS.typescript],
+		},
+		links: [
+			{
+				type: iconSocial.GitHub,
+				url: "https://github.com/nrcoover/TypeScript_InterestCalculator",
+			},
+			{ type: iconSocial.CodePen, url: "" },
+			{ type: iconSocial.Website, url: "" },
+		],
+	},
 	// {
 	// 	id: 0,
 	// 	title: "",
