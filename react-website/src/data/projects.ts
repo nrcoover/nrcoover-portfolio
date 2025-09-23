@@ -1365,6 +1365,61 @@ const PROJECTS: Project[] = [
 		],
 	},
 	// {
+	{
+		id: 24,
+		title: "Excelsheet Formatter",
+		description:
+			"A versatile NuGet package built with .NET Standard, ensuring compatibility with both legacy and modern applications. As an abstraction layer on top of ClosedXML, this package streamlines the formatting of downloadable Excel reports for enhancing standardization and efficiency. Written as a custom package, the source code is now the official property of Select Medical and cannot be displayed as it is classified as proprietary software.",
+		dateCreated: new Date(),
+		dateUpdated: new Date(),
+		isFeatured: false,
+		isFavorite: false,
+		imageData: {
+			coverArt: {
+				coverArtPath:
+					"images/projects/cover-art/ai-cover-art_excelsheet-formatter.png",
+				isAiGeneratedImage: false,
+			},
+			imagesPaths: [
+				{
+					src: "images/projects/details/excel-formatter_detail-1_ai-image-icon.png",
+					alt: "An icon of a stylized Excel sheet and the NuGet package icon resting together in the middle of an iridescent background.",
+					caption:
+						"After creating the NuGet package, there was a discussion on whether generative AI could be utilized to create a simple icon for the package published to GitLab. Use of generative A.I. in this facet was approved, the prompt was created, and this icon was the result, compliments of ChatGPT4.",
+				},
+				{
+					src: "images/projects/details/excel-formatter_detail-2_ai-image-icon-clippy.png",
+					alt: 'An AI-generated image of Microsoft\'s "Clippy", the helpful paperclip, wearing a cowboy hat while riding a velociraptor in a prehistoric environment with volcanoes, rainbows, and a giant monolith of an Excel spreadsheet towering in the background.',
+					caption:
+						'After showcasing the AI-generated icon to the team, one coworker jokingly suggested replacing it with a new image of Microsoft\'s "Clippy", the helpful paperclip, wearing a cowboy hat while riding a velociraptor on a rainbow across an Excel spreadsheet. To quote Barney Stinson, "Challenge accepted!" This was the result, again compliments of ChatGPT4.',
+				},
+			],
+		},
+		tagData: {
+			primaryTag: TAGS.csharp,
+			otherTags: [TAGS.csharp, TAGS.dotnet, TAGS.dotnetStandard],
+		},
+		links: [
+			{ type: iconSocial.GitHub, url: "" },
+			{ type: iconSocial.CodePen, url: "" },
+			{ type: iconSocial.Website, url: "" },
+			{
+				type: iconSocial.LinkedIn,
+				url: "https://www.linkedin.com/posts/nrcoover_promptengineering-generativeai-aiux-activity-7350864249360982018-Jf1Q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbnpg8Bz6AIyjfGkXtrQBmQq0ry8bYhiMc",
+			},
+		],
+		heroFeatureData: {
+			banner: {
+				src: "images/projects/feature-banners/ai-cover-art_excelsheet-formatter_feature-banner.png",
+				alt: 'Movie poster of a determined, serious robot in a dark, cyberpunk city. He patrols the streets looking to enforce compliance with formatting standards amongst the citizens of Excel City".',
+			},
+			shortTitle: "Excelsheet Formatter",
+			shortDescription:
+				"His mission is simple: enforce compliance to formatting standards...",
+			isAiGeneratedImage: true,
+		},
+		isDefaultData: false,
+	},
 	// 	id: 0,
 	// 	title: "",
 	// 	description: "",
