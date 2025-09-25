@@ -44,6 +44,8 @@ export const TAGS: Record<string, string> = {
 	fastapi: "fastapi",
 	csharp: "csharp",
 	dotnet: "dotnet",
+	dotnetStandard: "dotnet standard",
+	nuget: "nuget",
 	java: "java",
 	spring: "spring",
 	golang: "golang",

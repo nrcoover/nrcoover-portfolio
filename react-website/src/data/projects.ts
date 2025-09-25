@@ -1367,12 +1367,12 @@ const PROJECTS: Project[] = [
 	// {
 	{
 		id: 24,
-		title: "Excelsheet Formatter",
+		title: "Excel Sheet Formatter",
 		description:
 			"A versatile NuGet package built with .NET Standard, ensuring compatibility with both legacy and modern applications. As an abstraction layer on top of ClosedXML, this package streamlines the formatting of downloadable Excel reports for enhancing standardization and efficiency. Written as a custom package, the source code is now the official property of Select Medical and cannot be displayed as it is classified as proprietary software.",
-		dateCreated: new Date(),
-		dateUpdated: new Date(),
-		isFeatured: false,
+		dateCreated: new Date(2025, 5, 25),
+		dateUpdated: new Date(2025, 6, 3),
+		isFeatured: true,
 		isFavorite: false,
 		imageData: {
 			coverArt: {
@@ -1388,16 +1388,34 @@ const PROJECTS: Project[] = [
 						"After creating the NuGet package, there was a discussion on whether generative AI could be utilized to create a simple icon for the package published to GitLab. Use of generative A.I. in this facet was approved, the prompt was created, and this icon was the result, compliments of ChatGPT4.",
 				},
 				{
+					src: "../../public/images/projects/details/excel-formatter_detail-3_excel-code-default.png",
+					alt: "An open window in Microsoft Visual Studio and an Excel Spreadsheet. Visual Studio displays C# code that creates an Excel spreadsheet using the NuGet package ClosedXML. The Excel spreadsheet is an example of the spreadsheet created by the above code.",
+					caption:
+						"This simple Console application in Microsoft Visual Studio displays how a spreadsheet can be created with 5 columns and 7 rows (including headers) using the ClosedXML NuGet package. The Excel spreadsheet generated from this code can be seen below; notice the columns are all smushed together, generated with the default width in Excel.",
+				},
+				{
+					src: "../../public/images/projects/details/excel-formatter_detail-4_excel-code-formatting.png",
+					alt: "An open window in Microsoft Visual Studio and an Excel Spreadsheet. Visual Studio displays C# code that creates an Excel spreadsheet using the NuGet package ClosedXML, and formats the created document with alternating white and gray rows, auto-width formatted columns, and bold headers. The Excel spreadsheet is an example of the spreadsheet created by the above code.",
+					caption:
+						"This C# code is the same as before, but it includes some extra mock functions displaying how the Excel Sheet Formatter could be used, abstracting more complex code into three simple helper functions for formatting headers (making them bold, dynamically applying color and freezing the top row), auto-fitting the column width to extend to the width of their content, and alternating the row colors for easier row differentiation (white and gray are the default colors applied). The Excel spreadsheet below is a representation of the created Excel sheet after use of the formatting NuGet package.",
+				},
+				{
+					src: "../../public/images/projects/details/excel-formatter_detail-5_excel-code-alternate-colors.png",
+					alt: "An open window in Microsoft Visual Studio and an Excel Spreadsheet. Visual Studio displays C# code that creates an Excel spreadsheet using the NuGet package ClosedXML, and formats the created document with alternating rows with three colors (light green, light blue, and yellow), auto-width formatted columns, and bold headers. The Excel spreadsheet is an example of the spreadsheet created by the above code.",
+					caption:
+						"Extending on the previous C# code, this example displays again how the helper functions could be used, while showing an available overload of the custom Excel Sheet Formatter NuGet package, which allows the developer to specify up to three row colors and the optional parameter to darken the header based on the initial first color. The Excel sheet below is a representation of the created Excel sheet after use of the formatting NuGet package.",
+				},
+				{
 					src: "images/projects/details/excel-formatter_detail-2_ai-image-icon-clippy.png",
 					alt: 'An AI-generated image of Microsoft\'s "Clippy", the helpful paperclip, wearing a cowboy hat while riding a velociraptor in a prehistoric environment with volcanoes, rainbows, and a giant monolith of an Excel spreadsheet towering in the background.',
 					caption:
-						'After showcasing the AI-generated icon to the team, one coworker jokingly suggested replacing it with a new image of Microsoft\'s "Clippy", the helpful paperclip, wearing a cowboy hat while riding a velociraptor on a rainbow across an Excel spreadsheet. To quote Barney Stinson, "Challenge accepted!" This was the result, again compliments of ChatGPT4.',
+						'After showcasing the AI-generated icon to the team, one coworker jokingly suggested replacing it with a new image of Microsoft\'s "Clippy", the helpful paperclip, wearing a cowboy hat while riding a velociraptor on a rainbow across an Excel spreadsheet. To quote Barney Stinson, "Challenge accepted!" This was the result, again compliments of ChatGPT4. You can follow the LinkedIn link below to see a post about the difference in these A.I. generated images based on the prompts that were used.',
 				},
 			],
 		},
 		tagData: {
 			primaryTag: TAGS.csharp,
-			otherTags: [TAGS.csharp, TAGS.dotnet, TAGS.dotnetStandard],
+			otherTags: [TAGS.csharp, TAGS.dotnet, TAGS.dotnetStandard, TAGS.nuget],
 		},
 		links: [
 			{ type: iconSocial.GitHub, url: "" },
@@ -1408,17 +1426,18 @@ const PROJECTS: Project[] = [
 				url: "https://www.linkedin.com/posts/nrcoover_promptengineering-generativeai-aiux-activity-7350864249360982018-Jf1Q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbnpg8Bz6AIyjfGkXtrQBmQq0ry8bYhiMc",
 			},
 		],
-		heroFeatureData: {
-			banner: {
-				src: "images/projects/feature-banners/ai-cover-art_excelsheet-formatter_feature-banner.png",
-				alt: 'Movie poster of a determined, serious robot in a dark, cyberpunk city. He patrols the streets looking to enforce compliance with formatting standards amongst the citizens of Excel City".',
-			},
-			shortTitle: "Excelsheet Formatter",
-			shortDescription:
-				"His mission is simple: enforce compliance to formatting standards...",
-			isAiGeneratedImage: true,
-		},
-		isDefaultData: false,
+		// TODO: Fix Hero Banner bug and uncomment these details.
+		// heroFeatureData: {
+		// 	banner: {
+		// 		src: "images/projects/feature-banners/ai-cover-art_excelsheet-formatter_feature-banner.png",
+		// 		alt: 'Movie poster of a determined, serious robot in a dark, cyberpunk city. He patrols the streets looking to enforce compliance with formatting standards amongst the citizens of Excel City".',
+		// 	},
+		// 	shortTitle: "Excelsheet Formatter",
+		// 	shortDescription:
+		// 		"His mission is simple: enforce compliance to formatting standards...",
+		// 	isAiGeneratedImage: true,
+		// },
+		// isDefaultData: false,
 	},
 	// 	id: 0,
 	// 	title: "",

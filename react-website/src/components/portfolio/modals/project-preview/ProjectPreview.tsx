@@ -108,6 +108,9 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const websiteUrl = (project.links ?? defaultData.links).find(
 		(link) => link.type === iconSocial.Website
 	)?.url;
+	const linkedUrl = (project.links ?? defaultData.links).find(
+		(link) => link.type === iconSocial.LinkedIn
+	)?.url;
 
 	const previewContent = (
 		<>
@@ -253,6 +256,24 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 							>
 								<Icon
 									source={iconSocial.Website}
+									className={classes.previewLink}
+								/>
+							</NavLink>
+							<p>{getIconName(iconSocial.Website)}</p>
+						</li>
+					)}
+					{linkedUrl && (
+						<li className={globalClasses.iconContainer}>
+							<NavLink
+								to={linkedUrl}
+								className={`${({ isActive }: { isActive: boolean }) =>
+									isActive
+										? (classes.active, globalClasses.iconContainer)
+										: globalClasses.iconContainer}`}
+								end
+							>
+								<Icon
+									source={iconSocial.LinkedIn}
 									className={classes.previewLink}
 								/>
 							</NavLink>
