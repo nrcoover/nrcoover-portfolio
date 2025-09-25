@@ -1426,18 +1426,17 @@ const PROJECTS: Project[] = [
 				url: "https://www.linkedin.com/posts/nrcoover_promptengineering-generativeai-aiux-activity-7350864249360982018-Jf1Q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbnpg8Bz6AIyjfGkXtrQBmQq0ry8bYhiMc",
 			},
 		],
-		// TODO: Fix Hero Banner bug and uncomment these details.
-		// heroFeatureData: {
-		// 	banner: {
-		// 		src: "images/projects/feature-banners/ai-cover-art_excelsheet-formatter_feature-banner.png",
-		// 		alt: 'Movie poster of a determined, serious robot in a dark, cyberpunk city. He patrols the streets looking to enforce compliance with formatting standards amongst the citizens of Excel City".',
-		// 	},
-		// 	shortTitle: "Excelsheet Formatter",
-		// 	shortDescription:
-		// 		"His mission is simple: enforce compliance to formatting standards...",
-		// 	isAiGeneratedImage: true,
-		// },
-		// isDefaultData: false,
+		heroFeatureData: {
+			banner: {
+				src: "images/projects/feature-banners/ai-cover-art_excelsheet-formatter_feature-banner.png",
+				alt: 'Movie poster of a determined, serious robot in a dark, cyberpunk city. He patrols the streets looking to enforce compliance with formatting standards amongst the citizens of Excel City".',
+			},
+			shortTitle: "Excelsheet Formatter",
+			shortDescription:
+				"His mission is simple: enforce compliance to formatting standards...",
+			isAiGeneratedImage: true,
+		},
+		isDefaultData: false,
 	},
 	// 	id: 0,
 	// 	title: "",

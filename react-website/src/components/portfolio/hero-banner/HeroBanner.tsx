@@ -84,9 +84,6 @@ const HeroBanner = () => {
 					</div>
 				</div>
 			</div>
-			{/* <div className={`${classes.heroItem} ${classes.buttonWrapper}`}>
-				Placeholder
-			</div> */}
 		</>
 	);
 
@@ -95,27 +92,34 @@ const HeroBanner = () => {
 			{heroProjects?.length != 0 && display !== undefined ? (
 				<>
 					<div className={`${classes.heroItem} ${classes.textWrapper}`}>
-						<h1>DEVFLIX</h1>
+						<h1>
+							DEV<span>FLIX</span>
+						</h1>
 						<h2>{display.heroFeatureData?.shortTitle}</h2>
 						<i>
 							<p>{display.heroFeatureData?.shortDescription}</p>
 						</i>
+						<PreviewButton
+							selected={true}
+							handlePreviewClick={handlePreviewClick}
+							isModalOpen={isModalOpen}
+						/>
 					</div>
 					<div className={`${classes.heroItem} ${classes.heroImage}`}>
-						<img
-							src={providePathRoot(display.heroFeatureData?.banner.src)}
-							alt={display.heroFeatureData?.banner.alt}
-						/>
-						<div className={classes.aiNoticeWrapper}>
-							<AiNotice
-								showNotice={display.heroFeatureData?.isAiGeneratedImage ?? true}
-								useFadedEdges={true}
+						<div className={classes.heroImageWrapper}>
+							<img
+								src={providePathRoot(display.heroFeatureData?.banner.src)}
+								alt={display.heroFeatureData?.banner.alt}
 							/>
+							<div className={classes.aiNoticeWrapper}>
+								<AiNotice
+									showNotice={
+										display.heroFeatureData?.isAiGeneratedImage ?? true
+									}
+								/>
+							</div>
 						</div>
 					</div>
-					{/* <div className={`${classes.heroItem} ${classes.buttonWrapper}`}>
-						Placeholder
-					</div> */}
 				</>
 			) : (
 				<>{defaultContent}</>
