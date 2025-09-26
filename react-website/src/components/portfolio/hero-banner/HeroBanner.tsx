@@ -18,19 +18,19 @@ const HeroBanner = () => {
 
 	const [activeDisplayIndex, setActiveDisplayIndex] = useState<number>(0);
 
+	const defaultProject: Project = DEFAULT_PROJECT;
+
 	const featuredProjects = useMemo(() => {
 		return filterFeaturedProjects(getProjects());
 	}, []);
 
-	const heroProjects = useMemo(
-		() => featuredProjects.filter((p) => p.heroFeatureData !== undefined),
-		[featuredProjects]
-	);
+	const heroProjects = useMemo(() => {
+		const featureBanners = featuredProjects.filter(
+			(p) => p.heroFeatureData !== undefined
+		);
+		return [defaultProject, ...featureBanners];
+	}, [defaultProject, featuredProjects]);
 
-	console.log("HeroProjects:");
-	console.log(heroProjects);
-
-	const defaultProject: Project = DEFAULT_PROJECT;
 	const display =
 		heroProjects.length > 0 ? heroProjects[activeDisplayIndex] : defaultProject;
 
@@ -55,75 +55,37 @@ const HeroBanner = () => {
 		}
 	}, [activeDisplayIndex, heroProjects?.length]);
 
-	const defaultContent = (
-		<>
-			<div className={`${classes.heroItem} ${classes.textWrapper}`}>
-				<h1>
-					DEV<span>FLIX</span>
-				</h1>
-				<h2>{defaultProject.heroFeatureData?.shortTitle}</h2>
-				<i>
-					<p>{defaultProject.heroFeatureData?.shortDescription}</p>
-				</i>
-				<PreviewButton
-					selected={true}
-					handlePreviewClick={handlePreviewClick}
-					isModalOpen={isModalOpen}
-				/>
-			</div>
-			<div className={`${classes.heroItem} ${classes.heroImage}`}>
-				<div className={classes.heroImageWrapper}>
-					<img
-						src={providePathRoot(defaultProject.heroFeatureData?.banner.src)}
-						alt={defaultProject.heroFeatureData?.banner.alt}
-					/>
-					<div className={classes.aiNoticeWrapper}>
-						<AiNotice
-							showNotice={display.heroFeatureData?.isAiGeneratedImage ?? true}
-						/>
-					</div>
-				</div>
-			</div>
-		</>
-	);
-
 	return (
 		<section aria-label="Featured project" className={classes.hero}>
-			{heroProjects?.length != 0 && display !== undefined ? (
-				<>
-					<div className={`${classes.heroItem} ${classes.textWrapper}`}>
-						<h1>
-							DEV<span>FLIX</span>
-						</h1>
-						<h2>{display.heroFeatureData?.shortTitle}</h2>
-						<i>
-							<p>{display.heroFeatureData?.shortDescription}</p>
-						</i>
-						<PreviewButton
-							selected={true}
-							handlePreviewClick={handlePreviewClick}
-							isModalOpen={isModalOpen}
+			<>
+				<div className={`${classes.heroItem} ${classes.textWrapper}`}>
+					<h1>
+						DEV<span>FLIX</span>
+					</h1>
+					<h2>{display.heroFeatureData?.shortTitle}</h2>
+					<i>
+						<p>{display.heroFeatureData?.shortDescription}</p>
+					</i>
+					<PreviewButton
+						selected={true}
+						handlePreviewClick={handlePreviewClick}
+						isModalOpen={isModalOpen}
+					/>
+				</div>
+				<div className={`${classes.heroItem} ${classes.heroImage}`}>
+					<div className={classes.heroImageWrapper}>
+						<img
+							src={providePathRoot(display.heroFeatureData?.banner.src)}
+							alt={display.heroFeatureData?.banner.alt}
 						/>
-					</div>
-					<div className={`${classes.heroItem} ${classes.heroImage}`}>
-						<div className={classes.heroImageWrapper}>
-							<img
-								src={providePathRoot(display.heroFeatureData?.banner.src)}
-								alt={display.heroFeatureData?.banner.alt}
+						<div className={classes.aiNoticeWrapper}>
+							<AiNotice
+								showNotice={display.heroFeatureData?.isAiGeneratedImage ?? true}
 							/>
-							<div className={classes.aiNoticeWrapper}>
-								<AiNotice
-									showNotice={
-										display.heroFeatureData?.isAiGeneratedImage ?? true
-									}
-								/>
-							</div>
 						</div>
 					</div>
-				</>
-			) : (
-				<>{defaultContent}</>
-			)}
+				</div>
+			</>
 		</section>
 	);
 };

@@ -1378,7 +1378,7 @@ const PROJECTS: Project[] = [
 			coverArt: {
 				coverArtPath:
 					"images/projects/cover-art/ai-cover-art_excelsheet-formatter.png",
-				isAiGeneratedImage: false,
+				isAiGeneratedImage: true,
 			},
 			imagesPaths: [
 				{
