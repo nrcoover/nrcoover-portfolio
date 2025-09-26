@@ -16,6 +16,8 @@ const HeroBanner = () => {
 		ProjectPreviewContext
 	);
 
+	const [fadeState, setFadeState] = useState<"in" | "out">("in");
+
 	const [activeDisplayIndex, setActiveDisplayIndex] = useState<number>(0);
 
 	const defaultProject: Project = DEFAULT_PROJECT;
@@ -42,24 +44,29 @@ const HeroBanner = () => {
 
 	useEffect(() => {
 		const numberOfFeatures = heroProjects?.length ?? 0;
+		if (numberOfFeatures <= 1) return;
 
-		if (numberOfFeatures > 1) {
-			const timerId = setTimeout(() => {
-				const newIndex = (activeDisplayIndex + 1) % numberOfFeatures;
-				setActiveDisplayIndex(newIndex);
-			}, 3000);
+		const fadeOutTimer = setTimeout(() => {
+			setFadeState("out");
 
-			return () => {
-				clearTimeout(timerId);
-			};
-		}
+			setTimeout(() => {
+				setActiveDisplayIndex((prev) => (prev + 1) % numberOfFeatures);
+				setFadeState("in");
+			}, 1000);
+		}, 7000);
+
+		return () => clearTimeout(fadeOutTimer);
 	}, [activeDisplayIndex, heroProjects?.length]);
 
+	const fadeClasses = `${classes.projectContent} ${
+		fadeState === "in" ? classes.fadeIn : classes.fadeOut
+	}`;
+
 	return (
-		<section aria-label="Featured project" className={classes.hero}>
-			<>
+		<section aria-label="Featured project">
+			<div className={`${classes.hero} ${fadeClasses}`}>
 				<div className={`${classes.heroItem} ${classes.textWrapper}`}>
-					<h1>
+					<h1 className={classes.devFlix}>
 						DEV<span>FLIX</span>
 					</h1>
 					<h2>{display.heroFeatureData?.shortTitle}</h2>
@@ -85,7 +92,7 @@ const HeroBanner = () => {
 						</div>
 					</div>
 				</div>
-			</>
+			</div>
 		</section>
 	);
 };

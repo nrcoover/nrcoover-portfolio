@@ -1433,7 +1433,7 @@ const PROJECTS: Project[] = [
 			},
 			shortTitle: "Excelsheet Formatter",
 			shortDescription:
-				"His mission is simple: enforce compliance to formatting standards...",
+				"His mission is simple — enforce compliance to formatting standards...",
 			isAiGeneratedImage: true,
 		},
 		isDefaultData: false,

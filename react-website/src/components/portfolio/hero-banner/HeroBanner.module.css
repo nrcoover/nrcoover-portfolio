@@ -6,6 +6,7 @@
 	align-items: end;
 	justify-content: space-between;
 	overflow: hidden;
+	margin: 0 2rem;
 }
 
 .textWrapper {
@@ -111,6 +112,18 @@
 	justify-self: start;
 }
 
+.projectContent {
+	transition: opacity 1s ease; /* IMPORTANT: Must match timer in component */
+}
+
+.fadeIn {
+	opacity: 1;
+}
+
+.fadeOut {
+	opacity: 0;
+}
+
 /* ---------------------------
    Responsive adjustments
 ----------------------------*/
@@ -185,6 +198,7 @@
 		height: auto;
 		align-items: center;
 		justify-content: flex-start;
+		margin: 0;
 	}
 
 	.heroImageWrapper,
