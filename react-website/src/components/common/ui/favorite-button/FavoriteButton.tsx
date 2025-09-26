@@ -58,11 +58,24 @@ const FavoriteButton = ({
 				disabled={!project}
 				style={{ margin: margin }}
 			>
-				<Icon
-					source={isFavoriteProject ? iconUi.Favorite : iconUi.FavoriteOutline}
-					className={classes.link}
-					style={{ ...sizingStyles }}
-				/>
+				<div className={classes.parent}>
+					<div>
+						<Icon
+							source={
+								isFavoriteProject ? iconUi.Favorite : iconUi.FavoriteOutline
+							}
+							className={classes.link}
+							style={{ ...sizingStyles }}
+						/>
+					</div>
+					<div className={classes.child}>
+						<Icon
+							source={iconUi.Favorite}
+							className={classes.link}
+							style={{ ...sizingStyles }}
+						/>
+					</div>
+				</div>
 			</button>
 		</div>
 	);

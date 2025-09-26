@@ -35,3 +35,15 @@
 .favoriteButton svg {
 	stroke-width: 15px;
 }
+
+/** Positions background icon **/
+.parent {
+	position: relative;
+}
+
+.child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.4;
+}
