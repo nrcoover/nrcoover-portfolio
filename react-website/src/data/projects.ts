@@ -1364,6 +1364,103 @@ const PROJECTS: Project[] = [
 			{ type: iconSocial.Website, url: "" },
 		],
 	},
+	{
+		id: 22,
+		title: "Tic Tac Toe Game",
+		description:
+			'A digital board for the classic game, Tic-Tac-Toe, this project was built with a focus on state management, making use of the "useState" hook of React. This was an assignment from the Udemy course "React - The Complete Guide 2025 (incl. Next.js, Redux)" by Maximilian Schwarzmüller.',
+		dateCreated: new Date(2024, 4, 26),
+		dateUpdated: new Date(2025, 9, 26),
+		isFeatured: true,
+		isFavorite: false,
+		imageData: {
+			coverArt: {
+				coverArtPath:
+					"images/projects/cover-art/ai-cover-art_tic-tac-toe-game.png",
+				isAiGeneratedImage: true,
+			},
+			imagesPaths: [
+				{
+					src: "images/projects/details/tic-tac-toe_detail-1_main-page.png",
+					alt: "An online tic-tac-toe board with a yellow color scheme. There are two input fields, one for player one's name, and another for player two's name.",
+					caption:
+						"This tic-tac-toe board features two name inputs, one for player one and another for player two. Names can be manually set and will be saved for the duration of the game.",
+				},
+				{
+					src: "images/projects/details/tic-tac-toe_detail-2_game-layout.png",
+					alt: "The tic-tac-toe board has been updated with new player names; player one's name has been changed to “Cool Guy” and player two's name has been changed to “Awesome Dude”. The board is now filled with various X's and O's as the players have been placing symbols on the tiles. Beneath the board is a log listing the player who placed the symbol, and the location on the board in which the symbol has been placed.",
+					caption:
+						"The player's names have been updated to “Cool Guy” and “Awesome Dude” respectively, and a log has been added beneath the tic-tac-toe board describing the player and their symbol placement on the board during each turn.",
+				},
+				{
+					src: "images/projects/details/tic-tac-toe_detail-3_draw-modal.png",
+					alt: "An informational overlay has appeared over the board. It reads, “Game Over! It's a draw!” A button prompting for a rematch sits below the message.",
+					caption:
+						"If no one wins, an overlay modal is displayed informing players of the draw and prompting for a rematch, which will reset the board. Player names are persisted.",
+				},
+				{
+					src: "images/projects/details/tic-tac-toe_detail-4_victory-modal-on-hover.png",
+					alt: "An informational overlay has appeared over the board. It reads, “Player 2 wins!” A button prompting for a rematch sits below the message.",
+					caption:
+						'When a player becomes a victor, an overlay modal is displayed informing players of the winner and prompting for a rematch, which will reset the board. In this image the "Rematch" button is glowing yello to display the "on-hover" property change. Player names are persisted.',
+				},
+				{
+					src: "images/projects/details/tic-tac-toe_detail-5_game-crash.png",
+					alt: "The tic-tac-toe background is displayed without the tic-tac-toe board missing. Below the web page are several console errors thrown by Google Chrome's Dev Tools.",
+					caption:
+						"During development, there was a game-crashing bug preventing the main board component from rendering. The console errors in Google Chrome's Dev Tools reveal the failure was due to attempting to access a property of an undefined object. The solution is explained in the next image.",
+				},
+				{
+					src: "images/projects/details/tic-tac-toe_detail-6_game-crash-chatgpt-explanation.png",
+					alt: "A text conversation with ChatGPT discussing the cause of an unknown bug in a React component. The AI reveals the bug's root cause is due to a typo in a variable name.",
+					caption:
+						"After some debugging and remaining unable to resolve the game-crashing bug, ChatGPT was consulted. The AI was able to identify the root cause of the bug that human eyes overlooked: a simple typo in the word “square”, which left the object unintentionally undefined. This is a prime example where TypeScript could have prevented this error by type-checking the object's properties.",
+				},
+				{
+					src: "images/projects/details/tic-tac-toe_detail-7_need-for-typescript.png",
+					alt: "A display of React code samples, showing mismatched property names passed from one React component to another. This mix-match in property names results in a bug in which a button click functionality fails.",
+					caption:
+						"This code displays another bug that TypeScript, had it been used, could have prevented.  The bug is a malfunction of the rematch button, which fails to restart the game. The cause was due to the mismatch in property names from the app component to the game over component, resulting in the expected event handler failing to be passed to the child component.",
+				},
+				{
+					src: "images/projects/details/tic-tac-toe_detail-8_one-final-bug.png",
+					alt: 'There are three images in one; the first is a sample of React code in Visual Studio Code displaying a type in which "square" is typed "squre". The 2nd image is of console errors in Google Chrome Dev Tool, which read: "Cannot read properties of undefined." The third image is of another chat box with ChatGPT explaining the typo of the word "square".',
+					caption:
+						"Another game-crashing bug caused by the misspelling of the word, “square”. Humans are prone to typos, and although AI has such tendencies during image generation, it's fairly good at detecting and preventing typos in code.",
+				},
+			],
+		},
+		tagData: {
+			primaryTag: TAGS.react,
+			otherTags: [
+				TAGS.html,
+				TAGS.html5,
+				TAGS.css,
+				TAGS.responsiveWebDesign,
+				TAGS.javascript,
+				TAGS.react,
+			],
+		},
+		links: [
+			{
+				type: iconSocial.GitHub,
+				url: "https://github.com/nrcoover/TicTacToe_ReactGame",
+			},
+			{ type: iconSocial.CodePen, url: "" },
+			{ type: iconSocial.Website, url: "" },
+		],
+		heroFeatureData: {
+			banner: {
+				src: "images/projects/feature-banners/ai-cover-art_tic-tac-toe-game_feature-banner.png",
+				alt: 'Movie poster of an ancient artifact hidden deep in the ruins of an overgrown, forgotten jungle temple. Moonlight can be seen peeking in through holes in the ceiling, and torches illuminate the walls of the mossy, stone interior. In the center, an artifact with glowing "X\'s" and "O\'s"',
+			},
+			shortTitle: "Tic Tac Toe",
+			shortDescription:
+				"The artifact has been found, the game is ready to play…",
+			isAiGeneratedImage: true,
+		},
+		isDefaultData: false,
+	},
 	// {
 	{
 		id: 24,
