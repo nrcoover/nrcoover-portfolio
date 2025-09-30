@@ -6,6 +6,7 @@ import "./App.css";
 // import Contact from "./pages/Contact";
 import ErrorDefault from "./pages/ErrorDefault";
 // import Home from "./pages/Home";
+import ScrollToTop from "./components/common/ScrollToTop";
 import Portfolio from "./pages/Portfolio";
 import Root from "./pages/Root";
 import AuthUserContextProvider from "./store/auth-user-context/AuthUserContextProvider";
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
 		path: PATHS.Home,
 		element: (
 			<LocationContextProvider>
+				<ScrollToTop />
 				<Root />
 			</LocationContextProvider>
 		),
