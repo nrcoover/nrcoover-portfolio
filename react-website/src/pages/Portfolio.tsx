@@ -15,7 +15,6 @@ import { LocationContext } from "../store/location-context/LocationContext";
 import ErrorDefault from "./ErrorDefault";
 
 import { NavLink } from "react-router-dom";
-import globalClasses from "../global.module.css";
 import ImageWrapper from "../components/common/wrappers/image-wrapper/ImageWrapper.tsx";
 import UserSettings from "../components/portfolio/modals/user-settings/UserSettings.tsx";
 import { providePathRoot } from "../helpers/assetHelper.ts";
@@ -26,6 +25,8 @@ import {
 	filterProjects,
 	getProjects,
 } from "../helpers/projectHelper.ts";
+
+import globalClasses from "../global.module.css";
 import classes from "./styles/Portfolio.module.css";
 
 const Portfolio = () => {

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthUserContext } from "../../../../store/auth-user-context/AuthUserContext";
 import {
-	DISPLAY_MODE,
+	// DISPLAY_MODE,
 	SETTINGS_LABELS,
 	SettingsContext,
 } from "../../../../store/settings-context/SettingsContext";
@@ -18,9 +18,9 @@ const UserSettings = () => {
 		closeSettingsModal();
 	};
 
-	const handleDisplayModeSetting = () => {
-		toggleSetting(SETTINGS_LABELS.displayMode);
-	};
+	// const handleDisplayModeSetting = () => {
+	// 	toggleSetting(SETTINGS_LABELS.displayMode);
+	// };
 
 	const handleAllDecoratorsSetting = () => {
 		toggleSetting(SETTINGS_LABELS.allDecorators);

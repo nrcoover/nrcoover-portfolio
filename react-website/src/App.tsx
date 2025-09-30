@@ -7,7 +7,6 @@ import "./App.css";
 import ErrorDefault from "./pages/ErrorDefault";
 // import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
-import ProjectDetails from "./pages/ProjectDetails";
 import Root from "./pages/Root";
 import AuthUserContextProvider from "./store/auth-user-context/AuthUserContextProvider";
 import FavoritesContextProvider from "./store/favorites-context/FavoritesContextProvider";
@@ -37,10 +36,6 @@ const router = createBrowserRouter([
 					{ path: PATHS.Portfolio.AlreadyHere, element: <Portfolio /> },
 					{ path: PATHS.Portfolio.Favorites, element: <Portfolio /> },
 				],
-			},
-			{
-				path: `${PATHS.Portfolio.Root}/:projectTitle`,
-				element: <ProjectDetails />,
 			},
 			// {
 			// 	path: PATHS.AboutMe,
