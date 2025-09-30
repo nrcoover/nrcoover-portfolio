@@ -1461,7 +1461,85 @@ const PROJECTS: Project[] = [
 		},
 		isDefaultData: false,
 	},
-	// {
+	{
+		id: 23,
+		title: "Time Stopper Game",
+		description:
+			'Built with React, this game challenges the player to stop a count as close to zero as possible without running down the clock entirely. This project was built with a focus on React\'s "refs" and "portals". This was an assignment from the Udemy course "React - The Complete Guide 2025 (incl. Next.js, Redux)" by Maximilian Schwarzmüller.',
+		dateCreated: new Date(2024, 8, 30),
+		dateUpdated: new Date(2025, 9, 29),
+		isFeatured: true,
+		isFavorite: false,
+		imageData: {
+			coverArt: {
+				coverArtPath:
+					"images/projects/cover-art/ai-cover-art_time-stopper-game.png",
+				isAiGeneratedImage: false,
+			},
+			imagesPaths: [
+				{
+					src: "images/projects/details/time-stopper-game_detail-1_main-page.png",
+					alt: 'A game board with a title, an input for the player\'s name, and four panels for four different time-stopping challenges. The title reads, "The Almost Final Countdown: Stop the timer once you estimate that the time is (almost) up." The name typed in the input is "Pickles". The four challenges are for 1-second timer, 5-second timer, 10-second timer, and 15-second timer.',
+					caption:
+						'A time-stopping challenge with four tiers of difficulty: Easy, Normal, Intermediate, and Hard. Each difficulty level increases the timer amount. Also, the player can choose their name. Isn\'t that right, "Pickles"?',
+				},
+				{
+					src: "images/projects/details/time-stopper-game_detail-2_failure-modal.png",
+					alt: 'An overlay modal sits on top of the time stopper game. It reads: "You lost! The target time was one second. You failed to stop the timer within the limit. So sorry, Pickles. Please try again!"',
+					caption:
+						"If the player fails to stop the timer within the time limit, they are greeted with this failure notice. Poor Pickles… can't even beat the first challenge.",
+				},
+				{
+					src: "images/projects/details/time-stopper-game_detail-3_victory-modal.png",
+					alt: 'An overlay model sits on top of the time stop her game. It reads: "You won! The target time was 15 seconds. You stopped the timer with 0.17 seconds left! Congratulations, Pickles! Your score: 99".',
+					caption:
+						"If the player wins, they're agreed with this victory notice. Whoa, Pickles! Looks like you've been practicing! I can't imagine anyone could get a better score than this! (Unless, of course, they find the discreet vulnerability present for \"cheesing\" this game…)",
+				},
+				{
+					src: "images/projects/details/time-stopper-game_detail-4_result-modal-ref.png",
+					alt: 'A code sample of the TimerChallenge component displayed in Visual Studio Code. It makes use of the "ref" prop associated with the useRef Hook from React.',
+					caption:
+						'A code sample of a React component utilizing React\'s "useRef" hook. Both the timer and the modal are saved as "refs", the modal ref being passed to the ResultModal prop from within the TimerChallenge component.',
+				},
+				{
+					src: "images/projects/details/time-stopper-game_detail-5_result-modal-portal.png",
+					alt: 'A code sample of the TimerChallenge component displayed in Visual Studio Code. This sample displays the use of React\'s "forwardRef" and "createPortal" methods.',
+					caption:
+						'"The ResultModal component combines forwardRef with useImperativeHandle to expose an imperative open() method to its parent. It uses createPortal to render the modal into a dedicated DOM node outside the normal React hierarchy, while leveraging the native <dialog> element\'s built-in modal functionality (showModal, onClose) to provide accessible and dynamic dialog behavior."',
+				},
+			],
+		},
+		tagData: {
+			primaryTag: TAGS.react,
+			otherTags: [
+				TAGS.html,
+				TAGS.html5,
+				TAGS.css,
+				TAGS.responsiveWebDesign,
+				TAGS.javascript,
+				TAGS.react,
+			],
+		},
+		links: [
+			{
+				type: iconSocial.GitHub,
+				url: "https://github.com/nrcoover/time-stopper-react-game",
+			},
+			{ type: iconSocial.CodePen, url: "" },
+			{ type: iconSocial.Website, url: "" },
+		],
+		heroFeatureData: {
+			banner: {
+				src: "images/projects/feature-banners/ai-cover-art_time-stopper-game_feature-banner-2.png",
+				alt: 'Movie poster of a giant clockface UFO invading a city with a time-freezing beam. The movie poster title reads: "Time Stopper Game".',
+			},
+			shortTitle: "Time Stopper Game",
+			shortDescription:
+				"With all of the universe at risk, who will rise to the challenge and stop time?",
+			isAiGeneratedImage: true,
+		},
+		isDefaultData: false,
+	},
 	{
 		id: 24,
 		title: "Excel Sheet Formatter",
