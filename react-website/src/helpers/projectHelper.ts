@@ -75,3 +75,13 @@ export const filterNewArrivalProjects = (projects: Project[]) => {
 		)
 		.reverse();
 };
+
+export const filterMiniGameProjects = (projects: Project[]) => {
+	return projects
+		.filter((project) => project.isMiniGame)
+		.sort(
+			(a: Project, b: Project) =>
+				new Date(a.dateCreated).getTime() - new Date(b.dateCreated).getTime()
+		)
+		.reverse();
+};

@@ -21,6 +21,7 @@ import UserSettings from "../components/portfolio/modals/user-settings/UserSetti
 import { providePathRoot } from "../helpers/assetHelper.ts";
 import {
 	filterFeaturedProjects,
+	filterMiniGameProjects,
 	filterNewArrivalProjects,
 	filterProjects,
 	getProjects,
@@ -47,6 +48,7 @@ const Portfolio = () => {
 
 	const featuredProjects = filterFeaturedProjects(projects);
 	const newArrivalProjects = filterNewArrivalProjects(projects);
+	const miniGameProjects = filterMiniGameProjects(projects);
 
 	const sharedPortfolioContent = (
 		<>
@@ -63,6 +65,9 @@ const Portfolio = () => {
 					title={CATEGORIES.newArrivals}
 					projects={newArrivalProjects}
 				/>
+			)}
+			{miniGameProjects.length > 0 && (
+				<Carousel title={CATEGORIES.miniGames} projects={miniGameProjects} />
 			)}
 			{CATEGORIES_ARRAY &&
 				CATEGORIES_ARRAY.map((category) => {

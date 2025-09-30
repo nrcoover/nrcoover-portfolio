@@ -1373,6 +1373,7 @@ const PROJECTS: Project[] = [
 		dateUpdated: new Date(2025, 9, 26),
 		isFeatured: true,
 		isFavorite: false,
+		isMiniGame: true,
 		imageData: {
 			coverArt: {
 				coverArtPath:
@@ -1470,6 +1471,7 @@ const PROJECTS: Project[] = [
 		dateUpdated: new Date(2025, 9, 29),
 		isFeatured: true,
 		isFavorite: false,
+		isMiniGame: true,
 		imageData: {
 			coverArt: {
 				coverArtPath:

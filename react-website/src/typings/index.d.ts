@@ -48,6 +48,7 @@ export type Project = {
 	dateUpdated: Date;
 	isFeatured: boolean;
 	isFavorite: boolean;
+	isMiniGame?: boolean;
 	imageData: ImageData;
 	tagData: TagData;
 	links: CodeLinks[];

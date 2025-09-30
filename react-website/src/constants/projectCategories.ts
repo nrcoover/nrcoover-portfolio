@@ -16,10 +16,10 @@ const CATEGORIES_ARRAY = [
 	CATEGORIES.featured,
 	CATEGORIES.newArrivals,
 	CATEGORIES.miniGames,
+	CATEGORIES.cSharp,
 	CATEGORIES.ai,
 	CATEGORIES.react,
 	CATEGORIES.typeScript,
-	CATEGORIES.cSharp,
 	CATEGORIES.javaScript,
 	CATEGORIES.simpleWeb,
 ];
