@@ -51,7 +51,8 @@ const UserSettings = () => {
 				onClose={() => {}}
 			>
 				<section className={classes.settingsWrapper}>
-					<div className={classes.groupedSettings}>
+					{/* TODO: Uncomment once light/dark mode is implemented. */}
+					{/* <div className={classes.groupedSettings}>
 						<h2>Theme Settings</h2>
 						<Toggle
 							title={"Light / Dark Mode"}
@@ -60,7 +61,7 @@ const UserSettings = () => {
 							leftLabel={"Light"}
 							rightLabel={"Dark"}
 						/>
-					</div>
+					</div> */}
 					<div className={classes.groupedSettings}>
 						<h2>Decorator Settings</h2>
 						<Toggle
