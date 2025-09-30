@@ -36,10 +36,11 @@ function projectIncludesImages(project: Project): boolean {
 // TODO: Change to using Projects native IsFavorite property once data is retrieved from database and not hardcoded.
 const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 	const { closePreviewModal } = useContext(ProjectPreviewContext);
+	const firstImage = project?.imageData?.imagesPaths[0];
 
 	const [hasImages, setHasImages] = useState<boolean>();
 	const [selectedImage, setSelectedImage] = useState<Image | undefined>(
-		project?.imageData?.imagesPaths[0]
+		firstImage
 	);
 
 	useEffect(() => {
@@ -47,20 +48,16 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 			project !== undefined && projectIncludesImages(project);
 
 		setHasImages(includesImages);
-	}, [project]);
-
-	useEffect(() => {
-		const includesImages =
-			project !== undefined && projectIncludesImages(project);
 
 		const selectedImage = includesImages
 			? project?.imageData?.imagesPaths[0]
 			: defaultData.imageData.imagesPaths[0];
 
 		setSelectedImage(selectedImage);
-	}, [project, project?.imageData?.imagesPaths]);
+	}, [project, project?.imageData.imagesPaths]);
 
 	const handleCloseModal = () => {
+		setSelectedImage(firstImage);
 		closePreviewModal();
 	};
 
@@ -165,7 +162,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 								: defaultData.imageData.imagesPaths
 						}
 						onImageSelection={setSelectedImage}
-					></ImageCarousel>
+					/>
 					<h4>Image Description</h4>
 					<p>{selectedImage?.caption ?? defaultImageCaption}</p>
 				</div>
@@ -196,7 +193,7 @@ const ProjectPreview = ({ project, ref }: ProjectPreviewProps) => {
 								: defaultData.imageData.imagesPaths
 						}
 						onImageSelection={setSelectedImage}
-					></ImageCarousel>
+					/>
 				</div>
 			</div>
 			<Separator width={"auto"} />
