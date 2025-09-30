@@ -1388,19 +1388,19 @@ const PROJECTS: Project[] = [
 				},
 				{
 					src: "images/projects/details/tic-tac-toe_detail-2_game-layout.png",
-					alt: "The tic-tac-toe board has been updated with new player names; player one's name has been changed to “Cool Guy” and player two's name has been changed to “Awesome Dude”. The board is now filled with various X's and O's as the players have been placing symbols on the tiles. Beneath the board is a log listing the player who placed the symbol, and the location on the board in which the symbol has been placed.",
+					alt: "The tic-tac-toe board has been updated with new player names; player one's name has been changed to \"Cool Guy\" and player two's name has been changed to \"Awesome Dude\". The board is now filled with various X's and O's as the players have been placing symbols on the tiles. Beneath the board is a log listing the player who placed the symbol, and the location on the board in which the symbol has been placed.",
 					caption:
-						"The player's names have been updated to “Cool Guy” and “Awesome Dude” respectively, and a log has been added beneath the tic-tac-toe board describing the player and their symbol placement on the board during each turn.",
+						'The player\'s names have been updated to "Cool Guy" and "Awesome Dude" respectively, and a log has been added beneath the tic-tac-toe board describing the player and their symbol placement on the board during each turn.',
 				},
 				{
 					src: "images/projects/details/tic-tac-toe_detail-3_draw-modal.png",
-					alt: "An informational overlay has appeared over the board. It reads, “Game Over! It's a draw!” A button prompting for a rematch sits below the message.",
+					alt: 'An informational overlay has appeared over the board. It reads, "Game Over! It\'s a draw!" A button prompting for a rematch sits below the message.',
 					caption:
 						"If no one wins, an overlay modal is displayed informing players of the draw and prompting for a rematch, which will reset the board. Player names are persisted.",
 				},
 				{
 					src: "images/projects/details/tic-tac-toe_detail-4_victory-modal-on-hover.png",
-					alt: "An informational overlay has appeared over the board. It reads, “Player 2 wins!” A button prompting for a rematch sits below the message.",
+					alt: 'An informational overlay has appeared over the board. It reads, "Player 2 wins!" A button prompting for a rematch sits below the message.',
 					caption:
 						'When a player becomes a victor, an overlay modal is displayed informing players of the winner and prompting for a rematch, which will reset the board. In this image the "Rematch" button is glowing yello to display the "on-hover" property change. Player names are persisted.',
 				},
@@ -1414,7 +1414,7 @@ const PROJECTS: Project[] = [
 					src: "images/projects/details/tic-tac-toe_detail-6_game-crash-chatgpt-explanation.png",
 					alt: "A text conversation with ChatGPT discussing the cause of an unknown bug in a React component. The AI reveals the bug's root cause is due to a typo in a variable name.",
 					caption:
-						"After some debugging and remaining unable to resolve the game-crashing bug, ChatGPT was consulted. The AI was able to identify the root cause of the bug that human eyes overlooked: a simple typo in the word “square”, which left the object unintentionally undefined. This is a prime example where TypeScript could have prevented this error by type-checking the object's properties.",
+						'After some debugging and remaining unable to resolve the game-crashing bug, ChatGPT was consulted. The AI was able to identify the root cause of the bug that human eyes overlooked: a simple typo in the word "square", which left the object unintentionally undefined. This is a prime example where TypeScript could have prevented this error by type-checking the object\'s properties.',
 				},
 				{
 					src: "images/projects/details/tic-tac-toe_detail-7_need-for-typescript.png",
@@ -1426,7 +1426,7 @@ const PROJECTS: Project[] = [
 					src: "images/projects/details/tic-tac-toe_detail-8_one-final-bug.png",
 					alt: 'There are three images in one; the first is a sample of React code in Visual Studio Code displaying a type in which "square" is typed "squre". The 2nd image is of console errors in Google Chrome Dev Tool, which read: "Cannot read properties of undefined." The third image is of another chat box with ChatGPT explaining the typo of the word "square".',
 					caption:
-						"Another game-crashing bug caused by the misspelling of the word, “square”. Humans are prone to typos, and although AI has such tendencies during image generation, it's fairly good at detecting and preventing typos in code.",
+						'Another game-crashing bug caused by the misspelling of the word, "square". Humans are prone to typos, and although AI has such tendencies during image generation, it\'s fairly good at detecting and preventing typos in code.',
 				},
 			],
 		},
