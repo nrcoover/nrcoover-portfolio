@@ -1448,7 +1448,10 @@ const PROJECTS: Project[] = [
 				url: "https://github.com/nrcoover/TicTacToe_ReactGame",
 			},
 			{ type: iconSocial.CodePen, url: "" },
-			{ type: iconSocial.Website, url: "" },
+			{
+				type: iconSocial.Website,
+				url: "https://nrcoover.github.io/TicTacToe_ReactGame/",
+			},
 		],
 		heroFeatureData: {
 			banner: {
@@ -1528,7 +1531,10 @@ const PROJECTS: Project[] = [
 				url: "https://github.com/nrcoover/time-stopper-react-game",
 			},
 			{ type: iconSocial.CodePen, url: "" },
-			{ type: iconSocial.Website, url: "" },
+			{
+				type: iconSocial.Website,
+				url: "https://nrcoover.github.io/time-stopper-react-game/",
+			},
 		],
 		heroFeatureData: {
 			banner: {
