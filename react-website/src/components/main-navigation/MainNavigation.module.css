@@ -1,0 +1,45 @@
+.displayNone {
+	display: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.headerWrapper {
+	width: inherit;
+	margin-bottom: 0.75rem;
+	/* background-color: brown; */
+	box-shadow: var(--shadow-glow);
+}
+
+.header {
+	max-width: 1440px;
+	margin: auto;
+	padding: 1.5rem;
+	display: flex;
+	justify-content: center;
+	/* background-color: pink; */
+}
+
+.list {
+	display: flex;
+	gap: 3rem;
+}
+
+.list a {
+	text-decoration: none;
+	color: var(--color-primary-400);
+}
+
+.list a:hover,
+.list a.active {
+	color: var(--color-primary-800);
+	text-decoration: underline;
+}
+
+.sideNavigationOffset {
+	padding-left: var(--side-navigation-width-offset);
+}

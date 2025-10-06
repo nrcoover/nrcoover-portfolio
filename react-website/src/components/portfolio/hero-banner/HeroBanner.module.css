@@ -1,0 +1,256 @@
+.hero {
+	background-color: var(--background-secondary);
+	height: 50vh;
+	display: flex;
+	flex-direction: row;
+	align-items: end;
+	justify-content: space-between;
+	overflow: hidden;
+	margin: 0 2rem;
+}
+
+.textWrapper {
+	text-align: left;
+	position: absolute;
+	padding: 2rem;
+	z-index: 10;
+	left: 0;
+	max-width: 22rem;
+}
+
+.textWrapper h1 {
+	margin-bottom: 1rem;
+}
+
+.textWrapper h2 {
+	margin-bottom: 0.75rem;
+}
+
+.textWrapper p {
+	margin-bottom: 1rem;
+}
+
+.textWrapper span {
+	color: var(--color-red-dark);
+}
+
+/* .buttonWrapper {
+	text-align: left;
+	position: absolute;
+	padding: 2rem;
+	z-index: 10;
+	right: 0;
+} */
+
+.heroItem {
+	flex: 33.333%;
+}
+
+.heroImage {
+	height: inherit;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.heroImage img {
+	width: 100%;
+	height: 100%;
+	max-width: 85vw;
+	object-position: 50% 10%;
+	object-fit: cover;
+	justify-self: end;
+	display: block;
+	background-color: black; /* visible behind transparent edges */
+
+	/* Fade left and right edges (moved from .heroImageWrapper) */
+	/* leave here in case decided to use on image only */
+	/* mask-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 1) 20%,
+		rgba(0, 0, 0, 1) 80%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	-webkit-mask-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 1) 20%,
+		rgba(0, 0, 0, 1) 80%,
+		rgba(0, 0, 0, 0) 100%
+	); */
+}
+
+.heroImageWrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 85vw;
+	justify-self: end;
+	display: block;
+
+	/* Fade left and right edges */
+	mask-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 1) 20%,
+		rgba(0, 0, 0, 1) 80%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	-webkit-mask-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 1) 20%,
+		rgba(0, 0, 0, 1) 80%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+.aiNoticeWrapper {
+	width: 25rem;
+	justify-self: start;
+}
+
+.projectContent {
+	transition: opacity 1s ease; /* IMPORTANT: Must match timer in component */
+}
+
+.fadeIn {
+	opacity: 1;
+}
+
+.fadeOut {
+	opacity: 0;
+}
+
+/* ---------------------------
+   Responsive adjustments
+----------------------------*/
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+	.hero {
+		flex-direction: column-reverse;
+		height: auto;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.textWrapper {
+		position: relative;
+		padding: 1rem;
+		max-width: 100%;
+		text-align: center;
+	}
+
+	.textWrapper h1 {
+		font-size: 2rem;
+	}
+
+	.textWrapper h2 {
+		font-size: 1.25rem;
+	}
+
+	.textWrapper p {
+		font-size: 0.9rem;
+	}
+
+	.aiNoticeWrapper {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Tablets portrait (≤768px) */
+@media (max-width: 768px) {
+	.heroItem {
+		width: auto;
+	}
+
+	.heroImageWrapper {
+		position: relative;
+		width: auto;
+		height: 100%;
+		max-width: 100vw;
+		justify-self: center;
+		display: block;
+
+		/* Fade left and right edges */
+		mask-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 5%,
+			rgba(0, 0, 0, 1) 95%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 5%,
+			rgba(0, 0, 0, 1) 95%,
+			rgba(0, 0, 0, 0) 100%
+		);
+	}
+
+	.hero {
+		flex-direction: column-reverse;
+		height: auto;
+		align-items: center;
+		justify-content: flex-start;
+		margin: 0;
+	}
+
+	.heroImageWrapper,
+	.heroImage img {
+		max-width: 100% !important; /* remove 85vw */
+		width: 100%; /* span full screen */
+	}
+}
+
+/* Tablets landscape / small laptops (≤1024px) */
+@media (max-width: 1024px) {
+	.hero {
+		height: 60vh;
+	}
+
+	.textWrapper {
+		max-width: 20rem;
+		padding: 1.5rem;
+	}
+
+	.textWrapper h1 {
+		font-size: 2.5rem;
+	}
+
+	.textWrapper h2 {
+		font-size: 1.4rem;
+	}
+
+	.heroImage img {
+		object-position: 50% 20%;
+	}
+}
+
+/* Extra large desktops (≥1440px) */
+@media (min-width: 1440px) {
+	.hero {
+		height: 65vh;
+	}
+
+	.textWrapper {
+		max-width: 28rem;
+	}
+
+	.textWrapper h1 {
+		font-size: 3rem;
+	}
+
+	.textWrapper h2 {
+		font-size: 1.75rem;
+	}
+
+	.textWrapper p {
+		font-size: 1.1rem;
+	}
+}

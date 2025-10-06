@@ -1,0 +1,33 @@
+main {
+	position: relative;
+	background-color: var(--background-secondary);
+}
+
+.portfolio {
+	margin-left: var(--side-navigation-width-offset);
+}
+
+.sadPug {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.sadPug p {
+	max-width: 35rem;
+	text-align: justify;
+	margin: 0 2rem;
+}
+
+.sadPugImage {
+	border: solid var(--color-red-dark) 8px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+	.portfolio {
+		margin-left: 0;
+	}
+}

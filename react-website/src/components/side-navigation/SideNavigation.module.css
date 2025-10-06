@@ -1,0 +1,175 @@
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.navigationWrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: var(--side-navigation-width-offset);
+	height: 100vh;
+	font-size: small;
+	display: block;
+}
+
+/* .navItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	color: inherit;
+	text-decoration: none;
+} */
+
+.sideNavigation {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--background-primary);
+	height: 100%;
+	box-shadow: var(--shadow-glow);
+	padding: 1rem 0;
+}
+
+/* Desktop list groups */
+.list,
+.listItem {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.list a,
+.listItem,
+.listItem a,
+.list button,
+.listItem button {
+	text-decoration: none;
+	color: var(--color-primary-400);
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	font: inherit;
+	padding: 0;
+}
+
+.list a:hover,
+.list button:hover,
+.list a.active,
+.listItem a:hover,
+.listItem button:hover,
+.listItem a.active {
+	color: var(--color-primary-800);
+	text-decoration: underline;
+	border-color: none;
+	background-color: none;
+	background: none;
+}
+
+/* Mobile bottom bar */
+.mobileNavBar {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--background-primary);
+	box-shadow: var(--shadow-glow);
+	padding: 0.75rem;
+	text-align: center;
+	z-index: 1000;
+}
+
+.menuButton {
+	background: none;
+	border: none;
+	font-size: 1rem;
+	color: var(--color-primary-800);
+	cursor: pointer;
+	font-weight: 600;
+}
+
+/* Mobile overlay */
+.mobileMenuOverlay {
+	position: fixed;
+	inset: 0;
+	background: var(--background-primary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 200;
+	overflow-y: auto;
+	padding: 6rem;
+	overflow-y: hidden;
+}
+
+.mobileMenuContent {
+	width: 100%;
+	max-width: 375px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4rem;
+}
+
+.mobileList {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.5rem 2rem; /* row and column gap */
+	width: 100%;
+}
+
+.mobileList a,
+.mobileList button {
+	text-decoration: none;
+	color: var(--color-primary-400);
+	font-size: 1.2rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	border-color: none;
+	background-color: none;
+}
+
+.mobileList a:hover,
+.mobileList button:hover,
+.mobileList a.active {
+	color: var(--color-primary-800);
+	text-decoration: underline;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+	.navigationWrapper {
+		display: none;
+	}
+
+	.mobileNavBar {
+		display: block;
+	}
+
+	.listItem {
+		width: 5.95rem;
+	}
+
+	.mobileMenuContent {
+		margin-bottom: var(--side-navigation-width-offset);
+	}
+}
+
+@media (min-width: 769px) {
+	.mobileMenuOverlay {
+		display: none;
+	}
+}

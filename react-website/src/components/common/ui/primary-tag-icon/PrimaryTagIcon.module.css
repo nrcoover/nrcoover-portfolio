@@ -1,0 +1,10 @@
+.iconSizing {
+	width: 3rem;
+	height: 3rem;
+}
+
+.primaryTagIcon {
+	position: absolute;
+	float: right;
+	background-color: none;
+}

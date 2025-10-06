@@ -1,0 +1,39 @@
+.containerizer {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--background-primary);
+	border-radius: 1rem;
+	margin: 2rem;
+	padding: 1rem 2rem 2rem 2rem;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+/* ---------------------------
+   Responsive adjustments
+----------------------------*/
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+	.containerizer {
+		padding: 1rem;
+		border-radius: 0.5rem;
+	}
+}
+
+/* Tablets portrait (≤768px) */
+@media (max-width: 768px) {
+	.containerizer {
+		border-radius: 0.75rem;
+		padding: 1rem 0 !important;
+	}
+}
+
+/* Tablets landscape / small laptops (≤1024px) */
+@media (max-width: 1024px) {
+	.containerizer {
+		margin: 1.5rem;
+		padding: 1rem 2rem;
+		border-radius: 0.85rem;
+	}
+}

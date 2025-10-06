@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build:react"
+  publish = "."             # root folder (classic site + portfolio folder after build)
+
+[dev]
+  command = "npm run dev:all"
+  port = 8888
+  publish = "."             # root folder

@@ -1,0 +1,289 @@
+.preview p {
+	margin: 0.5rem 0;
+	font-size: 1.2rem;
+	overflow-y: auto;
+	text-align: justify;
+}
+
+.preview button {
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 4px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	background-color: var(--button-background);
+}
+
+.preview button:hover {
+	background-color: var(--button-background-hover);
+}
+
+.previewTitle {
+	padding-top: 0.5rem;
+	position: sticky;
+	top: 0;
+	background-color: var(--background-primary);
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.preview h3 {
+	font-family: "Handjet", monospace;
+	font-size: 3rem;
+	text-transform: uppercase;
+
+	/* For truncation */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+	display: block; /* ensures it behaves properly */
+	text-align: center;
+}
+
+.titleWrapper {
+	max-width: 80%;
+}
+
+/* TODO: Replace this "workaround" with configuring the Favorite Button component to use 50% for absolute locations... */
+.favoriteButtonWrapper {
+	margin-top: -0.25rem;
+}
+
+.previewContent {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: row;
+	text-align: left;
+}
+
+.preview h4 {
+	font-family: "Handjet", monospace;
+	font-size: 1.5rem;
+}
+
+.previewContent p {
+	font-family: "Handjet", monospace;
+	margin-bottom: 1rem;
+}
+
+.previewItem {
+	margin: 0.5rem;
+	flex: 1;
+}
+
+.previewIconsWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.previewIcons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.previewIcons p {
+	margin: 0;
+}
+
+.previewIcons li {
+	padding: 0.5rem;
+	margin: 1.25rem;
+}
+
+.closeButton {
+	display: inline;
+	position: sticky;
+	float: right;
+	z-index: 10;
+	bottom: 0%;
+	text-align: right;
+}
+
+.closeButton button {
+	margin: 0;
+}
+
+.previewLink {
+	width: 3rem;
+	height: 3rem;
+}
+
+#Tags {
+	text-align: center;
+	font-size: 0.85rem;
+}
+
+.contentSmallDisplay {
+	display: none;
+}
+
+@keyframes slide-in-from-top {
+	0% {
+		transform: translateY(-15%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes flash {
+	0% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+
+/* ---------------------------
+   Responsive adjustments
+----------------------------*/
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+	.previewContent {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.preview h3 {
+		font-size: 2rem;
+		white-space: normal;
+	}
+
+	.preview h4 {
+		font-size: 1.2rem;
+	}
+
+	.preview p {
+		font-size: 1rem;
+	}
+
+	.previewIcons {
+		justify-content: center;
+	}
+
+	.previewIcons li {
+		margin: 0.75rem;
+	}
+}
+
+/* Tablets portrait (≤768px) */
+@media (max-width: 768px) {
+	.previewTitle {
+		margin: 0 1.25rem;
+		padding-top: 0;
+	}
+
+	.previewContent {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 0.5rem 1rem 0rem;
+		margin-top: 0;
+	}
+
+	#Tags {
+		margin: 0 1rem 0.5rem;
+	}
+
+	.preview h3 {
+		font-size: 2.25rem;
+	}
+
+	.preview h4 {
+		font-size: 1.3rem;
+	}
+
+	.preview p {
+		font-size: 1.05rem;
+	}
+
+	.titleWrapper {
+		max-width: 70%;
+	}
+}
+
+/* Tablets landscape / small laptops (≤1024px) */
+@media (max-width: 1024px) {
+	.preview h3 {
+		font-size: 2.5rem;
+	}
+
+	.preview h4 {
+		font-size: 1.35rem;
+	}
+
+	.previewContent {
+		gap: 1rem;
+		flex-direction: column;
+	}
+
+	.favoriteButtonWrapper {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 1440px) {
+	.contentSmallDisplay {
+		display: block;
+	}
+
+	.contentLargeDisplay {
+		display: none;
+	}
+}
+
+/* Extra large desktops (≥1440px) */
+@media (min-width: 1440px) {
+	.preview h3 {
+		font-size: 3.25rem;
+	}
+
+	.preview h4 {
+		font-size: 1.75rem;
+	}
+
+	.preview p {
+		font-size: 1.25rem;
+	}
+
+	.previewContent {
+		gap: 2rem;
+	}
+}
+
+@keyframes slide-in-from-top {
+	0% {
+		transform: translateY(-15%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes flash {
+	0% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}

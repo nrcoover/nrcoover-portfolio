@@ -1,0 +1,147 @@
+.coverArtContainer {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	height: auto;
+	width: 30vh;
+	overflow: hidden;
+	flex: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.coverArtContainer img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.primaryTagGlow {
+	box-shadow: 0 0 5px 5px rgba(var(--glow-rgb), 0.75);
+	border-radius: 8px;
+	/* outline: solid black 2px; */
+}
+
+.primaryTagGlowSelected {
+	box-shadow: 0 0 8px 8px rgba(var(--glow-rgb), 0.75);
+	border-radius: 8px;
+	/* outline: solid black 2px; */
+}
+
+.previewBox {
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	height: 100%;
+	width: inherit;
+	position: absolute;
+	z-index: 3;
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+}
+
+.hiddenPreviewBox {
+	opacity: 0;
+	transform: translateY(20%);
+	pointer-events: none;
+}
+
+.previewBox button {
+	margin-bottom: 1rem;
+}
+
+.projectCard {
+	box-sizing: border-box;
+	margin: 0 0.5rem 0 0.5rem;
+	/* margin: 3px; */
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease,
+		outline 0.1s ease,
+		margin 0.3s ease;
+}
+
+.selected {
+	transform: scale(1.05);
+	outline: 3px solid rgb(255, 255, 255);
+	border-radius: 8px;
+	z-index: 2;
+}
+
+.projectSpacer {
+	margin-left: 1rem;
+}
+
+.selectedProjectSpacer {
+	margin-left: 2rem;
+}
+
+.displayNone {
+	transition: display 2.3 ease;
+	display: none;
+}
+
+/* ---------------------------
+   Responsive adjustments
+----------------------------*/
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+	.coverArtContainer {
+		width: 90vw; /* Nearly full width */
+	}
+
+	.projectCard {
+		margin: 0.5rem 0; /* Vertical stack spacing */
+	}
+
+	.previewBox button {
+		margin-bottom: 0.5rem;
+	}
+}
+
+/* Tablets portrait (≤768px) */
+@media (max-width: 768px) {
+	.coverArtContainer {
+		width: 30vw;
+	}
+
+	.projectCard {
+		margin: 0.75rem;
+	}
+
+	.previewBox button {
+		margin-bottom: 0.5rem;
+		padding: 0.5rem 0.75rem;
+		width: auto;
+		text-align: center;
+		justify-content: center;
+	}
+}
+
+/* Tablets landscape / small laptops (≤1024px) */
+@media (max-width: 1024px) {
+	.coverArtContainer {
+		width: 30vw;
+	}
+
+	.projectCard {
+		margin: 0.75rem;
+	}
+}
+
+/* Extra large desktops (≥1440px) */
+@media (min-width: 1440px) {
+	.coverArtContainer {
+		width: 35vh;
+	}
+
+	.projectCard {
+		margin: 1rem;
+	}
+}

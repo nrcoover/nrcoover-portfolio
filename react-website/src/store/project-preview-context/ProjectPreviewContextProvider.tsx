@@ -1,0 +1,45 @@
+import { useRef, useState } from "react";
+import type { Project } from "../../typings/index.d.ts";
+import { ProjectPreviewContext } from "./ProjectPreviewContext";
+
+interface ProjectPreviewContextProviderProps {
+	children: React.ReactNode;
+}
+
+const ProjectPreviewContextProvider = ({
+	children,
+}: ProjectPreviewContextProviderProps) => {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [selectedProject, setSelectedProject] = useState<Project | undefined>(
+		undefined
+	);
+	const previewModal = useRef<HTMLDialogElement | null>(null);
+
+	const openPreviewModal = () => {
+		setIsModalOpen(true);
+		previewModal.current?.showModal();
+	};
+
+	const closePreviewModal = () => {
+		setIsModalOpen(false);
+		previewModal.current?.close();
+	};
+
+	const contextValue = {
+		isModalOpen,
+		previewModal,
+		selectedProject,
+		setSelectedProject,
+		setIsModalOpen,
+		openPreviewModal,
+		closePreviewModal,
+	};
+
+	return (
+		<ProjectPreviewContext.Provider value={contextValue}>
+			{children}
+		</ProjectPreviewContext.Provider>
+	);
+};
+
+export default ProjectPreviewContextProvider;

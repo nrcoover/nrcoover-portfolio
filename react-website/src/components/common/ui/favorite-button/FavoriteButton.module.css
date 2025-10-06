@@ -1,0 +1,49 @@
+.link {
+	width: 3rem;
+	height: 3rem;
+}
+
+.favoriteButton {
+	position: absolute;
+	z-index: 10;
+	background-color: none;
+}
+
+.favoriteButton button {
+	background: none !important;
+	fill: rgb(255, 255, 255);
+	opacity: 100%;
+	outline: none;
+	margin: none;
+	border: none;
+	padding: 0 !important;
+}
+
+.favoriteButton button:active,
+.favoriteButton button:hover,
+.favoriteButton button:focus,
+.favoriteButton button:focus-visible {
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.favoriteButton button:hover {
+	opacity: 70%;
+}
+
+.favoriteButton svg {
+	stroke-width: 15px;
+}
+
+/** Positions background icon **/
+.parent {
+	position: relative;
+}
+
+.child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.4;
+}

@@ -1,0 +1,80 @@
+.panelElement {
+	/* background-color: var(--color-red-light);
+	box-shadow: 2px 2px 5px var(--background-secondary); */
+	min-width: 30rem;
+	width: 30rem;
+	border-radius: 10px;
+	text-align: center;
+	padding: 0.5em 1rem;
+	transition: background-color 1s;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.toggleContentsWrapper {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	min-width: 15rem;
+	background-color: var(--background-tertiary);
+	border-radius: 3rem;
+	justify-content: center;
+}
+
+.toggleWrapper {
+	background-color: var(--background-tertiary);
+	border: 2px solid var(--color-red-light);
+	border-radius: 35px;
+	box-shadow: 1px 1px 5px var(--light-theme-shadow);
+	display: flex;
+	justify-content: flex-start;
+	margin: 0.5em 1.25em;
+	width: 3.5em;
+	min-width: 3.5em;
+	cursor: pointer;
+	transition: justify-content 0.3s;
+}
+
+.toggleDot {
+	background-color: var(--color-red-light);
+	box-shadow: 1px 1px 3px var(--background-primary);
+	margin: 2px;
+	border-radius: 35px;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.toggleIsActive {
+	justify-content: flex-end;
+}
+
+@media (max-width: 870px) {
+	.panelElement {
+		/* background-color: var(--color-red-light);
+	box-shadow: 2px 2px 5px var(--background-secondary); */
+		min-width: 100%;
+		width: 100%;
+		border-radius: 10px;
+		text-align: center;
+		padding: 0.5em 1rem;
+		transition: background-color 1s;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		font-size: small;
+	}
+
+	.toggleContentsWrapper {
+		gap: 0.1rem;
+		padding: 0.1rem 0.5rem;
+		width: 95%;
+		min-width: 95%;
+		max-width: 3.5em;
+	}
+
+	.label {
+		font-size: 0.8rem;
+	}
+}

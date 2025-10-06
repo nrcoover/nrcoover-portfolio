@@ -1,0 +1,196 @@
+:root {
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--side-navigation-width-offset: 6rem;
+
+	/* Primary Tag Glow colors as RGB triplets (no alpha) */
+	--bootstrap-rgb: 144, 19, 254; /* #9013FE */
+	--css-rgb: 51, 169, 220; /* #33A9DC */
+	--csharp-rgb: 155, 79, 150; /* #9B4F96 */
+	--html-rgb: 241, 101, 41; /* #F16529 */
+	--html5-rgb: 241, 101, 41; /* #F16529 */
+	--javascript-rgb: 240, 219, 79; /* #F0DB4F */
+	--python-rgb: 90, 159, 212; /* #5A9FD4 */
+	--react-rgb: 97, 218, 251; /* #61DAFB */
+	--sass-rgb: 203, 102, 153; /* #CB6699 */
+	--scss-rgb: 203, 102, 153; /* #CB6699 */
+	--typescript-rgb: 0, 122, 204; /* #007ACC */
+
+	/* The dynamic “slot” for Primary Tag Glow color to be set */
+	--glow-rgb: var(--react-rgb);
+
+	/* === Core Brand Colors === */
+	--color-red: rgb(229, 9, 20); /* Netflix red (primary brand) */
+	--color-red-rgb: 229, 9, 20; /* Netflix red (primary brand) */
+	--color-red-dark: rgb(178, 7, 16); /* Darker red for hover/active */
+	--color-red-light: rgb(255, 60, 70); /* Accent red for glow/shadows */
+	--color-red-light-rgb: 255, 60, 70; /* Accent red for glow/shadows */
+
+	--color-black: rgb(20, 20, 20); /* Near-black background */
+	--color-gray-dark: rgb(31, 31, 31); /* Card / container background */
+	--color-gray: rgb(42, 42, 42); /* UI elements (borders, dividers) */
+	--color-gray-light: rgb(179, 179, 179); /* Muted text / secondary labels */
+
+	--color-white: rgb(255, 255, 255); /* Primary text */
+	--color-offwhite: rgb(229, 229, 229); /* Secondary text (less contrast) */
+
+	/* === Text === */
+	--text-primary: var(--color-white);
+	--text-secondary: var(--color-offwhite);
+	--text-accent: var(--color-red);
+
+	/* === Backgrounds === */
+	--background-primary: var(--color-black);
+	--background-secondary: var(--color-gray-dark);
+	--background-tertiary: var(--color-gray);
+	--background-overlay: rgba(20, 20, 20, 0.85); /* modal overlays */
+
+	/* === Borders / Dividers === */
+	--border-color: var(--color-gray);
+	--border-accent: var(--color-red);
+
+	/* === Accents / Effects === */
+	--accent: var(--color-red);
+	--shadow-glow: 0 0 6px 6px rgba(var(--color-red-light-rgb), 0.5);
+
+	/* === Buttons === */
+	--button-background: var(--color-red-dark);
+	--button-background-hover: var(--color-red);
+	--button-text: var(--color-white);
+	--button-border: transparent;
+
+	/* === Focus / Accessibility === */
+	--focus-outline: 2px solid var(--color-red-light);
+	--focus-outline-offset: 2px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+a {
+	font-weight: 500;
+	text-decoration: inherit;
+}
+
+a:hover {
+	color: var(--color-red-dark);
+}
+
+body {
+	margin: 0;
+	display: flex;
+	place-items: start;
+	min-width: 320px;
+	min-height: 100vh;
+	background-color: var(--background-secondary);
+}
+
+h1 {
+	font-size: 3.2em;
+	line-height: 1.1;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: var(--button-background);
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+
+button:hover {
+	border-color: var(--button-background-hover);
+	background-color: var(--button-background-hover);
+}
+
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+.content {
+	margin: 2rem auto;
+	text-align: center;
+}
+
+.iconButton {
+	background: none;
+	margin: none;
+	padding: 0;
+	border: none;
+}
+
+.iconButton:active,
+.iconButton:hover,
+.iconButton:focus,
+.iconButton:focus-visible {
+	background: none;
+	margin: none;
+	padding: 0;
+	border: none;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2.5rem 0 5rem;
+	/* background-color: var(--background-overlay); */
+}
+
+footer a {
+	opacity: 75%;
+	transition:
+		color ease-in-out 0.2s,
+		opacity ease-in-out 0.2s;
+}
+
+footer a:hover {
+	opacity: 100%;
+}
+
+footer button:active,
+footer button:hover,
+footer button:focus,
+footer button:focus-visible {
+	background: none;
+	margin: none;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+/* @media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+	a:hover {
+		color: #747bff;
+	}
+	button {
+		background-color: #f9f9f9;
+	}
+} */

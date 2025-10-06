@@ -1,0 +1,33 @@
+main {
+	position: relative;
+	background-color: var(--background-secondary);
+}
+
+.errorDefault {
+	margin-left: var(--side-navigation-width-offset);
+}
+
+.error {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.error p {
+	max-width: 35rem;
+	text-align: center;
+	margin: 0 2rem;
+}
+
+.errorImage {
+	border: solid rgb(0, 0, 0) 8px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+	.errorDefault {
+		margin-left: 0;
+	}
+}
