@@ -1621,6 +1621,54 @@ const PROJECTS: Project[] = [
 		},
 		isDefaultData: false,
 	},
+	// {
+	// 	id: 25,
+	// 	title: "DevFlix Portfolio",
+	// 	description: "",
+	// 	dateCreated: new Date(),
+	// 	dateUpdated: new Date(),
+	// 	isFeatured: false,
+	// 	isFavorite: false,
+	// 	imageData: {
+	// 		coverArt: {
+	// 			coverArtPath: "",
+	// 			isAiGeneratedImage: false,
+	// 		},
+	// 		imagesPaths: [
+	// 			{
+	// 				src: "../../public/images/projects/details",
+	// 				alt: "",
+	// 				caption: "",
+	// 			},
+	// 			{
+	// 				src: "../../public/images/projects/details",
+	// 				alt: "",
+	// 				caption: "",
+	// 			},
+	// 			{
+	// 				src: "../../public/images/projects/details",
+	// 				alt: "",
+	// 				caption: "",
+	// 			},
+	// 		],
+	// 	},
+	// 	tagData: {
+	// 		primaryTag: TAGS.javascript,
+	// 		otherTags: [
+	// 			TAGS.html,
+	// 			TAGS.html5,
+	// 			TAGS.css,
+	// 			TAGS.responsiveWebDesign,
+	// 			TAGS.javascript,
+	// 		],
+	// 	},
+	// 	links: [
+	// 		{ type: iconSocial.GitHub, url: "" },
+	// 		{ type: iconSocial.CodePen, url: "" },
+	// 		{ type: iconSocial.Website, url: "" },
+	// 	],
+	// },
+	// {
 	// 	id: 0,
 	// 	title: "",
 	// 	description: "",
@@ -1666,6 +1714,17 @@ const PROJECTS: Project[] = [
 	// 		{ type: iconSocial.CodePen, url: "" },
 	// 		{ type: iconSocial.Website, url: "" },
 	// 	],
+
+	// 	heroFeatureData: {
+	// 		banner: {
+	// 			src: "../../public/images/projects/feature-banners/.png",
+	// 			alt: "",
+	// 		},
+	// 		shortTitle: "",
+	// 		shortDescription: "",
+	// 		isAiGeneratedImage: false,
+	// 	},
+	// 	isDefaultData: false,
 	// },
 ];
 
