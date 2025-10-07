@@ -1,8 +1,5 @@
-# Force remove trailing slashes on all URLs
-/*  /:splat  301!
-
 # SPA fallback for React
-/portfolio/*  /portfolio/index.html  200
+/portfolio*  /portfolio/index.html  200
 
 # Redirect old static portfolio.html
-/portfolio.html  /portfolio  301!
+/portfolio.html /portfolio/  301!
