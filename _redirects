@@ -2,4 +2,4 @@
 /portfolio/*  /portfolio/index.html  200
 
 # Redirect old static portfolio.html
-/portfolio.html /portfolio  301!
+/portfolio.html /portfolio/  301!
