@@ -18,7 +18,6 @@ export const PATHS = {
 		Root: createPath(ROOTS.PORTFOLIO),
 		AlreadyHere: createPath(ROOTS.PORTFOLIO, "you-are-already-here"),
 		Favorites: createPath(ROOTS.PORTFOLIO, "favorites"),
-		ProjectOne: createPath(ROOTS.PORTFOLIO, "ProjectOne"),
 	},
 	AboutMe: ROOTS.ABOUT_ME,
 	Contact: ROOTS.CONTACT,

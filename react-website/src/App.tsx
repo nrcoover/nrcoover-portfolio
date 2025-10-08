@@ -34,9 +34,11 @@ const router = createBrowserRouter([
 			{
 				path: PATHS.Portfolio.Root,
 				element: <Portfolio />,
+				errorElement: <ErrorDefault />,
 				children: [
 					{ path: PATHS.Portfolio.AlreadyHere, element: <Portfolio /> },
 					{ path: PATHS.Portfolio.Favorites, element: <Portfolio /> },
+					{ path: "*", element: <ErrorDefault /> },
 				],
 			},
 			// {
