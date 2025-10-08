@@ -1,8 +1,11 @@
-# SPA fallback for React
+# Send ALL React routes under /portfolio to the SPA entrypoint
 
-/portfolio /portfolio/index.html 200
 /portfolio/\* /portfolio/index.html 200
 
-# Redirect old static portfolio.html
+# Redirect the old static portfolio.html page
 
 /portfolio.html /portfolio 301!
+
+# Optional — let everything else fall back to the classic 404
+
+/\* /404.html 404
