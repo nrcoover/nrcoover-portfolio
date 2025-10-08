@@ -1,8 +1,8 @@
 const createPath = (root: string, subpath?: string) => {
 	if (subpath === undefined) {
-		return `${root}`;
+		return `${root}/`;
 	}
-	return `${root}/${subpath}`;
+	return `${root}/${subpath}/`;
 };
 
 const ROOTS = {
