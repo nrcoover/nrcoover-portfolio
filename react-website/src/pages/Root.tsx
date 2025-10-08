@@ -42,7 +42,7 @@ const Root = () => {
 					<ul className={classes.list}>
 						<li className={globalClasses.iconContainer}>
 							<NavLink
-								to={PATHS.Home}
+								to={"/index.html"}
 								className={({ isActive }) =>
 									isActive
 										? (classes.active, globalClasses.iconContainer)
@@ -72,7 +72,7 @@ const Root = () => {
 						</li>
 						<li className={globalClasses.iconContainer}>
 							<NavLink
-								to={PATHS.AboutMe}
+								to={"/about-me.html"}
 								className={({ isActive }) =>
 									isActive
 										? (classes.active, globalClasses.iconContainer)
@@ -83,7 +83,8 @@ const Root = () => {
 								{isTrue && <>about me</>}
 							</NavLink>
 						</li>
-						<li className={globalClasses.iconContainer}>
+						{/* TODO: Uncomment once feature is implemented */}
+						{/* <li className={globalClasses.iconContainer}>
 							<NavLink
 								to={PATHS.Contact}
 								className={({ isActive }) =>
@@ -95,7 +96,7 @@ const Root = () => {
 							>
 								{isTrue && <>contact</>}
 							</NavLink>
-						</li>
+						</li> */}
 					</ul>
 					<h3 className={classes.externalSitesTitle}>external sites</h3>
 					<div className={classes.previewIconsWrapper}>
@@ -163,7 +164,8 @@ const Root = () => {
 							<Separator />
 							<h3>devflix menu</h3>
 							<ul className={classes.list}>
-								<li className={globalClasses.iconContainer}>
+								{/* TODO: Uncomment once feature is implemented */}
+								{/* <li className={globalClasses.iconContainer}>
 									<NavLink
 										to={PATHS.Home}
 										className={({ isActive }) =>
@@ -175,7 +177,7 @@ const Root = () => {
 									>
 										{isTrue && <>search</>}
 									</NavLink>
-								</li>
+								</li> */}
 								{isLoggedIn ? (
 									<li className={globalClasses.iconContainer}>
 										<button
@@ -196,7 +198,8 @@ const Root = () => {
 										</button>
 									</li>
 								)}
-								<li className={globalClasses.iconContainer}>
+								{/* TODO: Uncomment once feature is implemented */}
+								{/* <li className={globalClasses.iconContainer}>
 									<NavLink
 										to={PATHS.Home}
 										className={({ isActive }) =>
@@ -208,7 +211,7 @@ const Root = () => {
 									>
 										{isTrue && <>light mode</>}
 									</NavLink>
-								</li>
+								</li> */}
 								<li className={globalClasses.iconContainer}>
 									<NavLink
 										to={PATHS.Portfolio.Favorites}
