@@ -129,7 +129,7 @@
 ----------------------------*/
 
 /* Phones (≤480px) */
-@media (max-width: 480px) {
+@media (max-width: 370px) {
 	.hero {
 		flex-direction: column-reverse;
 		height: auto;
