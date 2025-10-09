@@ -35,6 +35,34 @@ ul {
 	padding: 1rem 0;
 }
 
+.cleanUi {
+	-webkit-tap-highlight-color: transparent;
+	-moz-outline-style: none;
+	outline: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: inherit;
+	background-clip: padding-box;
+	appearance: none;
+}
+
+.cleanUi:focus,
+.cleanUi:active {
+	outline: none;
+	box-shadow: none;
+}
+
+.cleanUi::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/* Accessibility: show a visible focus indicator only for keyboard users */
+.cleanUi:focus-visible {
+	outline: 2px solid white;
+	outline-offset: 2px;
+}
+
 /* Desktop list groups */
 .list,
 .listItem {

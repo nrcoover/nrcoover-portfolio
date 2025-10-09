@@ -148,7 +148,7 @@ const SideNavigation = () => {
 									item.onClick?.();
 									if (isMobile) toggleMenu();
 								}}
-								className={`${globalClasses.iconContainer}`}
+								className={`${globalClasses.iconContainer} ${classes.cleanUi}`}
 							>
 								{item.icon} {item.label}
 							</button>
