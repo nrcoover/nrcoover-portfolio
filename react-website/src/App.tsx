@@ -19,10 +19,18 @@ const router = createBrowserRouter([
 	{
 		path: PATHS.Home,
 		element: (
-			<LocationContextProvider>
-				<ScrollToTop />
-				<Root />
-			</LocationContextProvider>
+			<AuthUserContextProvider>
+				<SettingsContextProvider>
+					<FavoritesContextProvider>
+						<ProjectPreviewContextProvider>
+							<LocationContextProvider>
+								<ScrollToTop />
+								<Root />
+							</LocationContextProvider>
+						</ProjectPreviewContextProvider>
+					</FavoritesContextProvider>
+				</SettingsContextProvider>
+			</AuthUserContextProvider>
 		),
 		errorElement: <ErrorDefault />,
 		children: [
@@ -56,15 +64,7 @@ const router = createBrowserRouter([
 const App = () => {
 	return (
 		<>
-			<AuthUserContextProvider>
-				<SettingsContextProvider>
-					<FavoritesContextProvider>
-						<ProjectPreviewContextProvider>
-							<RouterProvider router={router}></RouterProvider>
-						</ProjectPreviewContextProvider>
-					</FavoritesContextProvider>
-				</SettingsContextProvider>
-			</AuthUserContextProvider>
+			<RouterProvider router={router}></RouterProvider>
 		</>
 	);
 };
