@@ -63,7 +63,10 @@ const HeroBanner = () => {
 	}`;
 
 	return (
-		<section aria-label="Featured project">
+		<section
+			aria-label="Featured project"
+			className={classes.devFlixHeroSection}
+		>
 			<div className={`${classes.hero} ${fadeClasses}`}>
 				<div className={`${classes.heroItem} ${classes.textWrapper}`}>
 					<h1 className={classes.devFlix}>

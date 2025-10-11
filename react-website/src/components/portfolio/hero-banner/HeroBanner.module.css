@@ -47,7 +47,8 @@
 }
 
 .heroImage {
-	height: inherit;
+	height: 100%;
+	width: 100%;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
@@ -129,12 +130,55 @@
 ----------------------------*/
 
 /* Phones (≤480px) */
-@media (max-width: 370px) {
+@media (max-width: 320px) {
+	.devFlixHeroSection {
+		display: flex;
+		justify-content: center;
+		margin: auto;
+	}
+
 	.hero {
 		flex-direction: column-reverse;
-		height: auto;
-		align-items: center;
 		justify-content: flex-start;
+		width: 100vw;
+		min-height: 100%;
+		height: auto;
+		margin: auto;
+		overflow: visible;
+	}
+
+	.heroImage {
+		width: 100vw;
+		display: block;
+		justify-content: center;
+		align-items: center;
+		height: auto;
+	}
+
+	.heroImageWrapper {
+		position: relative;
+		width: 100%;
+		height: auto;
+		min-height: 100%;
+	}
+
+	.heroImage img {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		object-position: center;
+		display: block;
+	}
+
+	.aiNoticeWrapper {
+		position: absolute;
+		bottom: 0%;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		width: 100%;
+		z-index: 5;
+		height: inherit;
 	}
 
 	.textWrapper {
@@ -142,23 +186,7 @@
 		padding: 1rem;
 		max-width: 100%;
 		text-align: center;
-	}
-
-	.textWrapper h1 {
-		font-size: 2rem;
-	}
-
-	.textWrapper h2 {
-		font-size: 1.25rem;
-	}
-
-	.textWrapper p {
-		font-size: 0.9rem;
-	}
-
-	.aiNoticeWrapper {
-		width: 100%;
-		text-align: center;
+		z-index: 2;
 	}
 }
 
